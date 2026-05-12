@@ -1,0 +1,68 @@
+{
+  "total_files": 12,
+  "processed_files": 12,
+  "failed_files": 0,
+  "total_chunks": 8318,
+  "documents": [
+    {
+      "filename": "Doubling-of-Farmers-Income-updated-092020-min.pdf",
+      "chunks": 3284,
+      "status": "success"
+    },
+    {
+      "filename": "farmerbook.pdf",
+      "chunks": 356,
+      "status": "success"
+    },
+    {
+      "filename": "farmerhandbook2016.pdf",
+      "chunks": 356,
+      "status": "success"
+    },
+    {
+      "filename": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf",
+      "chunks": 285,
+      "status": "success"
+    },
+    {
+      "filename": "ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf",
+      "chunks": 721,
+      "status": "success"
+    },
+    {
+      "filename": "ICAR-Kharif-Agro-Advisories-for-Farmers-2025__multi-language (1).pdf",
+      "chunks": 430,
+      "status": "success"
+    },
+    {
+      "filename": "ICAR-technologies-Biofertilizers.pdf",
+      "chunks": 166,
+      "status": "success"
+    },
+    {
+      "filename": "ICAR-Technologies-Biopesticides.pdf",
+      "chunks": 133,
+      "status": "success"
+    },
+    {
+      "filename": "Kharif-agro-advisory-2021-final.pdf",
+      "chunks": 493,
+      "status": "success"
+    },
+    {
+      "filename": "Kharif-agro-advisory-2022.pdf",
+      "chunks": 530,
+      "status": "success"
+    },
+    {
+      "filename": "Rabi-Agro-Advisory-2021-22_0.pdf",
+      "chunks": 612,
+      "status": "success"
+    },
+    {
+      "filename": "Technical-Manual-on-Natural_Farming_10.03.2025.pdf",
+      "chunks": 952,
+      "status": "success"
+    }
+  ]
+}
