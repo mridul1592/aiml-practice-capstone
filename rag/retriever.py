@@ -11,7 +11,6 @@ Handles:
 from typing import Dict, List, Optional, Tuple
 
 import numpy as np
-from textblob import TextBlob
 
 from rag.embedder import Embedder
 from rag.vector_store import VectorStore

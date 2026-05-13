@@ -137,3 +137,340 @@
 2026-05-12 20:15:12 - ingestion.orchestrator - INFO - Created 3284 chunks
 2026-05-12 20:15:12 - ingestion.orchestrator - INFO - Saved processed document to data\processed\Doubling-of-Farmers-Income-updated-092020-min_processed.json
 2026-05-12 20:15:12 - ingestion.orchestrator - INFO - Successfully ingested Doubling-of-Farmers-Income-updated-092020-min.pdf
+2026-05-13 16:13:59 - __main__ - INFO - Processing query: How to control wheat pests?
+2026-05-13 16:13:59 - rag.rag_orchestrator - INFO - Initializing RAG pipeline...
+2026-05-13 16:13:59 - rag.rag_orchestrator - INFO - Loading embedder...
+2026-05-13 16:13:59 - rag.embedder - INFO - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-13 16:14:32 - rag.embedder - INFO - Model loaded successfully. Embedding dimension: 384
+2026-05-13 16:14:32 - rag.rag_orchestrator - INFO - Embedder loaded: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-13 16:14:32 - rag.rag_orchestrator - INFO - Loading vector store from disk...
+2026-05-13 16:14:32 - rag.vector_store - INFO - Initialized vector store with dimension 384
+2026-05-13 16:14:32 - rag.vector_store - ERROR - Error loading vector store: FAISS index not found: data\embeddings\faiss_index.bin
+2026-05-13 16:14:32 - rag.rag_orchestrator - ERROR - Failed to load vector store: FAISS index not found: data\embeddings\faiss_index.bin
+2026-05-13 16:14:32 - __main__ - ERROR - Error running query: FAISS index not found: data\embeddings\faiss_index.bin
+2026-05-13 16:15:29 - __main__ - INFO - Starting PDF ingestion from: Agri_docs
+2026-05-13 16:15:29 - ingestion.orchestrator - INFO - Found 12 PDF files to ingest
+2026-05-13 16:15:29 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\Doubling-of-Farmers-Income-updated-092020-min.pdf
+2026-05-13 16:15:33 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\Doubling-of-Farmers-Income-updated-092020-min.pdf
+2026-05-13 16:15:33 - ingestion.metadata_extractor - INFO - Extracting metadata from Doubling-of-Farmers-Income-updated-092020-min.pdf
+2026-05-13 16:15:34 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'Doubling-of-Farmers-Income-updated-092020-min.pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'cotton', 'maize'], 'diseases': ['shoot_fly', 'root_rot', 'leaf_spot', 'powdery_mildew', 'stem_borer', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['punjab', 'karnataka', 'uttar_pradesh', 'madhya_pradesh', 'haryana', 'maharashtra'], 'year': '2020'}
+2026-05-13 16:15:34 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'Doubling-of-Farmers-Income-updated-092020-min.pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'cotton', 'maize'], 'diseases': ['shoot_fly', 'root_rot', 'leaf_spot', 'powdery_mildew', 'stem_borer', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['punjab', 'karnataka', 'uttar_pradesh', 'madhya_pradesh', 'haryana', 'maharashtra'], 'year': '2020'}
+2026-05-13 16:15:34 - ingestion.chunking - INFO - Chunking document (1573400 chars, ~393350 tokens)
+2026-05-13 16:15:34 - ingestion.chunking - INFO - Created 3284 chunks (avg: 141 tokens)
+2026-05-13 16:15:34 - ingestion.orchestrator - INFO - Created 3284 chunks
+2026-05-13 16:15:34 - ingestion.orchestrator - INFO - Saved processed document to data\processed\Doubling-of-Farmers-Income-updated-092020-min_processed.json
+2026-05-13 16:15:34 - ingestion.orchestrator - INFO - Successfully ingested Doubling-of-Farmers-Income-updated-092020-min.pdf
+2026-05-13 16:15:34 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\farmerbook.pdf
+2026-05-13 16:15:34 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\farmerbook.pdf
+2026-05-13 16:15:34 - ingestion.metadata_extractor - INFO - Extracting metadata from farmerbook.pdf
+2026-05-13 16:15:34 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'farmerbook.pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'cotton', 'maize'], 'diseases': ['stem_borer', 'leaf_spot', 'root_rot', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['karnataka', 'punjab', 'uttar_pradesh', 'madhya_pradesh', 'maharashtra']}
+2026-05-13 16:15:34 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'farmerbook.pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'cotton', 'maize'], 'diseases': ['stem_borer', 'leaf_spot', 'root_rot', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['karnataka', 'punjab', 'uttar_pradesh', 'madhya_pradesh', 'maharashtra']}
+2026-05-13 16:15:34 - ingestion.chunking - INFO - Chunking document (277088 chars, ~69272 tokens)
+2026-05-13 16:15:34 - ingestion.chunking - INFO - Created 356 chunks (avg: 237 tokens)
+2026-05-13 16:15:34 - ingestion.orchestrator - INFO - Created 356 chunks
+2026-05-13 16:15:34 - ingestion.orchestrator - INFO - Saved processed document to data\processed\farmerbook_processed.json
+2026-05-13 16:15:34 - ingestion.orchestrator - INFO - Successfully ingested farmerbook.pdf
+2026-05-13 16:15:34 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\farmerhandbook2016.pdf
+2026-05-13 16:15:34 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\farmerhandbook2016.pdf
+2026-05-13 16:15:34 - ingestion.metadata_extractor - INFO - Extracting metadata from farmerhandbook2016.pdf
+2026-05-13 16:15:34 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'farmerhandbook2016.pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'cotton', 'maize'], 'diseases': ['stem_borer', 'leaf_spot', 'root_rot', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['karnataka', 'punjab', 'uttar_pradesh', 'madhya_pradesh', 'maharashtra'], 'year': '2016'}
+2026-05-13 16:15:34 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'farmerhandbook2016.pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'cotton', 'maize'], 'diseases': ['stem_borer', 'leaf_spot', 'root_rot', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['karnataka', 'punjab', 'uttar_pradesh', 'madhya_pradesh', 'maharashtra'], 'year': '2016'}
+2026-05-13 16:15:34 - ingestion.chunking - INFO - Chunking document (277088 chars, ~69272 tokens)
+2026-05-13 16:15:34 - ingestion.chunking - INFO - Created 356 chunks (avg: 237 tokens)
+2026-05-13 16:15:34 - ingestion.orchestrator - INFO - Created 356 chunks
+2026-05-13 16:15:34 - ingestion.orchestrator - INFO - Saved processed document to data\processed\farmerhandbook2016_processed.json
+2026-05-13 16:15:34 - ingestion.orchestrator - INFO - Successfully ingested farmerhandbook2016.pdf
+2026-05-13 16:15:34 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf
+2026-05-13 16:15:35 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf
+2026-05-13 16:15:35 - ingestion.metadata_extractor - INFO - Extracting metadata from Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf
+2026-05-13 16:15:35 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'cotton', 'maize'], 'diseases': [], 'seasons': ['rabi', 'summer', 'kharif'], 'regions': ['punjab', 'uttar_pradesh', 'madhya_pradesh', 'haryana', 'maharashtra'], 'year': '2018'}
+2026-05-13 16:15:35 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'cotton', 'maize'], 'diseases': [], 'seasons': ['rabi', 'summer', 'kharif'], 'regions': ['punjab', 'uttar_pradesh', 'madhya_pradesh', 'haryana', 'maharashtra'], 'year': '2018'}
+2026-05-13 16:15:35 - ingestion.chunking - INFO - Chunking document (151378 chars, ~37844 tokens)
+2026-05-13 16:15:35 - ingestion.chunking - INFO - Created 285 chunks (avg: 145 tokens)
+2026-05-13 16:15:35 - ingestion.orchestrator - INFO - Created 285 chunks
+2026-05-13 16:15:35 - ingestion.orchestrator - INFO - Saved processed document to data\processed\Farmer_Friendly_Handbook_ENGLISH_2018_19_processed.json
+2026-05-13 16:15:35 - ingestion.orchestrator - INFO - Successfully ingested Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf
+2026-05-13 16:15:35 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf
+2026-05-13 16:15:36 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf
+2026-05-13 16:15:36 - ingestion.metadata_extractor - INFO - Extracting metadata from ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf
+2026-05-13 16:15:36 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'cotton', 'maize'], 'diseases': ['root_rot', 'leaf_spot', 'powdery_mildew', 'stem_borer', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['punjab', 'karnataka', 'uttar_pradesh', 'madhya_pradesh', 'haryana', 'maharashtra'], 'season': 'kharif', 'year': '2025'}
+2026-05-13 16:15:36 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'cotton', 'maize'], 'diseases': ['root_rot', 'leaf_spot', 'powdery_mildew', 'stem_borer', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['punjab', 'karnataka', 'uttar_pradesh', 'madhya_pradesh', 'haryana', 'maharashtra'], 'season': 'kharif', 'year': '2025'}
+2026-05-13 16:15:36 - ingestion.chunking - INFO - Chunking document (806753 chars, ~201688 tokens)
+2026-05-13 16:15:36 - ingestion.chunking - INFO - Created 721 chunks (avg: 327 tokens)
+2026-05-13 16:15:36 - ingestion.orchestrator - INFO - Created 721 chunks
+2026-05-13 16:15:36 - ingestion.orchestrator - INFO - Saved processed document to data\processed\ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025_processed.json
+2026-05-13 16:15:36 - ingestion.orchestrator - INFO - Successfully ingested ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf
+2026-05-13 16:15:36 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\ICAR-Kharif-Agro-Advisories-for-Farmers-2025__multi-language (1).pdf
+2026-05-13 16:15:37 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\ICAR-Kharif-Agro-Advisories-for-Farmers-2025__multi-language (1).pdf
+2026-05-13 16:15:37 - ingestion.metadata_extractor - INFO - Extracting metadata from ICAR-Kharif-Agro-Advisories-for-Farmers-2025__multi-language (1).pdf
+2026-05-13 16:15:37 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'ICAR-Kharif-Agro-Advisories-for-Farmers-2025__multi-language (1).pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'cotton', 'maize'], 'diseases': ['shoot_fly', 'root_rot', 'leaf_spot', 'stem_borer', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['punjab', 'karnataka', 'uttar_pradesh', 'madhya_pradesh', 'haryana', 'maharashtra'], 'season': 'kharif', 'year': '2025'}
+2026-05-13 16:15:37 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'ICAR-Kharif-Agro-Advisories-for-Farmers-2025__multi-language (1).pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'cotton', 'maize'], 'diseases': ['shoot_fly', 'root_rot', 'leaf_spot', 'stem_borer', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['punjab', 'karnataka', 'uttar_pradesh', 'madhya_pradesh', 'haryana', 'maharashtra'], 'season': 'kharif', 'year': '2025'}
+2026-05-13 16:15:37 - ingestion.chunking - INFO - Chunking document (767151 chars, ~191787 tokens)
+2026-05-13 16:15:38 - ingestion.chunking - INFO - Created 430 chunks (avg: 486 tokens)
+2026-05-13 16:15:38 - ingestion.orchestrator - INFO - Created 430 chunks
+2026-05-13 16:15:38 - ingestion.orchestrator - INFO - Saved processed document to data\processed\ICAR-Kharif-Agro-Advisories-for-Farmers-2025__multi-language (1)_processed.json
+2026-05-13 16:15:38 - ingestion.orchestrator - INFO - Successfully ingested ICAR-Kharif-Agro-Advisories-for-Farmers-2025__multi-language (1).pdf
+2026-05-13 16:15:38 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\ICAR-technologies-Biofertilizers.pdf
+2026-05-13 16:15:38 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\ICAR-technologies-Biofertilizers.pdf
+2026-05-13 16:15:38 - ingestion.metadata_extractor - INFO - Extracting metadata from ICAR-technologies-Biofertilizers.pdf
+2026-05-13 16:15:38 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'ICAR-technologies-Biofertilizers.pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'cotton', 'maize'], 'diseases': ['root_rot'], 'seasons': ['summer', 'rabi'], 'regions': ['punjab', 'karnataka', 'uttar_pradesh', 'madhya_pradesh', 'haryana', 'maharashtra']}
+2026-05-13 16:15:38 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'ICAR-technologies-Biofertilizers.pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'cotton', 'maize'], 'diseases': ['root_rot'], 'seasons': ['summer', 'rabi'], 'regions': ['punjab', 'karnataka', 'uttar_pradesh', 'madhya_pradesh', 'haryana', 'maharashtra']}
+2026-05-13 16:15:38 - ingestion.chunking - INFO - Chunking document (63466 chars, ~15866 tokens)
+2026-05-13 16:15:38 - ingestion.chunking - INFO - Created 166 chunks (avg: 96 tokens)
+2026-05-13 16:15:38 - ingestion.orchestrator - INFO - Created 166 chunks
+2026-05-13 16:15:38 - ingestion.orchestrator - INFO - Saved processed document to data\processed\ICAR-technologies-Biofertilizers_processed.json
+2026-05-13 16:15:38 - ingestion.orchestrator - INFO - Successfully ingested ICAR-technologies-Biofertilizers.pdf
+2026-05-13 16:15:38 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\ICAR-Technologies-Biopesticides.pdf
+2026-05-13 16:15:38 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\ICAR-Technologies-Biopesticides.pdf
+2026-05-13 16:15:38 - ingestion.metadata_extractor - INFO - Extracting metadata from ICAR-Technologies-Biopesticides.pdf
+2026-05-13 16:15:38 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'ICAR-Technologies-Biopesticides.pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'maize'], 'diseases': ['stem_borer', 'root_rot', 'powdery_mildew', 'blast'], 'seasons': [], 'regions': ['karnataka', 'maharashtra', 'madhya_pradesh', 'uttar_pradesh']}
+2026-05-13 16:15:38 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'ICAR-Technologies-Biopesticides.pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'maize'], 'diseases': ['stem_borer', 'root_rot', 'powdery_mildew', 'blast'], 'seasons': [], 'regions': ['karnataka', 'maharashtra', 'madhya_pradesh', 'uttar_pradesh']}
+2026-05-13 16:15:38 - ingestion.chunking - INFO - Chunking document (49358 chars, ~12339 tokens)
+2026-05-13 16:15:38 - ingestion.chunking - INFO - Created 133 chunks (avg: 93 tokens)
+2026-05-13 16:15:38 - ingestion.orchestrator - INFO - Created 133 chunks
+2026-05-13 16:15:38 - ingestion.orchestrator - INFO - Saved processed document to data\processed\ICAR-Technologies-Biopesticides_processed.json
+2026-05-13 16:15:38 - ingestion.orchestrator - INFO - Successfully ingested ICAR-Technologies-Biopesticides.pdf
+2026-05-13 16:15:38 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\Kharif-agro-advisory-2021-final.pdf
+2026-05-13 16:15:41 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\Kharif-agro-advisory-2021-final.pdf
+2026-05-13 16:15:41 - ingestion.metadata_extractor - INFO - Extracting metadata from Kharif-agro-advisory-2021-final.pdf
+2026-05-13 16:15:41 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'Kharif-agro-advisory-2021-final.pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'cotton', 'maize'], 'diseases': ['root_rot', 'leaf_spot', 'powdery_mildew', 'stem_borer', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['punjab', 'karnataka', 'uttar_pradesh', 'madhya_pradesh', 'haryana', 'maharashtra'], 'season': 'kharif', 'year': '2021'}
+2026-05-13 16:15:41 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'Kharif-agro-advisory-2021-final.pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'cotton', 'maize'], 'diseases': ['root_rot', 'leaf_spot', 'powdery_mildew', 'stem_borer', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['punjab', 'karnataka', 'uttar_pradesh', 'madhya_pradesh', 'haryana', 'maharashtra'], 'season': 'kharif', 'year': '2021'}
+2026-05-13 16:15:41 - ingestion.chunking - INFO - Chunking document (401785 chars, ~100446 tokens)
+2026-05-13 16:15:41 - ingestion.chunking - INFO - Created 493 chunks (avg: 203 tokens)
+2026-05-13 16:15:41 - ingestion.orchestrator - INFO - Created 493 chunks
+2026-05-13 16:15:41 - ingestion.orchestrator - INFO - Saved processed document to data\processed\Kharif-agro-advisory-2021-final_processed.json
+2026-05-13 16:15:41 - ingestion.orchestrator - INFO - Successfully ingested Kharif-agro-advisory-2021-final.pdf
+2026-05-13 16:15:41 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\Kharif-agro-advisory-2022.pdf
+2026-05-13 16:15:49 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\Kharif-agro-advisory-2022.pdf
+2026-05-13 16:15:49 - ingestion.metadata_extractor - INFO - Extracting metadata from Kharif-agro-advisory-2022.pdf
+2026-05-13 16:15:49 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'Kharif-agro-advisory-2022.pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'cotton', 'maize'], 'diseases': ['root_rot', 'leaf_spot', 'powdery_mildew', 'stem_borer', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['punjab', 'karnataka', 'uttar_pradesh', 'madhya_pradesh', 'haryana', 'maharashtra'], 'season': 'kharif', 'year': '2022'}
+2026-05-13 16:15:49 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'Kharif-agro-advisory-2022.pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'cotton', 'maize'], 'diseases': ['root_rot', 'leaf_spot', 'powdery_mildew', 'stem_borer', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['punjab', 'karnataka', 'uttar_pradesh', 'madhya_pradesh', 'haryana', 'maharashtra'], 'season': 'kharif', 'year': '2022'}
+2026-05-13 16:15:49 - ingestion.chunking - INFO - Chunking document (518184 chars, ~129546 tokens)
+2026-05-13 16:15:49 - ingestion.chunking - INFO - Created 530 chunks (avg: 299 tokens)
+2026-05-13 16:15:49 - ingestion.orchestrator - INFO - Created 530 chunks
+2026-05-13 16:15:49 - ingestion.orchestrator - INFO - Saved processed document to data\processed\Kharif-agro-advisory-2022_processed.json
+2026-05-13 16:15:49 - ingestion.orchestrator - INFO - Successfully ingested Kharif-agro-advisory-2022.pdf
+2026-05-13 16:15:49 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\Rabi-Agro-Advisory-2021-22_0.pdf
+2026-05-13 16:15:53 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\Rabi-Agro-Advisory-2021-22_0.pdf
+2026-05-13 16:15:53 - ingestion.metadata_extractor - INFO - Extracting metadata from Rabi-Agro-Advisory-2021-22_0.pdf
+2026-05-13 16:15:53 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'Rabi-Agro-Advisory-2021-22_0.pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'cotton', 'maize'], 'diseases': ['root_rot', 'leaf_spot', 'powdery_mildew', 'stem_borer', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['punjab', 'karnataka', 'uttar_pradesh', 'madhya_pradesh', 'haryana', 'maharashtra'], 'season': 'rabi', 'year': '2021'}
+2026-05-13 16:15:53 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'Rabi-Agro-Advisory-2021-22_0.pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'cotton', 'maize'], 'diseases': ['root_rot', 'leaf_spot', 'powdery_mildew', 'stem_borer', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['punjab', 'karnataka', 'uttar_pradesh', 'madhya_pradesh', 'haryana', 'maharashtra'], 'season': 'rabi', 'year': '2021'}
+2026-05-13 16:15:53 - ingestion.chunking - INFO - Chunking document (689032 chars, ~172258 tokens)
+2026-05-13 16:15:53 - ingestion.chunking - INFO - Created 612 chunks (avg: 344 tokens)
+2026-05-13 16:15:53 - ingestion.orchestrator - INFO - Created 612 chunks
+2026-05-13 16:15:53 - ingestion.orchestrator - INFO - Saved processed document to data\processed\Rabi-Agro-Advisory-2021-22_0_processed.json
+2026-05-13 16:15:53 - ingestion.orchestrator - INFO - Successfully ingested Rabi-Agro-Advisory-2021-22_0.pdf
+2026-05-13 16:15:53 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\Technical-Manual-on-Natural_Farming_10.03.2025.pdf
+2026-05-13 16:15:54 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\Technical-Manual-on-Natural_Farming_10.03.2025.pdf
+2026-05-13 16:15:54 - ingestion.metadata_extractor - INFO - Extracting metadata from Technical-Manual-on-Natural_Farming_10.03.2025.pdf
+2026-05-13 16:15:54 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'Technical-Manual-on-Natural_Farming_10.03.2025.pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'cotton', 'maize'], 'diseases': ['shoot_fly', 'root_rot', 'leaf_spot', 'powdery_mildew', 'stem_borer'], 'seasons': ['rabi', 'summer', 'kharif'], 'regions': ['punjab', 'karnataka', 'uttar_pradesh', 'madhya_pradesh', 'haryana', 'maharashtra'], 'year': '2025'}
+2026-05-13 16:15:54 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'Technical-Manual-on-Natural_Farming_10.03.2025.pdf', 'language': 'english', 'crops': ['paddy', 'wheat', 'cotton', 'maize'], 'diseases': ['shoot_fly', 'root_rot', 'leaf_spot', 'powdery_mildew', 'stem_borer'], 'seasons': ['rabi', 'summer', 'kharif'], 'regions': ['punjab', 'karnataka', 'uttar_pradesh', 'madhya_pradesh', 'haryana', 'maharashtra'], 'year': '2025'}
+2026-05-13 16:15:54 - ingestion.chunking - INFO - Chunking document (480165 chars, ~120041 tokens)
+2026-05-13 16:15:54 - ingestion.chunking - INFO - Created 952 chunks (avg: 146 tokens)
+2026-05-13 16:15:54 - ingestion.orchestrator - INFO - Created 952 chunks
+2026-05-13 16:15:54 - ingestion.orchestrator - INFO - Saved processed document to data\processed\Technical-Manual-on-Natural_Farming_10.03.2025_processed.json
+2026-05-13 16:15:54 - ingestion.orchestrator - INFO - Successfully ingested Technical-Manual-on-Natural_Farming_10.03.2025.pdf
+2026-05-13 16:15:54 - ingestion.orchestrator - INFO - Batch ingestion complete: 12/12 files processed, 8318 total chunks created
+2026-05-13 16:16:34 - __main__ - INFO - Starting embedding pipeline from: Agri_docs
+2026-05-13 16:16:34 - rag.embeddings_orchestrator - INFO - Starting complete ingestion + embedding pipeline from Agri_docs
+2026-05-13 16:16:34 - rag.embeddings_orchestrator - INFO - Step 1: Ingesting PDFs...
+2026-05-13 16:16:34 - ingestion.orchestrator - INFO - Found 12 PDF files to ingest
+2026-05-13 16:16:34 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\Doubling-of-Farmers-Income-updated-092020-min.pdf
+2026-05-13 16:16:37 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\Doubling-of-Farmers-Income-updated-092020-min.pdf
+2026-05-13 16:16:38 - ingestion.metadata_extractor - INFO - Extracting metadata from Doubling-of-Farmers-Income-updated-092020-min.pdf
+2026-05-13 16:16:38 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'Doubling-of-Farmers-Income-updated-092020-min.pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy', 'cotton'], 'diseases': ['stem_borer', 'root_rot', 'leaf_spot', 'powdery_mildew', 'blast', 'shoot_fly'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['maharashtra', 'uttar_pradesh', 'madhya_pradesh', 'karnataka', 'haryana', 'punjab'], 'year': '2020'}
+2026-05-13 16:16:38 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'Doubling-of-Farmers-Income-updated-092020-min.pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy', 'cotton'], 'diseases': ['stem_borer', 'root_rot', 'leaf_spot', 'powdery_mildew', 'blast', 'shoot_fly'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['maharashtra', 'uttar_pradesh', 'madhya_pradesh', 'karnataka', 'haryana', 'punjab'], 'year': '2020'}
+2026-05-13 16:16:38 - ingestion.chunking - INFO - Chunking document (1573400 chars, ~393350 tokens)
+2026-05-13 16:16:38 - ingestion.chunking - INFO - Created 3284 chunks (avg: 141 tokens)
+2026-05-13 16:16:38 - ingestion.orchestrator - INFO - Created 3284 chunks
+2026-05-13 16:16:38 - ingestion.orchestrator - INFO - Saved processed document to data\processed\Doubling-of-Farmers-Income-updated-092020-min_processed.json
+2026-05-13 16:16:38 - ingestion.orchestrator - INFO - Successfully ingested Doubling-of-Farmers-Income-updated-092020-min.pdf
+2026-05-13 16:16:38 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\farmerbook.pdf
+2026-05-13 16:16:38 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\farmerbook.pdf
+2026-05-13 16:16:38 - ingestion.metadata_extractor - INFO - Extracting metadata from farmerbook.pdf
+2026-05-13 16:16:38 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'farmerbook.pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy', 'cotton'], 'diseases': ['stem_borer', 'leaf_spot', 'blast', 'root_rot'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['maharashtra', 'uttar_pradesh', 'madhya_pradesh', 'karnataka', 'punjab']}
+2026-05-13 16:16:38 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'farmerbook.pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy', 'cotton'], 'diseases': ['stem_borer', 'leaf_spot', 'blast', 'root_rot'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['maharashtra', 'uttar_pradesh', 'madhya_pradesh', 'karnataka', 'punjab']}
+2026-05-13 16:16:38 - ingestion.chunking - INFO - Chunking document (277088 chars, ~69272 tokens)
+2026-05-13 16:16:38 - ingestion.chunking - INFO - Created 356 chunks (avg: 237 tokens)
+2026-05-13 16:16:38 - ingestion.orchestrator - INFO - Created 356 chunks
+2026-05-13 16:16:38 - ingestion.orchestrator - INFO - Saved processed document to data\processed\farmerbook_processed.json
+2026-05-13 16:16:38 - ingestion.orchestrator - INFO - Successfully ingested farmerbook.pdf
+2026-05-13 16:16:38 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\farmerhandbook2016.pdf
+2026-05-13 16:16:38 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\farmerhandbook2016.pdf
+2026-05-13 16:16:38 - ingestion.metadata_extractor - INFO - Extracting metadata from farmerhandbook2016.pdf
+2026-05-13 16:16:38 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'farmerhandbook2016.pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy', 'cotton'], 'diseases': ['stem_borer', 'leaf_spot', 'blast', 'root_rot'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['maharashtra', 'uttar_pradesh', 'madhya_pradesh', 'karnataka', 'punjab'], 'year': '2016'}
+2026-05-13 16:16:38 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'farmerhandbook2016.pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy', 'cotton'], 'diseases': ['stem_borer', 'leaf_spot', 'blast', 'root_rot'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['maharashtra', 'uttar_pradesh', 'madhya_pradesh', 'karnataka', 'punjab'], 'year': '2016'}
+2026-05-13 16:16:38 - ingestion.chunking - INFO - Chunking document (277088 chars, ~69272 tokens)
+2026-05-13 16:16:38 - ingestion.chunking - INFO - Created 356 chunks (avg: 237 tokens)
+2026-05-13 16:16:38 - ingestion.orchestrator - INFO - Created 356 chunks
+2026-05-13 16:16:38 - ingestion.orchestrator - INFO - Saved processed document to data\processed\farmerhandbook2016_processed.json
+2026-05-13 16:16:38 - ingestion.orchestrator - INFO - Successfully ingested farmerhandbook2016.pdf
+2026-05-13 16:16:38 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf
+2026-05-13 16:16:39 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf
+2026-05-13 16:16:39 - ingestion.metadata_extractor - INFO - Extracting metadata from Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf
+2026-05-13 16:16:39 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy', 'cotton'], 'diseases': [], 'seasons': ['rabi', 'summer', 'kharif'], 'regions': ['maharashtra', 'uttar_pradesh', 'madhya_pradesh', 'haryana', 'punjab'], 'year': '2018'}
+2026-05-13 16:16:39 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy', 'cotton'], 'diseases': [], 'seasons': ['rabi', 'summer', 'kharif'], 'regions': ['maharashtra', 'uttar_pradesh', 'madhya_pradesh', 'haryana', 'punjab'], 'year': '2018'}
+2026-05-13 16:16:39 - ingestion.chunking - INFO - Chunking document (151378 chars, ~37844 tokens)
+2026-05-13 16:16:39 - ingestion.chunking - INFO - Created 285 chunks (avg: 145 tokens)
+2026-05-13 16:16:39 - ingestion.orchestrator - INFO - Created 285 chunks
+2026-05-13 16:16:39 - ingestion.orchestrator - INFO - Saved processed document to data\processed\Farmer_Friendly_Handbook_ENGLISH_2018_19_processed.json
+2026-05-13 16:16:39 - ingestion.orchestrator - INFO - Successfully ingested Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf
+2026-05-13 16:16:39 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf
+2026-05-13 16:16:40 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf
+2026-05-13 16:16:40 - ingestion.metadata_extractor - INFO - Extracting metadata from ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf
+2026-05-13 16:16:40 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy', 'cotton'], 'diseases': ['stem_borer', 'root_rot', 'leaf_spot', 'powdery_mildew', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['maharashtra', 'uttar_pradesh', 'madhya_pradesh', 'karnataka', 'haryana', 'punjab'], 'season': 'kharif', 'year': '2025'}
+2026-05-13 16:16:40 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy', 'cotton'], 'diseases': ['stem_borer', 'root_rot', 'leaf_spot', 'powdery_mildew', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['maharashtra', 'uttar_pradesh', 'madhya_pradesh', 'karnataka', 'haryana', 'punjab'], 'season': 'kharif', 'year': '2025'}
+2026-05-13 16:16:40 - ingestion.chunking - INFO - Chunking document (806753 chars, ~201688 tokens)
+2026-05-13 16:16:40 - ingestion.chunking - INFO - Created 721 chunks (avg: 327 tokens)
+2026-05-13 16:16:40 - ingestion.orchestrator - INFO - Created 721 chunks
+2026-05-13 16:16:40 - ingestion.orchestrator - INFO - Saved processed document to data\processed\ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025_processed.json
+2026-05-13 16:16:40 - ingestion.orchestrator - INFO - Successfully ingested ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf
+2026-05-13 16:16:40 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\ICAR-Kharif-Agro-Advisories-for-Farmers-2025__multi-language (1).pdf
+2026-05-13 16:16:41 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\ICAR-Kharif-Agro-Advisories-for-Farmers-2025__multi-language (1).pdf
+2026-05-13 16:16:41 - ingestion.metadata_extractor - INFO - Extracting metadata from ICAR-Kharif-Agro-Advisories-for-Farmers-2025__multi-language (1).pdf
+2026-05-13 16:16:41 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'ICAR-Kharif-Agro-Advisories-for-Farmers-2025__multi-language (1).pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy', 'cotton'], 'diseases': ['stem_borer', 'root_rot', 'leaf_spot', 'blast', 'shoot_fly'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['maharashtra', 'uttar_pradesh', 'madhya_pradesh', 'karnataka', 'haryana', 'punjab'], 'season': 'kharif', 'year': '2025'}
+2026-05-13 16:16:41 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'ICAR-Kharif-Agro-Advisories-for-Farmers-2025__multi-language (1).pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy', 'cotton'], 'diseases': ['stem_borer', 'root_rot', 'leaf_spot', 'blast', 'shoot_fly'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['maharashtra', 'uttar_pradesh', 'madhya_pradesh', 'karnataka', 'haryana', 'punjab'], 'season': 'kharif', 'year': '2025'}
+2026-05-13 16:16:41 - ingestion.chunking - INFO - Chunking document (767151 chars, ~191787 tokens)
+2026-05-13 16:16:41 - ingestion.chunking - INFO - Created 430 chunks (avg: 486 tokens)
+2026-05-13 16:16:41 - ingestion.orchestrator - INFO - Created 430 chunks
+2026-05-13 16:16:41 - ingestion.orchestrator - INFO - Saved processed document to data\processed\ICAR-Kharif-Agro-Advisories-for-Farmers-2025__multi-language (1)_processed.json
+2026-05-13 16:16:41 - ingestion.orchestrator - INFO - Successfully ingested ICAR-Kharif-Agro-Advisories-for-Farmers-2025__multi-language (1).pdf
+2026-05-13 16:16:41 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\ICAR-technologies-Biofertilizers.pdf
+2026-05-13 16:16:41 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\ICAR-technologies-Biofertilizers.pdf
+2026-05-13 16:16:41 - ingestion.metadata_extractor - INFO - Extracting metadata from ICAR-technologies-Biofertilizers.pdf
+2026-05-13 16:16:41 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'ICAR-technologies-Biofertilizers.pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy', 'cotton'], 'diseases': ['root_rot'], 'seasons': ['rabi', 'summer'], 'regions': ['maharashtra', 'uttar_pradesh', 'madhya_pradesh', 'karnataka', 'haryana', 'punjab']}
+2026-05-13 16:16:41 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'ICAR-technologies-Biofertilizers.pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy', 'cotton'], 'diseases': ['root_rot'], 'seasons': ['rabi', 'summer'], 'regions': ['maharashtra', 'uttar_pradesh', 'madhya_pradesh', 'karnataka', 'haryana', 'punjab']}
+2026-05-13 16:16:41 - ingestion.chunking - INFO - Chunking document (63466 chars, ~15866 tokens)
+2026-05-13 16:16:41 - ingestion.chunking - INFO - Created 166 chunks (avg: 96 tokens)
+2026-05-13 16:16:41 - ingestion.orchestrator - INFO - Created 166 chunks
+2026-05-13 16:16:41 - ingestion.orchestrator - INFO - Saved processed document to data\processed\ICAR-technologies-Biofertilizers_processed.json
+2026-05-13 16:16:41 - ingestion.orchestrator - INFO - Successfully ingested ICAR-technologies-Biofertilizers.pdf
+2026-05-13 16:16:41 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\ICAR-Technologies-Biopesticides.pdf
+2026-05-13 16:16:42 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\ICAR-Technologies-Biopesticides.pdf
+2026-05-13 16:16:42 - ingestion.metadata_extractor - INFO - Extracting metadata from ICAR-Technologies-Biopesticides.pdf
+2026-05-13 16:16:42 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'ICAR-Technologies-Biopesticides.pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy'], 'diseases': ['stem_borer', 'blast', 'powdery_mildew', 'root_rot'], 'seasons': [], 'regions': ['madhya_pradesh', 'karnataka', 'maharashtra', 'uttar_pradesh']}
+2026-05-13 16:16:42 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'ICAR-Technologies-Biopesticides.pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy'], 'diseases': ['stem_borer', 'blast', 'powdery_mildew', 'root_rot'], 'seasons': [], 'regions': ['madhya_pradesh', 'karnataka', 'maharashtra', 'uttar_pradesh']}
+2026-05-13 16:16:42 - ingestion.chunking - INFO - Chunking document (49358 chars, ~12339 tokens)
+2026-05-13 16:16:42 - ingestion.chunking - INFO - Created 133 chunks (avg: 93 tokens)
+2026-05-13 16:16:42 - ingestion.orchestrator - INFO - Created 133 chunks
+2026-05-13 16:16:42 - ingestion.orchestrator - INFO - Saved processed document to data\processed\ICAR-Technologies-Biopesticides_processed.json
+2026-05-13 16:16:42 - ingestion.orchestrator - INFO - Successfully ingested ICAR-Technologies-Biopesticides.pdf
+2026-05-13 16:16:42 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\Kharif-agro-advisory-2021-final.pdf
+2026-05-13 16:16:44 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\Kharif-agro-advisory-2021-final.pdf
+2026-05-13 16:16:44 - ingestion.metadata_extractor - INFO - Extracting metadata from Kharif-agro-advisory-2021-final.pdf
+2026-05-13 16:16:44 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'Kharif-agro-advisory-2021-final.pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy', 'cotton'], 'diseases': ['stem_borer', 'root_rot', 'leaf_spot', 'powdery_mildew', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['maharashtra', 'uttar_pradesh', 'madhya_pradesh', 'karnataka', 'haryana', 'punjab'], 'season': 'kharif', 'year': '2021'}
+2026-05-13 16:16:44 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'Kharif-agro-advisory-2021-final.pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy', 'cotton'], 'diseases': ['stem_borer', 'root_rot', 'leaf_spot', 'powdery_mildew', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['maharashtra', 'uttar_pradesh', 'madhya_pradesh', 'karnataka', 'haryana', 'punjab'], 'season': 'kharif', 'year': '2021'}
+2026-05-13 16:16:44 - ingestion.chunking - INFO - Chunking document (401785 chars, ~100446 tokens)
+2026-05-13 16:16:44 - ingestion.chunking - INFO - Created 493 chunks (avg: 203 tokens)
+2026-05-13 16:16:44 - ingestion.orchestrator - INFO - Created 493 chunks
+2026-05-13 16:16:45 - ingestion.orchestrator - INFO - Saved processed document to data\processed\Kharif-agro-advisory-2021-final_processed.json
+2026-05-13 16:16:45 - ingestion.orchestrator - INFO - Successfully ingested Kharif-agro-advisory-2021-final.pdf
+2026-05-13 16:16:45 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\Kharif-agro-advisory-2022.pdf
+2026-05-13 16:16:53 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\Kharif-agro-advisory-2022.pdf
+2026-05-13 16:16:53 - ingestion.metadata_extractor - INFO - Extracting metadata from Kharif-agro-advisory-2022.pdf
+2026-05-13 16:16:53 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'Kharif-agro-advisory-2022.pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy', 'cotton'], 'diseases': ['stem_borer', 'root_rot', 'leaf_spot', 'powdery_mildew', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['maharashtra', 'uttar_pradesh', 'madhya_pradesh', 'karnataka', 'haryana', 'punjab'], 'season': 'kharif', 'year': '2022'}
+2026-05-13 16:16:53 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'Kharif-agro-advisory-2022.pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy', 'cotton'], 'diseases': ['stem_borer', 'root_rot', 'leaf_spot', 'powdery_mildew', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['maharashtra', 'uttar_pradesh', 'madhya_pradesh', 'karnataka', 'haryana', 'punjab'], 'season': 'kharif', 'year': '2022'}
+2026-05-13 16:16:53 - ingestion.chunking - INFO - Chunking document (518184 chars, ~129546 tokens)
+2026-05-13 16:16:53 - ingestion.chunking - INFO - Created 530 chunks (avg: 299 tokens)
+2026-05-13 16:16:53 - ingestion.orchestrator - INFO - Created 530 chunks
+2026-05-13 16:16:53 - ingestion.orchestrator - INFO - Saved processed document to data\processed\Kharif-agro-advisory-2022_processed.json
+2026-05-13 16:16:53 - ingestion.orchestrator - INFO - Successfully ingested Kharif-agro-advisory-2022.pdf
+2026-05-13 16:16:53 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\Rabi-Agro-Advisory-2021-22_0.pdf
+2026-05-13 16:16:57 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\Rabi-Agro-Advisory-2021-22_0.pdf
+2026-05-13 16:16:57 - ingestion.metadata_extractor - INFO - Extracting metadata from Rabi-Agro-Advisory-2021-22_0.pdf
+2026-05-13 16:16:57 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'Rabi-Agro-Advisory-2021-22_0.pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy', 'cotton'], 'diseases': ['stem_borer', 'root_rot', 'leaf_spot', 'powdery_mildew', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['maharashtra', 'uttar_pradesh', 'madhya_pradesh', 'karnataka', 'haryana', 'punjab'], 'season': 'rabi', 'year': '2021'}
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'Rabi-Agro-Advisory-2021-22_0.pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy', 'cotton'], 'diseases': ['stem_borer', 'root_rot', 'leaf_spot', 'powdery_mildew', 'blast'], 'seasons': ['rabi', 'summer', 'spring', 'kharif'], 'regions': ['maharashtra', 'uttar_pradesh', 'madhya_pradesh', 'karnataka', 'haryana', 'punjab'], 'season': 'rabi', 'year': '2021'}
+2026-05-13 16:16:57 - ingestion.chunking - INFO - Chunking document (689032 chars, ~172258 tokens)
+2026-05-13 16:16:57 - ingestion.chunking - INFO - Created 612 chunks (avg: 344 tokens)
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Created 612 chunks
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Saved processed document to data\processed\Rabi-Agro-Advisory-2021-22_0_processed.json
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Successfully ingested Rabi-Agro-Advisory-2021-22_0.pdf
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\Technical-Manual-on-Natural_Farming_10.03.2025.pdf
+2026-05-13 16:16:57 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\Technical-Manual-on-Natural_Farming_10.03.2025.pdf
+2026-05-13 16:16:57 - ingestion.metadata_extractor - INFO - Extracting metadata from Technical-Manual-on-Natural_Farming_10.03.2025.pdf
+2026-05-13 16:16:57 - ingestion.metadata_extractor - INFO - Extracted metadata: {'filename': 'Technical-Manual-on-Natural_Farming_10.03.2025.pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy', 'cotton'], 'diseases': ['stem_borer', 'root_rot', 'leaf_spot', 'powdery_mildew', 'shoot_fly'], 'seasons': ['rabi', 'summer', 'kharif'], 'regions': ['maharashtra', 'uttar_pradesh', 'madhya_pradesh', 'karnataka', 'haryana', 'punjab'], 'year': '2025'}
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Extracted metadata: {'filename': 'Technical-Manual-on-Natural_Farming_10.03.2025.pdf', 'language': 'english', 'crops': ['maize', 'wheat', 'paddy', 'cotton'], 'diseases': ['stem_borer', 'root_rot', 'leaf_spot', 'powdery_mildew', 'shoot_fly'], 'seasons': ['rabi', 'summer', 'kharif'], 'regions': ['maharashtra', 'uttar_pradesh', 'madhya_pradesh', 'karnataka', 'haryana', 'punjab'], 'year': '2025'}
+2026-05-13 16:16:57 - ingestion.chunking - INFO - Chunking document (480165 chars, ~120041 tokens)
+2026-05-13 16:16:57 - ingestion.chunking - INFO - Created 952 chunks (avg: 146 tokens)
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Created 952 chunks
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Saved processed document to data\processed\Technical-Manual-on-Natural_Farming_10.03.2025_processed.json
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Successfully ingested Technical-Manual-on-Natural_Farming_10.03.2025.pdf
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Batch ingestion complete: 12/12 files processed, 8318 total chunks created
+2026-05-13 16:16:57 - rag.embeddings_orchestrator - INFO - Step 2: Loading chunks...
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Found 12 processed document files
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Loaded 3284 chunks from Doubling-of-Farmers-Income-updated-092020-min_processed.json
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Loaded 356 chunks from farmerbook_processed.json
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Loaded 356 chunks from farmerhandbook2016_processed.json
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Loaded 285 chunks from Farmer_Friendly_Handbook_ENGLISH_2018_19_processed.json
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Loaded 721 chunks from ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025_processed.json
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Loaded 430 chunks from ICAR-Kharif-Agro-Advisories-for-Farmers-2025__multi-language (1)_processed.json
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Loaded 166 chunks from ICAR-technologies-Biofertilizers_processed.json
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Loaded 133 chunks from ICAR-Technologies-Biopesticides_processed.json
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Loaded 493 chunks from Kharif-agro-advisory-2021-final_processed.json
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Loaded 530 chunks from Kharif-agro-advisory-2022_processed.json
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Loaded 612 chunks from Rabi-Agro-Advisory-2021-22_0_processed.json
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Loaded 952 chunks from Technical-Manual-on-Natural_Farming_10.03.2025_processed.json
+2026-05-13 16:16:57 - ingestion.orchestrator - INFO - Total chunks loaded: 8318
+2026-05-13 16:16:57 - rag.embeddings_orchestrator - INFO - Step 3: Building vector store...
+2026-05-13 16:16:57 - rag.embeddings_orchestrator - INFO - Building vector store from 8318 chunks
+2026-05-13 16:16:57 - rag.embeddings_orchestrator - INFO - Creating embedder...
+2026-05-13 16:16:57 - rag.embedder - INFO - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-13 16:17:04 - rag.embedder - INFO - Model loaded successfully. Embedding dimension: 384
+2026-05-13 16:17:04 - rag.embedder - INFO - Generating embeddings for 8318 texts
+2026-05-13 16:17:12 - rag.embedder - INFO - Generated embeddings shape: (8318, 384)
+2026-05-13 16:17:12 - rag.embedder - INFO - Added embeddings to 8318 chunks
+2026-05-13 16:17:12 - rag.embeddings_orchestrator - INFO - Creating vector store...
+2026-05-13 16:17:12 - rag.vector_store - INFO - Initialized vector store with dimension 384
+2026-05-13 16:17:12 - rag.vector_store - INFO - Added 8318 embeddings to vector store
+2026-05-13 16:17:12 - rag.vector_store - INFO - Saved FAISS index to data\embeddings\faiss_index.bin
+2026-05-13 16:17:12 - rag.vector_store - INFO - Saved metadata to data\embeddings\metadata.json
+2026-05-13 16:17:12 - rag.embeddings_orchestrator - INFO - Vector store built with 8318 vectors
+2026-05-13 16:17:12 - rag.embeddings_orchestrator - INFO - Complete pipeline finished successfully
+2026-05-13 16:17:35 - __main__ - INFO - Processing query: How to control wheat pests?
+2026-05-13 16:17:35 - rag.rag_orchestrator - INFO - Initializing RAG pipeline...
+2026-05-13 16:17:35 - rag.rag_orchestrator - INFO - Loading embedder...
+2026-05-13 16:17:35 - rag.embedder - INFO - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-13 16:17:42 - rag.embedder - INFO - Model loaded successfully. Embedding dimension: 384
+2026-05-13 16:17:42 - rag.rag_orchestrator - INFO - Embedder loaded: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-13 16:17:42 - rag.rag_orchestrator - INFO - Loading vector store from disk...
+2026-05-13 16:17:42 - rag.vector_store - INFO - Initialized vector store with dimension 384
+2026-05-13 16:17:42 - rag.vector_store - INFO - Loaded FAISS index from data\embeddings\faiss_index.bin
+2026-05-13 16:17:42 - rag.vector_store - INFO - Loaded 8318 metadata entries
+2026-05-13 16:17:42 - rag.rag_orchestrator - INFO - Vector store loaded: 8318 vectors
+2026-05-13 16:17:42 - rag.rag_orchestrator - INFO - Initializing retriever...
+2026-05-13 16:17:42 - rag.retriever - INFO - Retriever initialized
+2026-05-13 16:17:42 - rag.rag_orchestrator - INFO - Retriever initialized
+2026-05-13 16:17:42 - rag.rag_orchestrator - INFO - Initializing generator with provider: ollama
+2026-05-13 16:17:42 - rag.rag_orchestrator - ERROR - Failed to initialize generator: 'Settings' object has no attribute 'llm_model'
+2026-05-13 16:17:42 - __main__ - ERROR - Error running query: 'Settings' object has no attribute 'llm_model'
+2026-05-13 16:20:33 - __main__ - INFO - Processing query: How to control wheat pests?
+2026-05-13 16:20:33 - rag.rag_orchestrator - INFO - Initializing RAG pipeline...
+2026-05-13 16:20:33 - rag.rag_orchestrator - INFO - Loading embedder...
+2026-05-13 16:20:33 - rag.embedder - INFO - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-13 16:20:40 - rag.embedder - INFO - Model loaded successfully. Embedding dimension: 384
+2026-05-13 16:20:40 - rag.rag_orchestrator - INFO - Embedder loaded: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-13 16:20:40 - rag.rag_orchestrator - INFO - Loading vector store from disk...
+2026-05-13 16:20:40 - rag.vector_store - INFO - Initialized vector store with dimension 384
+2026-05-13 16:20:40 - rag.vector_store - INFO - Loaded FAISS index from data\embeddings\faiss_index.bin
+2026-05-13 16:20:40 - rag.vector_store - INFO - Loaded 8318 metadata entries
+2026-05-13 16:20:40 - rag.rag_orchestrator - INFO - Vector store loaded: 8318 vectors
+2026-05-13 16:20:40 - rag.rag_orchestrator - INFO - Initializing retriever...
+2026-05-13 16:20:40 - rag.retriever - INFO - Retriever initialized
+2026-05-13 16:20:40 - rag.rag_orchestrator - INFO - Retriever initialized
+2026-05-13 16:20:40 - rag.rag_orchestrator - INFO - Initializing generator with provider: ollama
+2026-05-13 16:20:40 - rag.generator - INFO - Initialized Ollama client: mistral
+2026-05-13 16:20:40 - rag.generator - INFO - Response generator initialized
+2026-05-13 16:20:40 - rag.rag_orchestrator - INFO - Generator initialized
+2026-05-13 16:20:40 - rag.rag_orchestrator - INFO - RAG pipeline initialized successfully
+2026-05-13 16:20:40 - rag.rag_orchestrator - INFO - Processing query: How to control wheat pests?
+2026-05-13 16:20:40 - rag.rag_orchestrator - INFO - Retrieving 5 context chunks...
+2026-05-13 16:20:40 - rag.retriever - INFO - Retrieving for query: How to control wheat pests?
+2026-05-13 16:20:40 - rag.retriever - INFO - Detected language: en (scores: {'hi': 0.0, 'pa': 0.0, 'en': 0.8148148148148148})
+2026-05-13 16:20:40 - rag.retriever - INFO - Processed query: How to control wheat pests (language: en)
+2026-05-13 16:20:40 - rag.vector_store - INFO - Search returned 0 results
+2026-05-13 16:20:40 - rag.retriever - INFO - Retrieved 0 results
+2026-05-13 16:20:40 - rag.rag_orchestrator - INFO - Retrieved 0 chunks
+2026-05-13 16:20:40 - rag.rag_orchestrator - INFO - Generating response in en...
+2026-05-13 16:20:40 - rag.generator - INFO - Generating response for query in en
+2026-05-13 16:20:40 - rag.generator - WARNING - No context chunks provided
+2026-05-13 16:20:40 - rag.rag_orchestrator - INFO - Query processing completed

@@ -15,6 +15,7 @@ from typing import Optional
 
 from ingestion.orchestrator import IngestionPipeline
 from rag.embeddings_orchestrator import EmbeddingPipeline
+from rag.rag_orchestrator import RAGPipeline
 from utils.logger import setup_logger
 
 logger = setup_logger(__name__)
@@ -103,6 +104,11 @@ def test_command(args) -> int:
             return 0 if success else 1
         elif test_module == "tests.test_embeddings":
             from tests.test_embeddings import run_all_tests
+
+            success = run_all_tests()
+            return 0 if success else 1
+        elif test_module == "tests.test_rag":
+            from tests.test_rag import run_all_tests
 
             success = run_all_tests()
             return 0 if success else 1
@@ -232,6 +238,78 @@ def ui_command(args) -> int:
         return 1
 
 
+def query_command(args) -> int:
+    """
+    Execute RAG query command.
+
+    Args:
+        args: Parsed arguments
+
+    Returns:
+        Exit code (0 for success, 1 for failure)
+    """
+    query_text = args.query
+
+    if not query_text:
+        logger.error("Query text is required")
+        return 1
+
+    logger.info(f"Processing query: {query_text}")
+
+    try:
+        # Initialize RAG pipeline
+        pipeline = RAGPipeline(
+            llm_provider=args.provider,
+            llm_model_name=args.llm_model,
+        )
+
+        # Build metadata filters
+        filters = {}
+        if args.crop:
+            filters["crop"] = args.crop
+        if args.region:
+            filters["region"] = args.region
+        if args.season:
+            filters["season"] = args.season
+        if args.disease:
+            filters["disease"] = args.disease
+
+        # Execute query
+        result = pipeline.query(
+            query_text,
+            k=args.k,
+            similarity_threshold=args.threshold,
+            language=args.language,
+            crop=args.crop,
+            region=args.region,
+            season=args.season,
+            disease=args.disease,
+            temperature=args.temperature,
+        )
+
+        # Print results
+        print("\n" + "=" * 60)
+        print("RAG QUERY RESULT")
+        print("=" * 60)
+        print(f"Query: {result['query']}")
+        print(f"\nResponse:")
+        print(result["response"])
+        print(f"\nLanguage: {result['language']}")
+        print(f"Confidence: {result['confidence']}")
+        print(f"Retrieved chunks: {result['num_context_chunks']}")
+        print(f"\nSources:")
+        for src in result["sources"]:
+            print(f"  - {src}")
+        print("=" * 60)
+
+        return 0
+
+    except Exception as e:
+        logger.error(f"Error running query: {str(e)}")
+        print(f"\nError: {str(e)}")
+        return 1
+
+
 def main():
     """Main entry point."""
     parser = argparse.ArgumentParser(
@@ -265,6 +343,18 @@ Examples:
 
   # Start Streamlit UI
   python main.py ui
+
+  # Run RAG tests
+  python main.py test --test-module tests.test_rag
+
+  # Execute a query against the vector store
+  python main.py query --query "How to control wheat pests?"
+
+  # Query with language preference and crop filter
+  python main.py query --query "गेहूँ में कीटों का नियंत्रण कैसे करें?" --language hi --crop wheat
+
+  # Query with metadata filters and custom parameters
+  python main.py query --query "Paddy irrigation schedule" --crop paddy --region punjab --k 10 --threshold 0.3
         """,
     )
 
@@ -287,7 +377,7 @@ Examples:
     test_parser = subparsers.add_parser("test", help="Run tests")
     test_parser.add_argument(
         "--test-module",
-        choices=["tests.test_ingestion", "tests.test_embeddings"],
+        choices=["tests.test_ingestion", "tests.test_embeddings", "tests.test_rag"],
         help="Specific test module to run (default: tests.test_ingestion)",
     )
     test_parser.set_defaults(func=test_command)
@@ -316,6 +406,59 @@ Examples:
     # UI command
     ui_parser = subparsers.add_parser("ui", help="Start Streamlit UI")
     ui_parser.set_defaults(func=ui_command)
+
+    # Query command
+    query_parser = subparsers.add_parser("query", help="Run a RAG query against the vector store")
+    query_parser.add_argument("--query", required=True, help="Text query to ask the system")
+    query_parser.add_argument(
+        "--crop",
+        help="Optional crop filter (e.g. wheat, paddy)",
+    )
+    query_parser.add_argument(
+        "--language",
+        choices=["en", "hi", "pa"],
+        help="Response/query language",
+    )
+    query_parser.add_argument(
+        "--region",
+        help="Optional region filter",
+    )
+    query_parser.add_argument(
+        "--season",
+        help="Optional season filter",
+    )
+    query_parser.add_argument(
+        "--disease",
+        help="Optional disease filter",
+    )
+    query_parser.add_argument(
+        "--k",
+        type=int,
+        default=5,
+        help="Number of retrieved context chunks (default: 5)",
+    )
+    query_parser.add_argument(
+        "--threshold",
+        type=float,
+        default=0.2,
+        help="Minimum similarity threshold (default: 0.2)",
+    )
+    query_parser.add_argument(
+        "--temperature",
+        type=float,
+        default=0.7,
+        help="LLM temperature (default: 0.7)",
+    )
+    query_parser.add_argument(
+        "--provider",
+        choices=["ollama", "openai"],
+        help="LLM provider override",
+    )
+    query_parser.add_argument(
+        "--llm-model",
+        help="LLM model override",
+    )
+    query_parser.set_defaults(func=query_command)
 
     # Parse arguments
     args = parser.parse_args()
