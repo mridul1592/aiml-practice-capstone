@@ -474,3 +474,34 @@
 2026-05-13 16:20:40 - rag.generator - INFO - Generating response for query in en
 2026-05-13 16:20:40 - rag.generator - WARNING - No context chunks provided
 2026-05-13 16:20:40 - rag.rag_orchestrator - INFO - Query processing completed
+2026-05-13 16:31:03 - __main__ - INFO - Processing query: wheat
+2026-05-13 16:31:03 - rag.rag_orchestrator - INFO - Initializing RAG pipeline...
+2026-05-13 16:31:03 - rag.rag_orchestrator - INFO - Loading embedder...
+2026-05-13 16:31:03 - rag.embedder - INFO - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-13 16:31:09 - rag.embedder - INFO - Model loaded successfully. Embedding dimension: 384
+2026-05-13 16:31:09 - rag.rag_orchestrator - INFO - Embedder loaded: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-13 16:31:09 - rag.rag_orchestrator - INFO - Loading vector store from disk...
+2026-05-13 16:31:09 - rag.vector_store - INFO - Initialized vector store with dimension 384
+2026-05-13 16:31:09 - rag.vector_store - INFO - Loaded FAISS index from data\embeddings\faiss_index.bin
+2026-05-13 16:31:09 - rag.vector_store - INFO - Loaded 8318 metadata entries
+2026-05-13 16:31:09 - rag.rag_orchestrator - INFO - Vector store loaded: 8318 vectors
+2026-05-13 16:31:09 - rag.rag_orchestrator - INFO - Initializing retriever...
+2026-05-13 16:31:09 - rag.retriever - INFO - Retriever initialized
+2026-05-13 16:31:09 - rag.rag_orchestrator - INFO - Retriever initialized
+2026-05-13 16:31:09 - rag.rag_orchestrator - INFO - Initializing generator with provider: ollama
+2026-05-13 16:31:09 - rag.generator - INFO - Initialized Ollama client: mistral
+2026-05-13 16:31:09 - rag.generator - INFO - Response generator initialized
+2026-05-13 16:31:09 - rag.rag_orchestrator - INFO - Generator initialized
+2026-05-13 16:31:09 - rag.rag_orchestrator - INFO - RAG pipeline initialized successfully
+2026-05-13 16:31:09 - rag.rag_orchestrator - INFO - Processing query: wheat
+2026-05-13 16:31:09 - rag.rag_orchestrator - INFO - Retrieving 5 context chunks...
+2026-05-13 16:31:09 - rag.retriever - INFO - Retrieving for query: wheat
+2026-05-13 16:31:09 - rag.retriever - INFO - Detected language: en (scores: {'hi': 0.0, 'pa': 0.0, 'en': 1.0})
+2026-05-13 16:31:09 - rag.retriever - INFO - Processed query: wheat (language: en)
+2026-05-13 16:31:09 - rag.vector_store - INFO - Search returned 0 results
+2026-05-13 16:31:09 - rag.retriever - INFO - Retrieved 0 results
+2026-05-13 16:31:09 - rag.rag_orchestrator - INFO - Retrieved 0 chunks
+2026-05-13 16:31:09 - rag.rag_orchestrator - INFO - Generating response in en...
+2026-05-13 16:31:09 - rag.generator - INFO - Generating response for query in en
+2026-05-13 16:31:09 - rag.generator - WARNING - No context chunks provided
+2026-05-13 16:31:09 - rag.rag_orchestrator - INFO - Query processing completed

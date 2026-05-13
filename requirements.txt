@@ -13,7 +13,7 @@ langchain==0.1.4
 langchain-community==0.0.10
 sentence-transformers==2.2.2
 transformers==4.35.2
-torch==2.1.1
+torch==2.10.0
 
 # Vector Database
 faiss-cpu==1.7.4
