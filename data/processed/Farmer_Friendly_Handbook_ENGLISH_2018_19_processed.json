@@ -10,22 +10,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_0",
@@ -39,22 +39,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_1",
@@ -68,22 +68,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_2",
@@ -97,22 +97,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_3",
@@ -126,22 +126,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_4",
@@ -155,22 +155,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_5",
@@ -184,22 +184,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_6",
@@ -213,22 +213,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_7",
@@ -242,22 +242,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_8",
@@ -271,22 +271,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_9",
@@ -300,22 +300,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_10",
@@ -329,22 +329,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_11",
@@ -358,22 +358,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_12",
@@ -387,22 +387,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_13",
@@ -416,22 +416,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_14",
@@ -445,22 +445,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_15",
@@ -474,22 +474,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_16",
@@ -503,22 +503,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_17",
@@ -532,22 +532,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_18",
@@ -561,22 +561,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_19",
@@ -590,22 +590,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_20",
@@ -619,22 +619,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_21",
@@ -648,22 +648,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_22",
@@ -677,22 +677,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_23",
@@ -706,22 +706,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_24",
@@ -735,22 +735,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_25",
@@ -764,22 +764,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_26",
@@ -793,22 +793,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_27",
@@ -822,22 +822,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_28",
@@ -851,22 +851,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_29",
@@ -880,22 +880,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_30",
@@ -909,22 +909,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_31",
@@ -938,22 +938,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_32",
@@ -967,22 +967,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_33",
@@ -996,22 +996,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_34",
@@ -1025,22 +1025,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_35",
@@ -1054,22 +1054,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_36",
@@ -1083,22 +1083,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_37",
@@ -1112,22 +1112,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_38",
@@ -1141,22 +1141,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_39",
@@ -1170,22 +1170,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_40",
@@ -1199,22 +1199,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_41",
@@ -1228,22 +1228,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_42",
@@ -1257,22 +1257,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_43",
@@ -1286,22 +1286,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_44",
@@ -1315,22 +1315,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_45",
@@ -1344,22 +1344,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_46",
@@ -1373,22 +1373,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_47",
@@ -1402,22 +1402,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_48",
@@ -1431,22 +1431,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_49",
@@ -1460,22 +1460,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_50",
@@ -1489,22 +1489,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_51",
@@ -1518,22 +1518,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_52",
@@ -1547,22 +1547,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_53",
@@ -1576,22 +1576,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_54",
@@ -1605,22 +1605,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_55",
@@ -1634,22 +1634,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_56",
@@ -1663,22 +1663,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_57",
@@ -1692,22 +1692,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_58",
@@ -1721,22 +1721,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_59",
@@ -1750,22 +1750,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_60",
@@ -1779,22 +1779,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_61",
@@ -1808,22 +1808,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_62",
@@ -1837,22 +1837,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_63",
@@ -1866,22 +1866,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_64",
@@ -1895,22 +1895,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_65",
@@ -1924,22 +1924,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_66",
@@ -1953,22 +1953,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_67",
@@ -1982,22 +1982,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_68",
@@ -2011,22 +2011,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_69",
@@ -2040,22 +2040,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_70",
@@ -2069,22 +2069,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_71",
@@ -2098,22 +2098,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_72",
@@ -2127,22 +2127,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_73",
@@ -2156,22 +2156,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_74",
@@ -2185,22 +2185,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_75",
@@ -2214,22 +2214,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_76",
@@ -2243,22 +2243,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_77",
@@ -2272,22 +2272,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_78",
@@ -2301,22 +2301,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_79",
@@ -2330,22 +2330,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_80",
@@ -2359,22 +2359,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_81",
@@ -2388,22 +2388,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_82",
@@ -2417,22 +2417,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_83",
@@ -2446,22 +2446,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_84",
@@ -2475,22 +2475,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_85",
@@ -2504,22 +2504,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_86",
@@ -2533,22 +2533,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_87",
@@ -2562,22 +2562,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_88",
@@ -2591,22 +2591,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_89",
@@ -2620,22 +2620,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_90",
@@ -2649,22 +2649,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_91",
@@ -2678,22 +2678,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_92",
@@ -2707,22 +2707,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_93",
@@ -2736,22 +2736,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_94",
@@ -2765,22 +2765,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_95",
@@ -2794,22 +2794,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_96",
@@ -2823,22 +2823,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_97",
@@ -2852,22 +2852,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_98",
@@ -2881,22 +2881,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_99",
@@ -2910,22 +2910,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_100",
@@ -2939,22 +2939,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_101",
@@ -2968,22 +2968,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_102",
@@ -2997,22 +2997,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_103",
@@ -3026,22 +3026,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_104",
@@ -3055,22 +3055,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_105",
@@ -3084,22 +3084,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_106",
@@ -3113,22 +3113,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_107",
@@ -3142,22 +3142,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_108",
@@ -3171,22 +3171,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_109",
@@ -3200,22 +3200,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_110",
@@ -3229,22 +3229,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_111",
@@ -3258,22 +3258,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_112",
@@ -3287,22 +3287,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_113",
@@ -3316,22 +3316,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_114",
@@ -3345,22 +3345,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_115",
@@ -3374,22 +3374,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_116",
@@ -3403,22 +3403,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_117",
@@ -3432,22 +3432,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_118",
@@ -3461,22 +3461,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_119",
@@ -3490,22 +3490,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_120",
@@ -3519,22 +3519,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_121",
@@ -3548,22 +3548,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_122",
@@ -3577,22 +3577,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_123",
@@ -3606,22 +3606,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_124",
@@ -3635,22 +3635,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_125",
@@ -3664,22 +3664,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_126",
@@ -3693,22 +3693,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_127",
@@ -3722,22 +3722,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_128",
@@ -3751,22 +3751,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_129",
@@ -3780,22 +3780,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_130",
@@ -3809,22 +3809,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_131",
@@ -3838,22 +3838,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_132",
@@ -3867,22 +3867,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_133",
@@ -3896,22 +3896,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_134",
@@ -3925,22 +3925,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_135",
@@ -3954,22 +3954,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_136",
@@ -3983,22 +3983,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_137",
@@ -4012,22 +4012,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_138",
@@ -4041,22 +4041,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_139",
@@ -4070,22 +4070,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_140",
@@ -4099,22 +4099,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_141",
@@ -4128,22 +4128,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_142",
@@ -4157,22 +4157,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_143",
@@ -4186,22 +4186,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_144",
@@ -4215,22 +4215,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_145",
@@ -4244,22 +4244,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_146",
@@ -4273,22 +4273,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_147",
@@ -4302,22 +4302,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_148",
@@ -4331,22 +4331,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_149",
@@ -4360,22 +4360,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_150",
@@ -4389,22 +4389,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_151",
@@ -4418,22 +4418,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_152",
@@ -4447,22 +4447,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_153",
@@ -4476,22 +4476,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_154",
@@ -4505,22 +4505,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_155",
@@ -4534,22 +4534,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_156",
@@ -4563,22 +4563,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_157",
@@ -4592,22 +4592,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_158",
@@ -4621,22 +4621,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_159",
@@ -4650,22 +4650,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_160",
@@ -4679,22 +4679,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_161",
@@ -4708,22 +4708,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_162",
@@ -4737,22 +4737,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_163",
@@ -4766,22 +4766,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_164",
@@ -4795,22 +4795,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_165",
@@ -4824,22 +4824,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_166",
@@ -4853,22 +4853,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_167",
@@ -4882,22 +4882,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_168",
@@ -4911,22 +4911,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_169",
@@ -4940,22 +4940,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_170",
@@ -4969,22 +4969,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_171",
@@ -4998,22 +4998,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_172",
@@ -5027,22 +5027,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_173",
@@ -5056,22 +5056,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_174",
@@ -5085,22 +5085,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_175",
@@ -5114,22 +5114,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_176",
@@ -5143,22 +5143,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_177",
@@ -5172,22 +5172,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_178",
@@ -5201,22 +5201,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_179",
@@ -5230,22 +5230,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_180",
@@ -5259,22 +5259,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_181",
@@ -5288,22 +5288,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_182",
@@ -5317,22 +5317,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_183",
@@ -5346,22 +5346,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_184",
@@ -5375,22 +5375,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_185",
@@ -5404,22 +5404,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_186",
@@ -5433,22 +5433,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_187",
@@ -5462,22 +5462,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_188",
@@ -5491,22 +5491,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_189",
@@ -5520,22 +5520,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_190",
@@ -5549,22 +5549,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_191",
@@ -5578,22 +5578,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_192",
@@ -5607,22 +5607,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_193",
@@ -5636,22 +5636,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_194",
@@ -5665,22 +5665,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_195",
@@ -5694,22 +5694,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_196",
@@ -5723,22 +5723,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_197",
@@ -5752,22 +5752,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_198",
@@ -5781,22 +5781,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_199",
@@ -5810,22 +5810,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_200",
@@ -5839,22 +5839,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_201",
@@ -5868,22 +5868,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_202",
@@ -5897,22 +5897,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_203",
@@ -5926,22 +5926,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_204",
@@ -5955,22 +5955,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_205",
@@ -5984,22 +5984,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_206",
@@ -6013,22 +6013,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_207",
@@ -6042,22 +6042,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_208",
@@ -6071,22 +6071,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_209",
@@ -6100,22 +6100,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_210",
@@ -6129,22 +6129,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_211",
@@ -6158,22 +6158,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_212",
@@ -6187,22 +6187,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_213",
@@ -6216,22 +6216,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_214",
@@ -6245,22 +6245,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_215",
@@ -6274,22 +6274,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_216",
@@ -6303,22 +6303,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_217",
@@ -6332,22 +6332,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_218",
@@ -6361,22 +6361,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_219",
@@ -6390,22 +6390,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_220",
@@ -6419,22 +6419,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_221",
@@ -6448,22 +6448,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_222",
@@ -6477,22 +6477,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_223",
@@ -6506,22 +6506,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_224",
@@ -6535,22 +6535,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_225",
@@ -6564,22 +6564,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_226",
@@ -6593,22 +6593,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_227",
@@ -6622,22 +6622,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_228",
@@ -6651,22 +6651,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_229",
@@ -6680,22 +6680,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_230",
@@ -6709,22 +6709,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_231",
@@ -6738,22 +6738,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_232",
@@ -6767,22 +6767,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_233",
@@ -6796,22 +6796,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_234",
@@ -6825,22 +6825,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_235",
@@ -6854,22 +6854,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_236",
@@ -6883,22 +6883,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_237",
@@ -6912,22 +6912,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_238",
@@ -6941,22 +6941,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_239",
@@ -6970,22 +6970,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_240",
@@ -6999,22 +6999,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_241",
@@ -7028,22 +7028,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_242",
@@ -7057,22 +7057,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_243",
@@ -7086,22 +7086,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_244",
@@ -7115,22 +7115,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_245",
@@ -7144,22 +7144,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_246",
@@ -7173,22 +7173,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_247",
@@ -7202,22 +7202,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_248",
@@ -7231,22 +7231,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_249",
@@ -7260,22 +7260,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_250",
@@ -7289,22 +7289,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_251",
@@ -7318,22 +7318,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_252",
@@ -7347,22 +7347,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_253",
@@ -7376,22 +7376,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_254",
@@ -7405,22 +7405,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_255",
@@ -7434,22 +7434,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_256",
@@ -7463,22 +7463,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_257",
@@ -7492,22 +7492,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_258",
@@ -7521,22 +7521,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_259",
@@ -7550,22 +7550,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_260",
@@ -7579,22 +7579,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_261",
@@ -7608,22 +7608,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_262",
@@ -7637,22 +7637,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_263",
@@ -7666,22 +7666,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_264",
@@ -7695,22 +7695,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_265",
@@ -7724,22 +7724,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_266",
@@ -7753,22 +7753,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_267",
@@ -7782,22 +7782,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_268",
@@ -7811,22 +7811,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_269",
@@ -7840,22 +7840,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_270",
@@ -7869,22 +7869,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_271",
@@ -7898,22 +7898,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_272",
@@ -7927,22 +7927,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_273",
@@ -7956,22 +7956,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_274",
@@ -7985,22 +7985,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_275",
@@ -8014,22 +8014,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_276",
@@ -8043,22 +8043,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_277",
@@ -8072,22 +8072,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_278",
@@ -8101,22 +8101,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_279",
@@ -8130,22 +8130,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_280",
@@ -8159,22 +8159,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_281",
@@ -8188,22 +8188,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_282",
@@ -8217,22 +8217,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_283",
@@ -8246,22 +8246,22 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [],
       "seasons": [
-        "kharif",
         "rabi",
-        "summer"
+        "summer",
+        "kharif"
       ],
       "regions": [
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "year": "2018",
       "chunk_id": "Farmer_Friendly_Handbook_ENGLISH_2018_19.pdf_284",

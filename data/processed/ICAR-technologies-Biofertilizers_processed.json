@@ -10,9 +10,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -22,12 +22,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_0",
       "chunk_index": 0
@@ -40,9 +40,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -52,12 +52,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_1",
       "chunk_index": 1
@@ -70,9 +70,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -82,12 +82,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_2",
       "chunk_index": 2
@@ -100,9 +100,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -112,12 +112,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_3",
       "chunk_index": 3
@@ -130,9 +130,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -142,12 +142,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_4",
       "chunk_index": 4
@@ -160,9 +160,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -172,12 +172,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_5",
       "chunk_index": 5
@@ -190,9 +190,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -202,12 +202,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_6",
       "chunk_index": 6
@@ -220,9 +220,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -232,12 +232,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_7",
       "chunk_index": 7
@@ -250,9 +250,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -262,12 +262,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_8",
       "chunk_index": 8
@@ -280,9 +280,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -292,12 +292,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_9",
       "chunk_index": 9
@@ -310,9 +310,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -322,12 +322,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_10",
       "chunk_index": 10
@@ -340,9 +340,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -352,12 +352,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_11",
       "chunk_index": 11
@@ -370,9 +370,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -382,12 +382,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_12",
       "chunk_index": 12
@@ -400,9 +400,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -412,12 +412,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_13",
       "chunk_index": 13
@@ -430,9 +430,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -442,12 +442,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_14",
       "chunk_index": 14
@@ -460,9 +460,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -472,12 +472,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_15",
       "chunk_index": 15
@@ -490,9 +490,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -502,12 +502,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_16",
       "chunk_index": 16
@@ -520,9 +520,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -532,12 +532,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_17",
       "chunk_index": 17
@@ -550,9 +550,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -562,12 +562,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_18",
       "chunk_index": 18
@@ -580,9 +580,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -592,12 +592,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_19",
       "chunk_index": 19
@@ -610,9 +610,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -622,12 +622,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_20",
       "chunk_index": 20
@@ -640,9 +640,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -652,12 +652,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_21",
       "chunk_index": 21
@@ -670,9 +670,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -682,12 +682,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_22",
       "chunk_index": 22
@@ -700,9 +700,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -712,12 +712,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_23",
       "chunk_index": 23
@@ -730,9 +730,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -742,12 +742,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_24",
       "chunk_index": 24
@@ -760,9 +760,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -772,12 +772,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_25",
       "chunk_index": 25
@@ -790,9 +790,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -802,12 +802,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_26",
       "chunk_index": 26
@@ -820,9 +820,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -832,12 +832,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_27",
       "chunk_index": 27
@@ -850,9 +850,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -862,12 +862,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_28",
       "chunk_index": 28
@@ -880,9 +880,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -892,12 +892,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_29",
       "chunk_index": 29
@@ -910,9 +910,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -922,12 +922,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_30",
       "chunk_index": 30
@@ -940,9 +940,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -952,12 +952,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_31",
       "chunk_index": 31
@@ -970,9 +970,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -982,12 +982,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_32",
       "chunk_index": 32
@@ -1000,9 +1000,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1012,12 +1012,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_33",
       "chunk_index": 33
@@ -1030,9 +1030,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1042,12 +1042,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_34",
       "chunk_index": 34
@@ -1060,9 +1060,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1072,12 +1072,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_35",
       "chunk_index": 35
@@ -1090,9 +1090,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1102,12 +1102,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_36",
       "chunk_index": 36
@@ -1120,9 +1120,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1132,12 +1132,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_37",
       "chunk_index": 37
@@ -1150,9 +1150,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1162,12 +1162,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_38",
       "chunk_index": 38
@@ -1180,9 +1180,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1192,12 +1192,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_39",
       "chunk_index": 39
@@ -1210,9 +1210,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1222,12 +1222,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_40",
       "chunk_index": 40
@@ -1240,9 +1240,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1252,12 +1252,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_41",
       "chunk_index": 41
@@ -1270,9 +1270,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1282,12 +1282,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_42",
       "chunk_index": 42
@@ -1300,9 +1300,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1312,12 +1312,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_43",
       "chunk_index": 43
@@ -1330,9 +1330,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1342,12 +1342,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_44",
       "chunk_index": 44
@@ -1360,9 +1360,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1372,12 +1372,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_45",
       "chunk_index": 45
@@ -1390,9 +1390,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1402,12 +1402,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_46",
       "chunk_index": 46
@@ -1420,9 +1420,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1432,12 +1432,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_47",
       "chunk_index": 47
@@ -1450,9 +1450,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1462,12 +1462,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_48",
       "chunk_index": 48
@@ -1480,9 +1480,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1492,12 +1492,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_49",
       "chunk_index": 49
@@ -1510,9 +1510,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1522,12 +1522,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_50",
       "chunk_index": 50
@@ -1540,9 +1540,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1552,12 +1552,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_51",
       "chunk_index": 51
@@ -1570,9 +1570,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1582,12 +1582,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_52",
       "chunk_index": 52
@@ -1600,9 +1600,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1612,12 +1612,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_53",
       "chunk_index": 53
@@ -1630,9 +1630,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1642,12 +1642,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_54",
       "chunk_index": 54
@@ -1660,9 +1660,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1672,12 +1672,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_55",
       "chunk_index": 55
@@ -1690,9 +1690,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1702,12 +1702,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_56",
       "chunk_index": 56
@@ -1720,9 +1720,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1732,12 +1732,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_57",
       "chunk_index": 57
@@ -1750,9 +1750,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1762,12 +1762,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_58",
       "chunk_index": 58
@@ -1780,9 +1780,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1792,12 +1792,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_59",
       "chunk_index": 59
@@ -1810,9 +1810,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1822,12 +1822,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_60",
       "chunk_index": 60
@@ -1840,9 +1840,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1852,12 +1852,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_61",
       "chunk_index": 61
@@ -1870,9 +1870,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1882,12 +1882,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_62",
       "chunk_index": 62
@@ -1900,9 +1900,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1912,12 +1912,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_63",
       "chunk_index": 63
@@ -1930,9 +1930,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1942,12 +1942,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_64",
       "chunk_index": 64
@@ -1960,9 +1960,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -1972,12 +1972,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_65",
       "chunk_index": 65
@@ -1990,9 +1990,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2002,12 +2002,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_66",
       "chunk_index": 66
@@ -2020,9 +2020,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2032,12 +2032,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_67",
       "chunk_index": 67
@@ -2050,9 +2050,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2062,12 +2062,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_68",
       "chunk_index": 68
@@ -2080,9 +2080,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2092,12 +2092,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_69",
       "chunk_index": 69
@@ -2110,9 +2110,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2122,12 +2122,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_70",
       "chunk_index": 70
@@ -2140,9 +2140,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2152,12 +2152,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_71",
       "chunk_index": 71
@@ -2170,9 +2170,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2182,12 +2182,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_72",
       "chunk_index": 72
@@ -2200,9 +2200,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2212,12 +2212,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_73",
       "chunk_index": 73
@@ -2230,9 +2230,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2242,12 +2242,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_74",
       "chunk_index": 74
@@ -2260,9 +2260,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2272,12 +2272,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_75",
       "chunk_index": 75
@@ -2290,9 +2290,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2302,12 +2302,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_76",
       "chunk_index": 76
@@ -2320,9 +2320,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2332,12 +2332,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_77",
       "chunk_index": 77
@@ -2350,9 +2350,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2362,12 +2362,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_78",
       "chunk_index": 78
@@ -2380,9 +2380,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2392,12 +2392,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_79",
       "chunk_index": 79
@@ -2410,9 +2410,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2422,12 +2422,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_80",
       "chunk_index": 80
@@ -2440,9 +2440,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2452,12 +2452,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_81",
       "chunk_index": 81
@@ -2470,9 +2470,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2482,12 +2482,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_82",
       "chunk_index": 82
@@ -2500,9 +2500,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2512,12 +2512,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_83",
       "chunk_index": 83
@@ -2530,9 +2530,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2542,12 +2542,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_84",
       "chunk_index": 84
@@ -2560,9 +2560,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2572,12 +2572,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_85",
       "chunk_index": 85
@@ -2590,9 +2590,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2602,12 +2602,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_86",
       "chunk_index": 86
@@ -2620,9 +2620,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2632,12 +2632,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_87",
       "chunk_index": 87
@@ -2650,9 +2650,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2662,12 +2662,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_88",
       "chunk_index": 88
@@ -2680,9 +2680,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2692,12 +2692,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_89",
       "chunk_index": 89
@@ -2710,9 +2710,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2722,12 +2722,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_90",
       "chunk_index": 90
@@ -2740,9 +2740,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2752,12 +2752,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_91",
       "chunk_index": 91
@@ -2770,9 +2770,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2782,12 +2782,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_92",
       "chunk_index": 92
@@ -2800,9 +2800,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2812,12 +2812,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_93",
       "chunk_index": 93
@@ -2830,9 +2830,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2842,12 +2842,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_94",
       "chunk_index": 94
@@ -2860,9 +2860,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2872,12 +2872,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_95",
       "chunk_index": 95
@@ -2890,9 +2890,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2902,12 +2902,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_96",
       "chunk_index": 96
@@ -2920,9 +2920,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2932,12 +2932,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_97",
       "chunk_index": 97
@@ -2950,9 +2950,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2962,12 +2962,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_98",
       "chunk_index": 98
@@ -2980,9 +2980,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -2992,12 +2992,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_99",
       "chunk_index": 99
@@ -3010,9 +3010,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3022,12 +3022,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_100",
       "chunk_index": 100
@@ -3040,9 +3040,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3052,12 +3052,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_101",
       "chunk_index": 101
@@ -3070,9 +3070,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3082,12 +3082,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_102",
       "chunk_index": 102
@@ -3100,9 +3100,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3112,12 +3112,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_103",
       "chunk_index": 103
@@ -3130,9 +3130,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3142,12 +3142,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_104",
       "chunk_index": 104
@@ -3160,9 +3160,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3172,12 +3172,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_105",
       "chunk_index": 105
@@ -3190,9 +3190,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3202,12 +3202,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_106",
       "chunk_index": 106
@@ -3220,9 +3220,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3232,12 +3232,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_107",
       "chunk_index": 107
@@ -3250,9 +3250,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3262,12 +3262,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_108",
       "chunk_index": 108
@@ -3280,9 +3280,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3292,12 +3292,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_109",
       "chunk_index": 109
@@ -3310,9 +3310,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3322,12 +3322,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_110",
       "chunk_index": 110
@@ -3340,9 +3340,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3352,12 +3352,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_111",
       "chunk_index": 111
@@ -3370,9 +3370,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3382,12 +3382,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_112",
       "chunk_index": 112
@@ -3400,9 +3400,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3412,12 +3412,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_113",
       "chunk_index": 113
@@ -3430,9 +3430,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3442,12 +3442,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_114",
       "chunk_index": 114
@@ -3460,9 +3460,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3472,12 +3472,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_115",
       "chunk_index": 115
@@ -3490,9 +3490,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3502,12 +3502,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_116",
       "chunk_index": 116
@@ -3520,9 +3520,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3532,12 +3532,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_117",
       "chunk_index": 117
@@ -3550,9 +3550,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3562,12 +3562,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_118",
       "chunk_index": 118
@@ -3580,9 +3580,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3592,12 +3592,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_119",
       "chunk_index": 119
@@ -3610,9 +3610,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3622,12 +3622,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_120",
       "chunk_index": 120
@@ -3640,9 +3640,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3652,12 +3652,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_121",
       "chunk_index": 121
@@ -3670,9 +3670,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3682,12 +3682,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_122",
       "chunk_index": 122
@@ -3700,9 +3700,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3712,12 +3712,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_123",
       "chunk_index": 123
@@ -3730,9 +3730,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3742,12 +3742,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_124",
       "chunk_index": 124
@@ -3760,9 +3760,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3772,12 +3772,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_125",
       "chunk_index": 125
@@ -3790,9 +3790,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3802,12 +3802,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_126",
       "chunk_index": 126
@@ -3820,9 +3820,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3832,12 +3832,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_127",
       "chunk_index": 127
@@ -3850,9 +3850,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3862,12 +3862,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_128",
       "chunk_index": 128
@@ -3880,9 +3880,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3892,12 +3892,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_129",
       "chunk_index": 129
@@ -3910,9 +3910,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3922,12 +3922,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_130",
       "chunk_index": 130
@@ -3940,9 +3940,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3952,12 +3952,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_131",
       "chunk_index": 131
@@ -3970,9 +3970,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -3982,12 +3982,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_132",
       "chunk_index": 132
@@ -4000,9 +4000,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4012,12 +4012,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_133",
       "chunk_index": 133
@@ -4030,9 +4030,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4042,12 +4042,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_134",
       "chunk_index": 134
@@ -4060,9 +4060,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4072,12 +4072,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_135",
       "chunk_index": 135
@@ -4090,9 +4090,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4102,12 +4102,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_136",
       "chunk_index": 136
@@ -4120,9 +4120,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4132,12 +4132,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_137",
       "chunk_index": 137
@@ -4150,9 +4150,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4162,12 +4162,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_138",
       "chunk_index": 138
@@ -4180,9 +4180,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4192,12 +4192,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_139",
       "chunk_index": 139
@@ -4210,9 +4210,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4222,12 +4222,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_140",
       "chunk_index": 140
@@ -4240,9 +4240,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4252,12 +4252,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_141",
       "chunk_index": 141
@@ -4270,9 +4270,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4282,12 +4282,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_142",
       "chunk_index": 142
@@ -4300,9 +4300,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4312,12 +4312,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_143",
       "chunk_index": 143
@@ -4330,9 +4330,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4342,12 +4342,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_144",
       "chunk_index": 144
@@ -4360,9 +4360,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4372,12 +4372,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_145",
       "chunk_index": 145
@@ -4390,9 +4390,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4402,12 +4402,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_146",
       "chunk_index": 146
@@ -4420,9 +4420,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4432,12 +4432,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_147",
       "chunk_index": 147
@@ -4450,9 +4450,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4462,12 +4462,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_148",
       "chunk_index": 148
@@ -4480,9 +4480,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4492,12 +4492,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_149",
       "chunk_index": 149
@@ -4510,9 +4510,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4522,12 +4522,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_150",
       "chunk_index": 150
@@ -4540,9 +4540,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4552,12 +4552,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_151",
       "chunk_index": 151
@@ -4570,9 +4570,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4582,12 +4582,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_152",
       "chunk_index": 152
@@ -4600,9 +4600,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4612,12 +4612,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_153",
       "chunk_index": 153
@@ -4630,9 +4630,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4642,12 +4642,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_154",
       "chunk_index": 154
@@ -4660,9 +4660,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4672,12 +4672,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_155",
       "chunk_index": 155
@@ -4690,9 +4690,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4702,12 +4702,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_156",
       "chunk_index": 156
@@ -4720,9 +4720,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4732,12 +4732,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_157",
       "chunk_index": 157
@@ -4750,9 +4750,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4762,12 +4762,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_158",
       "chunk_index": 158
@@ -4780,9 +4780,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4792,12 +4792,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_159",
       "chunk_index": 159
@@ -4810,9 +4810,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4822,12 +4822,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_160",
       "chunk_index": 160
@@ -4840,9 +4840,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4852,12 +4852,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_161",
       "chunk_index": 161
@@ -4870,9 +4870,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4882,12 +4882,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_162",
       "chunk_index": 162
@@ -4900,9 +4900,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4912,12 +4912,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_163",
       "chunk_index": 163
@@ -4930,9 +4930,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4942,12 +4942,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_164",
       "chunk_index": 164
@@ -4960,9 +4960,9 @@
       "language": "english",
       "crops": [
         "maize",
-        "wheat",
         "cotton",
-        "paddy"
+        "paddy",
+        "wheat"
       ],
       "diseases": [
         "root_rot"
@@ -4972,12 +4972,12 @@
         "summer"
       ],
       "regions": [
-        "karnataka",
-        "maharashtra",
         "punjab",
-        "madhya_pradesh",
         "uttar_pradesh",
-        "haryana"
+        "karnataka",
+        "haryana",
+        "maharashtra",
+        "madhya_pradesh"
       ],
       "chunk_id": "ICAR-technologies-Biofertilizers.pdf_165",
       "chunk_index": 165
