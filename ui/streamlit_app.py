@@ -559,43 +559,107 @@ def main():
             if audio_data:
                 try:
                     with st.spinner("🔄 Transcribing audio..."):
+                        # CHECKPOINT 1: Audio data received
+                        st.write("**[DEBUG] Checkpoint 1:** Audio data received")
+                        logger.info("CHECKPOINT 1: Audio data received from mic_recorder")
+                        logger.info(f"  - Audio data type: {type(audio_data)}")
+                        logger.info(f"  - Audio data keys: {audio_data.keys() if isinstance(audio_data, dict) else 'N/A'}")
+                        logger.info(f"  - Bytes length: {len(audio_data.get('bytes', b'')) if isinstance(audio_data, dict) else 'N/A'}")
+
                         # Save webm temporarily
                         with tempfile.NamedTemporaryFile(delete=False, suffix=".webm") as f:
                             f.write(audio_data['bytes'])
                             webm_path = f.name
 
+                        # CHECKPOINT 2: File written to disk
+                        st.write("**[DEBUG] Checkpoint 2:** File written to temp location")
+                        logger.info("CHECKPOINT 2: Audio file written to temp location")
+                        logger.info(f"  - Temp file path: {webm_path}")
+                        logger.info(f"  - File exists: {os.path.exists(webm_path)}")
+                        logger.info(f"  - File size: {os.path.getsize(webm_path) if os.path.exists(webm_path) else 'N/A'}")
+                        logger.info(f"  - Absolute path: {os.path.abspath(webm_path)}")
+
                         try:
-                            # Use Whisper CLI directly via command line
-                            import json
+                            # CHECKPOINT 3: About to run Whisper
+                            st.write("**[DEBUG] Checkpoint 3:** Running Whisper CLI")
+                            logger.info("CHECKPOINT 3: About to run Whisper CLI command")
+
+                            whisper_cmd = ["whisper", webm_path, "--model", "base", "--output_format", "json", "--output_dir", ".", "--verbose", "False"]
+                            logger.info(f"  - Command: {' '.join(whisper_cmd)}")
+                            logger.info(f"  - Current working directory: {os.getcwd()}")
+                            logger.info(f"  - Whisper path: {shutil.which('whisper')}")
+
                             result = subprocess.run(
-                                ["whisper", webm_path, "--model", "base", "--output_format", "json", "--output_dir", ".", "--verbose", "False"],
+                                whisper_cmd,
                                 capture_output=True,
                                 text=True,
                                 timeout=60
                             )
 
+                            # CHECKPOINT 4: Whisper execution completed
+                            st.write("**[DEBUG] Checkpoint 4:** Whisper execution completed")
+                            logger.info("CHECKPOINT 4: Whisper execution completed")
+                            logger.info(f"  - Return code: {result.returncode}")
+                            logger.info(f"  - Stdout length: {len(result.stdout)}")
+                            logger.info(f"  - Stderr length: {len(result.stderr)}")
+                            logger.info(f"  - Stdout: {result.stdout[:500]}")
+                            logger.info(f"  - Stderr: {result.stderr[:500]}")
+
                             if result.returncode == 0:
-                                # Parse the JSON output from Whisper
+                                # CHECKPOINT 5: Looking for JSON output
                                 json_file = webm_path.replace(".webm", ".json")
+                                st.write("**[DEBUG] Checkpoint 5:** Looking for JSON output")
+                                logger.info("CHECKPOINT 5: Looking for JSON output file")
+                                logger.info(f"  - Expected JSON path: {json_file}")
+                                logger.info(f"  - Absolute JSON path: {os.path.abspath(json_file)}")
+                                logger.info(f"  - JSON file exists: {os.path.exists(json_file)}")
+                                logger.info(f"  - Files in current directory: {os.listdir('.')[:10]}")  # List first 10 files
+
                                 if os.path.exists(json_file):
-                                    with open(json_file, 'r') as f:
+                                    # CHECKPOINT 6: JSON file found, reading contents
+                                    st.write("**[DEBUG] Checkpoint 6:** JSON file found, reading")
+                                    logger.info("CHECKPOINT 6: JSON file found and readable")
+                                    logger.info(f"  - File size: {os.path.getsize(json_file)}")
+
+                                    with open(json_file, 'r', encoding='utf-8') as f:
                                         whisper_output = json.load(f)
                                         transcribed_text = whisper_output.get("text", "").strip()
+
+                                        # CHECKPOINT 7: Text extracted
+                                        st.write("**[DEBUG] Checkpoint 7:** Text extracted from JSON")
+                                        logger.info("CHECKPOINT 7: Text extracted from JSON")
+                                        logger.info(f"  - Transcribed text length: {len(transcribed_text)}")
+                                        logger.info(f"  - Transcribed text: {transcribed_text[:200]}")
+
                                         if transcribed_text:
                                             st.success("✅ Audio transcribed!")
                                         else:
                                             st.warning("⚠️ No speech detected in audio")
+
                                     # Clean up JSON file
                                     os.remove(json_file)
+                                    logger.info("CHECKPOINT 8: JSON file cleaned up")
+                                else:
+                                    st.error(f"JSON file not created. Looking in: {os.getcwd()}")
+                                    logger.error("JSON file not found after Whisper execution")
+                                    logger.error(f"  - Expected: {json_file}")
+                                    logger.error(f"  - Directory contents: {os.listdir('.')}")
                             else:
-                                st.error(f"Error: {result.stderr[:200]}")
+                                st.error(f"Whisper error (code {result.returncode}): {result.stderr[:200]}")
+                                logger.error(f"Whisper failed with return code {result.returncode}")
+                                logger.error(f"  - Error: {result.stderr}")
+
+                        except subprocess.TimeoutExpired:
+                            st.error("Whisper transcription timed out (60 seconds)")
+                            logger.error("Whisper transcription timed out")
                         finally:
                             if os.path.exists(webm_path):
                                 os.remove(webm_path)
+                                logger.info("CHECKPOINT 9: Temp webm file cleaned up")
 
                 except Exception as e:
                     st.error(f"Error: {str(e)}")
-                    logger.error(f"Audio transcription error: {e}")
+                    logger.error(f"Audio transcription error: {e}", exc_info=True)
 
         except ImportError:
             st.info("📍 Audio recording not available")
@@ -611,41 +675,87 @@ def main():
         if uploaded_audio:
             try:
                 with st.spinner("🔄 Transcribing audio..."):
+                    # CHECKPOINT 1: File upload received
+                    st.write("**[DEBUG] Checkpoint 1:** File uploaded")
+                    logger.info("CHECKPOINT 1: Audio file uploaded")
+                    logger.info(f"  - File name: {uploaded_audio.name}")
+                    logger.info(f"  - File size: {uploaded_audio.size}")
+
                     # Save uploaded file temporarily
                     with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as f:
                         f.write(uploaded_audio.getbuffer())
                         audio_path = f.name
 
+                    # CHECKPOINT 2: File saved
+                    st.write("**[DEBUG] Checkpoint 2:** File saved to temp location")
+                    logger.info("CHECKPOINT 2: Uploaded file saved to temp location")
+                    logger.info(f"  - Temp file path: {audio_path}")
+                    logger.info(f"  - File exists: {os.path.exists(audio_path)}")
+                    logger.info(f"  - File size: {os.path.getsize(audio_path) if os.path.exists(audio_path) else 'N/A'}")
+
                     try:
-                        # Use Whisper CLI
-                        import json
+                        # CHECKPOINT 3: Running Whisper
+                        st.write("**[DEBUG] Checkpoint 3:** Running Whisper CLI")
+                        logger.info("CHECKPOINT 3: About to run Whisper on uploaded file")
+
+                        whisper_cmd = ["whisper", audio_path, "--model", "base", "--output_format", "json", "--output_dir", ".", "--verbose", "False"]
+                        logger.info(f"  - Command: {' '.join(whisper_cmd)}")
+                        logger.info(f"  - Working dir: {os.getcwd()}")
+
                         result = subprocess.run(
-                            ["whisper", audio_path, "--model", "base", "--output_format", "json", "--output_dir", ".", "--verbose", "False"],
+                            whisper_cmd,
                             capture_output=True,
                             text=True,
                             timeout=60
                         )
 
+                        # CHECKPOINT 4: Whisper completed
+                        st.write("**[DEBUG] Checkpoint 4:** Whisper completed")
+                        logger.info("CHECKPOINT 4: Whisper execution completed")
+                        logger.info(f"  - Return code: {result.returncode}")
+                        logger.info(f"  - Stderr: {result.stderr[:200]}")
+
                         if result.returncode == 0:
+                            # CHECKPOINT 5: Looking for JSON
                             json_file = audio_path.replace(".wav", ".json")
+                            st.write("**[DEBUG] Checkpoint 5:** Looking for JSON output")
+                            logger.info("CHECKPOINT 5: Searching for JSON output")
+                            logger.info(f"  - Expected JSON: {json_file}")
+                            logger.info(f"  - Exists: {os.path.exists(json_file)}")
+
                             if os.path.exists(json_file):
-                                with open(json_file, 'r') as f:
+                                # CHECKPOINT 6: Reading JSON
+                                st.write("**[DEBUG] Checkpoint 6:** Reading JSON")
+                                logger.info("CHECKPOINT 6: JSON file found, reading")
+
+                                with open(json_file, 'r', encoding='utf-8') as f:
                                     whisper_output = json.load(f)
                                     transcribed_text = whisper_output.get("text", "").strip()
+
+                                    st.write("**[DEBUG] Checkpoint 7:** Text extracted")
+                                    logger.info(f"CHECKPOINT 7: Text extracted: {len(transcribed_text)} chars")
+
                                     if transcribed_text:
                                         st.success("✅ Audio transcribed!")
                                     else:
                                         st.warning("⚠️ No speech detected")
                                 os.remove(json_file)
+                                logger.info("CHECKPOINT 8: JSON cleaned up")
                         else:
-                            st.error(f"Error: {result.stderr[:200]}")
+                            st.error(f"Whisper error (code {result.returncode}): {result.stderr[:200]}")
+                            logger.error(f"Whisper failed: {result.stderr}")
+
+                    except subprocess.TimeoutExpired:
+                        st.error("Whisper transcription timed out (60 seconds)")
+                        logger.error("Whisper timed out")
                     finally:
                         if os.path.exists(audio_path):
                             os.remove(audio_path)
+                            logger.info("CHECKPOINT 9: Temp file cleaned up")
 
             except Exception as e:
                 st.error(f"Error: {str(e)}")
-                logger.error(f"Audio upload error: {e}")
+                logger.error(f"Audio upload error: {e}", exc_info=True)
 
     # If audio was transcribed, show it and add to query
     if transcribed_text:
