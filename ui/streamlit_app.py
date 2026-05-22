@@ -194,27 +194,49 @@ st.markdown(
 # ── Scroll helper ─────────────────────────────────────────────────────────────
 def _scroll_to_last_message() -> None:
     """
-    Inject a zero-height iframe whose JS scrolls the Streamlit main area
-    so the START of the most-recent chat message is visible at the top of
-    the viewport.  This prevents long responses from leaving the user staring
-    at the bottom of the answer instead of reading from the top.
+    Scroll the Streamlit main area so the START of the newest chat message
+    is visible after a response is rendered.
+
+    Implementation notes:
+    - height=0 iframes are suppressed by some browsers; use height=1.
+    - Streamlit batches DOM updates, so the newest message may not be in the
+      DOM when the iframe first loads. We retry up to 3 times with delays.
+    - We scroll to the LAST stChatMessage element (the assistant reply).
     """
     _components.html(
         """
         <script>
-            (function () {
-                var parent = window.parent.document;
-                var msgs = parent.querySelectorAll('[data-testid="stChatMessage"]');
-                if (msgs.length === 0) return;
-                // Scroll to the last (newest) message
-                msgs[msgs.length - 1].scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            })();
+        (function () {
+            var MAX_TRIES = 6;
+            var DELAY_MS  = 150;
+            var tries = 0;
+
+            function scrollToLast() {
+                try {
+                    var parent = window.parent.document;
+                    var msgs = parent.querySelectorAll(
+                        '[data-testid="stChatMessage"]'
+                    );
+                    if (msgs.length > 0) {
+                        msgs[msgs.length - 1].scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+                        return;   // success — stop retrying
+                    }
+                } catch (e) { /* cross-origin guard */ }
+
+                if (++tries < MAX_TRIES) {
+                    setTimeout(scrollToLast, DELAY_MS);
+                }
+            }
+
+            // Start after a short pause so Streamlit can commit the DOM
+            setTimeout(scrollToLast, DELAY_MS);
+        })();
         </script>
         """,
-        height=0,
+        height=1,
     )
 
 
