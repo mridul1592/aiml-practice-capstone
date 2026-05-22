@@ -24,6 +24,13 @@ class AudioProcessor:
         "en": "English",
         "hi": "Hindi",
         "pa": "Punjabi",
+        "ta": "Tamil",
+        "te": "Telugu",
+        "or": "Odia",
+        "kn": "Kannada",
+        "mr": "Marathi",
+        "ml": "Malayalam",
+        "bn": "Bengali",
     }
 
     def __init__(self, model_size: str = "base"):

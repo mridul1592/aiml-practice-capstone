@@ -36,8 +36,8 @@ class Settings(BaseSettings):
     chunk_overlap: int = 40
     similarity_threshold: float = 0.5
     top_k_retrieval: int = 5
-    supported_languages: List[str] = ["en", "hi", "pa"]
-    language_detect_threshold: float = 0.5
+    supported_languages: List[str] = ["en", "hi", "pa", "ta", "te", "or", "kn", "mr", "ml", "bn"]
+    language_detect_threshold: float = 0.05
 
     # FastAPI Configuration
     api_host: str = "0.0.0.0"

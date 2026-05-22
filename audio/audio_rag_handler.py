@@ -118,12 +118,19 @@ class AudioRAGHandler:
             whisper_language: Language code from Whisper
 
         Returns:
-            RAG system language code (en, hi, pa)
+            RAG system language code (en, hi, pa, ta, te, or, kn, mr, ml, bn)
         """
         language_map = {
             "english": "en",
             "hindi": "hi",
             "punjabi": "pa",
+            "tamil": "ta",
+            "telugu": "te",
+            "odia": "or",
+            "kannada": "kn",
+            "marathi": "mr",
+            "malayalam": "ml",
+            "bengali": "bn",
         }
 
         whisper_lang_lower = whisper_language.lower()

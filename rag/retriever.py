@@ -21,7 +21,7 @@ logger = setup_logger(__name__)
 
 
 class LanguageDetector:
-    """Detect language of text."""
+    """Detect language of text supporting 10 Indian languages."""
 
     def __init__(self):
         """Initialize language detector."""
@@ -36,20 +36,23 @@ class LanguageDetector:
             threshold: Confidence threshold (0-1)
 
         Returns:
-            Language code (en, hi, pa) or 'en' as default
+            Language code (en, hi, pa, ta, te, or, kn, mr, ml, bn) or 'en' as default
         """
         if not text:
             return "en"
 
-        # Simple pattern-based detection
-        hindi_score = self._score_hindi(text)
-        punjabi_score = self._score_punjabi(text)
-        english_score = self._score_english(text)
-
+        # Score all supported languages
         scores = {
-            "hi": hindi_score,
-            "pa": punjabi_score,
-            "en": english_score,
+            "en": self._score_english(text),
+            "hi": self._score_hindi(text),  # Devanagari (Hindi, Marathi)
+            "pa": self._score_punjabi(text),  # Gurmukhi
+            "bn": self._score_bengali(text),  # Bengali
+            "or": self._score_odia(text),  # Odia
+            "ta": self._score_tamil(text),  # Tamil
+            "te": self._score_telugu(text),  # Telugu
+            "kn": self._score_kannada(text),  # Kannada
+            "ml": self._score_malayalam(text),  # Malayalam
+            "mr": self._score_marathi(text),  # Marathi (uses Devanagari like Hindi)
         }
 
         # Get language with highest score
@@ -62,39 +65,76 @@ class LanguageDetector:
         logger.info(f"Detected language: {detected_lang} (scores: {scores})")
         return detected_lang
 
-    def _score_hindi(self, text: str) -> float:
-        """Score text for Hindi language (Devanagari script)."""
-        import re
-
-        # Count Devanagari characters (more comprehensive range)
-        devanagari_pattern = r"[ऀ-ॿ]"  # Full Devanagari Unicode range
-        matches = len(re.findall(devanagari_pattern, text))
-        # Return percentage of Devanagari characters
-        if not text:
-            return 0
-        return matches / len(text)
-
-    def _score_punjabi(self, text: str) -> float:
-        """Score text for Punjabi language (Gurmukhi script)."""
-        import re
-
-        # Count Gurmukhi characters
-        gurmukhi_pattern = r"[਀-੿]"  # Full Gurmukhi Unicode range
-        matches = len(re.findall(gurmukhi_pattern, text))
-        # Return percentage of Gurmukhi characters
-        if not text:
-            return 0
-        return matches / len(text)
-
     def _score_english(self, text: str) -> float:
         """Score text for English language."""
         import re
+        pattern = r"[a-zA-Z]"
+        matches = len(re.findall(pattern, text))
+        return matches / len(text) if text else 0
 
-        english_pattern = r"[a-zA-Z]"
-        matches = len(re.findall(english_pattern, text))
-        if not text:
-            return 0
-        return matches / len(text)
+    def _score_hindi(self, text: str) -> float:
+        """Score text for Hindi (Devanagari script)."""
+        import re
+        pattern = r"[ऀ-ॿ]"
+        matches = len(re.findall(pattern, text))
+        return matches / len(text) if text else 0
+
+    def _score_marathi(self, text: str) -> float:
+        """Score text for Marathi (Devanagari script)."""
+        import re
+        # Marathi uses Devanagari, same as Hindi
+        pattern = r"[ऀ-ॿ]"
+        matches = len(re.findall(pattern, text))
+        return matches / len(text) if text else 0
+
+    def _score_punjabi(self, text: str) -> float:
+        """Score text for Punjabi (Gurmukhi script)."""
+        import re
+        pattern = r"[਀-੿]"
+        matches = len(re.findall(pattern, text))
+        return matches / len(text) if text else 0
+
+    def _score_bengali(self, text: str) -> float:
+        """Score text for Bengali (Bengali script)."""
+        import re
+        pattern = r"[অ-৿]"  # Bengali Unicode range U+0980–U+09FF
+        matches = len(re.findall(pattern, text))
+        return matches / len(text) if text else 0
+
+    def _score_odia(self, text: str) -> float:
+        """Score text for Odia (Odia script)."""
+        import re
+        pattern = r"[ଅ-ୟ]"  # Odia Unicode range U+0B00–U+0B7F
+        matches = len(re.findall(pattern, text))
+        return matches / len(text) if text else 0
+
+    def _score_tamil(self, text: str) -> float:
+        """Score text for Tamil (Tamil script)."""
+        import re
+        pattern = r"[அ-ி]"  # Tamil Unicode range U+0B80–U+0BFF
+        matches = len(re.findall(pattern, text))
+        return matches / len(text) if text else 0
+
+    def _score_telugu(self, text: str) -> float:
+        """Score text for Telugu (Telugu script)."""
+        import re
+        pattern = r"[అ-౿]"  # Telugu Unicode range U+0C00–U+0C7F
+        matches = len(re.findall(pattern, text))
+        return matches / len(text) if text else 0
+
+    def _score_kannada(self, text: str) -> float:
+        """Score text for Kannada (Kannada script)."""
+        import re
+        pattern = r"[ಅ-ಿ]"  # Kannada Unicode range U+0C80–U+0CFF
+        matches = len(re.findall(pattern, text))
+        return matches / len(text) if text else 0
+
+    def _score_malayalam(self, text: str) -> float:
+        """Score text for Malayalam (Malayalam script)."""
+        import re
+        pattern = r"[അ-ൿ]"  # Malayalam Unicode range U+0D00–U+0D7F
+        matches = len(re.findall(pattern, text))
+        return matches / len(text) if text else 0
 
 
 class QueryPreprocessor:
