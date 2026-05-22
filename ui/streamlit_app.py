@@ -26,27 +26,37 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 # Find FFmpeg executable
 def get_ffmpeg_path():
     """Get the full path to FFmpeg executable."""
-    # First try Python's shutil.which() - most reliable
-    ffmpeg = shutil.which("ffmpeg")
-    if ffmpeg:
-        return ffmpeg
-
-    # Try common installation locations for Windows
+    # Common installation locations for Windows (check most likely first)
     common_paths = [
         r"C:\Users\mridu\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-8.1.1-full_build\bin\ffmpeg.exe",
         r"C:\Program Files\FFmpeg\bin\ffmpeg.exe",
         r"C:\Program Files (x86)\FFmpeg\bin\ffmpeg.exe",
-        Path.home() / "AppData" / "Local" / "Programs" / "FFmpeg" / "bin" / "ffmpeg.exe",
+        str(Path.home() / "AppData" / "Local" / "Programs" / "FFmpeg" / "bin" / "ffmpeg.exe"),
     ]
 
+    # Check hardcoded paths first (most reliable for installed packages)
     for path in common_paths:
-        path_str = str(path)
-        if os.path.exists(path_str):
-            return path_str
+        if os.path.exists(path):
+            logger.info(f"Found FFmpeg at: {path}")
+            return path
 
+    # Try Python's shutil.which() as fallback
+    ffmpeg = shutil.which("ffmpeg")
+    if ffmpeg:
+        logger.info(f"Found FFmpeg in PATH: {ffmpeg}")
+        return ffmpeg
+
+    logger.warning("FFmpeg not found - audio recording will not work")
     return None
 
 FFMPEG_PATH = get_ffmpeg_path()
+
+# Display FFmpeg status in sidebar for debugging
+with st.sidebar:
+    if FFMPEG_PATH:
+        st.success(f"✅ FFmpeg found: {FFMPEG_PATH.split(os.sep)[-3:]}")
+    else:
+        st.error("❌ FFmpeg not found - audio recording unavailable")
 
 from audio.audio_rag_handler import AudioRAGHandler
 from rag.rag_orchestrator import RAGPipeline
