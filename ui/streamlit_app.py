@@ -366,8 +366,26 @@ def _process_query(query: str, pipeline: RAGPipeline, cfg: dict) -> None:
                 import traceback
                 err = traceback.format_exc()
                 logger.error(f"Query error:\n{err}")
-                st.error(f"❌ {exc}")
-                with st.expander("Error details"):
+
+                err_str = str(exc)
+                # Friendly guidance for common Ollama errors
+                if "500" in err_str or "Internal Server Error" in err_str:
+                    st.error(
+                        "❌ Ollama returned a 500 error — the model context overflowed or "
+                        "is still loading.\n\n"
+                        "**Quick fixes:**\n"
+                        "- Reduce **Context Chunks (k)** in *Advanced Settings* (try k=5)\n"
+                        "- Wait a few seconds and try again (model may still be loading)\n"
+                        "- Restart Ollama: `ollama serve`"
+                    )
+                elif "Connection" in err_str or "refused" in err_str.lower():
+                    st.error(
+                        "❌ Cannot reach Ollama. Make sure it is running: `ollama serve`"
+                    )
+                else:
+                    st.error(f"❌ {exc}")
+
+                with st.expander("🔍 Error details"):
                     st.code(err)
                 st.session_state.messages.append(
                     {"role": "assistant", "content": f"Error: {exc}", "result": None}
