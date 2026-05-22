@@ -409,6 +409,7 @@ def main():
             "LLM Provider",
             options=["ollama", "openai"],
             help="Select the LLM provider for response generation",
+            key="llm_provider_sidebar"
         )
 
         if llm_provider == "ollama":
@@ -416,12 +417,14 @@ def main():
                 "Ollama Model",
                 options=["neural-chat", "mistral", "llama2", "orca2"],
                 help="Select model available in Ollama",
+                key="ollama_model_sidebar"
             )
         else:
             llm_model = st.text_input(
                 "OpenAI Model",
                 value="gpt-3.5-turbo",
                 help="Requires OPENAI_API_KEY in .env",
+                key="openai_model_sidebar"
             )
 
         temperature = st.slider(
@@ -431,6 +434,7 @@ def main():
             value=0.7,
             step=0.1,
             help="Lower = deterministic, Higher = creative",
+            key="temperature_sidebar"
         )
 
         st.markdown("---")
@@ -538,6 +542,7 @@ def main():
                 max_value=20,
                 value=5,
                 step=1,
+                key="k_text_query"
             )
 
         with col2:
@@ -547,6 +552,7 @@ def main():
                 max_value=1.0,
                 value=0.2,
                 step=0.05,
+                key="threshold_text_query"
             )
 
         with col3:
@@ -652,6 +658,7 @@ def main():
                 options=["tiny", "base", "small", "medium", "large"],
                 value="base",
                 help="Larger = more accurate but slower",
+                key="whisper_model_size"
             )
 
         with col2:
