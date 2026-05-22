@@ -7,7 +7,13 @@
       "Bash(git add *)",
       "Bash(git commit *)",
       "Bash(python main.py query --query \"How to control wheat pests?\")",
-      "Bash(python main.py query --query \"गेहूँ में कीटों का नियंत्रण कैसे करें?\")"
+      "Bash(python main.py query --query \"गेहूँ में कीटों का नियंत्रण कैसे करें?\")",
+      "Bash(pip install *)",
+      "Bash(cat)",
+      "Bash(python3)",
+      "Bash(python main.py --help)",
+      "Bash(python3 -m py_compile main.py)",
+      "Bash(python main.py)"
     ]
   }
 }
