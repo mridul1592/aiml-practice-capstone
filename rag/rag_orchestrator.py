@@ -16,6 +16,7 @@ from typing import Dict, List, Optional, Tuple
 
 from rag.embedder import Embedder
 from rag.generator import ResponseGenerator, create_generator
+from rag.reranker import BGEReranker, create_reranker
 from rag.retriever import Retriever
 from rag.vector_store import VectorStore
 from utils.config import settings
@@ -119,6 +120,7 @@ class RAGPipeline:
         self.vector_store = self.load_vector_store()
         self.retriever = self.load_retriever()
         self.generator = self.load_generator()
+        self.reranker = self.load_reranker()
 
         # Build source map for filename attribution (no re-indexing needed)
         self._source_map = _build_source_map()
@@ -175,6 +177,28 @@ class RAGPipeline:
         logger.info("Retriever initialized")
         return retriever
 
+    def load_reranker(self) -> Optional[BGEReranker]:
+        """
+        Load the BGE cross-encoder reranker.
+
+        Returns:
+            BGEReranker instance, or None if reranking is disabled in settings.
+        """
+        if not settings.use_reranker:
+            logger.info("Reranker disabled (USE_RERANKER=false)")
+            return None
+
+        logger.info(f"Loading reranker: {settings.reranker_model}")
+        try:
+            reranker = create_reranker()
+            logger.info("Reranker loaded successfully")
+            return reranker
+        except Exception as e:
+            logger.warning(
+                f"Failed to load reranker ({e}). Continuing without reranking."
+            )
+            return None
+
     def load_generator(self) -> ResponseGenerator:
         """
         Load response generator with LLM client.
@@ -218,6 +242,7 @@ class RAGPipeline:
         disease: Optional[str] = None,
         temperature: float = 0.7,
         use_hybrid: bool = True,
+        use_reranker: Optional[bool] = None,
     ) -> Dict:
         """
         Execute a RAG query.
@@ -234,6 +259,8 @@ class RAGPipeline:
             temperature: LLM temperature for generation
             use_hybrid: If True, use BM25 + semantic hybrid search (recommended).
                         If False, use semantic-only search.
+            use_reranker: Override reranking on/off for this call.
+                          Defaults to settings.use_reranker.
 
         Returns:
             Dictionary with query, response, language, sources, and confidence
@@ -244,6 +271,10 @@ class RAGPipeline:
         """
         if not query_text or not query_text.strip():
             raise ValueError("Query text cannot be empty")
+
+        # Resolve reranker flag: per-call override → settings default
+        _use_reranker = use_reranker if use_reranker is not None else settings.use_reranker
+        _use_reranker = _use_reranker and (self.reranker is not None)
 
         logger.info(f"Processing query: {query_text}")
 
@@ -264,22 +295,25 @@ class RAGPipeline:
         if disease:
             filters["disease"] = disease
 
-        # Retrieve context chunks
+        # Retrieve context chunks — fetch extra candidates when reranking so
+        # the cross-encoder has a richer pool to rescore.
+        retrieval_k = k * 3 if _use_reranker else k
+
         try:
             if use_hybrid:
-                logger.info(f"Hybrid retrieval (BM25 + semantic), k={k}...")
+                logger.info(f"Hybrid retrieval (BM25 + semantic), k={retrieval_k}...")
                 context_chunks = self.retriever.retrieve_hybrid(
                     query_text,
-                    k=k,
+                    k=retrieval_k,
                     similarity_threshold=similarity_threshold,
                     filters=filters if filters else None,
                     return_scores=True,
                 )
             else:
-                logger.info(f"Semantic-only retrieval, k={k}...")
+                logger.info(f"Semantic-only retrieval, k={retrieval_k}...")
                 context_chunks = self.retriever.retrieve(
                     query_text,
-                    k=k,
+                    k=retrieval_k,
                     similarity_threshold=similarity_threshold,
                     filters=filters if filters else None,
                     return_scores=True,
@@ -288,8 +322,18 @@ class RAGPipeline:
 
             # Enrich with source filename (runtime lookup, no re-index needed)
             context_chunks = _enrich_chunks_with_filename(context_chunks, self._source_map)
+
+            # ── Reranking ──────────────────────────────────────────────────────
+            if _use_reranker:
+                logger.info(f"Reranking {len(context_chunks)} candidates → top {k}...")
+                context_chunks = self.reranker.rerank(
+                    query=query_text,
+                    chunks=context_chunks,
+                    top_k=k,
+                )
+                logger.info(f"Reranking complete: {len(context_chunks)} chunks selected")
         except Exception as e:
-            logger.error(f"Retrieval failed: {str(e)}")
+            logger.error(f"Retrieval/reranking failed: {str(e)}")
             raise
 
         # Generate response
@@ -314,6 +358,7 @@ class RAGPipeline:
             "num_context_chunks": len(context_chunks),
             "retrieved_chunks": context_chunks,
             "retrieval_mode": "hybrid" if use_hybrid else "semantic",
+            "reranker_used": _use_reranker,
         }
 
         logger.info("Query processing completed")

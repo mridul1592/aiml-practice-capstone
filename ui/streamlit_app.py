@@ -268,6 +268,7 @@ def _render_result(result: dict) -> None:
     confidence = result.get("confidence", "low").upper()
     num_chunks = result.get("num_context_chunks", 0)
     mode = "Hybrid" if result.get("retrieval_mode") == "hybrid" else "Semantic"
+    reranked_tag = "🎯 Reranked" if result.get("reranker_used") else "⚡ No Rerank"
 
     st.markdown(
         f'<div class="resp-meta">'
@@ -275,6 +276,7 @@ def _render_result(result: dict) -> None:
         f'<span class="resp-tag">📊 {confidence}</span>'
         f'<span class="resp-tag">📖 {num_chunks} chunks</span>'
         f'<span class="resp-tag">🔍 {mode}</span>'
+        f'<span class="resp-tag">{reranked_tag}</span>'
         f"</div>",
         unsafe_allow_html=True,
     )
@@ -318,12 +320,16 @@ def _render_result(result: dict) -> None:
     if chunks:
         with st.expander(f"📖 Retrieved Chunks ({len(chunks)})"):
             for i, chunk in enumerate(chunks, 1):
-                score   = chunk.get("similarity_score", 0)
+                sem_score    = chunk.get("similarity_score", 0)
+                rerank_score = chunk.get("rerank_score")
                 content = chunk.get("content", "")
                 fname   = _short(chunk.get("filename", "Unknown"))
                 section = chunk.get("section", "").strip()[:50]
+                score_str = f"Sem: `{sem_score:.4f}`"
+                if rerank_score is not None:
+                    score_str += f" · Rerank: `{rerank_score:.4f}`"
                 st.markdown(
-                    f"**Chunk {i}** · 📄 `{fname}` · *{section}* · Score: `{score:.4f}`"
+                    f"**Chunk {i}** · 📄 `{fname}` · *{section}* · {score_str}"
                 )
                 st.markdown(content)
                 if i < len(chunks):
@@ -357,6 +363,7 @@ def _process_query(query: str, pipeline: RAGPipeline, cfg: dict) -> None:
                     disease=cfg["disease"] or None,
                     temperature=cfg["temperature"],
                     use_hybrid=cfg["use_hybrid"],
+                    use_reranker=cfg["use_reranker"],
                 )
                 _render_result(result)
                 st.session_state.messages.append(
@@ -446,6 +453,17 @@ def main() -> None:
             help="Combines keyword and embedding search via Reciprocal Rank Fusion.",
         )
         st.caption("🔀 BM25 + FAISS → RRF" if use_hybrid else "🧠 FAISS embeddings only")
+
+        use_reranker = st.toggle(
+            "Reranker (BGE cross-encoder)",
+            value=True, key="sb_reranker",
+            help=(
+                "After retrieval, score every (query, chunk) pair with "
+                "BAAI/bge-reranker-base for higher precision. "
+                "Fetches k×3 candidates then keeps the top-k."
+            ),
+        )
+        st.caption("🎯 Cross-encoder precision" if use_reranker else "⚡ Bi-encoder only")
 
         st.divider()
 
@@ -551,14 +569,15 @@ def main() -> None:
 
     # Build pipeline config dict (read once, passed everywhere)
     cfg = {
-        "k":           st.session_state.get("sb_k", 10),
-        "threshold":   st.session_state.get("sb_thresh", 0.2),
-        "use_hybrid":  st.session_state.get("sb_hybrid", True),
-        "temperature": st.session_state.get("sb_temp", 0.7),
-        "crop":        st.session_state.get("sb_crop", ""),
-        "region":      st.session_state.get("sb_region", ""),
-        "season":      st.session_state.get("sb_season", ""),
-        "disease":     st.session_state.get("sb_disease", ""),
+        "k":            st.session_state.get("sb_k", 10),
+        "threshold":    st.session_state.get("sb_thresh", 0.2),
+        "use_hybrid":   st.session_state.get("sb_hybrid", True),
+        "use_reranker": st.session_state.get("sb_reranker", True),
+        "temperature":  st.session_state.get("sb_temp", 0.7),
+        "crop":         st.session_state.get("sb_crop", ""),
+        "region":       st.session_state.get("sb_region", ""),
+        "season":       st.session_state.get("sb_season", ""),
+        "disease":      st.session_state.get("sb_disease", ""),
     }
 
     try:

@@ -379,8 +379,8 @@ class Retriever:
         processed = self.preprocessor.preprocess(query)
         logger.info(f"Processed query: {processed['normalized']} (language: {processed['language']})")
 
-        # Generate query embedding
-        query_embedding = self.embedder.embed_text(processed["normalized"])
+        # Generate query embedding (uses instruction prefix for instruct models)
+        query_embedding = self.embedder.embed_query(processed["normalized"])
 
         # Search in vector store (don't filter by language if documents don't have it)
         results, scores = self.vector_store.search(
@@ -453,7 +453,8 @@ class Retriever:
         normalized_query = processed["normalized"]
 
         # ── 2. Semantic leg ──────────────────────────────────────────────────
-        query_embedding = self.embedder.embed_text(normalized_query)
+        # embed_query adds instruction prefix for instruct-tuned models
+        query_embedding = self.embedder.embed_query(normalized_query)
         sem_results, _ = self.vector_store.search(
             query_embedding,
             k=semantic_candidates,

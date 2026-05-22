@@ -23,9 +23,13 @@ class Settings(BaseSettings):
     openai_api_key: str = ""
 
     # Embedding Configuration
-    embedding_model: str = "sentence-transformers/multilingual-e5-small"
+    embedding_model: str = "intfloat/multilingual-e5-large-instruct"
     device: str = "cuda"
-    embedding_dimension: int = 384
+    embedding_dimension: int = 1024
+
+    # Reranker Configuration
+    reranker_model: str = "BAAI/bge-reranker-base"
+    use_reranker: bool = True
 
     # Vector Store Configuration
     faiss_index_path: str = "./data/embeddings/faiss_index.bin"

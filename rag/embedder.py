@@ -24,6 +24,13 @@ logger = setup_logger(__name__)
 class Embedder:
     """Generate multilingual embeddings for document chunks."""
 
+    # Task instruction used as prefix for query embeddings when using
+    # E5-instruct family models (and any other instruct-tuned bi-encoders).
+    # Documents are embedded without a prefix; only query vectors get this.
+    _QUERY_INSTRUCTION: str = (
+        "Given an agricultural query, retrieve relevant passages that answer the query"
+    )
+
     def __init__(self, model_name: Optional[str] = None):
         """
         Initialize embedder with SentenceTransformer or AutoModel.
@@ -73,6 +80,48 @@ class Embedder:
             logger.error(f"Failed to load embedding model: {str(e)}")
             raise
     
+    # ------------------------------------------------------------------
+    # Properties
+    # ------------------------------------------------------------------
+
+    @property
+    def _is_instruct_model(self) -> bool:
+        """True for instruction-tuned embedding models (E5-instruct, etc.)."""
+        return "instruct" in self.model_name.lower()
+
+    # ------------------------------------------------------------------
+    # Public embedding API
+    # ------------------------------------------------------------------
+
+    def embed_query(self, query: str, normalize: bool = True) -> np.ndarray:
+        """
+        Generate an embedding for a *query* string.
+
+        For instruction-tuned models (e.g. intfloat/multilingual-e5-large-instruct)
+        this automatically prepends the task instruction so the query vector is
+        in the same embedding space as the document vectors produced by embed_text().
+
+        For non-instruct models this is identical to embed_text().
+
+        Args:
+            query:     Raw query text
+            normalize: Whether to L2-normalise the output (default: True)
+
+        Returns:
+            1-D numpy array of shape (embedding_dim,)
+        """
+        if not query or not query.strip():
+            raise ValueError("Query text cannot be empty")
+
+        if self._is_instruct_model and not self.use_transformers:
+            # E5-instruct style: "Instruct: <task>\nQuery: <text>"
+            text = f"Instruct: {self._QUERY_INSTRUCTION}\nQuery: {query}"
+            logger.debug("Prepended instruction prefix for instruct model query")
+        else:
+            text = query
+
+        return self.embed_text(text, normalize=normalize)
+
     def get_model_info(self) -> Dict[str, Any]:
         """
         Retrieve metadata about the currently loaded embedding model.
