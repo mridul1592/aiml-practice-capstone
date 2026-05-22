@@ -23,6 +23,16 @@ import streamlit as st
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
+# Import logger FIRST before using it
+from utils.logger import setup_logger
+logger = setup_logger(__name__)
+
+# Import other modules
+from audio.audio_rag_handler import AudioRAGHandler
+from rag.rag_orchestrator import RAGPipeline
+from rag.retriever import LanguageDetector
+from utils.config import settings
+
 # Find FFmpeg executable
 def get_ffmpeg_path():
     """Get the full path to FFmpeg executable."""
@@ -57,14 +67,6 @@ with st.sidebar:
         st.success(f"✅ FFmpeg found: {FFMPEG_PATH.split(os.sep)[-3:]}")
     else:
         st.error("❌ FFmpeg not found - audio recording unavailable")
-
-from audio.audio_rag_handler import AudioRAGHandler
-from rag.rag_orchestrator import RAGPipeline
-from rag.retriever import LanguageDetector
-from utils.config import settings
-from utils.logger import setup_logger
-
-logger = setup_logger(__name__)
 
 # Streamlit page configuration
 st.set_page_config(
