@@ -695,7 +695,7 @@ def main():
                 "Context Chunks",
                 min_value=1,
                 max_value=20,
-                value=5,
+                value=10,
                 step=1,
                 key="k_text_query"
             )

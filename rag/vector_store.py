@@ -145,17 +145,21 @@ class VectorStore:
         query_normalized = query_embedding / (np.linalg.norm(query_embedding) + 1e-10)
         query_normalized = query_normalized.astype(np.float32).reshape(1, -1)
 
-        # Search in FAISS
-        distances, indices = self.index.search(query_normalized, min(k * 2, len(self.metadata)))
+        # Search FAISS with a generous over-fetch to survive deduplication and
+        # filtering.  We ask for min(k*6, total) candidates so that even when
+        # many duplicates or filtered entries are present we still fill k slots.
+        fetch_k = min(k * 6, len(self.metadata))
+        distances, indices = self.index.search(query_normalized, fetch_k)
 
         # Convert L2 distances to similarity scores (cosine)
         # L2 distance to cosine similarity: sim = 1 - (dist^2 / 2)
         similarities = 1.0 - (distances[0] ** 2) / 2.0
         similarities = np.clip(similarities, -1.0, 1.0)  # Clamp to valid range
-        
-        # Apply filtering and thresholding
+
+        # Apply filtering, deduplication, and thresholding
         results = []
         scores = []
+        seen_content: set = set()  # track content hashes to skip duplicates
 
         for idx, similarity in zip(indices[0], similarities):
             if idx == -1 or idx >= len(self.metadata):
@@ -165,10 +169,17 @@ class VectorStore:
             if similarity_threshold and similarity < similarity_threshold:
                 continue
 
-            # Check metadata filters
+            # Check metadata filters — only enforce keys that actually exist in
+            # the metadata so missing fields don't silently drop all results.
             metadata = self.metadata[idx]
             if metadata_filters and not self._match_filters(metadata, metadata_filters):
                 continue
+
+            # Deduplicate on content (strip + first 200 chars as fingerprint)
+            content_fp = metadata.get("content", "")[:200].strip()
+            if content_fp and content_fp in seen_content:
+                continue
+            seen_content.add(content_fp)
 
             results.append(metadata)
             scores.append(float(similarity))
@@ -176,7 +187,7 @@ class VectorStore:
             if len(results) == k:
                 break
 
-        logger.info(f"Search returned {len(results)} results")
+        logger.info(f"Search returned {len(results)} results (fetch_k={fetch_k})")
         return results, scores
 
     def search_batch(
@@ -228,8 +239,11 @@ class VectorStore:
             True if all filters match
         """
         for key, value in filters.items():
+            # If the metadata record doesn't have this field at all, skip the
+            # filter rather than excluding the result.  Documents indexed before
+            # the filter fields were added would otherwise be invisible.
             if key not in metadata:
-                return False
+                continue
 
             meta_value = metadata[key]
 
