@@ -17,6 +17,8 @@ from typing import Optional
 import os
 import shutil
 import subprocess
+import tempfile
+import json
 
 import streamlit as st
 
@@ -536,13 +538,10 @@ def main():
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-    # Audio input section alongside text
+    # Audio input section - simple transcription to text
     col1, col2 = st.columns([1, 1])
 
-    audio_file = None
-    transcription_result = None
-    import tempfile
-    import os
+    transcribed_text = ""
 
     with col1:
         st.markdown("#### 🎙️ Record Audio")
@@ -558,116 +557,48 @@ def main():
             )
 
             if audio_data:
-                # Save recorded audio to temporary file for transcription
                 try:
-                    with st.spinner("🔄 Processing audio..."):
-                        # Save webm to temp file
-                        import tempfile
-                        with tempfile.NamedTemporaryFile(delete=False, suffix=".webm") as webm_file:
-                            webm_file.write(audio_data['bytes'])
-                            webm_path = webm_file.name
+                    with st.spinner("🔄 Transcribing audio..."):
+                        # Save webm temporarily
+                        with tempfile.NamedTemporaryFile(delete=False, suffix=".webm") as f:
+                            f.write(audio_data['bytes'])
+                            webm_path = f.name
 
-                        # Convert webm to wav using FFmpeg
-                        wav_path = webm_path.replace(".webm", ".wav")
-                        logger.info(f"WebM path: {webm_path}")
-                        logger.info(f"WAV path: {wav_path}")
-                        logger.info(f"FFmpeg path: {FFMPEG_PATH}")
-
-                        if FFMPEG_PATH:
-                            try:
-                                logger.info(f"Starting FFmpeg conversion from {webm_path} to {wav_path}")
-                                result = subprocess.run(
-                                    [FFMPEG_PATH, "-i", webm_path, "-acodec", "pcm_s16le", "-ar", "16000", wav_path, "-y"],
-                                    capture_output=True,
-                                    text=True,
-                                    timeout=30
-                                )
-                                logger.info(f"FFmpeg return code: {result.returncode}")
-                                logger.info(f"FFmpeg stdout: {result.stdout[:200] if result.stdout else 'None'}")
-                                logger.info(f"FFmpeg stderr: {result.stderr[:500] if result.stderr else 'None'}")
-
-                                if result.returncode != 0:
-                                    st.error(f"❌ FFmpeg error: {result.stderr[:200]}")
-                                    if os.path.exists(webm_path):
-                                        os.remove(webm_path)
-                                    raise RuntimeError(f"FFmpeg conversion failed: {result.stderr}")
-
-                                # Verify wav file was created
-                                if not os.path.exists(wav_path):
-                                    st.error(f"❌ WAV file not created. Path: {wav_path}")
-                                    if os.path.exists(webm_path):
-                                        os.remove(webm_path)
-                                    raise RuntimeError(f"FFmpeg did not create output file: {wav_path}")
-
-                                logger.info(f"WAV file created successfully: {wav_path}")
-                                st.info(f"✅ Audio converted (webm → wav)")
-
-                            except subprocess.TimeoutExpired:
-                                st.error("❌ Audio conversion timed out")
-                                if os.path.exists(webm_path):
-                                    os.remove(webm_path)
-                                raise
-                            except Exception as ffmpeg_error:
-                                st.error(f"❌ Error converting audio: {str(ffmpeg_error)}")
-                                logger.error(f"FFmpeg error details: {ffmpeg_error}")
-                                if os.path.exists(webm_path):
-                                    os.remove(webm_path)
-                                raise
-                        else:
-                            st.error("❌ FFmpeg not found. Please ensure FFmpeg is installed.")
-                            if os.path.exists(webm_path):
-                                os.remove(webm_path)
-                            raise RuntimeError("FFmpeg is not installed")
-
-                        # Transcribe the converted audio
                         try:
-                            import time
-                            import shutil
+                            # Use Whisper CLI directly via command line
+                            import json
+                            result = subprocess.run(
+                                ["whisper", webm_path, "--model", "base", "--output_format", "json", "--output_dir", ".", "--verbose", "False"],
+                                capture_output=True,
+                                text=True,
+                                timeout=60
+                            )
 
-                            # Wait a moment for Windows file system to finalize the file
-                            logger.info(f"Waiting for file system to finalize WAV file...")
-                            time.sleep(0.5)
-
-                            # Verify WAV file exists and is readable before transcribing
-                            if not os.path.exists(wav_path):
-                                st.error(f"❌ WAV file disappeared: {wav_path}")
-                                raise FileNotFoundError(f"WAV file not found at {wav_path}")
-
-                            file_size = os.path.getsize(wav_path)
-                            logger.info(f"WAV file size: {file_size} bytes")
-
-                            if file_size == 0:
-                                st.error(f"❌ WAV file is empty: {wav_path}")
-                                raise RuntimeError(f"FFmpeg created empty file: {wav_path}")
-
-                            # Copy to a simpler path to avoid Windows path encoding issues
-                            # Some versions of Whisper have issues with complex temp paths
-                            simple_wav_path = "audio_temp.wav"
-                            shutil.copy2(wav_path, simple_wav_path)
-                            logger.info(f"Copied WAV to simpler path: {simple_wav_path}")
-
-                            try:
-                                logger.info(f"Starting transcription of {simple_wav_path}")
-                                handler = initialize_audio_handler()
-                                transcription_result = handler.audio_processor.transcribe(
-                                    simple_wav_path,
-                                    language=None
-                                )
-                                st.success("✅ Audio captured and transcribed!")
-                            finally:
-                                # Clean up the simple path copy
-                                if os.path.exists(simple_wav_path):
-                                    os.remove(simple_wav_path)
+                            if result.returncode == 0:
+                                # Parse the JSON output from Whisper
+                                json_file = webm_path.replace(".webm", ".json")
+                                if os.path.exists(json_file):
+                                    with open(json_file, 'r') as f:
+                                        whisper_output = json.load(f)
+                                        transcribed_text = whisper_output.get("text", "").strip()
+                                        if transcribed_text:
+                                            st.success("✅ Audio transcribed!")
+                                        else:
+                                            st.warning("⚠️ No speech detected in audio")
+                                    # Clean up JSON file
+                                    os.remove(json_file)
+                            else:
+                                st.error(f"Error: {result.stderr[:200]}")
                         finally:
-                            # Clean up temp files
                             if os.path.exists(webm_path):
                                 os.remove(webm_path)
-                            if os.path.exists(wav_path):
-                                os.remove(wav_path)
+
                 except Exception as e:
-                    st.error(f"Error processing audio: {str(e)}")
+                    st.error(f"Error: {str(e)}")
+                    logger.error(f"Audio transcription error: {e}")
+
         except ImportError:
-            st.info("📍 Audio recording not available. Use file upload instead.")
+            st.info("📍 Audio recording not available")
 
     with col2:
         st.markdown("#### 📁 Upload Audio File")
@@ -678,45 +609,59 @@ def main():
         )
 
         if uploaded_audio:
-            audio_file = uploaded_audio
-            # Save uploaded audio to temporary file for transcription
             try:
                 with st.spinner("🔄 Transcribing audio..."):
-                    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmp_file:
-                        tmp_file.write(uploaded_audio.getbuffer())
-                        tmp_audio_path = tmp_file.name
+                    # Save uploaded file temporarily
+                    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as f:
+                        f.write(uploaded_audio.getbuffer())
+                        audio_path = f.name
 
                     try:
-                        handler = initialize_audio_handler()
-                        transcription_result = handler.audio_processor.transcribe(
-                            tmp_audio_path,
-                            language=None
+                        # Use Whisper CLI
+                        import json
+                        result = subprocess.run(
+                            ["whisper", audio_path, "--model", "base", "--output_format", "json", "--output_dir", ".", "--verbose", "False"],
+                            capture_output=True,
+                            text=True,
+                            timeout=60
                         )
-                        st.success("✅ Audio loaded!")
-                    finally:
-                        # Clean up temp file
-                        if os.path.exists(tmp_audio_path):
-                            os.remove(tmp_audio_path)
-            except Exception as e:
-                st.error(f"Error transcribing: {str(e)}")
 
-    # Show transcription immediately if available
-    if transcription_result:
+                        if result.returncode == 0:
+                            json_file = audio_path.replace(".wav", ".json")
+                            if os.path.exists(json_file):
+                                with open(json_file, 'r') as f:
+                                    whisper_output = json.load(f)
+                                    transcribed_text = whisper_output.get("text", "").strip()
+                                    if transcribed_text:
+                                        st.success("✅ Audio transcribed!")
+                                    else:
+                                        st.warning("⚠️ No speech detected")
+                                os.remove(json_file)
+                        else:
+                            st.error(f"Error: {result.stderr[:200]}")
+                    finally:
+                        if os.path.exists(audio_path):
+                            os.remove(audio_path)
+
+            except Exception as e:
+                st.error(f"Error: {str(e)}")
+                logger.error(f"Audio upload error: {e}")
+
+    # If audio was transcribed, show it and add to query
+    if transcribed_text:
         st.markdown("---")
         st.markdown("### 📝 What you said:")
-        lang_name = LANGUAGES.get(transcription_result.get("language", "en"), "Unknown")
         st.markdown(
             f"""
             <div class='card'>
-                <span class='language-badge'>{lang_name}</span>
-                <p style='margin-top: 10px; font-size: 1.1em; line-height: 1.6;'><strong>{transcription_result['text']}</strong></p>
+                <p style='margin: 0; font-size: 1.1em; line-height: 1.6;'><strong>{transcribed_text}</strong></p>
             </div>
             """,
             unsafe_allow_html=True,
         )
-        # Use transcription as query if text input is empty
+        # Auto-populate query with transcribed text
         if not query_text.strip():
-            query_text = transcription_result['text']
+            query_text = transcribed_text
 
     st.markdown("---")
 
