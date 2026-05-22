@@ -61,7 +61,6 @@ class OllamaClient(LLMClient):
 
         try:
             import requests
-
             self.requests = requests
         except ImportError:
             raise ImportError("requests library required for Ollama client")
@@ -123,7 +122,7 @@ class OllamaClient(LLMClient):
         try:
             response = self.requests.get(f"{self.base_url}/api/tags", timeout=5)
             return response.status_code == 200
-        except:
+        except Exception:
             return False
 
 
@@ -226,7 +225,6 @@ class ResponseGenerator:
         self,
         query: str,
         context_chunks: List[Dict],
-        language: str = "en",
         temperature: float = 0.7,
     ) -> Dict:
         """
@@ -235,7 +233,6 @@ class ResponseGenerator:
         Args:
             query: User query
             context_chunks: Retrieved context chunks
-            language: Response language
             temperature: LLM temperature
 
         Returns:
@@ -247,29 +244,35 @@ class ResponseGenerator:
         if not query or not query.strip():
             raise ValueError("Query cannot be empty")
 
-        logger.info(f"Generating response for query in {language}")
+        logger.info("Generating response for query")
 
         # Check if we have sufficient context
         if not context_chunks:
             logger.warning("No context chunks provided")
-            response_text = PromptTemplates.get_insufficient_context_response(language)
-
+            response_text = (
+                "I do not have enough information to answer this question. "
+                "Please consult a local agricultural expert or contact your nearest "
+                "agricultural extension center."
+            )
             return {
                 "query": query,
                 "response": response_text,
-                "language": language,
                 "num_context_chunks": 0,
                 "sources": [],
                 "confidence": "low",
             }
 
         # Assemble context
-        context_text = PromptTemplates.assemble_context(context_chunks)
-        sources = PromptTemplates.assemble_sources(context_chunks)
+        context_text = self._assemble_context(context_chunks)
+        sources = [c.get("filename", "Unknown") for c in context_chunks]
 
-        # Get system and retrieval prompts
-        system_prompt = PromptTemplates.get_system_prompt(language)
-        retrieval_template = PromptTemplates.get_retrieval_template(language)
+        # Create system and retrieval prompts
+        system_prompt = (
+            "You are an agricultural expert providing farming advice based on provided context."
+        )
+        retrieval_template = (
+            "Based on the following context:\n\n{context}\n\nAnswer this question: {query}"
+        )
 
         # Format prompt
         formatted_prompt = retrieval_template.format(context=context_text, query=query)
@@ -281,14 +284,13 @@ class ResponseGenerator:
             )
 
             # Check for hallucination indicators
-            confidence = self._assess_confidence(response_text, context_chunks, language)
+            confidence = self._assess_confidence(response_text, context_chunks)
 
             return {
                 "query": query,
                 "response": response_text,
-                "language": language,
                 "num_context_chunks": len(context_chunks),
-                "sources": [c.get("filename", "Unknown") for c in context_chunks],
+                "sources": sources,
                 "confidence": confidence,
             }
 
@@ -296,19 +298,37 @@ class ResponseGenerator:
             logger.error(f"Response generation failed: {str(e)}")
             raise
 
-    def _assess_confidence(self, response: str, context_chunks: List[Dict], language: str) -> str:
+    def _assemble_context(self, context_chunks: List[Dict]) -> str:
+        """
+        Assemble context text from retrieved chunks.
+
+        Args:
+            context_chunks: List of retrieved chunk dicts
+
+        Returns:
+            Assembled context string
+        """
+        parts = []
+        for i, chunk in enumerate(context_chunks, 1):
+            content = chunk.get("content", "").strip()
+            filename = chunk.get("filename", "Unknown")
+            parts.append(f"[Source {i}: {filename}]\n{content}")
+        return "\n\n".join(parts)
+
+    def _assess_confidence(
+        self, response: str, context_chunks: List[Dict], language: str = "en"
+    ) -> str:
         """
         Assess confidence in generated response.
 
         Args:
             response: Generated response
             context_chunks: Context used for generation
-            language: Response language
+            language: Response language code (en, hi, pa)
 
         Returns:
             Confidence level: high, medium, low
         """
-        # Simple heuristic: check if response contains phrases indicating uncertainty
         uncertainty_phrases = {
             "en": ["i don't know", "no information", "not available", "insufficient"],
             "hi": ["नहीं पता", "कोई जानकारी नहीं", "उपलब्ध नहीं", "अपर्याप्त"],
@@ -322,7 +342,6 @@ class ResponseGenerator:
             if phrase.lower() in response_lower:
                 return "low"
 
-        # More context chunks → higher confidence
         if len(context_chunks) >= 5:
             return "high"
         elif len(context_chunks) >= 3:
@@ -377,9 +396,7 @@ def create_generator(provider: Optional[str] = None, **kwargs) -> ResponseGenera
 
 
 if __name__ == "__main__":
-    # Example usage
     try:
-        # Try Ollama first
         print("Testing Ollama client...")
         ollama_client = OllamaClient(model_name="mistral")
 
@@ -394,9 +411,7 @@ if __name__ == "__main__":
                 }
             ]
 
-            result = generator.generate(
-                "How to control wheat pests?", context_chunks, language="en"
-            )
+            result = generator.generate("How to control wheat pests?", context_chunks)
 
             print("Query:", result["query"])
             print("Response:", result["response"])

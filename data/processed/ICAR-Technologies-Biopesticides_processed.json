@@ -1,3597 +1,741 @@
 {
   "source_file": "ICAR-Technologies-Biopesticides.pdf",
-  "total_chunks": 133,
+  "total_chunks": 147,
   "chunks": [
     {
       "content": "Printed:\nJuly, 2021",
       "section": "Printed:",
-      "tokens": 4,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_0",
-      "chunk_index": 0
+      "tokens": 4
     },
     {
       "content": "Citation:\nSaxena A.K., Chakdar H., Kumar M., Rajawat M.V.S., Dubey S.C. and Sharma T.R. 2021.\nICAR Technologies: Biopesticides for Eco-friendly Pest Management. Indian Council of\nAgricultural Research, New Delhi\nConceived by:\nDr. Trilochan Mohapatra, Secretary, Department of Agricultural Research and\nEducation and Director General, Indian Council of Agricultural Research,\nKrishi Bhavan, New Delhi 110 001\nCompiled by:\nDr. Anil Kumar Saxena, Director, ICAR-National Bureau of Agriculturally Important\nMicroorganisms, Kushmaur, Mau 275 103\nEdited by:\nA.K. Saxena, H. Chakdar, Kumar M., M.V.S. Rajawat, S.C. Dubey and T.R. Sharma",
       "section": "Citation:",
-      "tokens": 157,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_1",
-      "chunk_index": 1
+      "tokens": 157
     },
     {
       "content": "Contributors:\nAll the developers of the Biopesticides",
       "section": "Contributors:",
-      "tokens": 13,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_2",
-      "chunk_index": 2
+      "tokens": 13
     },
     {
       "content": "Secretarial Assistance:\nMr. Siddharth Arora, Personal Assistant, ICAR-NBAIM\nPublished by:\nDirectorate of Knowledge Management in Agriculture, Indian Council of Agricultural\nResearch, KAB-1, Pusa Campus, New Delhi 110 012.\nThis publication may be used/shared freely for non-commercial purposes, with proper\nattribution to the publisher.\n\niii",
       "section": "Secretarial Assistance:",
-      "tokens": 85,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_3",
-      "chunk_index": 3
+      "tokens": 85
     },
     {
-      "content": "FOREWORD\n\nFOREWORD\nIndiscriminate use of chemical fertilizers and pesticides post\ngreen revolution taught us a tough lesson that sustainable utilization of\nthe resources is the way forward for prolonged growth in agricultural\nproduction sans deterioration of soil health. Just as biofertilizers are\nemerging as green alternative to chemical fertilizers, biopesticides\nhave a huge role to play in sustainable management of crop pests\nand pathogens. In contrast to chemical pesticides, application of\necofriendly biopesticides does not lead to development of any\nresistance in pests and pathogens. Still this sustainable alternative is\nstruggling to find its place in the market over its chemical counterpart\nowing to technological challenges and acceptance among the farming\ncommunity. National Policy for Farmers (NPF), 2007, which aims to improve\neconomic viability of farming and increase net income of farmers,\nstrongly recommends the promotion of biopesticides. In spite of these\nefforts the biopesticides represent only 4.2% of the overall pesticide\nmarket in India compared to 40% in USA and 20% each in Europe\nand Oceanic countries. Indian Council of Agricultural Research, recognizing the\nimportance of biopesticides started All India Coordinated Research\nProject (AICRP) on Biological control of Crop Pests and Weeds\nway back in 1977. Since the inception of this project different\nICAR institutes accelerated the works on biocontrol and developed\nbiopesticides against a number of crop pests and diseases.",
+      "content": "FOREWORD\n\nFOREWORD\nIndiscriminate use of chemical fertilizers and pesticides post\ngreen revolution taught us a tough lesson that sustainable utilization of\nthe resources is the way forward for prolonged growth in agricultural\nproduction sans deterioration of soil health. Just as biofertilizers are\nemerging as green alternative to chemical fertilizers, biopesticides\nhave a huge role to play in sustainable management of crop pests\nand pathogens. In contrast to chemical pesticides, application of\necofriendly biopesticides does not lead to development of any\nresistance in pests and pathogens. Still this sustainable alternative is\nstruggling to find its place in the market over its chemical counterpart\nowing to technological challenges and acceptance among the farming\ncommunity.",
       "section": "FOREWORD",
-      "tokens": 378,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_4",
-      "chunk_index": 4
+      "tokens": 196
     },
     {
-      "content": "FOREWORD\n\nesticides started All India Coordinated Research\nProject (AICRP) on Biological control of Crop Pests and Weeds\nway back in 1977. Since the inception of this project different\nICAR institutes accelerated the works on biocontrol and developed\nbiopesticides against a number of crop pests and diseases. \n\nAt present\nmore than 970 biopesticide products have been registered with\nCentral Insecticide Board and Registration Committee (CIB & RC)\nwhich is a governing body for insecticide registration in India. Most\nbiopesticide producing companies are dependent on either a single\nstrain or a handful of microbes for commercial production. Most of\n\nthe times, the products developed using these strains have limited\napplication and their activity range is narrow. To overcome this issue,\nthere should be many bioagents available that are active against a\nwide range of pests and pathogens. Once there is availability of many\nbioagents to select upon, the challenges faced by biopesticides in the\nmarket can be handled well. This compendium entitled “ICAR Technologies: Biopesticides\nfor Eco-friendly Pest Management” is a compilation of microbial\nformulations developed by ICAR against crop pests and pathogens\nthat are at various stages of registration and commercialization. It can\nbe a useful source of information for students, researchers, scientists,\nentrepreneurs and most importantly farming community and policy\nmakers. Dated: 30th July, 2021\n(T.",
+      "content": "FOREWORD\n\nical challenges and acceptance among the farming\ncommunity. \n\nNational Policy for Farmers (NPF), 2007, which aims to improve\neconomic viability of farming and increase net income of farmers,\nstrongly recommends the promotion of biopesticides. In spite of these\nefforts the biopesticides represent only 4.2% of the overall pesticide\nmarket in India compared to 40% in USA and 20% each in Europe\nand Oceanic countries. Indian Council of Agricultural Research, recognizing the\nimportance of biopesticides started All India Coordinated Research\nProject (AICRP) on Biological control of Crop Pests and Weeds\nway back in 1977.",
       "section": "FOREWORD",
-      "tokens": 365,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_5",
-      "chunk_index": 5
+      "tokens": 157
     },
     {
-      "content": "FOREWORD\n\nons developed by ICAR against crop pests and pathogens\nthat are at various stages of registration and commercialization. It can\nbe a useful source of information for students, researchers, scientists,\nentrepreneurs and most importantly farming community and policy\nmakers. Dated: 30th July, 2021\n(T. \n\nMohapatra)\nNew Delhi\n\nv\npreface\nIn India, crop pests and pathogens are implicated in 15–20% yield loss in\nmajor field and horticultural crops. The profile of key pests and pathogens has been\nchanging rapidly owing to climate change, indiscriminate use of chemical pesticides\nand other anthropogenic interventions. Non judicious use of chemical pesticides\nhas led to deterioration of soil health and environmental pollution. Biopesticides,\nin contrast to their chemical alternatives can help to manage pests and pathogens\nwithout negatively influencing the soil health and environment. Govt. of India has\nencouraged the use of biopesticides by including them as a component in several\nagricultural programs. Still, biopesticides are facing many challenges at farm level\ndue to declining interest among farmers. Application of biopesticides like Bacillus thuringiensis, Trichoderma,\nPseudomonas, Metarhizium, Beauveria and others can have significant effect on crop\nprotection in a sustainable manner. Microbial biopesticides in the Indian market\ncome under different categories viz., fungi, bacteria, and viruses. At present, there\nare about 20 microorganisms registered as biopesticides with Central Insecticide\nBoard and Registration Committee (CIB & RC).",
+      "content": "FOREWORD\n\niological control of Crop Pests and Weeds\nway back in 1977. \n\nSince the inception of this project different\nICAR institutes accelerated the works on biocontrol and developed\nbiopesticides against a number of crop pests and diseases. At present\nmore than 970 biopesticide products have been registered with\nCentral Insecticide Board and Registration Committee (CIB & RC)\nwhich is a governing body for insecticide registration in India. Most\nbiopesticide producing companies are dependent on either a single\nstrain or a handful of microbes for commercial production. Most of\n\nthe times, the products developed using these strains have limited\napplication and their activity range is narrow.",
       "section": "FOREWORD",
-      "tokens": 392,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_6",
-      "chunk_index": 6
+      "tokens": 174
     },
     {
-      "content": "FOREWORD\n\nn crop\nprotection in a sustainable manner. Microbial biopesticides in the Indian market\ncome under different categories viz., fungi, bacteria, and viruses. At present, there\nare about 20 microorganisms registered as biopesticides with Central Insecticide\nBoard and Registration Committee (CIB & RC). \n\nIndian Council of Agricultural Research (ICAR) through its constituent institutes\nis engaged in development and evaluation of microbial biopesticides since last few\ndecades. Some of the biopescticide formulations developed at ICAR are being validated\nthrough the network of AICRP-Biological Control of Crop Pests and Diseases. The\nrecent invasions of fall armyworm (FAW) infesting maize and devastating infection\nof banana by Fusarium cubense TR4 have been successfully managed with microbial\nagents developed by ICAR. This compendium on “ICAR Technologies: Biopesticides for Eco-friendly Pest\nManagement” is a timely initiative as microorganisms will be playing a vital role in\nshaping the future of agriculture. With great pleasure I extend my sincere thanks\nto Dr. T. Mohapatra, Hon'ble Secretary, Department of Agricultural Research and\nEducation and Director General, ICAR for guidance and support in preparation of\nthis compendium. I congratulate all the developers of technologies and thank other\neditors of this compendium. (T.R. Sharma)\nDeputy Director General (Crop Science)\nIndian Council of Agricultural Research\n\nvii",
+      "content": "FOREWORD\n\nave limited\napplication and their activity range is narrow. \n\nTo overcome this issue,\nthere should be many bioagents available that are active against a\nwide range of pests and pathogens. Once there is availability of many\nbioagents to select upon, the challenges faced by biopesticides in the\nmarket can be handled well. This compendium entitled “ICAR Technologies: Biopesticides\nfor Eco-friendly Pest Management” is a compilation of microbial\nformulations developed by ICAR against crop pests and pathogens\nthat are at various stages of registration and commercialization. It can\nbe a useful source of information for students, researchers, scientists,\nentrepreneurs and most importantly farming community and policy\nmakers. Dated: 30th July, 2021\n(T.",
       "section": "FOREWORD",
-      "tokens": 360,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_7",
-      "chunk_index": 7
+      "tokens": 191
+    },
+    {
+      "content": "FOREWORD\n\ning community and policy\nmakers. Dated: 30th July, 2021\n(T. \n\nMohapatra)\nNew Delhi\n\nv\npreface\nIn India, crop pests and pathogens are implicated in 15–20% yield loss in\nmajor field and horticultural crops. The profile of key pests and pathogens has been\nchanging rapidly owing to climate change, indiscriminate use of chemical pesticides\nand other anthropogenic interventions. Non judicious use of chemical pesticides\nhas led to deterioration of soil health and environmental pollution. Biopesticides,\nin contrast to their chemical alternatives can help to manage pests and pathogens\nwithout negatively influencing the soil health and environment. Govt. of India has\nencouraged the use of biopesticides by including them as a component in several\nagricultural programs.",
+      "section": "FOREWORD",
+      "tokens": 194
+    },
+    {
+      "content": "FOREWORD\n\nuding them as a component in several\nagricultural programs. \n\nStill, biopesticides are facing many challenges at farm level\ndue to declining interest among farmers. Application of biopesticides like Bacillus thuringiensis, Trichoderma,\nPseudomonas, Metarhizium, Beauveria and others can have significant effect on crop\nprotection in a sustainable manner. Microbial biopesticides in the Indian market\ncome under different categories viz., fungi, bacteria, and viruses. At present, there\nare about 20 microorganisms registered as biopesticides with Central Insecticide\nBoard and Registration Committee (CIB & RC). Indian Council of Agricultural Research (ICAR) through its constituent institutes\nis engaged in development and evaluation of microbial biopesticides since last few\ndecades.",
+      "section": "FOREWORD",
+      "tokens": 199
+    },
+    {
+      "content": "FOREWORD\n\naluation of microbial biopesticides since last few\ndecades. \n\nSome of the biopescticide formulations developed at ICAR are being validated\nthrough the network of AICRP-Biological Control of Crop Pests and Diseases. The\nrecent invasions of fall armyworm (FAW) infesting maize and devastating infection\nof banana by Fusarium cubense TR4 have been successfully managed with microbial\nagents developed by ICAR. This compendium on “ICAR Technologies: Biopesticides for Eco-friendly Pest\nManagement” is a timely initiative as microorganisms will be playing a vital role in\nshaping the future of agriculture. With great pleasure I extend my sincere thanks\nto Dr. T.",
+      "section": "FOREWORD",
+      "tokens": 167
+    },
+    {
+      "content": "FOREWORD\n\ne. With great pleasure I extend my sincere thanks\nto Dr. T. \n\nMohapatra, Hon'ble Secretary, Department of Agricultural Research and\nEducation and Director General, ICAR for guidance and support in preparation of\nthis compendium. I congratulate all the developers of technologies and thank other\neditors of this compendium. (T.R. Sharma)\nDeputy Director General (Crop Science)\nIndian Council of Agricultural Research\n\nvii",
+      "section": "FOREWORD",
+      "tokens": 107
     },
     {
       "content": "CONTENTS\nForeword-Secretary, DARE and DG, ICAR\niii\nPreface\nv\nIntroduction\nix\nAbbreviations\nx",
       "section": "CONTENTS",
-      "tokens": 23,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_8",
-      "chunk_index": 8
+      "tokens": 23
     },
     {
       "content": "1.\nShatpada Aphid Kill\n01",
       "section": "1.\nShatpada Aphid Kill",
-      "tokens": 6,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_9",
-      "chunk_index": 9
+      "tokens": 6
     },
     {
       "content": "2.\nShatpada Rugose Whitefly Kill\n02",
       "section": "2.\nShatpada Rugose Whitefly Kill",
-      "tokens": 8,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_10",
-      "chunk_index": 10
+      "tokens": 8
     },
     {
       "content": "3.\nShatpada Sucking pest Hit\n03",
       "section": "3.\nShatpada Sucking pest Hit",
-      "tokens": 7,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_11",
-      "chunk_index": 11
+      "tokens": 7
     },
     {
       "content": "4.\nShatpada Grubicide\n04",
       "section": "4.\nShatpada Grubicide",
-      "tokens": 6,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_12",
-      "chunk_index": 12
+      "tokens": 6
     },
     {
       "content": "5.\nShatpada Larvicide\n05",
       "section": "5.\nShatpada Larvicide",
-      "tokens": 6,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_13",
-      "chunk_index": 13
+      "tokens": 6
     },
     {
       "content": "6.\nShatpada Armour\n06",
       "section": "6.\nShatpada Armour",
-      "tokens": 5,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_14",
-      "chunk_index": 14
+      "tokens": 5
     },
     {
       "content": "7.\nShatpada Terminator\n07",
       "section": "7.\nShatpada Terminator",
-      "tokens": 6,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_15",
-      "chunk_index": 15
+      "tokens": 6
     },
     {
       "content": "8.\nShatpada All Rounder\n08",
       "section": "8.\nShatpada All Rounder",
-      "tokens": 6,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_16",
-      "chunk_index": 16
+      "tokens": 6
     },
     {
       "content": "9.\nShatpada Master Blaster\n09",
       "section": "9.\nShatpada Master Blaster",
-      "tokens": 7,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_17",
-      "chunk_index": 17
+      "tokens": 7
     },
     {
       "content": "10.\nICAR-FUSICONT\n10",
       "section": "10.\nICAR-FUSICONT",
-      "tokens": 5,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_18",
-      "chunk_index": 18
+      "tokens": 5
     },
     {
       "content": "11.\nEco-Pesticide\n11",
       "section": "11.\nEco-Pesticide",
-      "tokens": 5,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_19",
-      "chunk_index": 19
+      "tokens": 5
     },
     {
       "content": "12.\nBio-Pulse\n12",
       "section": "12.\nBio-Pulse",
-      "tokens": 4,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_20",
-      "chunk_index": 20
+      "tokens": 4
     },
     {
       "content": "13.\nMaru sena 1\n13",
       "section": "13.\nMaru sena 1",
-      "tokens": 4,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_21",
-      "chunk_index": 21
+      "tokens": 4
     },
     {
       "content": "14.\nMaru sena 3\n14",
       "section": "14.\nMaru sena 3",
-      "tokens": 4,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_22",
-      "chunk_index": 22
+      "tokens": 4
     },
     {
       "content": "15.\nMishrit Maru sena\n15",
       "section": "15.\nMishrit Maru sena",
-      "tokens": 6,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_23",
-      "chunk_index": 23
+      "tokens": 6
     },
     {
       "content": "16.\nNRRI-BBLF\n16",
       "section": "16.\nNRRI-BBLF",
-      "tokens": 4,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_24",
-      "chunk_index": 24
+      "tokens": 4
     },
     {
       "content": "17.\nNRRI-MALF\n17",
       "section": "17.\nNRRI-MALF",
-      "tokens": 4,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_25",
-      "chunk_index": 25
+      "tokens": 4
     },
     {
       "content": "18.\nTriguard Th-L\n18",
       "section": "18.\nTriguard Th-L",
-      "tokens": 5,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_26",
-      "chunk_index": 26
+      "tokens": 5
     },
     {
       "content": "19.\nTriguard Th-P\n19",
       "section": "19.\nTriguard Th-P",
-      "tokens": 5,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_27",
-      "chunk_index": 27
+      "tokens": 5
     },
     {
       "content": "20.\nTriguard Ta-P\n20\n21\nBioguard Bt-L\n21\n\nviii",
       "section": "20.\nTriguard Ta-P",
-      "tokens": 11,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_28",
-      "chunk_index": 28
+      "tokens": 11
     },
     {
       "content": "22.\nMycoguard Bb-L\n22",
       "section": "22.\nMycoguard Bb-L",
-      "tokens": 5,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_29",
-      "chunk_index": 29
+      "tokens": 5
     },
     {
       "content": "23.\nARKA Krishi Vriddhi\n23",
       "section": "23.\nARKA Krishi Vriddhi",
-      "tokens": 6,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_30",
-      "chunk_index": 30
+      "tokens": 6
     },
     {
       "content": "24.\nARKA Krishi Veera\n24",
       "section": "24.\nARKA Krishi Veera",
-      "tokens": 6,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_31",
-      "chunk_index": 31
+      "tokens": 6
     },
     {
       "content": "25.\nARKA Krishi Samrakshak\n25",
       "section": "25.\nARKA Krishi Samrakshak",
-      "tokens": 7,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_32",
-      "chunk_index": 32
+      "tokens": 7
     },
     {
       "content": "26.\nARKA Krishi Rakshak\n26",
       "section": "26.\nARKA Krishi Rakshak",
-      "tokens": 6,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_33",
-      "chunk_index": 33
+      "tokens": 6
     },
     {
       "content": "27.\nARKA Krishi Kawach\n27",
       "section": "27.\nARKA Krishi Kawach",
-      "tokens": 6,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_34",
-      "chunk_index": 34
+      "tokens": 6
     },
     {
       "content": "28.\nARKA Krishi All Rounder and ARKA Plant Growth Booster\n28",
       "section": "28.\nARKA Krishi All Rounder and ARKA Plant Growth Booster",
-      "tokens": 15,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_35",
-      "chunk_index": 35
+      "tokens": 15
     },
     {
       "content": "29.\nManjari Vineguard\n29",
       "section": "29.\nManjari Vineguard",
-      "tokens": 6,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_36",
-      "chunk_index": 36
+      "tokens": 6
     },
     {
       "content": "30.\nManjari Rakshak\n30",
       "section": "30.\nManjari Rakshak",
-      "tokens": 5,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_37",
-      "chunk_index": 37
+      "tokens": 5
     },
     {
-      "content": "31.\nPusa 5SD\n31\n\nix\nIntroduction\nPests and pathogens cause a major loss of agricultural produce\nevery year. Management of these menace using chemical pesticides\nand fungicides has come at the cost of long term agricultural\nsustainability. This non-judicious use of agrochemicals coupled\nwith climate change worsened the situation leading to changes\nin pest and pathogen behaviour and development of resistance.\nMicroorganisms due to their extraordinary metabolic diversity are\nknown to produce a battery of secondary metabolites including\nantimicrobial peptides, volatiles, toxins and enzymes. Many such\nmicroorganisms have been substantially utilized as biopesticides to\ncontrol several phytopathogenic fungi, bacteria, nematodes and insect\npests. Unlike their chemical counter parts, biopesticides aid to manage\npests and pathogens without any adverse effects on soil health and\nenvironment. Microbial biopesticides developed with microorganisms\nlike Trichoderma, Beauveria, Metarhizium, Bacillus, Pseudomonas are\nknown for their role in management of pests and pathogens. With the\nincreasing reports on emerging pests and pathogens, the biopesticides\nare expected to play a major role in sustainable management. Currently,\nabout 20 microorganisms are registered as biopesticides with Central\nInsecticide Board and Registration Committee (CIB & RC).\nICAR through its constituent institutes and All India Coordinated\nResearch Projects (AICRPs) has developed and validated various\nformulations of biopesticides. Challenges faced by biopesticides are\nlower efficacy and shelf life, narrow host range, inability to reproduce\nthe results under field conditions. Constant efforts are being made\nby ICAR to overcome these challenges. This bulletin is a compilation\nof 31 biopesticides developed by ICAR that are at various stages of\nregistration and commercialization.\n\nAbbreviations\nAAU\n:\nAnand Agricultural University",
+      "content": "31.\nPusa 5SD\n\n31. Pusa 5SD\n31\n\nix\nIntroduction\nPests and pathogens cause a major loss of agricultural produce\nevery year. Management of these menace using chemical pesticides\nand fungicides has come at the cost of long term agricultural\nsustainability. This non-judicious use of agrochemicals coupled\nwith climate change worsened the situation leading to changes\nin pest and pathogen behaviour and development of resistance. Microorganisms due to their extraordinary metabolic diversity are\nknown to produce a battery of secondary metabolites including\nantimicrobial peptides, volatiles, toxins and enzymes. Many such\nmicroorganisms have been substantially utilized as biopesticides to\ncontrol several phytopathogenic fungi, bacteria, nematodes and insect\npests.",
       "section": "31.\nPusa 5SD",
-      "tokens": 478,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_38",
-      "chunk_index": 38
+      "tokens": 190
+    },
+    {
+      "content": "31.\nPusa 5SD\n\nhytopathogenic fungi, bacteria, nematodes and insect\npests. \n\nUnlike their chemical counter parts, biopesticides aid to manage\npests and pathogens without any adverse effects on soil health and\nenvironment. Microbial biopesticides developed with microorganisms\nlike Trichoderma, Beauveria, Metarhizium, Bacillus, Pseudomonas are\nknown for their role in management of pests and pathogens. With the\nincreasing reports on emerging pests and pathogens, the biopesticides\nare expected to play a major role in sustainable management. Currently,\nabout 20 microorganisms are registered as biopesticides with Central\nInsecticide Board and Registration Committee (CIB & RC).",
+      "section": "31.\nPusa 5SD",
+      "tokens": 169
+    },
+    {
+      "content": "31.\nPusa 5SD\n\nal\nInsecticide Board and Registration Committee (CIB & RC). \n\nICAR through its constituent institutes and All India Coordinated\nResearch Projects (AICRPs) has developed and validated various\nformulations of biopesticides. Challenges faced by biopesticides are\nlower efficacy and shelf life, narrow host range, inability to reproduce\nthe results under field conditions. Constant efforts are being made\nby ICAR to overcome these challenges. This bulletin is a compilation\nof 31 biopesticides developed by ICAR that are at various stages of\nregistration and commercialization. Abbreviations\nAAU\n:\nAnand Agricultural University",
+      "section": "31.\nPusa 5SD",
+      "tokens": 159
     },
     {
       "content": "AICRP\n:\nAll India Coordinated Research Project",
       "section": "AICRP",
-      "tokens": 11,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_39",
-      "chunk_index": 39
+      "tokens": 11
     },
     {
       "content": "ANGRAU\n:\nAcharya N.G. Ranga Agricultural University\nARS\n:\nAgricultural Research Station\nBCCP&D\n:\nBiological Control of Crop Pests and Diseases",
       "section": "ANGRAU",
-      "tokens": 35,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_40",
-      "chunk_index": 40
+      "tokens": 35
     },
     {
       "content": "CAZRI\n:\nCentral Arid Zone Research Institute\ncfu\n:\nColony Forming Unit\nCIB&RC\n:\nCentral Insecticide Board and Registration Committee",
       "section": "CAZRI",
-      "tokens": 33,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_41",
-      "chunk_index": 41
+      "tokens": 33
     },
     {
       "content": "DARE\n:\nDepartment of Agricultural Research and Education\nFYM\n:\nFarmyard Manure\nGAU\n:\nGujarat Agricultural University",
       "section": "DARE",
-      "tokens": 29,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_42",
-      "chunk_index": 42
+      "tokens": 29
     },
     {
       "content": "IARI\n:\nIndian Agricultural Research Institute",
       "section": "IARI",
-      "tokens": 11,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_43",
-      "chunk_index": 43
+      "tokens": 11
     },
     {
       "content": "ICAR\n:\nIndian Council of Agricultural Research",
       "section": "ICAR",
-      "tokens": 11,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_44",
-      "chunk_index": 44
+      "tokens": 11
     },
     {
       "content": "IIHR\n:\nIndian Institute of Horticultural Research",
       "section": "IIHR",
-      "tokens": 12,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_45",
-      "chunk_index": 45
+      "tokens": 12
     },
     {
       "content": "IIOR\n:\nIndian Institute of Oilseeds Research",
       "section": "IIOR",
-      "tokens": 11,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_46",
-      "chunk_index": 46
+      "tokens": 11
     },
     {
       "content": "IISS\n:\nIndian Institute of Seed Science",
       "section": "IISS",
-      "tokens": 9,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_47",
-      "chunk_index": 47
+      "tokens": 9
     },
     {
       "content": "ITCC\n:\nIndian Type Culture Collection",
       "section": "ITCC",
-      "tokens": 9,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_48",
-      "chunk_index": 48
+      "tokens": 9
     },
     {
       "content": "JNKVV\n:\nJawaharlal Nehru Krishi Vishwavidyalaya\nKVK\n:\nKrishi Vigyan Kendra\nMCC\n:\nMicrobial Culture Collection\n\n\n(now National Centre for Microbial Resource)",
       "section": "JNKVV",
-      "tokens": 39,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_49",
-      "chunk_index": 49
+      "tokens": 39
     },
     {
       "content": "MTCC\n:\nMicrobial Type Culture Collection",
       "section": "MTCC",
-      "tokens": 10,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_50",
-      "chunk_index": 50
+      "tokens": 10
     },
     {
       "content": "MPKV\n:\nMahatma Phule Krishi Vidyapeeth",
       "section": "MPKV",
-      "tokens": 9,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_51",
-      "chunk_index": 51
+      "tokens": 9
     },
     {
       "content": "NAIMCC\n:\nNational Agriculturally Important Microbial Culture Collection",
       "section": "NAIMCC",
-      "tokens": 17,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_52",
-      "chunk_index": 52
+      "tokens": 17
     },
     {
       "content": "NBAIM\n:\nNational Bureau of Agriculturally Important Microorganisms",
       "section": "NBAIM",
-      "tokens": 16,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_53",
-      "chunk_index": 53
+      "tokens": 16
     },
     {
       "content": "NBAIR\n:\nNational Bureau of Agricultural Insect Resources\nNRC\n:\nNational Research Centre\n\nxi",
       "section": "NBAIR",
-      "tokens": 22,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_54",
-      "chunk_index": 54
+      "tokens": 22
     },
     {
       "content": "NRRI\n:\nNational Rice Research Institute",
       "section": "NRRI",
-      "tokens": 9,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_55",
-      "chunk_index": 55
+      "tokens": 9
     },
     {
       "content": "OUAT\n:\nOdisha University of Agriculture and Technology",
       "section": "OUAT",
-      "tokens": 13,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_56",
-      "chunk_index": 56
+      "tokens": 13
     },
     {
       "content": "PRSS\n:\nPulses Research Substation",
       "section": "PRSS",
-      "tokens": 8,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_57",
-      "chunk_index": 57
+      "tokens": 8
     },
     {
       "content": "RARS\n:\nRegional Agricultural Research Station",
       "section": "RARS",
-      "tokens": 11,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_58",
-      "chunk_index": 58
+      "tokens": 11
     },
     {
       "content": "SKUAST\n:\nSher-e-Kashmir University of Agricultural Science and\n\n\nTechnology",
       "section": "SKUAST",
-      "tokens": 18,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_59",
-      "chunk_index": 59
+      "tokens": 18
     },
     {
       "content": "TNAU\n:\nTamil Nadu Agricultural University\nUAS\n:\nUniversity of Agricultural Sciences\n\n1\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial Constituent: Beauveria bassiana ICAR-NBAIR\nBb-5a (NAIMCC-F-00396)\nyy\nType: Oil formulation; 1 × 108 cfu/mL\nyy\nShelf life: 12 months at 25-35°C\nyy\nTarget pests and crops: Aphids in chilli and brinjal (Aphis\ngossypii); cabbage (Brevicoryne brassicae) and cowpea (Aphis\ncraccivora)\nyy\nMethod of application: Three foliar sprays at 5 mL/L of water\nat 15 days interval after pest incidence; Water required for each\nspray: 200 L/ha\nyy\nTarget agroecological zones/states: Karnataka\nyy\nValidation: In Bengaluru, Karnataka during 2017 and 2018\nyy\nToxicological data required for CIB&RC registration yet to be\ngenerated\nyy\nCommercialization: Available for licensing\nyy",
       "section": "TNAU",
-      "tokens": 197,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_60",
-      "chunk_index": 60
+      "tokens": 197
     },
     {
       "content": "Benefits:\n\n\n50-83% pest reduction\n\n\n20-33% increase in yield",
       "section": "Benefits:",
-      "tokens": 16,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_61",
-      "chunk_index": 61
+      "tokens": 16
     },
     {
-      "content": "1. Shatpada Aphid Kill\nEffect of Shatpada Aphid Kill on brinjal aphid in Bengaluru, Karnataka during 2017\nEffect of Shatpada Aphid Kill on cabbage aphid in Bengaluru, Karnataka during 2017\nTreated\nTreated\nControl\nControl\nDirector, ICAR-National Bureau of Agricultural Insect Resources, Bengaluru-560024;\ne-Mail: director.nbair@icar.gov.in\n\n2\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial Constituent: Isaria\nfumosorosea\nICAR-NBAIR\nPfu5 (NAIMCC-F-02139)\nyy\nType: Talc; 1 × 108 cfu/g; Oil\nformulation; 1 × 108 cfu/mL\nyy\nShelf life: 12 months at\n25-35°C\nyy\nTarget pests and crops:\nRugose Spiralling Whitefly\n(Aleurodicus rugioperculatus)\nin coconut and oil palm\nyy\nMethod of application: Two-three foliar sprays at 5mL/L of water (or 5 g/L of\nwater for talc formulation) at 15 days interval after pest incidence; Water required\nfor each spray: 900 L/ha\nyy\nTarget agroecological zones/states: Karnataka, Andhra Pradesh, Tamil Nadu and\nKerala\nyy\nValidation: Coastal Andhra Pradesh on Coconut and Oil Palm for two years;\nCoastal and Southern Karnataka, Kerala and Tamil Nadu on Coconut for two years\nyy\nToxicological data required for CIB&RC registration yet to be generated\nyy\nCommercialization: Available for licensing\nyy",
+      "content": "1. Shatpada Aphid Kill\n\n1.",
       "section": "1. Shatpada Aphid Kill",
-      "tokens": 304,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_62",
-      "chunk_index": 62
+      "tokens": 6
+    },
+    {
+      "content": "1. Shatpada Aphid Kill\n\n1. Shatpada Aphid Kill\n\n1. \n\nShatpada Aphid Kill\nEffect of Shatpada Aphid Kill on brinjal aphid in Bengaluru, Karnataka during 2017\nEffect of Shatpada Aphid Kill on cabbage aphid in Bengaluru, Karnataka during 2017\nTreated\nTreated\nControl\nControl\nDirector, ICAR-National Bureau of Agricultural Insect Resources, Bengaluru-560024;\ne-Mail: director.nbair@icar.gov.in\n\n2\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial Constituent: Isaria\nfumosorosea\nICAR-NBAIR\nPfu5 (NAIMCC-F-02139)\nyy\nType: Talc; 1 × 108 cfu/g; Oil\nformulation; 1 × 108 cfu/mL\nyy\nShelf life: 12 months at\n25-35°C\nyy\nTarget pests and crops:\nRugose Spiralling Whitefly\n(Aleurodicus rugioperculatus)\nin coconut and oil palm\nyy\nMethod of application: Two-three foliar sprays at 5mL/L of water (or 5 g/L of\nwater for talc formulation) at 15 days interval after pest incidence; Water required\nfor each spray: 900 L/ha\nyy\nTarget agroecological zones/states: Karnataka, Andhra Pradesh, Tamil Nadu and\nKerala\nyy\nValidation: Coastal Andhra Pradesh on Coconut and Oil Palm for two years;\nCoastal and Southern Karnataka, Kerala and Tamil Nadu on Coconut for two years\nyy\nToxicological data required for CIB&RC registration yet to be generated\nyy\nCommercialization: Available for licensing\nyy",
+      "section": "1. Shatpada Aphid Kill",
+      "tokens": 317
     },
     {
       "content": "Benefits:\n\n\n70-75% pest reduction\nBefore spraying\nAfter spraying\nEffect of Shatpada Rugose Whitefly Kill on Coconut\n(var. ECT) Rugose spiralling whitefly (RSW)\nin coastal Andhra Pradesh during 2019\nInfection of NBAIR Pfu-5 on Coconut\nRSW eggs, third and fourth instar\nnymphs and adult",
       "section": "Benefits:",
-      "tokens": 71,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_63",
-      "chunk_index": 63
+      "tokens": 71
     },
     {
       "content": "2. Shatpada Rugose Whitefly Kill\nDirector, ICAR-National Bureau of Agricultural Insect Resources, Bengaluru-560024;\ne-Mail: director.nbair@icar.gov.in\n\n3\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial Constituent: Lecanicillium lecanii ICAR-NBAIR\nVl-8 (NAIMCC-F-01851)\nyy\nType: Oil formulation; 1 × 108 cfu/mL\nyy\nShelf life: 12 months at 25-35°C\nyy\nTarget pests and crops: Aphids in chilli (Aphis gossypii)\nand cowpea (Aphis craccivora)\nyy\nMethod of application: Three foliar sprays at 5 mL/L\nof water at 15 days interval after pest incidence; Water\nrequired for each spray: 900 L/ha\nyy\nTarget agroecological zones/states: Karnataka\nyy\nValidation: Bengaluru, Karnataka for two years\nyy\nToxicological data required for CIB&RC registration yet to\nbe generated\nyy\nCommercialization: Available for licensing\nyy",
       "section": "2. Shatpada Rugose Whitefly Kill",
-      "tokens": 201,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_64",
-      "chunk_index": 64
+      "tokens": 201
     },
     {
       "content": "Benefits:\n\n\n75-78% pest reduction\n\n\n24-27% increase in yield",
       "section": "Benefits:",
-      "tokens": 16,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_65",
-      "chunk_index": 65
+      "tokens": 16
     },
     {
       "content": "3. Shatpada Sucking pest Hit\nEffect of Shatpada Sucking pest Hit on chilli aphids in Bengaluru, Karnataka during 2018\nTreated\nControl\nDirector, ICAR-National Bureau of Agricultural Insect Resources, Bengaluru-560024;\ne-Mail: director.nbair@icar.gov.in\n\n4\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial Constituent: Metarhizium\nanisopliae\nICAR-NBAIR\nMa\n4\n(NAIMCC-F-01296)\nyy\nType: Talc formulation; 1 × 108 cfu/g\nyy\nShelf life: 12 months at 25-35°C\nyy\nTarget pest and crop: White grubs\n(Holotrichia spp.) in sugarcane\nyy\nMethod\nof\napplication:\nSoil\napplication at 2.5 kg mixed with 250\nkg farmyard manure per hectare. The\napplication has to be done twice in a year during June/July and July/August at 30\ndays interval\nyy\nTarget agroecological zones/states: Karnataka, Andhra Pradesh and Maharashtra\nyy\nValidation: AICRP-BCCP&D centres at UAS-Raichur, Karnataka and RARS,\nANGRAU, Anakapalle, Andhra Pradesh for two years\nyy\nToxicological data required for CIB&RC registration already generated\nyy\nCommercialization: Commercialized in 2020; Available for licensing\nyy",
       "section": "3. Shatpada Sucking pest Hit",
-      "tokens": 265,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_66",
-      "chunk_index": 66
+      "tokens": 265
     },
     {
       "content": "Benefits:\n\n\n75-96% pest reduction\n\n\n33-62% increase in yield",
       "section": "Benefits:",
-      "tokens": 16,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_67",
-      "chunk_index": 67
+      "tokens": 16
     },
     {
       "content": "4. Shatpada Grubicide\nEffect of Shatpada Grubicide on sugarcane (var. CO-86032) white grub in Raichur,\nKarnataka during 2017-18\nTreated\nControl\nDirector, ICAR-National Bureau of Agricultural Insect Resources, Bengaluru-560024;\ne-Mail: director.nbair@icar.gov.in\n\n5\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial Constituent: Metarhizium\nanisopliae ICAR-NBAIR Ma 35\n(NAIMCC-F-04130)\nyy\nType: Talc; 1 × 108 cfu/g; Oil\nformulation; 1 × 108 cfu/mL\nyy\nShelf life: 12 months at 25-35°C\nyy\nTarget pest and crop: Fall armyworm\n(Spodoptera frugiperda) in maize\nyy\nMethod of application: Three foliar sprays at 5 mL/L of water (or 5 g/L of water\nfor talc based formulation) at 20, 30 and 40 days after sowing; Water required for\neach spray: 200 L/ha\nyy\nTarget agroecological zones/states: Karnataka, Andhra Pradesh, Tamil Nadu and\nMaharashtra\nyy\nValidation: Southern Karnataka; AICRP-BCCP&D centres at RARS, ANGRAU,\nAnakapalle, Andhra Pradesh; TNAU, Coimbatore, Tamil Nadu and MPKV, Pune,\nMaharashtra for two years\nyy\nToxicological data required for CIB&RC registration already generated\nyy\nCommercialization: Available for licensing\nyy",
       "section": "4. Shatpada Grubicide",
-      "tokens": 281,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_68",
-      "chunk_index": 68
+      "tokens": 281
     },
     {
       "content": "Benefits:\n\n\n33-76% reduction in plant damage\n\n\n38-53% increase in yield",
       "section": "Benefits:",
-      "tokens": 18,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_69",
-      "chunk_index": 69
+      "tokens": 18
     },
     {
       "content": "5. Shatpada Larvicide\n Healthy larva Mycosed larva\nEffect of Shatpada Larvicide on maize\nFall armyworm in Bengaluru, Karnataka during 2019\nDirector, ICAR-National Bureau of Agricultural Insect Resources, Bengaluru-560024;\ne-Mail: director.nbair@icar.gov.in\n\n6\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial constituent: Bacillus thuringiensis var. kurstaki\nICAR-NBAIR BT25\nyy\nType: Liquid; 1 × 108 cfu/mL\nyy\nShelf life: 12 months at 25-35°C\nyy\nTarget pest and crop: Fall armyworm (Spodoptera\nfrugiperda) in maize\nyy\nMethod of application: Two to three foliar sprays at 10\nmL/L of water at 25, 35 and 45 days after sowing; Water\nrequired for each spray: 200 L/ha\nyy\nTarget agroecological zones/states: Karnataka, Andhra\nPradesh, Maharashtra, Tamil Nadu, Gujarat and Odisha\nyy\nValidation: Field evaluation carried out under AICRP-\nBCCP&D at Regional Agricultural Research Station (RARS), Anakapalle, Andhra\nPradesh, Odisha University of Agriculture & Technology (OUAT), Bhubaneshwar,\nOdisha and Anand Agricultural University (AAU), Anand, Gujarat during\n2018-19 and 2019-20\nyy\nToxicological data required for CIB&RC registration yet to be generated\nyy\nCommercialization: Available for licensing\nyy",
       "section": "5. Shatpada Larvicide",
-      "tokens": 298,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_70",
-      "chunk_index": 70
+      "tokens": 298
     },
     {
       "content": "Benefits:\n\n\n85-90% reduction in pest\n\n\n33-40% increase in yield",
       "section": "Benefits:",
-      "tokens": 16,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_71",
-      "chunk_index": 71
+      "tokens": 16
     },
     {
-      "content": "6. Shatpada Armour\nEffect of Shatpada Armour on maize at Anakapalle, Andhra Pradesh during 2018-19\nControl\nTreated\nDirector, ICAR-National Bureau of Agricultural Insect Resources, Bengaluru-560024;\ne-Mail: director.nbair@icar.gov.in\n\n7\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial constituent: Bacillus thuringiensis var. kurstaki\nICAR-NBAIR BTG4\nyy\nType: Liquid; 1 × 108 cfu/ml\nyy\nShelf life: 12 months at 25-35°C\nyy\nTarget pests and crops: Legume pod borer (Helicoverpa armigera,\nMaruca sp.), diamondback moth (Plutella xylostella), spotted\nstem borer (Chilo partellus), rice leaf folder (Cnaphalocrocis\nmedinalis), brinjal shoot borer (Leucinodes orbonalis) and red\nhairy caterpillar (Amsacta albistriga)\nyy\nMethod of application: Two to three foliar sprays at 20 mL/L of\nwater at pre flowering and post flowering stages; Water required\nfor each spray: 200 L/ha\nyy\nTarget agroecological zones/states: Karnataka, Andhra Pradesh, Maharashtra,\nTamil Nadu, Gujarat and Odisha\nyy\nValidation: The technology was tested at UAS, Raichur, Karnataka, AAU, Anand,\nGujarat, RARS, Anakapalle, Andhra Pradesh, TNAU, Coimbatore; Tamil Nadu,\nOUAT, Bhubaneshwar, Odisha during 2016-17, 2017-18, 2018-19 and 2019-20\nyy\nToxicological data required for CIB&RC registration yet to be generated\nyy\nCommercialization: Commercialized in 2020; Licensed to three private companies\n\n\nM/s Ponalabs, Bengaluru, Karnataka\n\n\nAllwin Industries, Pithampur, Dhar, Madhya Pradesh\n\n\nAgri Bio Care, Kottayam, Kerala\nyy",
+      "content": "6. Shatpada Armour\n\n6. Shatpada Armour\nEffect of Shatpada Armour on maize at Anakapalle, Andhra Pradesh during 2018-19\nControl\nTreated\nDirector, ICAR-National Bureau of Agricultural Insect Resources, Bengaluru-560024;\ne-Mail: director.nbair@icar.gov.in\n\n7\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial constituent: Bacillus thuringiensis var.",
       "section": "6. Shatpada Armour",
-      "tokens": 372,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_72",
-      "chunk_index": 72
+      "tokens": 85
+    },
+    {
+      "content": "6. Shatpada Armour\n\nCIDES\nyy\nMicrobial constituent: Bacillus thuringiensis var. \n\nkurstaki\nICAR-NBAIR BTG4\nyy\nType: Liquid; 1 × 108 cfu/ml\nyy\nShelf life: 12 months at 25-35°C\nyy\nTarget pests and crops: Legume pod borer (Helicoverpa armigera,\nMaruca sp.), diamondback moth (Plutella xylostella), spotted\nstem borer (Chilo partellus), rice leaf folder (Cnaphalocrocis\nmedinalis), brinjal shoot borer (Leucinodes orbonalis) and red\nhairy caterpillar (Amsacta albistriga)\nyy\nMethod of application: Two to three foliar sprays at 20 mL/L of\nwater at pre flowering and post flowering stages; Water required\nfor each spray: 200 L/ha\nyy\nTarget agroecological zones/states: Karnataka, Andhra Pradesh, Maharashtra,\nTamil Nadu, Gujarat and Odisha\nyy\nValidation: The technology was tested at UAS, Raichur, Karnataka, AAU, Anand,\nGujarat, RARS, Anakapalle, Andhra Pradesh, TNAU, Coimbatore; Tamil Nadu,\nOUAT, Bhubaneshwar, Odisha during 2016-17, 2017-18, 2018-19 and 2019-20\nyy\nToxicological data required for CIB&RC registration yet to be generated\nyy\nCommercialization: Commercialized in 2020; Licensed to three private companies\n\n\nM/s Ponalabs, Bengaluru, Karnataka\n\n\nAllwin Industries, Pithampur, Dhar, Madhya Pradesh\n\n\nAgri Bio Care, Kottayam, Kerala\nyy",
+      "section": "6. Shatpada Armour",
+      "tokens": 312
     },
     {
       "content": "Benefits:\n\n\n83-85% reduction in pest\n\n\n19-35% increase in yield",
       "section": "Benefits:",
-      "tokens": 16,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_73",
-      "chunk_index": 73
+      "tokens": 16
     },
     {
-      "content": "7. Shatpada Terminator\nEffect of Shatpada Terminator on pod borer in pigeon pea at Raichur, Karnataka during 2016-17\nTreated\nControl\nDirector, ICAR-National Bureau of Agricultural Insect Resources, Bengaluru-560024;\ne-Mail: director.nbair@icar.gov.in\n\n8\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial constituent: Pseudomonas fluorescens\nNBAIR-PFDWD\nyy\nType: Talc based; 1 × 108 cfu/g\nyy\nShelf life: 12 months at 25-35°C\nyy\nTarget pests and crops: Thrips spp. in capsicum\nand Fusarium wilt of red gram\nyy\nMethod of application: Foliar application at\n20 g/L of water at 20, 30, 40 and 50 days after\ntransplanting for the management of thrips\nin capsicum; Water required: 200 L/ha; Soil\napplication in the root zone during 25, 40 and 55 days after sowing at 2.5 kg/ha\nfor management of red gram wilt; Mix 2.5 kg of formulation in 250 kg farmyard\nmanure and apply\nyy\nTarget agroecological zones/states: Karnataka and Telangana\nyy\nValidation: The technology was tested at ICAR-NBAIR, Bengaluru, Karnataka\nduring 2018 and 2019 for thrips management in capsicum; Validated at KVK,\nPalem, Telangana for management of Fusarium wilt of red gram during 2020\nyy\nToxicological data required for CIB&RC registration yet to be generated\nyy\nCommercialization: Commercialized in 2020; Licensed to two organizations\n\n\nSiddaganga Oil and Bio Industries LLP, Tumakuru, Karnataka\n\n\nAnand Agricultural University (AAU), Anand, Gujarat\nyy",
+      "content": "7. Shatpada Terminator\n\n7. Shatpada Terminator\nEffect of Shatpada Terminator on pod borer in pigeon pea at Raichur, Karnataka during 2016-17\nTreated\nControl\nDirector, ICAR-National Bureau of Agricultural Insect Resources, Bengaluru-560024;\ne-Mail: director.nbair@icar.gov.in\n\n8\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial constituent: Pseudomonas fluorescens\nNBAIR-PFDWD\nyy\nType: Talc based; 1 × 108 cfu/g\nyy\nShelf life: 12 months at 25-35°C\nyy\nTarget pests and crops: Thrips spp.",
       "section": "7. Shatpada Terminator",
-      "tokens": 354,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_74",
-      "chunk_index": 74
+      "tokens": 120
+    },
+    {
+      "content": "7. Shatpada Terminator\n\n12 months at 25-35°C\nyy\nTarget pests and crops: Thrips spp. \n\nin capsicum\nand Fusarium wilt of red gram\nyy\nMethod of application: Foliar application at\n20 g/L of water at 20, 30, 40 and 50 days after\ntransplanting for the management of thrips\nin capsicum; Water required: 200 L/ha; Soil\napplication in the root zone during 25, 40 and 55 days after sowing at 2.5 kg/ha\nfor management of red gram wilt; Mix 2.5 kg of formulation in 250 kg farmyard\nmanure and apply\nyy\nTarget agroecological zones/states: Karnataka and Telangana\nyy\nValidation: The technology was tested at ICAR-NBAIR, Bengaluru, Karnataka\nduring 2018 and 2019 for thrips management in capsicum; Validated at KVK,\nPalem, Telangana for management of Fusarium wilt of red gram during 2020\nyy\nToxicological data required for CIB&RC registration yet to be generated\nyy\nCommercialization: Commercialized in 2020; Licensed to two organizations\n\n\nSiddaganga Oil and Bio Industries LLP, Tumakuru, Karnataka\n\n\nAnand Agricultural University (AAU), Anand, Gujarat\nyy",
+      "section": "7. Shatpada Terminator",
+      "tokens": 261
     },
     {
       "content": "Benefits:\n\n\n70-90% thrips reduction; 50-60% Fusarium wilt reduction\n\n\n48-53% increase in yield",
       "section": "Benefits:",
-      "tokens": 24,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_75",
-      "chunk_index": 75
+      "tokens": 24
     },
     {
-      "content": "8. Shatpada All Rounder\nEffect of Shatpada All Rounder on yield of capsicum at ICAR-NBAIR, Bengaluru, Karnataka\nduring 2018\n\n Treated\n Control\nDirector, ICAR-National Bureau of Agricultural Insect Resources, Bengaluru-560024;\ne-Mail: director.nbair@icar.gov.in\n\n9\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial\nconstituent:\nBacillus\nalbus\nNBAIR-BATP\nyy\nType: Talc based; 1 × 108 cfu/g\nyy\nShelf life: 12 months at 25-35°C\nyy\nTarget pests and crops: Fall armyworm\n(Spodoptera frugiperda) of maize, tomato\npin worm (Tuta absoluta) and Fusarium\nwilt of cucumber (Fusarium oxysporum f. sp.\ncucumerinum)\nyy\nMethod of application: Foliar application at 20 g/L of water at 20, 30, 40 and 50\ndays after sowing for management of fall armyworm of maize and tomato pin\nworm; Water required: 200 L/ha; Soil application in the root zone during 25, 40\nand 55 days after sowing at 2.5 kg/ha for management of cucumber wilt; Mix 2.5\nkg of formulation in 250 kg farmyard manure and apply\nyy\nTarget agroecological zones/states: Karnataka and Andhra Pradesh\nyy\nValidation: The technology was tested at ICAR-NBAIR, Bengaluru, Karnataka\nand RARS, Anakapalle, Andhra Pradesh during 2019-20 and 2020-21 for fall\narmyworm and tomato pinworm; Kanakapura and Kolar districts, Karnataka for\nmanagement of cucumber wilt during 2020-21\nyy\nToxicological data required for CIB&RC registration yet to be generated\nyy\nCommercialization: Available for licensing\nyy",
+      "content": "8. Shatpada All Rounder\n\n8. Shatpada All Rounder\nEffect of Shatpada All Rounder on yield of capsicum at ICAR-NBAIR, Bengaluru, Karnataka\nduring 2018\n\n Treated\n Control\nDirector, ICAR-National Bureau of Agricultural Insect Resources, Bengaluru-560024;\ne-Mail: director.nbair@icar.gov.in\n\n9\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial\nconstituent:\nBacillus\nalbus\nNBAIR-BATP\nyy\nType: Talc based; 1 × 108 cfu/g\nyy\nShelf life: 12 months at 25-35°C\nyy\nTarget pests and crops: Fall armyworm\n(Spodoptera frugiperda) of maize, tomato\npin worm (Tuta absoluta) and Fusarium\nwilt of cucumber (Fusarium oxysporum f. sp.",
       "section": "8. Shatpada All Rounder",
-      "tokens": 357,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_76",
-      "chunk_index": 76
+      "tokens": 152
+    },
+    {
+      "content": "8. Shatpada All Rounder\n\na) and Fusarium\nwilt of cucumber (Fusarium oxysporum f. sp. \n\ncucumerinum)\nyy\nMethod of application: Foliar application at 20 g/L of water at 20, 30, 40 and 50\ndays after sowing for management of fall armyworm of maize and tomato pin\nworm; Water required: 200 L/ha; Soil application in the root zone during 25, 40\nand 55 days after sowing at 2.5 kg/ha for management of cucumber wilt; Mix 2.5\nkg of formulation in 250 kg farmyard manure and apply\nyy\nTarget agroecological zones/states: Karnataka and Andhra Pradesh\nyy\nValidation: The technology was tested at ICAR-NBAIR, Bengaluru, Karnataka\nand RARS, Anakapalle, Andhra Pradesh during 2019-20 and 2020-21 for fall\narmyworm and tomato pinworm; Kanakapura and Kolar districts, Karnataka for\nmanagement of cucumber wilt during 2020-21\nyy\nToxicological data required for CIB&RC registration yet to be generated\nyy\nCommercialization: Available for licensing\nyy",
+      "section": "8. Shatpada All Rounder",
+      "tokens": 233
     },
     {
       "content": "Benefits:\n\n\n70-80% Fall armyworm reduction, 80-90% tomato pin worm reduction and\n45-50% Fusarium wilt reduction\n\n\n26-29% increase in maize yield; 30-40% increase in tomato yield and 22-24%\nincrease in cucumber yield",
       "section": "Benefits:",
-      "tokens": 54,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_77",
-      "chunk_index": 77
+      "tokens": 54
     },
     {
-      "content": "9. Shatpada Master Blaster\nControl Treated\nEffect of Shatpada Master Blaster on tomato pin worm\nDirector, ICAR-National Bureau of Agricultural Insect Resources, Bengaluru-560024;\ne-Mail: director.nbair@icar.gov.in\n\n10\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial Constituent: Trichoderma reesei\nCSR-T-3 (NAIMCC-SF-0030)\nyy\nType: Wettable powder; 1 × 107 cfu/g\nyy\nShelf life: 12 months at 25-35°C\nyy\nTarget pests and crops: Fusarium wilt of\nbanana (Fusarium oxysporum f. sp. cubense\nTropical race 4 and race 1)\nyy\nMethod of application: 3% of WP (w/v) in\nwater as soil drenching at 1 L per plant 4 times\n(3rd, 5th, 9th and 12th month after planting); Water\nrequired; 1500 L/ha\nyy\nTarget agroecological zones/states: Uttar\nPradesh, Bihar, Andhra Pradesh, Tamil Nadu,\nAssam, Nagaland, West Bengal and Gujarat\nyy\nValidation: Validated under AICRP-Fruits in Andhra Pradesh, Gujarat and\nTamil Nadu; Assam Agricultural University, Jorhat, Assam and Central Institute\nof Horticulture, Medziphema, Nagaland for two years; farmers' fields at different\ndistricts of Bihar and Uttar Pradesh\nyy\nToxicological data required for CIB&RC registration already generated\nyy\nCommercialization: Commercialized in 2020; Available for licensing\nyy",
+      "content": "9. Shatpada Master Blaster\n\n9. Shatpada Master Blaster\nControl Treated\nEffect of Shatpada Master Blaster on tomato pin worm\nDirector, ICAR-National Bureau of Agricultural Insect Resources, Bengaluru-560024;\ne-Mail: director.nbair@icar.gov.in\n\n10\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial Constituent: Trichoderma reesei\nCSR-T-3 (NAIMCC-SF-0030)\nyy\nType: Wettable powder; 1 × 107 cfu/g\nyy\nShelf life: 12 months at 25-35°C\nyy\nTarget pests and crops: Fusarium wilt of\nbanana (Fusarium oxysporum f. sp.",
       "section": "9. Shatpada Master Blaster",
-      "tokens": 306,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_78",
-      "chunk_index": 78
+      "tokens": 125
+    },
+    {
+      "content": "9. Shatpada Master Blaster\n\nd crops: Fusarium wilt of\nbanana (Fusarium oxysporum f. sp. \n\ncubense\nTropical race 4 and race 1)\nyy\nMethod of application: 3% of WP (w/v) in\nwater as soil drenching at 1 L per plant 4 times\n(3rd, 5th, 9th and 12th month after planting); Water\nrequired; 1500 L/ha\nyy\nTarget agroecological zones/states: Uttar\nPradesh, Bihar, Andhra Pradesh, Tamil Nadu,\nAssam, Nagaland, West Bengal and Gujarat\nyy\nValidation: Validated under AICRP-Fruits in Andhra Pradesh, Gujarat and\nTamil Nadu; Assam Agricultural University, Jorhat, Assam and Central Institute\nof Horticulture, Medziphema, Nagaland for two years; farmers' fields at different\ndistricts of Bihar and Uttar Pradesh\nyy\nToxicological data required for CIB&RC registration already generated\nyy\nCommercialization: Commercialized in 2020; Available for licensing\nyy",
+      "section": "9. Shatpada Master Blaster",
+      "tokens": 210
     },
     {
       "content": "Benefits:\n\n\n85-90% reduction in disease incidence",
       "section": "Benefits:",
-      "tokens": 12,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_79",
-      "chunk_index": 79
+      "tokens": 12
     },
     {
       "content": "10. ICAR-FUSICONT\nEffect of ICAR-FUSICONT on banana (cv. Grand Naine) wilt in Ayodhya,\nUttar Pradesh during 2018-19\nTreated sick plot\nControl sick plot\nDirector, ICAR-Central Soil Salinity Research Institute, Karnal-132001;\ne-Mail: director.cssri@icar.gov.in\n\n11\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial constituent: Pseudomonas fluorescens\n(NAIMCC-SB-0053)\nyy\nType: Talc formulation; 1 × 108 cfu/g\nyy\nShelf life: 12 months at 25-35°C\nyy\nTarget pests and crops: Spot blotch of wheat, sheath\nblight of rice and wilt of tomato and chickpea\nyy\nMethod of Application: Seed treatment (10 g/kg\nseed)\nyy\nTarget agroecological zones/states: Uttar Pradesh\nyy\nValidation: Field trials at ICAR-NBAIM, Mau, Uttar\nPradesh in tomato, rice, and wheat; KVK, Ghazipur,\nUttar Pradesh in chickpea; KVK, Azamgarh, Uttar Pradesh in direct seeded rice;\nICAR-IISS, Mau, Uttar Pradesh in wheat; farmers’ fields on chickpea and wheat\nyy\nToxicological data required for CIB&RC registration yet to be generated\nyy\nCommercialization: Available for licensing\nyy",
       "section": "10. ICAR-FUSICONT",
-      "tokens": 259,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_80",
-      "chunk_index": 80
+      "tokens": 259
     },
     {
       "content": "Benefits:\n\n\n45-55% reduction in spot blotch disease of wheat, sheath blight in rice and wilt\nof tomato\n\n\n15-25% reduction in usage of chemical pesticides",
       "section": "Benefits:",
-      "tokens": 39,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_81",
-      "chunk_index": 81
+      "tokens": 39
     },
     {
-      "content": "11. Eco-Pesticide\nEffect of Eco-Pesticide on wheat (var. HUV 234) at ICAR-NBAIM, Mau, Uttar Pradesh\nduring 2016-17\nTreated\nControl\nDirector, ICAR-National Bureau of Agriculturally Important Microorganisms,\nMau-275103; e-Mail: director.nbaim@icar.gov.in\n\n12\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial constituents: Trichoderma harzianum\n(NAIMCC-SF-0036) and Bacillus amyloliquefaciens\n(NAIMCC-SB-0052)\nyy\n Type: Talc formulation; 1 × 107 cfu/g each\nyy\nShelf life: 12 months at 25-35°C\nyy\nTarget pests and crops: Wilt of chickpea, lentil, pea,\npigeon pea; damping off/seedling mortality in papaya;\nTarget fungi: Rhizoctonia, Sclerotium, Sclerotinia,\nFusarium,\nPythium,\nRalstonia,\nMacrophomina,\nBipolaris and Phoma\nyy\nMethod of Application: Seed treatment (10 g/kg\nseeds)\nyy\nTarget agroecological zones/states: Uttar Pradesh, Bihar and Chhattisgarh\nyy\nValidation: Four KVKs of Madhya Pradesh at Hamirpur, Chhattarpur, Tikamgarh\nand Panna on chickpea; KVK Ghazipur, Uttar Pradesh on chickpea; KVK\nAzamgarh, Uttar Pradesh on rice; ICAR-NBAIM, Mau, Uttar Pradesh on tomato,\nwheat and maize; farmers' fields at Mau, Uttar Pradesh on chickpea, pea, lentil,\nvegetables and wheat; farmers' fields at Begusarai, Hazaribagh and Bhabhua, Bihar\non papaya\nyy\nToxicological data required for CIB&RC registration already generated\nyy\nCommercialization: Available for licensing\nyy",
+      "content": "11. Eco-Pesticide\n\n11. Eco-Pesticide\nEffect of Eco-Pesticide on wheat (var.",
       "section": "11. Eco-Pesticide",
-      "tokens": 341,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_82",
-      "chunk_index": 82
+      "tokens": 19
+    },
+    {
+      "content": "11. Eco-Pesticide\n\ne\n\n11. Eco-Pesticide\nEffect of Eco-Pesticide on wheat (var. \n\nHUV 234) at ICAR-NBAIM, Mau, Uttar Pradesh\nduring 2016-17\nTreated\nControl\nDirector, ICAR-National Bureau of Agriculturally Important Microorganisms,\nMau-275103; e-Mail: director.nbaim@icar.gov.in\n\n12\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial constituents: Trichoderma harzianum\n(NAIMCC-SF-0036) and Bacillus amyloliquefaciens\n(NAIMCC-SB-0052)\nyy\n Type: Talc formulation; 1 × 107 cfu/g each\nyy\nShelf life: 12 months at 25-35°C\nyy\nTarget pests and crops: Wilt of chickpea, lentil, pea,\npigeon pea; damping off/seedling mortality in papaya;\nTarget fungi: Rhizoctonia, Sclerotium, Sclerotinia,\nFusarium,\nPythium,\nRalstonia,\nMacrophomina,\nBipolaris and Phoma\nyy\nMethod of Application: Seed treatment (10 g/kg\nseeds)\nyy\nTarget agroecological zones/states: Uttar Pradesh, Bihar and Chhattisgarh\nyy\nValidation: Four KVKs of Madhya Pradesh at Hamirpur, Chhattarpur, Tikamgarh\nand Panna on chickpea; KVK Ghazipur, Uttar Pradesh on chickpea; KVK\nAzamgarh, Uttar Pradesh on rice; ICAR-NBAIM, Mau, Uttar Pradesh on tomato,\nwheat and maize; farmers' fields at Mau, Uttar Pradesh on chickpea, pea, lentil,\nvegetables and wheat; farmers' fields at Begusarai, Hazaribagh and Bhabhua, Bihar\non papaya\nyy\nToxicological data required for CIB&RC registration already generated\nyy\nCommercialization: Available for licensing\nyy",
+      "section": "11. Eco-Pesticide",
+      "tokens": 347
     },
     {
       "content": "Benefits:\n\n\nReduce the wilt incidence by 40-75% in chickpea, 30-55% in lentil, 45-60%\nin pea, 25-40% in pigeonpea and 60-75% reduction in damping off/seedling\nmortality in papaya\n\n\nYield increase in chickpea, pea and lentil by 10-15%",
       "section": "Benefits:",
-      "tokens": 59,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_83",
-      "chunk_index": 83
+      "tokens": 59
     },
     {
       "content": "12. Bio-Pulse\nEffect of inoculation of Bio-Pulse on chickpea (var. JG 62) in Ghazipur, Uttar Pradesh during 2016-17\nDirector, ICAR-National Bureau of Agriculturally Important Microorganisms,\nMau-275103; e-Mail: director.nbaim@icar.gov.in\nTreated\nControl\n\n13\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial Constituent: Trichoderma\nharzianum\nICAR-CAZRI\nAZNF-5\n(MCC 1723)\nyy\nType: Carrier based formulation; 1 × 108\ncfu/g\nyy\nShelf life: 4 months at 55°C\nyy\nTarget pathogen and crops: Fusarium\noxysporum f. sp. cumini in cumin\nyy\nMethod of application: Seed treatment\n(4 g/kg seed) and soil application (1 kg/\nha with 50 kg FYM) before sowing\nyy\nTarget\nagroecological\nzones/states:\nArid and semi arid regions of Rajasthan\nyy\nValidation: Experimental farms at\nICAR-CAZRI, Jodhpur, Rajasthan; farmers’ fields at Pali and Jodhpur, Rajasthan\nfor two years\nyy\nToxicological data required for CIB&RC registration yet to be generated\nyy\nCommercialization: Available for licensing\nyy",
       "section": "12. Bio-Pulse",
-      "tokens": 242,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_84",
-      "chunk_index": 84
+      "tokens": 242
     },
     {
       "content": "Benefits:\n\n\n34-52% reduction in plant mortality\n\n\n14.5-25.8% yield increase",
       "section": "Benefits:",
-      "tokens": 19,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_85",
-      "chunk_index": 85
+      "tokens": 19
     },
     {
       "content": "13. Maru sena 1\nEffect of Maru sena 1 on Cumin (var. GC-4) at ICAR-CAZRI, Jodhpur, Rajasthan during 2015-16\nControl\nTreated\nDirector, ICAR- Central Arid Zone Research Institute, Jodhpur-342003;\ne-Mail: director.cazri@icar.gov.in\n\n14\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial Constituent: Bacillus firmus ICAR-\nCAZRI AZ-1 (MCC 0122)\nyy\nType: Carrier based formulation; 1 × 108 cfu/g\nyy\nShelf life: 6 months at 25-35°C\nyy\nTarget pathogen and crops: Macrophomina\nphaseolina in legumes and oil seed crops\nyy\nMethod of application: Seed treatment (30 g/\nkg seed with jaggery solution) before sowing\nyy\nTarget agroecological zones/states: Arid and\nsemi arid region of Rajasthan\nyy\nValidation: Experimental farm at ICAR-\nCAZRI, Jodhpur; farmers’ fields at Nagaur and\nJodhpur, Rajasthan for three years\nyy\nToxicological data required for CIB&RC registration yet to be generated\nyy\nCommercialization: Patent granted in 2019 (Patent No. 309385); Available for\nlicensing\nyy",
       "section": "13. Maru sena 1",
-      "tokens": 241,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_86",
-      "chunk_index": 86
+      "tokens": 241
     },
     {
       "content": "Benefits:\n\n\n37-54% reduction in plant mortality\n\n\n23.2-31.6% yield increase",
       "section": "Benefits:",
-      "tokens": 19,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_87",
-      "chunk_index": 87
+      "tokens": 19
     },
     {
       "content": "14. Maru sena 3\nEffect of Maru sena 3 on guar (var. RGC 936) at ICAR-CAZRI, Jodhpur, Rajasthan during 2007-08\nControl\n Treated\nDirector, ICAR- Central Arid Zone Research Institute, Jodhpur-342003;\ne-Mail: director.cazri@icar.gov.in\n\n15\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy",
       "section": "14. Maru sena 3",
-      "tokens": 67,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_88",
-      "chunk_index": 88
+      "tokens": 67
     },
     {
       "content": "Microbial\nConstituent:\nTrichoderma\nharzianum ICAR-CAZRI AZNF-5 (MCC\n1723) and Bacillus firmus ICAR-CAZRI AZ-1\n(MCC 0122)\nyy\nType: Carrier based formulation; 1 × 108\ncfu/g of each\nyy\nShelf life: 4 months at 55°C\nyy\nTarget pathogen and crops: Macrophomina\nphaseolina in legumes and oil seed crops\nyy\nMethod of application: Seed treatment (10\ng/kg seed with jaggery) and soil application\n(1 kg/ha with 40 kg FYM) before sowing\nyy\nTarget agroecological zones/states: Arid and\nsemi arid regions of Rajasthan\nyy\nValidation: Experimental farms at ICAR-CAZRI, Jodhpur; farmers' fields at Pali\nand Jodhpur, Rajasthan for two years\nyy\nToxicological data required for CIB&RC registration yet to be generated\nyy\nCommercialization: Patent granted in 2019 (Patent No. 326803); Available for\nlicensing\nyy\nBenefits\n\n\n37-56.4% reduction in plant mortality\n\n\n20-23% yield promotion",
       "section": "Microbial\nConstituent:",
-      "tokens": 216,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_89",
-      "chunk_index": 89
+      "tokens": 216
     },
     {
       "content": "15. Mishrit Maru sena\nControl\n Treated\nEffect of Mishrit Maru sena on guar (var. RGC 1033) at ICAR-CAZRI, Jodhpur, Rajasthan\nduring 2015-16\nDirector, ICAR-Central Arid Zone Research Institute, Jodhpur-342003;\ne-Mail: director.cazri@icar.gov.in\n\n16\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial Constituent: Beauveria bassiana TF6\n(MTCC 12233)\nyy\nType: Talc formulation; 1 × 109 cfu/g\nyy\nShelf life: 8 months at 25-35°C\nyy\nTarget pests and crops: Rice leaf folder\n(Cnaphalocrocis medinalis)\nyy\nMethod of application: Foliar spray at 2 g/L; Water\nrequired: 500 L/ha\nyy\nTarget agroecological zones/states: Odisha\nyy",
       "section": "15. Mishrit Maru sena",
-      "tokens": 153,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_90",
-      "chunk_index": 90
+      "tokens": 153
     },
     {
       "content": "Validation:\nFarmers’\nfields\nof\nMahanga,\nNischintakoili and Santpur village of Odisha;\nexperimental fields of NRRI, Cuttack, Odisha for\nfour consecutive seasons\nyy\nToxicological\ndata\nrequired\nfor\nCIB&RC\nregistration yet to be generated\nyy\nCommercialization: Patent filed (260/KOL/2015\ndated 10.03.2015); Available for licensing\nyy",
       "section": "Validation:",
-      "tokens": 82,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_91",
-      "chunk_index": 91
+      "tokens": 82
     },
     {
       "content": "Benefits:\n\n\n74% leaf folder mortality",
       "section": "Benefits:",
-      "tokens": 9,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_92",
-      "chunk_index": 92
+      "tokens": 9
     },
     {
       "content": "16. NRRI-BBLF\nEffect of application of B. bassiana (a) on rice leaf folder larvae (b)\nDirector, ICAR-National Rice Research Institute, Cuttack-753006, Odisha;\ne-Mail: director.nrri@icar.gov.in\n\n17\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial Constituent: Metarhizium anisopliae\nTF19 (MTCC 11644)\nyy\nType: Talc formulation; 1 × 109 cfu/g\nyy\nShelf life: 8 months at 25-35°C\nyy\nTarget pests and crops: Rice leaf folder\n(Cnaphalocrocis medinalis)\nyy\nMethod of application: Foliar spray at 2 g/L; Water\nrequired: 500 L/ha\nyy\nTarget agroecological zones/states: Odisha\nyy",
       "section": "16. NRRI-BBLF",
-      "tokens": 141,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_93",
-      "chunk_index": 93
+      "tokens": 141
     },
     {
       "content": "Validation:\nFarmers’\nfields\nof\nMahanga,\nNischintakoili and Santpur village of Odisha;\nexperimental fields of NRRI, Cuttack, Odisha for\nfour years\nyy\nToxicological data required for CIB&RC registration\nyet to be generated\nyy\nCommercialization: Patent filed (265/KOL/2015\ndated 10.03.2015); Available for licensing\nyy",
       "section": "Validation:",
-      "tokens": 78,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_94",
-      "chunk_index": 94
+      "tokens": 78
     },
     {
       "content": "Benefits:\n\n\n77% leaf folder mortality",
       "section": "Benefits:",
-      "tokens": 9,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_95",
-      "chunk_index": 95
+      "tokens": 9
     },
     {
       "content": "17. NRRI-MALF\nRice leaf folder larvae infected with M. anisopliae\nDirector, ICAR- National Rice Research Institute, Cuttack-753006, Odisha;\ne-Mail: director.nrri@icar.gov.in\n\n18\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy",
       "section": "17. NRRI-MALF",
-      "tokens": 53,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_96",
-      "chunk_index": 96
+      "tokens": 53
     },
     {
       "content": "Microbial\nConstituent:\nTrichoderma\nharzianum\nTh4d\n(NAIMCC-F-02188)\nyy\nType: Liquid suspension concentrate; 1 × 109 cfu/mL\nyy\nShelf life: 18 months at 25-35°C\nyy\nTarget pests and crops: Phytophthora seedling blight,\nMacrophomina root rot and Fusarium wilt of safflower and gray\nmold of castor, Alternaria aster leaf blight and powdery mildew of\nsunflower\nyy\nMethod of application: Seed treatment at 1 mL suspension\nconcentrate/kg of seeds, Foliar spray at 1-2 mL/L of water; Water\nrequired for spray: 500 L/ha\nyy\nTarget agroecological zones/states: Telangana, Maharashtra and Tamil Nadu\nyy\nValidation: Evaluated under AICRP-Oilseeds on sunflower, safflower and castor\nfor five years\nyy\nToxicological data required for CIB&RC registration already generated\nyy\nCommercialization: Commercialized in 2015; Licensed to 4 companies\n\n\nM/s Dhampur Sugars Pvt. Ltd., Dhampur, Uttar Pradesh\n\n\nM/s Shri Ram Bioorganics, Jaspur, Uttarakhand\n\n\nM/s Vidarbha Biotech, Yavatmal, Maharashtra\n\n\nM/s Agricos Pvt. Ltd., Yavatmal, Maharashtra\nyy",
       "section": "Microbial\nConstituent:",
-      "tokens": 257,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_97",
-      "chunk_index": 97
+      "tokens": 257
     },
     {
       "content": "Benefits:\n\n\nSymbiotic colonizer\n\n\nEffective against a wide range of diseases\n\n\nHelps to achieve high yield",
       "section": "Benefits:",
-      "tokens": 28,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_98",
-      "chunk_index": 98
+      "tokens": 28
     },
     {
       "content": "18. Triguard Th-L\nEffect of Triguard Th-L on safflower (var. PBNS 12) at Parbhani, Maharashtra during 2015-16\nTreated\nControl\nDirector, ICAR-Indian Institute of Oilseed Research, Rajendranagar, Hyderabad-500030;\ne-Mail: director.iior@icar.gov.in\n\n19\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial Constituent: Trichoderma harzianum\nTh4 (NAIMCC-F-02188)\nyy\nType: Wettable powder; 1 × 109 cfu/g\nyy\nShelf life: 18 months at 25-35°C\nyy\nTarget pests and crops: Phytophthora seedling\nblight, Macrophomina root rot and Fusarium\nwilt of safflower and Fusarium wilt of castor and\nAspergillus root rot in groundnut\nyy\nMethod of application: Seed treatment at 10 g/\nkg of seeds\nyy\nTarget agroecological zones/states: Telangana,\nMaharashtra and Tamil Nadu\nyy\nValidation: Evaluated under AICRP-Oilseeds on\nsunflower, safflower and castor for eight years\nyy\nToxicological data required for CIB&RC registration already generated\nyy\nCommercialization: Licensed to M/s M R Biologics Pvt Ltd., Hyderabad,\nTelangana\nyy",
       "section": "18. Triguard Th-L",
-      "tokens": 249,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_99",
-      "chunk_index": 99
+      "tokens": 249
     },
     {
       "content": "Benefits:\n\n\nSymbiotic colonizer\n\n\nEffective against a wide range of diseases\n\n\nHelps to achieve high yield",
       "section": "Benefits:",
-      "tokens": 28,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_100",
-      "chunk_index": 100
+      "tokens": 28
     },
     {
       "content": "19. Triguard Th-P\nEffect of Triguard Th-P on groundnut (var. K-6) at Palem, Telangana during 2018-19\nTreated\nControl\nControl\nTreated\nDirector, ICAR-Indian Institute of Oilseed Research, Rajendranagar, Hyderabad-500030;\ne-Mail: director.iior@icar.gov.in\n\n20\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial Constituent: Trichoderma asperellum\nTa DOR 7316 (MTCC 5623)\nyy\nType: Wettable powder; 1 × 109 cfu/g\nyy\nShelf life: 18 months at 25-35°C\nyy\nTarget pests and crops: Phytophthora seedling\nblight, Macrophomina root rot and Fusarium\nwilt of safflower and Fusarium wilt of castor\nyy\nMethod of application: Seed treatment at 10 g/\nkg of seeds\nyy\nTarget agroecological zones/states: Telangana,\nMaharashtra and Tamil Nadu\nyy\nValidation: Evaluated under AICRP-Oilseeds on sunflower, safflower and castor\nfor five years\nyy\nToxicological data required for CIB&RC registration already generated\nyy\nCommercialization: Patent filed (1117/CHE/2013); Available for licensing\nyy",
       "section": "19. Triguard Th-P",
-      "tokens": 240,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_101",
-      "chunk_index": 101
+      "tokens": 240
     },
     {
       "content": "Benefits:\n\n\n60% reduction in soil borne disease incidences\n\n\n3-5% increase in yield",
       "section": "Benefits:",
-      "tokens": 21,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_102",
-      "chunk_index": 102
+      "tokens": 21
     },
     {
       "content": "20. Triguard Ta-P\nEffect of Triguard Ta-P on safflower (var. Phule Kusum) at Solapur, Maharashtra during 2013-14\nTreated\nControl\nDirector, ICAR-Indian Institute of Oilseed Research, Rajendranagar, Hyderabad-500030,\nTelangana; e-Mail: director.iior@icar.gov.in\n\n21\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial Constituent: Bacillus thuringiensis var. kurstaki\nDOR Bt-127 (MTCC 5976/NAIMCC-B-01463)\nyy\nType: Liquid suspension concentrate; 1 × 1011 cfu/mL\nyy\nShelf life: 24 months at 25-35°C\nyy\nTarget pests and crops: Spodoptera litura in soybean\nyy\nMethod of application: Two foliar sprays at 3 mL/L of\nwater at 10 days interval; Water required for each spray:\n1500 L/ha\nyy\nTarget agroecological zones/states: Madhya Pradesh,\nKarnataka, Manipur and Telangana\nyy\nValidation: AICRP-Soybean for three years; Farmers’\nfields on soybean at Hegdoli and Nizamabad, Telangana\nyy\nToxicological data required for CIB&RC registration\nalready generated\nyy\nCommercialization: Available for licensing\nyy",
       "section": "20. Triguard Ta-P",
-      "tokens": 247,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_103",
-      "chunk_index": 103
+      "tokens": 247
     },
     {
       "content": "Benefits:\n\n\n69-95% reduction in larval population\n\n\n26-49% increase in yield",
       "section": "Benefits:",
-      "tokens": 20,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_104",
-      "chunk_index": 104
+      "tokens": 20
     },
     {
       "content": "21. Bioguard Bt-L\nEffect of Bioguard Bt-L on larval mortality of Spodoptera litura\nControl\nTreated\nDirector, ICAR-Indian Institute of Oilseeds Research, Rajendranagar, Hyderabad-500030,\nTelangana; e-Mail: director.iior@icar.gov.in\n\n22\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy",
       "section": "21. Bioguard Bt-L",
-      "tokens": 67,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_105",
-      "chunk_index": 105
+      "tokens": 67
     },
     {
       "content": "Microbial\nConstituent:\nBeauveria bassiana (ITCC\n4513)\nyy\nType: Liquid suspension\nconcentrate; 1 × 1012 cfu/\nmL\nyy\nShelf life: 24 months at\n25-35°C\nyy\nTarget pests and crops:\nHelicoverpa armigera in\npigeon pea\nyy\nMethod of application: Two to three foliar sprays at 0.3 mL/L of water at 10 days\ninterval; Water required for each spray: 700 to 1000 L/ha\nyy\nTarget agroecological zones/states: Maharashtra, Gujarat, Telangana and Andhra\nPradesh\nyy\nValidation: AICRP-Pigeon pea and ICAR-IIOR experimental farms at Hyderabad,\nTelangana for three years\nyy\nToxicological data required for CIB&RC registration already generated\nyy\nCommercialization: Commercialized in 2014; Available for licensing\nyy",
       "section": "Microbial\nConstituent:",
-      "tokens": 173,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_106",
-      "chunk_index": 106
+      "tokens": 173
     },
     {
       "content": "Benefits:\n\n\n24-45% reduction in pod damage\n\n\n21-33% increase in yield",
       "section": "Benefits:",
-      "tokens": 18,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_107",
-      "chunk_index": 107
+      "tokens": 18
     },
     {
       "content": "22. Mycoguard Bb-L\n Suspension concentrate Dispersion in water\nEffect of Mycoguard Bb-L formulation on pigeon pea pod borer\nLarval mortality due to\nB. bassiana infection\nHealthy larva\nDirector, ICAR-Indian Institute of Oilseeds Research, Rajendranagar, Hyderabad-500030,\nTelangana; e-Mail: director.iior@icar.gov.in\n\n23\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy",
       "section": "22. Mycoguard Bb-L",
-      "tokens": 88,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_108",
-      "chunk_index": 108
+      "tokens": 88
     },
     {
       "content": "Microbial\nConstituent:\nTrichoderma\nharzianum ICAR-IIHR Th-2 (NAIMCC-\nSF-0033/ITCC 6888)\nyy\nType: Wettable powder; 2 × 106 cfu/g\nyy\nShelf life: 10 months at 25-35°C\nyy\nTarget pests and crops:\n\n\nRoot\nknot\nnematode\n(Meloidogyne\nincognita)\n\n\nFungal pathogens–Fusarium oxysporum f.\nsp. vasinfectum, Fusarium oxysporum f. sp.\nlycopersici, Sclerotium rolfsii and Fusarium\nsolani\n\n\nCrops: Brinjal, tomato, carrot and okra\nyy\nMethod of application: Seed treatment at 20\ng/kg seed; nursery bed treatment at 50 g/m2\nfor transplantable crops; soil application at 5\nkg/ha after enrichment in 5 tons FYM before\nsowing or transplanting\nyy\nTarget agroecological zones/states: All\nyy\nValidation: Karnataka, Odisha and Tamil\nNadu for two seasons (2007-2009); AICRP\non Nematodes, Vegetables, Floriculture and\nFruits\nyy\nToxicological data required for CIB&RC\nregistration already generated\nyy",
       "section": "Microbial\nConstituent:",
-      "tokens": 219,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_109",
-      "chunk_index": 109
+      "tokens": 219
     },
     {
       "content": "Commercialization:\nCommercialized\nin\n2008; Licensed to 113 companies\nyy",
       "section": "Commercialization:",
-      "tokens": 17,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_110",
-      "chunk_index": 110
+      "tokens": 17
     },
     {
       "content": "Benefits:\n\n\n66-68% suppression in egg hatching of\nMeloidogyne incognita\n\n\n62-67% inhibition in growth of target fungi\n\n\n14.2–18.4% increase in yield in brinjal, tomato, carrot and okra",
       "section": "Benefits:",
-      "tokens": 47,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_111",
-      "chunk_index": 111
+      "tokens": 47
     },
     {
       "content": "23. ARKA Krishi Vriddhi\nARKA Krishi Vriddhi\nT. harzianum culture\nDirector, ICAR-Indian Institute of Horticultural Research, Bengaluru-560089;\ne-Mail: director.iihr@icar.gov.in\n\n24\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial Constituent: Trichoderma viride\nICAR-IIHR Tv-5 (NAIMCC-SF-0032/ITCC\n6889)\nyy\nType: Wettable powder; 2 × 106 cfu/g\nyy\nShelf life: 10 months at 25-35°C\nyy\nTarget pests and crops:\n\n\nRoot\nknot\nnematode\n(Meloidogyne\nincognita)\n\n\nFungal pathogens–Fusarium oxysporum f.\nsp. vasinfectum, Fusarium oxysporum f. sp.\nlycopersici, Sclerotium rolfsii and Fusarium\nsolani\n\n\nCrops: Brinjal, tomato, carrot and okra\nyy\nMethod of application: Seed treatment at 20\ng/kg seed; Nursery bed treatment at 50 g/m2\nfor transplantable crops; Soil application at 5\nkg/ha after enrichment in 5 tons FYM before\ntransplanting or sowing\nyy\nTarget agroecological zones/states: All\nyy\nValidation: Karnataka, Odisha and Tamil\nNadu for two seasons (2007-2009); AICRP on\nNematodes, Vegetables, Floriculture and Fruits\nyy\nToxicological data required for CIB&RC\nregistration already generated\nyy\nCommercialization: Commercialized in 2014;\nLicensed to 180 companies\nyy",
       "section": "23. ARKA Krishi Vriddhi",
-      "tokens": 290,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_112",
-      "chunk_index": 112
+      "tokens": 290
     },
     {
       "content": "Benefits:\n\n\n56-58% suppression in egg hatching of Meloidogyne incognita\n\n\n63-72% inhibition in growth of target fungi\n\n\n12.8–16.2% increase in yield in brinjal, tomato, carrot and okra",
       "section": "Benefits:",
-      "tokens": 47,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_113",
-      "chunk_index": 113
+      "tokens": 47
     },
     {
       "content": "24. ARKA Krishi Veera\nARKA Krishi Veera\nT. viride culture\nDirector, ICAR-Indian Institute of Horticultural Research, Bengaluru-560089;\ne-Mail: director.iihr@icar.gov.in\n\n25\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy",
       "section": "24. ARKA Krishi Veera",
-      "tokens": 52,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_114",
-      "chunk_index": 114
+      "tokens": 52
     },
     {
       "content": "Microbial\nConstituent:\nPseudomonas\nfluorescens ICAR-IIHR Pf-2 (NAIMCC-\nSB-0038/ITCC B0034)\nyy\nType: Wettable powder; 2 × 108 cfu/g\nyy\nShelf life: 10 months at 25-35°C\nyy\nTarget pests and crops:\n\n\nRoot knot nematode (Meloidogyne\nincognita)\n\n\nBacterial\npathogens–\nRalstonia\nsolanacearum and Erwinia carotovora\n\n\nFungal pathogens– Fusarium oxysporum\nf. sp. vasinfectum and Fusarium solani\n\n\nCrops: Brinjal, tomato, carrot and okra\nyy\nMethod of application: Seed treatment at 20\ng/kg seed; Nursery bed treatment at 50 g/m2\nfor transplantable crops; Soil application at 5\nkg/ha after enrichment in 5 tons FYM before\ntransplanting or sowing\nyy\nTarget agroecological zones/states: All\nyy\nValidation: Karnataka, Odisha and Tamil\nNadu for two seasons (2007-2009); AICRP\non Nematodes, Vegetables, Floriculture and\nFruits\nyy\nToxicological data required for CIB&RC\nregistration already generated\nyy\nCommercialization: Commercialized\nin\n2006; Licensed to 171companies\nyy",
       "section": "Microbial\nConstituent:",
-      "tokens": 241,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_115",
-      "chunk_index": 115
+      "tokens": 241
     },
     {
       "content": "Benefits:\n\n\n71-74% suppression in egg hatching of Meloidogyne incognita\n\n\n60-72% reduction in growth of target fungi\n\n\n13.2–19.4% increase in yield of brinjal, tomato, carrot and okra",
       "section": "Benefits:",
-      "tokens": 47,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_116",
-      "chunk_index": 116
+      "tokens": 47
     },
     {
       "content": "25. ARKA Krishi Samarakshak\nARKA Krishi Samarakshak\nP. fluorescens culture\nDirector, ICAR-Indian Institute of Horticultural Research, Bengaluru-560089;\ne-Mail: director.iihr@icar.gov.in\n\n26\nICAR TECHNOLOGIES: BIOPESTICIDES",
       "section": "25. ARKA Krishi Samarakshak",
-      "tokens": 55,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_117",
-      "chunk_index": 117
+      "tokens": 55
     },
     {
       "content": "26. ARKA Krishi Rakshak\nyy",
       "section": "26. ARKA Krishi Rakshak",
-      "tokens": 6,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_118",
-      "chunk_index": 118
+      "tokens": 6
     },
     {
       "content": "Microbial\nConstituent:\nPochonia\nchlamydosporia\n(=Verticillium\nchlamydosporium)\nIIHR-\nVc-3\n(NAIMCC-SF-0035/ITCC 6898)\nyy\nType: Carrier based formulation;\n2 × 106 cfu/g\nyy\nShelf life: 10 months at 25-35°C\nyy\nTarget pests and crops:\n\n\nRoot knot nematode (Meloidogyne\nincognita)\n\n\nCrops: Brinjal, tomato, carrot and\nokra\nyy\nMethod\nof\napplication:\nSeed\ntreatment at 20 g/kg seed; Nursery bed\ntreatment at 50 g/m2 for transplantable\ncrops; Soil application at 5 kg/ha after\nenrichment in 5 tons FYM before\ntransplanting or sowing\nyy\nTarget agroecological zones/states:\nAll\nyy",
       "section": "Microbial\nConstituent:",
-      "tokens": 143,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_119",
-      "chunk_index": 119
+      "tokens": 143
     },
     {
       "content": "Validation:\nKarnataka,\nOdisha\nand Tamil Nadu for two seasons\n(2007-2009); AICRP on Nematodes,\nVegetables, Floriculture and Fruits\nyy\nToxicological\ndata\nrequired\nfor\nCIB&RC registration already generated\nyy\nCommercialization: Commercialized\nin 2006; Licensed to 50 companies\nyy",
       "section": "Validation:",
-      "tokens": 69,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_120",
-      "chunk_index": 120
+      "tokens": 69
     },
     {
       "content": "Benefits:\n\n\n61-64%\nsuppression\nin\negg\nhatching of Meloidogyne incognita\n\n\n62-76% parasitization of nematode eggs\n\n\n14.6-22.5% increase in yield of brinjal, tomato, carrot and okra\nARKA Krishi Rakshak\nP. chlamydosporia culture\nDirector, ICAR-Indian Institute of Horticultural Research, Bengaluru-560089;\ne-Mail: director.iihr@icar.gov.in\n\n27\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial Constituent: Purpureocillium\nlilacinum\n(=Paecilomyces\nlilacinus)\nIIHR- Pl-2 (NAIMCC-SF-0034/ITCC\n6887)\nyy\nType: Wettable powder; 2 × 106 cfu/g\nyy\nShelf life: 10 months at 25-35°C\nyy\nTarget pests and crops:\n\n\nRoot knot nematode (Meloidogyne\nincognita)\n\n\nCrops: Brinjal, tomato, carrot and\nokra\nyy\nMethod of application: Seed treatment\nat 20 g/kg seed; Nursery bed treatment\nat 50 g/m2 for transplantable crops; Soil\napplication at 5 kg/ha after enrichment\nin 5 tons FYM before transplanting or\nsowing\nyy\nTarget agroecological zones/states: All\nyy",
       "section": "Benefits:",
-      "tokens": 235,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_121",
-      "chunk_index": 121
+      "tokens": 235
     },
     {
       "content": "Validation:\nKarnataka,\nOdisha\nand Tamil Nadu for two seasons\n(2007-2009); AICRP on Nematodes,\nVegetables, Floriculture and Fruits\nyy\nToxicological data required for CIB&RC\nregistration already generated\nyy\nCommercialization: Commercialized\nin 2006; Licensed to 86 companies\nyy",
       "section": "Validation:",
-      "tokens": 69,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_122",
-      "chunk_index": 122
+      "tokens": 69
     },
     {
       "content": "Benefits:\n\n\n51-61% suppression in egg hatching\nof Meloidogyne incognita\n\n\n60-76% parasitization of nematode eggs\n\n\n14.3–17.8 % increase in yield of brinjal, tomato, carrot and okra",
       "section": "Benefits:",
-      "tokens": 46,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_123",
-      "chunk_index": 123
+      "tokens": 46
     },
     {
       "content": "27. ARKA Krishi Kawach\nARKA Krishi Kawach\nP. lilacinum culture\nDirector, ICAR-Indian Institute of Horticultural Research, Bengaluru-560089;\ne-Mail: director.iihr@icar.gov.in\n\n28\nICAR TECHNOLOGIES: BIOPESTICIDES",
       "section": "27. ARKA Krishi Kawach",
-      "tokens": 52,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_124",
-      "chunk_index": 124
+      "tokens": 52
     },
     {
-      "content": "28. ARKA Krishi All Rounder and\nARKA Plant Growth Booster\nyy\nMicrobial Constituent: Pseudomonas fluorescens IIHR Pf-2 (NAIMCC-SB-0038/\nITCC B0034) and Trichoderma harzianum IIHR Th-2 (NAIMCC-SF-0033/ITCC\n6888)\nyy\nType: Liquid; 2 × 108 cfu/mL; Carrier based; 2 × 108 cfu/g\nyy\nShelf life: 10-12 months at 25-35°C\nyy\nTarget pests and crops:\n\n\nNematodes: Root knot nematode (Meloidogyne incognita)\n\n\nBacterial pathogens–Ralstonia solanacearum and Erwinia\ncarotovora\n\n\nFungal pathogens –Fusarium oxysporum f. sp. vasinfectum\nand Fusarium solani\n\n\nCrops: Tomato, capsicum, okra, brinjal, cabbage,\ncauliflower, chillies, carrot, onion, tuberose, gerbera,\ncrossandra,\ngladioli,\ncarnation,\nbanana,\npapaya,\npomegranate, acid lime, citrus and grapes; crops grown\nunder protected conditions such as carnation, gerbera,\ncapsicum, tomato, okra, muskmelon and watermelon\nyy\nMethod of application: Seed treatment at 20 g or 20 mL/kg\nseed; substrate treatment with 10 mL or 10g/kg of cocopeat;\nsoil application at 5 kg or 5 L/ha after enrichment in 5 tons\nFYM before transplanting or sowing\nyy\nTarget agroecological zones/states: Karnataka\nyy\nValidation: Experimental farms at ICAR-IIHR, Bengaluru,\nKarnataka for two years\nyy\nToxicological data required for CIB&RC registration already generated\nyy\nCommercialization: Commercialized in 2013; Granted patents in India\n(No. 250779); US (US 7,923,005 B), Australia (AU 2007216174 B2) and Thailand\n(No. 7621); licensed to one company\nyy",
+      "content": "28. ARKA Krishi All Rounder and\n\n28. ARKA Krishi All Rounder and\nARKA Plant Growth Booster\nyy\nMicrobial Constituent: Pseudomonas fluorescens IIHR Pf-2 (NAIMCC-SB-0038/\nITCC B0034) and Trichoderma harzianum IIHR Th-2 (NAIMCC-SF-0033/ITCC\n6888)\nyy\nType: Liquid; 2 × 108 cfu/mL; Carrier based; 2 × 108 cfu/g\nyy\nShelf life: 10-12 months at 25-35°C\nyy\nTarget pests and crops:\n\n\nNematodes: Root knot nematode (Meloidogyne incognita)\n\n\nBacterial pathogens–Ralstonia solanacearum and Erwinia\ncarotovora\n\n\nFungal pathogens –Fusarium oxysporum f. sp.",
       "section": "28. ARKA Krishi All Rounder and",
-      "tokens": 368,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_125",
-      "chunk_index": 125
+      "tokens": 136
+    },
+    {
+      "content": "28. ARKA Krishi All Rounder and\n\n\ncarotovora\n\n\nFungal pathogens –Fusarium oxysporum f. sp. \n\nvasinfectum\nand Fusarium solani\n\n\nCrops: Tomato, capsicum, okra, brinjal, cabbage,\ncauliflower, chillies, carrot, onion, tuberose, gerbera,\ncrossandra,\ngladioli,\ncarnation,\nbanana,\npapaya,\npomegranate, acid lime, citrus and grapes; crops grown\nunder protected conditions such as carnation, gerbera,\ncapsicum, tomato, okra, muskmelon and watermelon\nyy\nMethod of application: Seed treatment at 20 g or 20 mL/kg\nseed; substrate treatment with 10 mL or 10g/kg of cocopeat;\nsoil application at 5 kg or 5 L/ha after enrichment in 5 tons\nFYM before transplanting or sowing\nyy\nTarget agroecological zones/states: Karnataka\nyy\nValidation: Experimental farms at ICAR-IIHR, Bengaluru,\nKarnataka for two years\nyy\nToxicological data required for CIB&RC registration already generated\nyy\nCommercialization: Commercialized in 2013; Granted patents in India\n(No.",
+      "section": "28. ARKA Krishi All Rounder and",
+      "tokens": 236
+    },
+    {
+      "content": "28. ARKA Krishi All Rounder and\n\ntion: Commercialized in 2013; Granted patents in India\n(No. \n\n250779); US (US 7,923,005 B), Australia (AU 2007216174 B2) and Thailand\n(No. 7621); licensed to one company\nyy",
+      "section": "28. ARKA Krishi All Rounder and",
+      "tokens": 51
     },
     {
       "content": "Benefits:\n\n\nPlant growth promotion and yield enhancement\n\n\nProduction of healthy and vigorous seedlings of horticultural crops\n\n\nManagement of plant parasitic nematodes and soil borne pathogens\nDirector, ICAR-Indian Institute of Horticultural Research, Bengaluru-560089;\ne-Mail: director.iihr@icar.gov.in\nARKA Plant\nGrowth Booster\nARKA Krishi\nAll Rounder\n\n29\nICAR TECHNOLOGIES: BIOPESTICIDES",
       "section": "Benefits:",
-      "tokens": 99,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_126",
-      "chunk_index": 126
+      "tokens": 99
     },
     {
       "content": "29. Manjari Vineguard\nyy\nMicrobial constituent: Trichoderma asperelloides 5R (NAIMCC-SF-0026)\nyy\nType: Liquid formulation; 5 × 1011 cfu/mL\nyy\nShelf life: 3 months at 25-35°C\nyy\nTarget pests and crops: Powdery mildew of grapes\nyy\nMethod of application: Soil drenching at 2 mL/L of water; Water required for soil\ndrenching: 1000 L/ha\nyy\nTarget agroecological zones/states: Maharashtra, Karnataka, Tamil Nadu,\nMizoram, and West Bengal\nyy\nValidation: Experimental farms at ICAR-NRC Grapes, Pune, Maharashtra for 3\nyears; farmers’ fields in Pune for two years\nyy\nToxicological data required for CIB&RC registration yet to be generated\nyy\nCommercialization: Available for licensing\nyy",
       "section": "29. Manjari Vineguard",
-      "tokens": 169,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_127",
-      "chunk_index": 127
+      "tokens": 169
     },
     {
       "content": "Benefits:\n\n\nSignificant reduction in powdery mildew incidence\n\n\nSignificant reduction in number of fungicide application\nApplication of Manjari Vineguard for controlling powdery mildew of grapes\n(var. Thompson Seedless) at Pune, Maharashtra during 2017-18\nTreated\nControl\nDirector, ICAR-National Research Centre for Grapes, Pune- 413702;\ne-Mail: director.nrcg@icar.gov.in\n\n30\nICAR TECHNOLOGIES: BIOPESTICIDES\nyy\nMicrobial constituent: Trichoderma afroharzianum (NAIMCC-F-01938)\nyy\nType: Liquid; 5 × 108 cfu/mL\nyy\nShelf life: 3 months at 25-35°C\nyy\nTarget pests and crops: Powdery mildew of grapes\nyy\nMethod of application: Foliar spray at 2.0 ml/L of water; Water required for spray:\n1000 L/ha\nyy\nTarget agroecological zones/states: Maharashtra, Karnataka, Tamil Nadu,\nMizoram and West Bengal\nyy\nValidation: Experimental farms at ICAR-NRC Grapes, Pune, Maharashtra for 3\nyears; farmers’ fields in Pune for two years\nyy\nToxicological data required for CIB&RC registration yet to be generated\nyy\nCommercialization: Available for licensing\nyy",
       "section": "Benefits:",
-      "tokens": 260,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_128",
-      "chunk_index": 128
+      "tokens": 260
     },
     {
       "content": "Benefits:\n\n\nSignificant reduction in powdery mildew incidence\n\n\nSignificant reduction in number of fungicide application",
       "section": "Benefits:",
-      "tokens": 31,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_129",
-      "chunk_index": 129
+      "tokens": 31
     },
     {
       "content": "30. Manjari Rakshak\nApplication of Manjari Rakshak for controlling powdery mildew of grapes (var. Thompson Seedless)\nat Pune, Maharashtra during 2017-18\nTreated\nControl\nDirector, ICAR-National Research Centre for Grapes, Pune- 413702;\ne-Mail: director.nrcg@icar.gov.in\n\n31\nICAR TECHNOLOGIES: BIOPESTICIDES",
       "section": "30. Manjari Rakshak",
-      "tokens": 76,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_130",
-      "chunk_index": 130
+      "tokens": 76
     },
     {
       "content": "31. Pusa 5SD\nyy\nMicrobial Constituent: Trichoderma harzianum IARI P-4\n(MTCC 5371)\nyy\nType: Wettable powder; 108 cfu/g\nyy\nShelf life: 25 months at 25+8°C\nyy\nTarget pests and crops: Fusarium oxysporum f. sp. ciceris,\nSclerotium rolfsii and Sclerotinia sclerotiorum in chickpea;\nRhizoctonia solani and R. bataticola in chickpea and mungbean; Fusarium\noxysporum f. sp. lycopersici in tomato; Pythium ultimum and R. solani in french\nbean; and major soil and seed borne fungal pathogens in various crops\nyy\nMethod of application: Seed treatment at 4g/kg of seed\nyy\nTarget agroecological zones/states: All\nyy\nValidation: AICRP on chickpea at 8 locations for three years; ICAR-IARI, New\nDelhi; JNKVV, Jabalpur, Madhya Pradesh; RAK College of Agriculture, Sehore,\nMadhya Pradesh; ARS, Durgapura, Jaipur, Rajasthan; ARS, Badnapur, Maharastra;\nGAU, Junagadh, Gujarat; College of Agriculture, Indore, Madhya Pradesh and\nPRSS, SKUAST, Samba, Jammu & Kashmir\nyy\nToxicological data required for CIB&RC registration yet to be generated\nyy\nCommercialization: Patent granted in 2018 (Patent No. 292555); Available for\nlicencing\nyy",
       "section": "31. Pusa 5SD",
-      "tokens": 278,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_131",
-      "chunk_index": 131
+      "tokens": 278
     },
     {
       "content": "Benefits:\n\n\nEffective against a wide range of soil and seed borne diseases\n\n\nEnhanced growth of the plants\n\n\nIncreased seed germination\n\n\nIncreased grain yield under field conditions\nPusa 5SD evaluated against chickpea wilt\nControl\nTreated\nDirector, ICAR-Indian Agricultural Research Institute, New Delhi 110012;\ne-Mail: director@iari.res.in\n\nNotes",
       "section": "Benefits:",
-      "tokens": 89,
-      "filename": "ICAR-Technologies-Biopesticides.pdf",
-      "language": "english",
-      "crops": [
-        "maize",
-        "paddy",
-        "wheat"
-      ],
-      "diseases": [
-        "blast",
-        "stem_borer",
-        "powdery_mildew",
-        "root_rot"
-      ],
-      "seasons": [],
-      "regions": [
-        "maharashtra",
-        "madhya_pradesh",
-        "karnataka",
-        "uttar_pradesh"
-      ],
-      "chunk_id": "ICAR-Technologies-Biopesticides.pdf_132",
-      "chunk_index": 132
+      "tokens": 89
     }
   ]
 }

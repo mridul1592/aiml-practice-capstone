@@ -150,8 +150,9 @@ class VectorStore:
 
         # Convert L2 distances to similarity scores (cosine)
         # L2 distance to cosine similarity: sim = 1 - (dist^2 / 2)
-        similarities = 1 - (distances[0] ** 2) / 2
-
+        similarities = 1.0 - (distances[0] ** 2) / 2.0
+        similarities = np.clip(similarities, -1.0, 1.0)  # Clamp to valid range
+        
         # Apply filtering and thresholding
         results = []
         scores = []

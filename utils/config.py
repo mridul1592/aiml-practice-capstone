@@ -19,11 +19,12 @@ class Settings(BaseSettings):
     # LLM Configuration
     llm_provider: str = "ollama"
     ollama_base_url: str = "http://localhost:11434"
-    ollama_model: str = "mistral"
+    ollama_model: str = "orca2"
     openai_api_key: str = ""
 
     # Embedding Configuration
-    embedding_model: str = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+    embedding_model: str = "sentence-transformers/multilingual-e5-small"
+    device: str = "cuda"
     embedding_dimension: int = 384
 
     # Vector Store Configuration
@@ -31,22 +32,12 @@ class Settings(BaseSettings):
     metadata_index_path: str = "./data/embeddings/metadata.json"
 
     # RAG Configuration
-    chunk_size: int = 400
-    chunk_overlap: int = 100
+    chunk_size: int = 200
+    chunk_overlap: int = 40
     similarity_threshold: float = 0.5
     top_k_retrieval: int = 5
+    supported_languages: List[str] = ["en", "hi", "pa"]
     language_detect_threshold: float = 0.5
-
-    # Supported Languages
-    supported_languages: List[str] = Field(default=["en", "hi", "pa"])
-
-    @field_validator("supported_languages", mode="before")
-    @classmethod
-    def parse_languages(cls, v):
-        """Parse comma-separated languages if string."""
-        if isinstance(v, str):
-            return [lang.strip() for lang in v.split(",")]
-        return v
 
     # FastAPI Configuration
     api_host: str = "0.0.0.0"
@@ -68,6 +59,7 @@ class Settings(BaseSettings):
         """Pydantic settings configuration."""
         env_file = ".env"
         env_file_encoding = "utf-8"
+        extra = "ignore"
 
     def ensure_directories(self):
         """Create necessary directories if they don't exist."""

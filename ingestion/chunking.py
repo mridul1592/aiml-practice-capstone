@@ -15,12 +15,8 @@ from utils.logger import setup_logger
 
 logger = setup_logger(__name__)
 
-# Approximate token counting (rough estimates for different languages)
-CHARS_PER_TOKEN = {
-    "en": 4.0,  # English: ~4 chars per token
-    "hi": 2.0,  # Hindi: ~2 chars per token (Devanagari)
-    "pa": 2.0,  # Punjabi: ~2 chars per token (Gurmukhi)
-}
+# Approximate token counting for English
+CHARS_PER_TOKEN = 4.0  # English: ~4 chars per token
 
 
 class DocumentChunker:
@@ -28,9 +24,8 @@ class DocumentChunker:
 
     def __init__(
         self,
-        chunk_size: int = 400,
-        chunk_overlap: int = 100,
-        language: str = "en",
+        chunk_size: int = 200,
+        chunk_overlap: int = 40,
     ):
         """
         Initialize document chunker.
@@ -38,12 +33,10 @@ class DocumentChunker:
         Args:
             chunk_size: Target chunk size in tokens
             chunk_overlap: Token overlap between chunks
-            language: Language code for character-to-token conversion
         """
         self.chunk_size = chunk_size
         self.chunk_overlap = chunk_overlap
-        self.language = language
-        self.chars_per_token = CHARS_PER_TOKEN.get(language, 4.0)
+        self.chars_per_token = CHARS_PER_TOKEN
 
     def estimate_tokens(self, text: str) -> int:
         """
@@ -261,8 +254,8 @@ class DocumentChunker:
 def chunk_document(
     text: str,
     language: str = "en",
-    chunk_size: int = 400,
-    chunk_overlap: int = 100,
+    chunk_size: int = 200,
+    chunk_overlap: int = 40,
     metadata: Optional[Dict] = None,
 ) -> List[Dict]:
     """
@@ -305,7 +298,7 @@ if __name__ == "__main__":
     Use appropriate pesticides as recommended by agricultural experts.
     """
 
-    chunker = DocumentChunker(chunk_size=200, language="en")
+    chunker = DocumentChunker(chunk_size=200, chunk_overlap=40, language="en")
     chunks = chunker.chunk_document(sample_text)
 
     metadata = {"filename": "wheat_guide.pdf", "crop": "wheat", "language": "en"}
