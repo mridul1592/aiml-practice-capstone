@@ -667,12 +667,17 @@ def main():
             audio_data = mic_recorder(
                 start_prompt="🎤 Start Recording",
                 stop_prompt="⏹️ Stop Recording",
-                just_once=False,
+                just_once=True,          # only fires once per recording
                 use_container_width=True,
-                format="webm"
+                format="webm",
+                key="mic_recorder_widget"
             )
             if audio_data:
-                _transcribe_audio_to_query(audio_data['bytes'], ".webm", audio_language)
+                # Use audio id to avoid re-transcribing the same clip on every rerun
+                audio_id = audio_data.get("id", id(audio_data['bytes']))
+                if st.session_state.get("last_audio_id") != audio_id:
+                    st.session_state.last_audio_id = audio_id
+                    _transcribe_audio_to_query(audio_data['bytes'], ".webm", audio_language)
         except ImportError:
             st.info("📍 Audio recording requires `streamlit-mic-recorder`")
 
@@ -684,8 +689,11 @@ def main():
             key="audio_upload"
         )
         if uploaded_audio:
-            ext = Path(uploaded_audio.name).suffix.lower()
-            _transcribe_audio_to_query(uploaded_audio.getbuffer(), ext, audio_language)
+            upload_id = f"{uploaded_audio.name}_{uploaded_audio.size}"
+            if st.session_state.get("last_audio_id") != upload_id:
+                st.session_state.last_audio_id = upload_id
+                ext = Path(uploaded_audio.name).suffix.lower()
+                _transcribe_audio_to_query(uploaded_audio.getbuffer(), ext, audio_language)
 
     st.markdown("---")
 
