@@ -23,9 +23,9 @@ class Settings(BaseSettings):
     openai_api_key: str = ""
 
     # Embedding Configuration
-    embedding_model: str = "intfloat/multilingual-e5-large-instruct"
+    embedding_model: str = "BAAI/bge-base-en-v1.5"
     device: str = "cuda"
-    embedding_dimension: int = 1024
+    embedding_dimension: int = 768
 
     # Reranker Configuration
     reranker_model: str = "BAAI/bge-reranker-base"

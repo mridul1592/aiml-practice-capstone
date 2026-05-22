@@ -24,11 +24,16 @@ logger = setup_logger(__name__)
 class Embedder:
     """Generate multilingual embeddings for document chunks."""
 
-    # Task instruction used as prefix for query embeddings when using
-    # E5-instruct family models (and any other instruct-tuned bi-encoders).
-    # Documents are embedded without a prefix; only query vectors get this.
+    # ── Query prefixes ────────────────────────────────────────────────────────
+    # E5-instruct family: "Instruct: <task>\nQuery: <text>"
     _QUERY_INSTRUCTION: str = (
         "Given an agricultural query, retrieve relevant passages that answer the query"
+    )
+
+    # BGE (BAAI) non-instruct models: short prefix recommended in model card.
+    # Applied only to queries; documents are embedded without any prefix.
+    _BGE_QUERY_PREFIX: str = (
+        "Represent this sentence for searching relevant passages: "
     )
 
     def __init__(self, model_name: Optional[str] = None):
@@ -59,7 +64,7 @@ class Embedder:
                 self.model = AutoModel.from_pretrained(
                     self.model_name,
                     trust_remote_code=True,
-                    torch_dtype=torch.float16 if "cuda" in str(self.device) else torch.float32,
+                    dtype=torch.float16 if "cuda" in str(self.device) else torch.float32,
                 ).to(self.device)
                 self.embedding_dim = self.model.config.hidden_size
             else:
@@ -116,7 +121,11 @@ class Embedder:
         if self._is_instruct_model and not self.use_transformers:
             # E5-instruct style: "Instruct: <task>\nQuery: <text>"
             text = f"Instruct: {self._QUERY_INSTRUCTION}\nQuery: {query}"
-            logger.debug("Prepended instruction prefix for instruct model query")
+            logger.debug("Prepended E5-instruct prefix for query")
+        elif self.use_transformers and self.model_name.startswith("BAAI/") and "instruct" not in self.model_name.lower():
+            # BGE non-instruct: short retrieval prefix recommended in model card
+            text = f"{self._BGE_QUERY_PREFIX}{query}"
+            logger.debug("Prepended BGE query prefix")
         else:
             text = query
 
@@ -186,8 +195,14 @@ class Embedder:
         with torch.no_grad():
             outputs = self.model(**inputs)
 
-        # Apply basic pooling logic
-        if hasattr(outputs, "pooler_output") and outputs.pooler_output is not None:
+        # Pooling strategy:
+        # - BAAI/BGE models: CLS token from last_hidden_state[:,0,:]
+        #   (pooler_output exists but is a linear projection NOT trained
+        #    for retrieval — using it hurts retrieval quality)
+        # - Other models: prefer pooler_output, fall back to CLS
+        if self.model_name.startswith("BAAI/"):
+            emb = outputs.last_hidden_state[:, 0, :]
+        elif hasattr(outputs, "pooler_output") and outputs.pooler_output is not None:
             emb = outputs.pooler_output
         else:
             emb = outputs.last_hidden_state[:, 0, :]
