@@ -299,25 +299,22 @@ class RAGPipeline:
         if disease:
             filters["disease"] = disease
 
-        # Retrieve context chunks — fetch extra candidates when reranking so
-        # the cross-encoder has a richer pool to rescore.
-        retrieval_k = k * 3 if _use_reranker else k
-
+        # Retrieve exactly k chunks; the reranker reorders them, not filters.
         try:
             if use_hybrid:
-                logger.info(f"Hybrid retrieval (BM25 + semantic), k={retrieval_k}...")
+                logger.info(f"Hybrid retrieval (BM25 + semantic), k={k}...")
                 context_chunks = self.retriever.retrieve_hybrid(
                     query_text,
-                    k=retrieval_k,
+                    k=k,
                     similarity_threshold=similarity_threshold,
                     filters=filters if filters else None,
                     return_scores=True,
                 )
             else:
-                logger.info(f"Semantic-only retrieval, k={retrieval_k}...")
+                logger.info(f"Semantic-only retrieval, k={k}...")
                 context_chunks = self.retriever.retrieve(
                     query_text,
-                    k=retrieval_k,
+                    k=k,
                     similarity_threshold=similarity_threshold,
                     filters=filters if filters else None,
                     return_scores=True,
@@ -329,13 +326,13 @@ class RAGPipeline:
 
             # ── Reranking ──────────────────────────────────────────────────────
             if _use_reranker:
-                logger.info(f"Reranking {len(context_chunks)} candidates → top {k}...")
+                logger.info(f"Reranking {len(context_chunks)} chunks by cross-encoder score...")
                 context_chunks = self.reranker.rerank(
                     query=query_text,
                     chunks=context_chunks,
-                    top_k=k,
+                    top_k=None,   # keep all k — just reorder by relevance
                 )
-                logger.info(f"Reranking complete: {len(context_chunks)} chunks selected")
+                logger.info(f"Reranking complete")
         except Exception as e:
             logger.error(f"Retrieval/reranking failed: {str(e)}")
             raise
