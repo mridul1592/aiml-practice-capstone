@@ -527,36 +527,22 @@ def main():
         )
 
     # Search input area (Google-style)
-    # Initialize transcribed text in session state if not present
-    if "transcribed_audio" not in st.session_state:
-        st.session_state.transcribed_audio = ""
+    # Initialize query text in session state
+    if "query_text_value" not in st.session_state:
+        st.session_state.query_text_value = ""
 
     col1, col2, col3 = st.columns([0.5, 3, 0.5])
     with col2:
-        # Show transcribed text if available
-        if st.session_state.transcribed_audio:
-            st.info(f"📝 Transcribed: {st.session_state.transcribed_audio}")
-
-            col_use, col_clear = st.columns([2, 1])
-            with col_use:
-                if st.button("✅ Use this text", key="use_transcribed", use_container_width=True):
-                    st.session_state.query_input = st.session_state.transcribed_audio
-                    st.session_state.transcribed_audio = ""
-                    st.rerun()
-            with col_clear:
-                if st.button("❌ Clear", key="clear_transcribed", use_container_width=True):
-                    st.session_state.transcribed_audio = ""
-                    st.rerun()
-
         query_text = st.text_area(
             "Enter your question",
-            value=st.session_state.get("query_input", ""),
+            value=st.session_state.query_text_value,
             placeholder="e.g., How to control wheat pests? / गेहूँ में कीटों का नियंत्रण कैसे करें?",
             height=80,
             label_visibility="collapsed",
-            key="main_query",
-            on_change=lambda: st.session_state.update({"query_input": st.session_state.main_query})
+            key="main_query"
         )
+        # Update session state when user types
+        st.session_state.query_text_value = query_text
 
     st.markdown("<br>", unsafe_allow_html=True)
 
@@ -745,11 +731,11 @@ def main():
                                         logger.info(f"  - Transcribed text: {transcribed_text[:200]}")
 
                                         if transcribed_text:
-                                            # Store transcribed text in separate variable
-                                            st.session_state.transcribed_audio = transcribed_text
-                                            st.success("✅ Audio transcribed! Click '✅ Use this text' to add to query field.")
+                                            # Write transcribed text directly to text area
+                                            st.session_state.query_text_value = transcribed_text
+                                            st.success("✅ Audio transcribed and added to query field!")
                                             import time
-                                            time.sleep(0.5)  # Brief pause so user sees success message
+                                            time.sleep(0.3)
                                             st.rerun()
                                         else:
                                             st.warning("⚠️ No speech detected in audio")
@@ -895,11 +881,11 @@ def main():
                                     logger.info(f"CHECKPOINT 7: Text extracted: {len(transcribed_text)} chars")
 
                                     if transcribed_text:
-                                        # Store transcribed text in separate variable
-                                        st.session_state.transcribed_audio = transcribed_text
-                                        st.success("✅ Audio transcribed! Click '✅ Use this text' to add to query field.")
+                                        # Write transcribed text directly to text area
+                                        st.session_state.query_text_value = transcribed_text
+                                        st.success("✅ Audio transcribed and added to query field!")
                                         import time
-                                        time.sleep(0.5)  # Brief pause so user sees success message
+                                        time.sleep(0.3)
                                         st.rerun()
                                     else:
                                         st.warning("⚠️ No speech detected")
