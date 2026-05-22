@@ -656,7 +656,7 @@ def main():
             model_size = st.selectbox(
                 "Whisper Model Size",
                 options=["tiny", "base", "small", "medium", "large"],
-                value="base",
+                index=1,
                 help="Larger = more accurate but slower",
                 key="whisper_model_size"
             )
