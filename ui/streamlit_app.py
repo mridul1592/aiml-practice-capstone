@@ -539,6 +539,18 @@ def main():
 
     st.markdown("<br>", unsafe_allow_html=True)
 
+    # Language selector for audio (helps Whisper detect correctly)
+    audio_lang_col1, audio_lang_col2, audio_lang_col3 = st.columns([1, 2, 1])
+    with audio_lang_col2:
+        st.write("**Select language for audio input:**")
+        audio_language = st.selectbox(
+            "Audio language",
+            options=["Auto-detect", "en", "hi", "pa"],
+            format_func=lambda x: "🔍 Auto-detect" if x == "Auto-detect" else LANGUAGES.get(x, x),
+            key="audio_language"
+        )
+    st.markdown("<br>", unsafe_allow_html=True)
+
     # Audio input section - simple transcription to text
     col1, col2 = st.columns([1, 1])
 
@@ -637,6 +649,13 @@ def main():
                                 # Use absolute path for output directory to avoid path issues
                                 output_dir = os.path.abspath(".")
                                 whisper_cmd = [sys.executable, "-m", "whisper", audio_input_path, "--model", "base", "--output_format", "json", "--output_dir", output_dir, "--verbose", "False"]
+
+                                # Add language hint if specified (not auto-detect)
+                                if audio_language != "Auto-detect":
+                                    whisper_cmd.extend(["--language", audio_language])
+                                    logger.info(f"  - Language hint: {audio_language}")
+                                else:
+                                    logger.info(f"  - Language: Auto-detect")
                                 logger.info(f"  - Command: {' '.join(whisper_cmd)}")
                                 logger.info(f"  - Current working directory: {os.getcwd()}")
                                 logger.info(f"  - Output directory: {output_dir}")
@@ -786,6 +805,14 @@ def main():
                         # Use absolute path for output directory to avoid path issues
                         output_dir = os.path.abspath(".")
                         whisper_cmd = [sys.executable, "-m", "whisper", audio_path, "--model", "base", "--output_format", "json", "--output_dir", output_dir, "--verbose", "False"]
+
+                        # Add language hint if specified (not auto-detect)
+                        if audio_language != "Auto-detect":
+                            whisper_cmd.extend(["--language", audio_language])
+                            logger.info(f"  - Language hint: {audio_language}")
+                        else:
+                            logger.info(f"  - Language: Auto-detect")
+
                         logger.info(f"  - Command: {' '.join(whisper_cmd)}")
                         logger.info(f"  - Working dir: {os.getcwd()}")
                         logger.info(f"  - Output directory: {output_dir}")
