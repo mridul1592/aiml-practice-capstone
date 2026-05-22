@@ -15,6 +15,8 @@ import sys
 from pathlib import Path
 from typing import Optional
 import os
+import shutil
+import subprocess
 
 import streamlit as st
 
@@ -24,28 +26,25 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 # Find FFmpeg executable
 def get_ffmpeg_path():
     """Get the full path to FFmpeg executable."""
-    # Try to find FFmpeg in PATH first
-    try:
-        import subprocess
-        result = subprocess.run(["where", "ffmpeg"], capture_output=True, text=True, timeout=5)
-        if result.returncode == 0:
-            return result.stdout.strip().split('\n')[0]
-    except:
-        pass
+    # First try Python's shutil.which() - most reliable
+    ffmpeg = shutil.which("ffmpeg")
+    if ffmpeg:
+        return ffmpeg
 
-    # Try common installation locations
+    # Try common installation locations for Windows
     common_paths = [
         r"C:\Users\mridu\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-8.1.1-full_build\bin\ffmpeg.exe",
         r"C:\Program Files\FFmpeg\bin\ffmpeg.exe",
         r"C:\Program Files (x86)\FFmpeg\bin\ffmpeg.exe",
+        Path.home() / "AppData" / "Local" / "Programs" / "FFmpeg" / "bin" / "ffmpeg.exe",
     ]
 
     for path in common_paths:
-        if os.path.exists(path):
-            return path
+        path_str = str(path)
+        if os.path.exists(path_str):
+            return path_str
 
-    # Return ffmpeg command (will fail if not in PATH, but that's ok for error handling)
-    return "ffmpeg"
+    return None
 
 FFMPEG_PATH = get_ffmpeg_path()
 
@@ -549,35 +548,53 @@ def main():
             if audio_data:
                 # Save recorded audio to temporary file for transcription
                 try:
-                    with st.spinner("🔄 Transcribing audio..."):
+                    with st.spinner("🔄 Processing audio..."):
                         # Save webm to temp file
+                        import tempfile
                         with tempfile.NamedTemporaryFile(delete=False, suffix=".webm") as webm_file:
                             webm_file.write(audio_data['bytes'])
                             webm_path = webm_file.name
 
                         # Convert webm to wav using FFmpeg
                         wav_path = webm_path.replace(".webm", ".wav")
-                        import subprocess
-                        try:
-                            subprocess.run(
-                                [FFMPEG_PATH, "-i", webm_path, "-acodec", "pcm_s16le", "-ar", "16000", wav_path, "-y"],
-                                capture_output=True,
-                                check=True,
-                                timeout=30
-                            )
-                        except Exception as ffmpeg_error:
-                            st.error(f"Error converting audio: {str(ffmpeg_error)}")
+
+                        if FFMPEG_PATH:
+                            try:
+                                result = subprocess.run(
+                                    [FFMPEG_PATH, "-i", webm_path, "-acodec", "pcm_s16le", "-ar", "16000", wav_path, "-y"],
+                                    capture_output=True,
+                                    text=True,
+                                    timeout=30
+                                )
+                                if result.returncode != 0:
+                                    st.error(f"FFmpeg error: {result.stderr}")
+                                    if os.path.exists(webm_path):
+                                        os.remove(webm_path)
+                                    raise RuntimeError(f"FFmpeg conversion failed: {result.stderr}")
+                            except subprocess.TimeoutExpired:
+                                st.error("Audio conversion timed out")
+                                if os.path.exists(webm_path):
+                                    os.remove(webm_path)
+                                raise
+                            except Exception as ffmpeg_error:
+                                st.error(f"Error converting audio: {str(ffmpeg_error)}")
+                                if os.path.exists(webm_path):
+                                    os.remove(webm_path)
+                                raise
+                        else:
+                            st.error("❌ FFmpeg not found. Please ensure FFmpeg is installed.")
                             if os.path.exists(webm_path):
                                 os.remove(webm_path)
-                            raise
+                            raise RuntimeError("FFmpeg is not installed")
 
+                        # Transcribe the converted audio
                         try:
                             handler = initialize_audio_handler()
                             transcription_result = handler.audio_processor.transcribe(
                                 wav_path,
                                 language=None
                             )
-                            st.success("✅ Audio captured!")
+                            st.success("✅ Audio captured and transcribed!")
                         finally:
                             # Clean up temp files
                             if os.path.exists(webm_path):
@@ -585,7 +602,7 @@ def main():
                             if os.path.exists(wav_path):
                                 os.remove(wav_path)
                 except Exception as e:
-                    st.error(f"Error transcribing: {str(e)}")
+                    st.error(f"Error processing audio: {str(e)}")
         except ImportError:
             st.info("📍 Audio recording not available. Use file upload instead.")
 
