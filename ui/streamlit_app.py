@@ -501,6 +501,8 @@ def main():
 
     audio_file = None
     transcription_result = None
+    import tempfile
+    import os
 
     with col1:
         st.markdown("#### 🎙️ Record Audio")
@@ -516,21 +518,24 @@ def main():
             )
 
             if audio_data:
-                import io
-                audio_file = io.BytesIO(audio_data['bytes'])
-                audio_file.name = "recorded_audio.wav"
-                audio_file.type = "audio/wav"
-
-                # Immediately transcribe
+                # Save recorded audio to temporary file for transcription
                 try:
                     with st.spinner("🔄 Transcribing audio..."):
-                        handler = initialize_audio_handler()
-                        transcription_result = handler.audio_processor.transcribe(
-                            audio_file,
-                            language=None
-                        )
-                        # Display transcription immediately
-                        st.success("✅ Audio captured!")
+                        with tempfile.NamedTemporaryFile(delete=False, suffix=".webm") as tmp_file:
+                            tmp_file.write(audio_data['bytes'])
+                            tmp_audio_path = tmp_file.name
+
+                        try:
+                            handler = initialize_audio_handler()
+                            transcription_result = handler.audio_processor.transcribe(
+                                tmp_audio_path,
+                                language=None
+                            )
+                            st.success("✅ Audio captured!")
+                        finally:
+                            # Clean up temp file
+                            if os.path.exists(tmp_audio_path):
+                                os.remove(tmp_audio_path)
                 except Exception as e:
                     st.error(f"Error transcribing: {str(e)}")
         except ImportError:
@@ -546,15 +551,24 @@ def main():
 
         if uploaded_audio:
             audio_file = uploaded_audio
-            # Immediately transcribe
+            # Save uploaded audio to temporary file for transcription
             try:
                 with st.spinner("🔄 Transcribing audio..."):
-                    handler = initialize_audio_handler()
-                    transcription_result = handler.audio_processor.transcribe(
-                        audio_file,
-                        language=None
-                    )
-                    st.success("✅ Audio loaded!")
+                    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmp_file:
+                        tmp_file.write(uploaded_audio.getbuffer())
+                        tmp_audio_path = tmp_file.name
+
+                    try:
+                        handler = initialize_audio_handler()
+                        transcription_result = handler.audio_processor.transcribe(
+                            tmp_audio_path,
+                            language=None
+                        )
+                        st.success("✅ Audio loaded!")
+                    finally:
+                        # Clean up temp file
+                        if os.path.exists(tmp_audio_path):
+                            os.remove(tmp_audio_path)
             except Exception as e:
                 st.error(f"Error transcribing: {str(e)}")
 
