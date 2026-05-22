@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     # LLM Configuration
     llm_provider: str = "ollama"
     ollama_base_url: str = "http://localhost:11434"
-    ollama_model: str = "orca2"
+    ollama_model: str = "neural-chat"
     openai_api_key: str = ""
 
     # Embedding Configuration
