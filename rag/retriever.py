@@ -181,17 +181,10 @@ class Retriever:
         processed = self.preprocessor.preprocess(query)
         logger.info(f"Processed query: {processed['normalized']} (language: {processed['language']})")
 
-        # Add language to filters if not specified
-        if filters is None:
-            filters = {}
-
-        if "language" not in filters:
-            filters["language"] = processed["language"]
-
         # Generate query embedding
         query_embedding = self.embedder.embed_text(processed["normalized"])
 
-        # Search in vector store
+        # Search in vector store (don't filter by language if documents don't have it)
         results, scores = self.vector_store.search(
             query_embedding, k=k, similarity_threshold=similarity_threshold, metadata_filters=filters
         )
