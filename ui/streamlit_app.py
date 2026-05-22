@@ -531,6 +531,7 @@ def main():
     with col2:
         query_text = st.text_area(
             "Enter your question",
+            value=st.session_state.get("main_query", ""),
             placeholder="e.g., How to control wheat pests? / गेहूँ में कीटों का नियंत्रण कैसे करें?",
             height=80,
             label_visibility="collapsed",
@@ -553,8 +554,6 @@ def main():
 
     # Audio input section - simple transcription to text
     col1, col2 = st.columns([1, 1])
-
-    transcribed_text = ""
 
     with col1:
         st.markdown("#### 🎙️ Record Audio")
@@ -726,7 +725,9 @@ def main():
                                         logger.info(f"  - Transcribed text: {transcribed_text[:200]}")
 
                                         if transcribed_text:
-                                            st.success("✅ Audio transcribed!")
+                                            # Update the query text area with transcribed text
+                                            st.session_state.main_query = transcribed_text
+                                            st.success("✅ Audio transcribed and added to query field!")
                                         else:
                                             st.warning("⚠️ No speech detected in audio")
 
@@ -871,7 +872,9 @@ def main():
                                     logger.info(f"CHECKPOINT 7: Text extracted: {len(transcribed_text)} chars")
 
                                     if transcribed_text:
-                                        st.success("✅ Audio transcribed!")
+                                        # Update the query text area with transcribed text
+                                        st.session_state.main_query = transcribed_text
+                                        st.success("✅ Audio transcribed and added to query field!")
                                     else:
                                         st.warning("⚠️ No speech detected")
                                 os.remove(json_file)
@@ -891,22 +894,6 @@ def main():
             except Exception as e:
                 st.error(f"Error: {str(e)}")
                 logger.error(f"Audio upload error: {e}", exc_info=True)
-
-    # If audio was transcribed, show it and add to query
-    if transcribed_text:
-        st.markdown("---")
-        st.markdown("### 📝 What you said:")
-        st.markdown(
-            f"""
-            <div class='card'>
-                <p style='margin: 0; font-size: 1.1em; line-height: 1.6;'><strong>{transcribed_text}</strong></p>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-        # Auto-populate query with transcribed text
-        if not query_text.strip():
-            query_text = transcribed_text
 
     st.markdown("---")
 
