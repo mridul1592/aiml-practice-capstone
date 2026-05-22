@@ -521,21 +521,40 @@ def main():
                 # Save recorded audio to temporary file for transcription
                 try:
                     with st.spinner("🔄 Transcribing audio..."):
-                        with tempfile.NamedTemporaryFile(delete=False, suffix=".webm") as tmp_file:
-                            tmp_file.write(audio_data['bytes'])
-                            tmp_audio_path = tmp_file.name
+                        # Save webm to temp file
+                        with tempfile.NamedTemporaryFile(delete=False, suffix=".webm") as webm_file:
+                            webm_file.write(audio_data['bytes'])
+                            webm_path = webm_file.name
+
+                        # Convert webm to wav using FFmpeg
+                        wav_path = webm_path.replace(".webm", ".wav")
+                        import subprocess
+                        try:
+                            subprocess.run(
+                                ["ffmpeg", "-i", webm_path, "-acodec", "pcm_s16le", "-ar", "16000", wav_path, "-y"],
+                                capture_output=True,
+                                check=True,
+                                timeout=30
+                            )
+                        except Exception as ffmpeg_error:
+                            st.error(f"Error converting audio: {str(ffmpeg_error)}")
+                            if os.path.exists(webm_path):
+                                os.remove(webm_path)
+                            raise
 
                         try:
                             handler = initialize_audio_handler()
                             transcription_result = handler.audio_processor.transcribe(
-                                tmp_audio_path,
+                                wav_path,
                                 language=None
                             )
                             st.success("✅ Audio captured!")
                         finally:
-                            # Clean up temp file
-                            if os.path.exists(tmp_audio_path):
-                                os.remove(tmp_audio_path)
+                            # Clean up temp files
+                            if os.path.exists(webm_path):
+                                os.remove(webm_path)
+                            if os.path.exists(wav_path):
+                                os.remove(wav_path)
                 except Exception as e:
                     st.error(f"Error transcribing: {str(e)}")
         except ImportError:
