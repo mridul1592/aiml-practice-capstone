@@ -20,6 +20,7 @@ from pathlib import Path
 from typing import Optional
 
 import streamlit as st
+import streamlit.components.v1 as _components
 
 # ── Path setup (must happen before project imports) ─────────────────────────
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -189,6 +190,33 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
+# ── Scroll helper ─────────────────────────────────────────────────────────────
+def _scroll_to_last_message() -> None:
+    """
+    Inject a zero-height iframe whose JS scrolls the Streamlit main area
+    so the START of the most-recent chat message is visible at the top of
+    the viewport.  This prevents long responses from leaving the user staring
+    at the bottom of the answer instead of reading from the top.
+    """
+    _components.html(
+        """
+        <script>
+            (function () {
+                var parent = window.parent.document;
+                var msgs = parent.querySelectorAll('[data-testid="stChatMessage"]');
+                if (msgs.length === 0) return;
+                // Scroll to the last (newest) message
+                msgs[msgs.length - 1].scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            })();
+        </script>
+        """,
+        height=0,
+    )
+
 
 # ── Cached pipeline ───────────────────────────────────────────────────────────
 @st.cache_resource
@@ -397,6 +425,9 @@ def _process_query(query: str, pipeline: RAGPipeline, cfg: dict) -> None:
                 st.session_state.messages.append(
                     {"role": "assistant", "content": f"Error: {exc}", "result": None}
                 )
+
+    # Scroll so the top of the new response is visible, not the bottom
+    _scroll_to_last_message()
 
 
 # ── Main app ──────────────────────────────────────────────────────────────────

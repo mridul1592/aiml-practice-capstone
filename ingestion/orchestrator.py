@@ -194,12 +194,24 @@ class IngestionPipeline:
         json_files = list(processed_path.glob("*_processed.json"))
         logger.info(f"Found {len(json_files)} processed document files")
 
-        for json_file in json_files:
+        # Process files in sorted order so vector_ids assigned during embedding
+        # are in a deterministic, reproducible sequence.
+        for json_file in sorted(json_files):
             try:
                 with open(json_file, "r", encoding="utf-8") as f:
                     data = json.load(f)
+                    source_file = data.get(
+                        "source_file",
+                        json_file.stem.replace("_processed", "") + ".pdf",
+                    )
                     chunks = data.get("chunks", [])
-                    all_chunks.extend(chunks)
+                    # Inject the top-level source filename into every chunk so
+                    # downstream embedding and retrieval can identify the origin.
+                    enriched = [
+                        {**c, "filename": source_file} if not c.get("filename") else c
+                        for c in chunks
+                    ]
+                    all_chunks.extend(enriched)
                     logger.info(f"Loaded {len(chunks)} chunks from {json_file.name}")
             except Exception as e:
                 logger.error(f"Error loading {json_file.name}: {str(e)}")

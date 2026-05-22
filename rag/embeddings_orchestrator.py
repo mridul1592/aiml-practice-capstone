@@ -190,12 +190,13 @@ class EmbeddingPipeline:
             logger.error("No chunks found after ingestion")
             return ingestion_results
 
-        # Tag every chunk with its source filename so the FAISS metadata
-        # carries it from this point forward (avoids the runtime range-lookup).
+        # get_all_chunks() now injects 'filename' from the top-level source_file
+        # field in each processed JSON, so raw_chunks already carry the correct
+        # filename.  This guard is kept as a safety net only.
         chunks = []
         for chunk in raw_chunks:
-            if not chunk.get("filename"):
-                chunk = {**chunk, "filename": chunk.get("source_file", "Unknown")}
+            if not chunk.get("filename") or chunk.get("filename") == "Unknown":
+                chunk = {**chunk, "filename": "Unknown"}
             chunks.append(chunk)
 
         # Step 3: Build vector store

@@ -73,14 +73,18 @@ def _enrich_chunks_with_filename(
     chunks: List[Dict], source_map: List[Tuple[int, int, str]]
 ) -> List[Dict]:
     """
-    Add a 'filename' key to every chunk dict that doesn't already have one,
-    using the source_map range lookup.
+    Add or replace the 'filename' key on every chunk dict that is missing or
+    set to the 'Unknown' sentinel, using the source_map range lookup.
+
+    Note: 'Unknown' is a truthy string so `not chunk.get('filename')` would
+    incorrectly skip it — we check both conditions explicitly.
     """
     if not source_map:
         return chunks
     enriched = []
     for chunk in chunks:
-        if not chunk.get("filename"):
+        fname = chunk.get("filename")
+        if not fname or fname == "Unknown":
             vid = chunk.get("vector_id", -1)
             chunk = {**chunk, "filename": _lookup_filename(vid, source_map)}
         enriched.append(chunk)
