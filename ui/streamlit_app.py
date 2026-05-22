@@ -586,76 +586,86 @@ def main():
 
                         try:
                             # Convert webm to wav using FFmpeg (Whisper handles WAV better)
-                            st.write("**[DEBUG] Checkpoint 2.5:** Converting WebM to WAV")
-                            logger.info("CHECKPOINT 2.5: Converting WebM to WAV using FFmpeg")
+                            try:
+                                st.write("**[DEBUG] Checkpoint 2.5:** Converting WebM to WAV")
+                                logger.info("CHECKPOINT 2.5: Converting WebM to WAV using FFmpeg")
 
-                            wav_path = webm_path.replace(".webm", ".wav")
-                            if FFMPEG_PATH:
-                                convert_cmd = [
-                                    FFMPEG_PATH,
-                                    "-i", webm_path,
-                                    "-acodec", "pcm_s16le",
-                                    "-ar", "16000",
-                                    "-ac", "1",
-                                    "-y",  # Overwrite output
-                                    wav_path
-                                ]
-                                logger.info(f"  - FFmpeg command: {' '.join(convert_cmd)}")
+                                wav_path = webm_path.replace(".webm", ".wav")
+                                if FFMPEG_PATH:
+                                    convert_cmd = [
+                                        FFMPEG_PATH,
+                                        "-i", webm_path,
+                                        "-acodec", "pcm_s16le",
+                                        "-ar", "16000",
+                                        "-ac", "1",
+                                        "-y",  # Overwrite output
+                                        wav_path
+                                    ]
+                                    logger.info(f"  - FFmpeg command: {' '.join(convert_cmd)}")
 
-                                convert_result = subprocess.run(
-                                    convert_cmd,
-                                    capture_output=True,
-                                    text=True,
-                                    timeout=30
-                                )
+                                    convert_result = subprocess.run(
+                                        convert_cmd,
+                                        capture_output=True,
+                                        text=True,
+                                        timeout=30
+                                    )
 
-                                if convert_result.returncode == 0:
-                                    logger.info(f"  - Conversion successful")
-                                    logger.info(f"  - WAV path: {wav_path}")
-                                    logger.info(f"  - WAV exists: {os.path.exists(wav_path)}")
-                                    time.sleep(0.1)  # Small delay after conversion
-                                    audio_input_path = wav_path  # Use WAV for Whisper
+                                    if convert_result.returncode == 0:
+                                        logger.info(f"  - Conversion successful")
+                                        logger.info(f"  - WAV path: {wav_path}")
+                                        logger.info(f"  - WAV exists: {os.path.exists(wav_path)}")
+                                        time.sleep(0.1)  # Small delay after conversion
+                                        audio_input_path = wav_path  # Use WAV for Whisper
+                                    else:
+                                        logger.error(f"  - Conversion failed: {convert_result.stderr}")
+                                        st.warning("FFmpeg conversion failed, trying with WebM")
+                                        audio_input_path = webm_path  # Fallback to WebM
                                 else:
-                                    logger.error(f"  - Conversion failed: {convert_result.stderr}")
-                                    st.warning("FFmpeg conversion failed, trying with WebM")
-                                    audio_input_path = webm_path  # Fallback to WebM
-                            else:
-                                logger.warning("  - FFmpeg not available, using WebM directly")
-                                audio_input_path = webm_path
+                                    logger.warning("  - FFmpeg not available, using WebM directly")
+                                    audio_input_path = webm_path
+                            except Exception as e:
+                                logger.error(f"EXCEPTION at CP2.5: {str(e)}", exc_info=True)
+                                st.error(f"Conversion error: {str(e)}")
+                                audio_input_path = webm_path  # Fallback
 
                             # CHECKPOINT 3: About to run Whisper
-                            st.write("**[DEBUG] Checkpoint 3:** Running Whisper CLI")
-                            logger.info("CHECKPOINT 3: About to run Whisper CLI command")
+                            try:
+                                st.write("**[DEBUG] Checkpoint 3:** Running Whisper CLI")
+                                logger.info("CHECKPOINT 3: About to run Whisper CLI command")
 
-                            # Use absolute path for output directory to avoid path issues
-                            output_dir = os.path.abspath(".")
-                            whisper_cmd = [sys.executable, "-m", "whisper", audio_input_path, "--model", "base", "--output_format", "json", "--output_dir", output_dir, "--verbose", "False"]
-                            logger.info(f"  - Command: {' '.join(whisper_cmd)}")
-                            logger.info(f"  - Current working directory: {os.getcwd()}")
-                            logger.info(f"  - Output directory: {output_dir}")
-                            logger.info(f"  - Python executable: {sys.executable}")
+                                # Use absolute path for output directory to avoid path issues
+                                output_dir = os.path.abspath(".")
+                                whisper_cmd = [sys.executable, "-m", "whisper", audio_input_path, "--model", "base", "--output_format", "json", "--output_dir", output_dir, "--verbose", "False"]
+                                logger.info(f"  - Command: {' '.join(whisper_cmd)}")
+                                logger.info(f"  - Current working directory: {os.getcwd()}")
+                                logger.info(f"  - Output directory: {output_dir}")
+                                logger.info(f"  - Python executable: {sys.executable}")
 
-                            result = subprocess.run(
-                                whisper_cmd,
-                                capture_output=True,
-                                text=True,
-                                timeout=60
-                            )
+                                result = subprocess.run(
+                                    whisper_cmd,
+                                    capture_output=True,
+                                    text=True,
+                                    timeout=60
+                                )
 
-                            # CHECKPOINT 4: Whisper execution completed
-                            st.write("**[DEBUG] Checkpoint 4:** Whisper execution completed")
-                            logger.info("CHECKPOINT 4: Whisper execution completed")
-                            logger.info(f"  - Return code: {result.returncode}")
-                            logger.info(f"  - Stdout length: {len(result.stdout)}")
-                            logger.info(f"  - Stderr length: {len(result.stderr)}")
-                            logger.info(f"  - Full Stdout:\n{result.stdout}")
-                            logger.info(f"  - Full Stderr:\n{result.stderr}")
+                                # CHECKPOINT 4: Whisper execution completed
+                                st.write("**[DEBUG] Checkpoint 4:** Whisper execution completed")
+                                logger.info("CHECKPOINT 4: Whisper execution completed")
+                                logger.info(f"  - Return code: {result.returncode}")
+                                logger.info(f"  - Stdout length: {len(result.stdout)}")
+                                logger.info(f"  - Stderr length: {len(result.stderr)}")
+                                logger.info(f"  - Full Stdout:\n{result.stdout}")
+                                logger.info(f"  - Full Stderr:\n{result.stderr}")
 
-                            if result.returncode != 0:
-                                st.write(f"**[DEBUG] Whisper Error (code {result.returncode}):**")
-                                st.code(result.stderr, language="text")
+                                if result.returncode != 0:
+                                    st.write(f"**[DEBUG] Whisper Error (code {result.returncode}):**")
+                                    st.code(result.stderr, language="text")
+                            except Exception as e:
+                                logger.error(f"EXCEPTION at CP3-4: {str(e)}", exc_info=True)
+                                st.error(f"Whisper execution error: {str(e)}")
+                                result = None
 
-                            if result.returncode == 0:
+                            if result and result.returncode == 0:
                                 # CHECKPOINT 5: Looking for JSON output
                                 # JSON is created in output_dir with the basename of the input file
                                 webm_basename = os.path.basename(webm_path)
