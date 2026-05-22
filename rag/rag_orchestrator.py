@@ -140,7 +140,7 @@ class RAGPipeline:
     def query(
         self,
         query_text: str,
-        k: int = 5,
+        k: int = 10,
         similarity_threshold: Optional[float] = None,
         language: Optional[str] = None,
         crop: Optional[str] = None,
@@ -148,6 +148,7 @@ class RAGPipeline:
         season: Optional[str] = None,
         disease: Optional[str] = None,
         temperature: float = 0.7,
+        use_hybrid: bool = True,
     ) -> Dict:
         """
         Execute a RAG query.
@@ -162,6 +163,8 @@ class RAGPipeline:
             season: Filter by season
             disease: Filter by disease
             temperature: LLM temperature for generation
+            use_hybrid: If True, use BM25 + semantic hybrid search (recommended).
+                        If False, use semantic-only search.
 
         Returns:
             Dictionary with query, response, language, sources, and confidence
@@ -194,14 +197,24 @@ class RAGPipeline:
 
         # Retrieve context chunks
         try:
-            logger.info(f"Retrieving {k} context chunks...")
-            context_chunks = self.retriever.retrieve(
-                query_text,
-                k=k,
-                similarity_threshold=similarity_threshold,
-                filters=filters if filters else None,
-                return_scores=True,
-            )
+            if use_hybrid:
+                logger.info(f"Hybrid retrieval (BM25 + semantic), k={k}...")
+                context_chunks = self.retriever.retrieve_hybrid(
+                    query_text,
+                    k=k,
+                    similarity_threshold=similarity_threshold,
+                    filters=filters if filters else None,
+                    return_scores=True,
+                )
+            else:
+                logger.info(f"Semantic-only retrieval, k={k}...")
+                context_chunks = self.retriever.retrieve(
+                    query_text,
+                    k=k,
+                    similarity_threshold=similarity_threshold,
+                    filters=filters if filters else None,
+                    return_scores=True,
+                )
             logger.info(f"Retrieved {len(context_chunks)} chunks")
         except Exception as e:
             logger.error(f"Retrieval failed: {str(e)}")
@@ -228,6 +241,7 @@ class RAGPipeline:
             "sources": response["sources"],
             "num_context_chunks": len(context_chunks),
             "retrieved_chunks": context_chunks,
+            "retrieval_mode": "hybrid" if use_hybrid else "semantic",
         }
 
         logger.info("Query processing completed")

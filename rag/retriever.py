@@ -6,8 +6,10 @@ Handles:
 - Language detection
 - Metadata-aware retrieval
 - Query normalization and preprocessing
+- Hybrid search: BM25 keyword + FAISS semantic, merged with Reciprocal Rank Fusion
 """
 
+import re
 from typing import Dict, List, Optional, Tuple
 
 import numpy as np
@@ -178,6 +180,148 @@ class QueryPreprocessor:
         }
 
 
+class BM25Index:
+    """
+    Lightweight BM25 keyword index built on top of the existing vector-store
+    metadata.  Lazily initialised on first use so cold-start cost is paid only
+    when hybrid search is actually requested.
+
+    Tokenisation strategy:
+    - Lower-case the text
+    - Split on whitespace and non-alphanumeric boundaries
+    - Remove common English stop-words (they add noise to BM25 scores)
+    - Keep tokens ≥ 2 characters
+    This works for English and for the ASCII-portion of Indian-language docs.
+    """
+
+    _TOKEN_RE = re.compile(r"[^\w]+", re.UNICODE)
+
+    # Common English stop-words that carry no domain signal
+    _STOP_WORDS = {
+        "a", "an", "the", "and", "or", "but", "in", "on", "at", "to", "for",
+        "of", "with", "by", "from", "is", "are", "was", "were", "be", "been",
+        "being", "have", "has", "had", "do", "does", "did", "will", "would",
+        "could", "should", "may", "might", "shall", "can", "not", "no",
+        "how", "what", "why", "when", "where", "which", "who", "whom",
+        "this", "that", "these", "those", "it", "its", "as", "if", "so",
+        "up", "out", "about", "into", "then", "than", "also", "just",
+    }
+
+    def __init__(self):
+        self._bm25 = None          # BM25Okapi instance
+        self._index_to_meta: List[Dict] = []   # parallel list to bm25 corpus
+
+    # ------------------------------------------------------------------
+    # Build
+    # ------------------------------------------------------------------
+
+    def build(self, metadata_list: List[Dict]) -> None:
+        """
+        Build the BM25 corpus from a list of metadata dicts (same list that
+        lives in VectorStore.metadata).
+
+        Args:
+            metadata_list: list of dicts, each with at least a 'content' key
+        """
+        try:
+            from rank_bm25 import BM25Okapi
+        except ImportError:
+            raise ImportError(
+                "rank-bm25 is required for hybrid search. "
+                "Install with: pip install rank-bm25"
+            )
+
+        corpus: List[List[str]] = []
+        self._index_to_meta = []
+
+        for doc in metadata_list:
+            content = doc.get("content", "")
+            tokens = self._tokenize(content)
+            corpus.append(tokens)
+            self._index_to_meta.append(doc)
+
+        self._bm25 = BM25Okapi(corpus)
+        logger.info(f"BM25 index built: {len(corpus)} documents")
+
+    # ------------------------------------------------------------------
+    # Search
+    # ------------------------------------------------------------------
+
+    def search(self, query: str, k: int = 20) -> List[Tuple[Dict, float]]:
+        """
+        Run a BM25 keyword search.
+
+        Args:
+            query: Raw query text
+            k:     Number of top results to return
+
+        Returns:
+            List of (metadata_dict, bm25_score) tuples, sorted descending.
+        """
+        if self._bm25 is None:
+            raise RuntimeError("BM25 index has not been built yet. Call build() first.")
+
+        tokens = self._tokenize(query)
+        scores = self._bm25.get_scores(tokens)          # ndarray, one score per doc
+
+        # Pair with metadata and sort
+        paired = sorted(
+            zip(self._index_to_meta, scores.tolist()),
+            key=lambda x: x[1],
+            reverse=True,
+        )
+        return paired[:k]
+
+    # ------------------------------------------------------------------
+    # Helpers
+    # ------------------------------------------------------------------
+
+    @classmethod
+    def _tokenize(cls, text: str) -> List[str]:
+        """Lower-case, split on non-word chars, remove stop-words, keep tokens ≥ 2 chars."""
+        tokens = cls._TOKEN_RE.split(text.lower())
+        return [t for t in tokens if len(t) >= 2 and t not in cls._STOP_WORDS]
+
+    @property
+    def is_built(self) -> bool:
+        return self._bm25 is not None
+
+
+# ---------------------------------------------------------------------------
+# Reciprocal Rank Fusion helper
+# ---------------------------------------------------------------------------
+
+def _reciprocal_rank_fusion(
+    ranked_lists: List[List[Dict]],
+    k_rrf: int = 60,
+) -> List[Tuple[Dict, float]]:
+    """
+    Merge multiple ranked result lists using Reciprocal Rank Fusion.
+
+    RRF score for document d = sum_r [ 1 / (k_rrf + rank_r(d)) ]
+    where rank_r is the 1-based position of d in ranked list r.
+
+    Args:
+        ranked_lists: Each element is an ordered list of metadata dicts.
+                      A dict is identified by its 'id' or 'vector_id' field.
+        k_rrf:        Smoothing constant (default 60, standard in literature).
+
+    Returns:
+        List of (metadata_dict, rrf_score) sorted by rrf_score descending.
+    """
+    scores: Dict[str, float] = {}
+    doc_map: Dict[str, Dict] = {}
+
+    for ranked in ranked_lists:
+        for rank, doc in enumerate(ranked, start=1):
+            doc_id = str(doc.get("id") or doc.get("vector_id") or id(doc))
+            scores[doc_id] = scores.get(doc_id, 0.0) + 1.0 / (k_rrf + rank)
+            doc_map[doc_id] = doc
+
+    merged = sorted(doc_map.keys(), key=lambda d: scores[d], reverse=True)
+    return [(doc_map[d], scores[d]) for d in merged]
+
+
 class Retriever:
     """Semantic retriever with language support."""
 
@@ -198,6 +342,7 @@ class Retriever:
         self.embedder = embedder
         self.vector_store = vector_store
         self.preprocessor = QueryPreprocessor()
+        self._bm25_index = BM25Index()   # built lazily on first hybrid call
 
         logger.info("Retriever initialized")
 
@@ -257,6 +402,106 @@ class Retriever:
 
         logger.info(f"Retrieved {len(formatted_results)} results")
         return formatted_results
+
+    # ------------------------------------------------------------------
+    # Hybrid retrieval (BM25 + semantic → RRF)
+    # ------------------------------------------------------------------
+
+    def retrieve_hybrid(
+        self,
+        query: str,
+        k: int = 10,
+        similarity_threshold: Optional[float] = None,
+        filters: Optional[Dict] = None,
+        return_scores: bool = True,
+        bm25_candidates: int = 40,
+        semantic_candidates: int = 40,
+        rrf_k: int = 60,
+    ) -> List[Dict]:
+        """
+        Hybrid retrieval: run BM25 keyword search and FAISS semantic search
+        independently, then merge the candidate lists using Reciprocal Rank
+        Fusion (RRF) and return the top-k deduplicated results.
+
+        Why this helps:
+        - Semantic search excels at paraphrased / conceptual matches.
+        - BM25 excels at exact keyword matches (crop names, pesticide names,
+          technical terms) that may not rank high in embedding space.
+        - RRF rewards documents that rank well in *both* lists, combining
+          the strengths of each approach.
+
+        Args:
+            query:               Query text (any language)
+            k:                   Final number of results to return
+            similarity_threshold: Applied to semantic leg only
+            filters:             Metadata filters applied to *both* legs
+            return_scores:       Whether to attach scores to results
+            bm25_candidates:     Candidates retrieved from BM25 before RRF
+            semantic_candidates: Candidates retrieved from FAISS before RRF
+            rrf_k:               RRF smoothing constant (default 60)
+
+        Returns:
+            List of chunk dicts with 'similarity_score' (RRF score) field
+        """
+        if not query or not query.strip():
+            raise ValueError("Query cannot be empty")
+
+        logger.info(f"Hybrid retrieval for: {query[:80]}")
+
+        # ── 1. Preprocess query ──────────────────────────────────────────────
+        processed = self.preprocessor.preprocess(query)
+        normalized_query = processed["normalized"]
+
+        # ── 2. Semantic leg ──────────────────────────────────────────────────
+        query_embedding = self.embedder.embed_text(normalized_query)
+        sem_results, _ = self.vector_store.search(
+            query_embedding,
+            k=semantic_candidates,
+            similarity_threshold=similarity_threshold,
+            metadata_filters=filters,
+        )
+        logger.info(f"Semantic leg: {len(sem_results)} candidates")
+
+        # ── 3. BM25 leg ──────────────────────────────────────────────────────
+        if not self._bm25_index.is_built:
+            logger.info("Building BM25 index from vector store metadata…")
+            self._bm25_index.build(self.vector_store.metadata)
+
+        bm25_raw = self._bm25_index.search(normalized_query, k=bm25_candidates)
+
+        # Apply metadata filters to BM25 results (same semantics as FAISS leg)
+        if filters:
+            bm25_raw = [
+                (doc, score) for doc, score in bm25_raw
+                if self.vector_store._match_filters(doc, filters)
+            ]
+
+        bm25_results = [doc for doc, _ in bm25_raw]
+        logger.info(f"BM25 leg: {len(bm25_results)} candidates")
+
+        # ── 4. Reciprocal Rank Fusion ────────────────────────────────────────
+        merged = _reciprocal_rank_fusion([sem_results, bm25_results], k_rrf=rrf_k)
+
+        # ── 5. Content-based deduplication (same as VectorStore.search) ──────
+        seen: set = set()
+        final: List[Dict] = []
+        for doc, rrf_score in merged:
+            fp = doc.get("content", "")[:200].strip()
+            if fp and fp in seen:
+                continue
+            seen.add(fp)
+            entry = {**doc, "similarity_score": round(rrf_score, 6)}
+            if not return_scores:
+                entry.pop("similarity_score", None)
+            final.append(entry)
+            if len(final) == k:
+                break
+
+        logger.info(
+            f"Hybrid retrieval complete: {len(final)} results "
+            f"(from {len(sem_results)} semantic + {len(bm25_results)} BM25 candidates)"
+        )
+        return final
 
     def retrieve_by_crop(
         self,

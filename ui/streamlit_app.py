@@ -366,11 +366,15 @@ def display_response(result: dict):
     confidence = result.get("confidence", "low").upper()
     num_chunks = result.get("num_context_chunks", 0)
     num_sources = len(result.get("sources", []))
+    retrieval_mode = result.get("retrieval_mode", "semantic")
+    mode_label = "🔀 Hybrid (BM25 + Semantic)" if retrieval_mode == "hybrid" else "🧠 Semantic only"
 
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4 = st.columns(4)
     col1.metric("📊 Confidence", confidence)
     col2.metric("📖 Context Chunks", num_chunks)
     col3.metric("📚 Sources", num_sources)
+    col4.metric("🔍 Search Mode", "Hybrid" if retrieval_mode == "hybrid" else "Semantic")
+    st.caption(mode_label)
     st.divider()
 
     # ── Sources ───────────────────────────────────────────────────────────────
@@ -532,6 +536,23 @@ def main():
             help="Lower = deterministic, Higher = creative",
             key="temperature_sidebar"
         )
+
+        st.markdown("---")
+        st.markdown("### 🔍 Search Mode")
+        use_hybrid = st.toggle(
+            "Hybrid Search (BM25 + Semantic)",
+            value=True,
+            help=(
+                "ON — combines keyword (BM25) and semantic (embedding) search "
+                "using Reciprocal Rank Fusion. Better for exact crop/pest names.\n\n"
+                "OFF — semantic-only (embedding similarity)."
+            ),
+            key="use_hybrid_sidebar"
+        )
+        if use_hybrid:
+            st.caption("🔀 BM25 keywords + FAISS embeddings → RRF merge")
+        else:
+            st.caption("🧠 FAISS embedding similarity only")
 
         st.markdown("---")
         st.markdown("### 📊 System Information")
@@ -740,10 +761,11 @@ def main():
                     region   = st.session_state.get("region_filter", "")
                     season   = st.session_state.get("season_filter", "")
                     disease  = st.session_state.get("disease_filter", "")
-                    k        = st.session_state.get("k_text_query", 5)
+                    k        = st.session_state.get("k_text_query", 10)
                     threshold = st.session_state.get("threshold_text_query", 0.2)
+                    use_hybrid = st.session_state.get("use_hybrid_sidebar", True)
 
-                    logger.info(f"Filters: crop={crop} region={region} season={season} disease={disease} k={k} threshold={threshold}")
+                    logger.info(f"Filters: crop={crop} region={region} season={season} disease={disease} k={k} threshold={threshold} hybrid={use_hybrid}")
 
                     # Initialize pipeline
                     pipeline = initialize_pipeline(llm_provider, llm_model)
@@ -760,6 +782,7 @@ def main():
                         season=season if season else None,
                         disease=disease if disease else None,
                         temperature=temperature,
+                        use_hybrid=use_hybrid,
                     )
                     logger.info(f"Query complete | response length={len(result.get('response',''))}")
 
