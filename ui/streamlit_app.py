@@ -84,7 +84,28 @@ st.markdown(
     """
     <style>
     /* ── Global ─────────────────────────────── */
-    .block-container { padding-top: 1rem; padding-bottom: 0; }
+    /* Push content below Streamlit's fixed header (~60 px ≈ 3.75 rem).
+       1 rem was too small and the first chat bubble was hidden under it. */
+    .block-container {
+        padding-top: 5rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* Streamlit header bar — keep it visible but make sure it doesn't
+       overlap chat content by anchoring it to the top of the viewport. */
+    [data-testid="stHeader"] {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 999 !important;
+        background: var(--background-color, #ffffff) !important;
+    }
+
+    /* Toolbar (Deploy button etc.) — keep it on top too */
+    [data-testid="stToolbar"] {
+        z-index: 1000 !important;
+    }
 
     /* ── Sidebar ────────────────────────────── */
     [data-testid="stSidebar"] {
