@@ -346,97 +346,51 @@ def display_header():
 
 
 def display_response(result: dict):
-    """Display query response with beautiful formatting."""
-    # Response
-    col1, col2 = st.columns([3, 1])
-    with col1:
+    """Display query response using native Streamlit components (theme-safe)."""
+
+    # ── Header row: title + language badge ───────────────────────────────────
+    lang_code = result.get("language", "en")
+    lang_name = LANGUAGES.get(lang_code, lang_code)
+    col_title, col_lang = st.columns([4, 1])
+    with col_title:
         st.markdown("### 💬 Response")
-    with col2:
-        lang_code = result.get("language", "en")
-        lang_name = LANGUAGES.get(lang_code, "Unknown")
-        st.markdown(f"<span class='language-badge'>{lang_name}</span>", unsafe_allow_html=True)
+    with col_lang:
+        st.info(lang_name)
 
-    st.markdown(
-        f"""
-        <div class='card response-card'>
-        {result['response']}
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+    # ── Response text (native markdown — respects dark/light theme) ──────────
+    response_text = result.get("response", "No response returned.")
+    st.markdown(response_text)
+    st.divider()
 
-    st.markdown("<div class='divider'></div>", unsafe_allow_html=True)
+    # ── Metrics ───────────────────────────────────────────────────────────────
+    confidence = result.get("confidence", "low").upper()
+    num_chunks = result.get("num_context_chunks", 0)
+    num_sources = len(result.get("sources", []))
 
-    # Metrics
     col1, col2, col3 = st.columns(3)
-    with col1:
-        st.markdown(
-            f"""
-            <div class='metric-container'>
-                <div class='metric-label'>📊 Confidence</div>
-                <div class='metric-value {get_confidence_color(result.get("confidence", "low"))}'>
-                    {result.get("confidence", "N/A").upper()}
-                </div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
+    col1.metric("📊 Confidence", confidence)
+    col2.metric("📖 Context Chunks", num_chunks)
+    col3.metric("📚 Sources", num_sources)
+    st.divider()
 
-    with col2:
-        st.markdown(
-            f"""
-            <div class='metric-container'>
-                <div class='metric-label'>📖 Context Chunks</div>
-                <div class='metric-value'>{result.get("num_context_chunks", 0)}</div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-
-    with col3:
-        st.markdown(
-            f"""
-            <div class='metric-container'>
-                <div class='metric-label'>📚 Sources</div>
-                <div class='metric-value'>{len(result.get("sources", []))}</div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-
-    st.markdown("<div class='divider'></div>", unsafe_allow_html=True)
-
-    # Sources
+    # ── Sources ───────────────────────────────────────────────────────────────
     if result.get("sources"):
         st.markdown("### 📚 Sources")
         for source in result["sources"]:
-            st.markdown(
-                f"<div class='source-item'>📄 {source}</div>",
-                unsafe_allow_html=True,
-            )
+            st.markdown(f"- 📄 `{source}`")
+        st.divider()
 
-    st.markdown("<div class='divider'></div>", unsafe_allow_html=True)
-
-    # Retrieved Chunks
+    # ── Retrieved Chunks ─────────────────────────────────────────────────────
     if result.get("retrieved_chunks"):
-        with st.expander(f"📖 Retrieved Chunks ({len(result['retrieved_chunks'])})"):
+        with st.expander(f"📖 View Retrieved Chunks ({len(result['retrieved_chunks'])})"):
             for i, chunk in enumerate(result["retrieved_chunks"], 1):
                 similarity = chunk.get("similarity_score", 0)
-                content = chunk.get("content", "")
-                filename = chunk.get("filename", "Unknown")
-
-                st.markdown(
-                    f"""
-                    <div class='chunk-item'>
-                        <div class='chunk-header'>
-                            <span><b>Chunk {i}</b> | 📄 {filename}</span>
-                            <span class='similarity-score'>Similarity: {similarity:.1%}</span>
-                        </div>
-                        <p>{content}</p>
-                    </div>
-                    """,
-                    unsafe_allow_html=True,
-                )
+                content    = chunk.get("content", "")
+                filename   = chunk.get("filename", "Unknown")
+                st.markdown(f"**Chunk {i}** · 📄 `{filename}` · Similarity: `{similarity:.1%}`")
+                st.markdown(content)
+                if i < len(result["retrieved_chunks"]):
+                    st.divider()
 
 
 def _transcribe_audio_to_query(audio_bytes, suffix: str, language: str) -> None:
