@@ -1,0 +1,85 @@
+2026-05-22 20:07:59 - rag.rag_orchestrator - INFO - Initializing RAG pipeline...
+2026-05-22 20:07:59 - rag.rag_orchestrator - INFO - Loading embedder...
+2026-05-22 20:07:59 - rag.embedder - INFO - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-22 20:07:59 - rag.embedder - INFO - Using SentenceTransformers pipeline.
+2026-05-22 20:08:05 - rag.embedder - INFO - Model loaded successfully. Embedding dimension: 384
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - Embedder loaded: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - Loading vector store from disk...
+2026-05-22 20:08:05 - rag.vector_store - INFO - Initialized vector store with dimension 384
+2026-05-22 20:08:05 - rag.vector_store - INFO - Loaded FAISS index from data\embeddings\faiss_index.bin
+2026-05-22 20:08:05 - rag.vector_store - INFO - Loaded 3281 metadata entries
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - Vector store loaded: 3281 vectors
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - Initializing retriever...
+2026-05-22 20:08:05 - rag.retriever - INFO - Retriever initialized
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - Retriever initialized
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - Initializing generator with provider: ollama
+2026-05-22 20:08:05 - rag.generator - INFO - Initialized Ollama client: mistral
+2026-05-22 20:08:05 - rag.generator - INFO - Response generator initialized
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - Generator initialized
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - RAG pipeline initialized successfully
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3568.0_x64__qbz5n2kfra8p0\Lib\logging\__init__.py", line 1154, in emit
+    stream.write(msg + self.terminator)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3568.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 70-74: character maps to <undefined>
+Call stack:
+  File "<stdin>", line 13, in <module>
+  File "D:\practice\VSCode\aiml-fas-rag\aiml-practice-capstone\rag\rag_orchestrator.py", line 176, in query
+    logger.info(f"Processing query: {query_text}")
+Message: 'Processing query: \u0917\u0947\u0939\u0942\u0901 \u092e\u0947\u0902 \u0915\u0940\u091f\u094b\u0902 \u0915\u093e \u0928\u093f\u092f\u0902\u0924\u094d\u0930\u0923 \u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902?'
+Arguments: ()
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - Processing query: \u0917\u0947\u0939\u0942\u0901 \u092e\u0947\u0902 \u0915\u0940\u091f\u094b\u0902 \u0915\u093e \u0928\u093f\u092f\u0902\u0924\u094d\u0930\u0923 \u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902?
+2026-05-22 20:08:05 - rag.retriever - INFO - Detected language: hi (scores: {'hi': 0.8157894736842105, 'pa': 0.0, 'en': 0.0})
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - Response language: hi
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - Retrieving 5 context chunks...
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3568.0_x64__qbz5n2kfra8p0\Lib\logging\__init__.py", line 1154, in emit
+    stream.write(msg + self.terminator)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3568.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 67-71: character maps to <undefined>
+Call stack:
+  File "<stdin>", line 13, in <module>
+  File "D:\practice\VSCode\aiml-fas-rag\aiml-practice-capstone\rag\rag_orchestrator.py", line 198, in query
+    context_chunks = self.retriever.retrieve(
+  File "D:\practice\VSCode\aiml-fas-rag\aiml-practice-capstone\rag\retriever.py", line 191, in retrieve
+    logger.info(f"Retrieving for query: {query}")
+Message: 'Retrieving for query: \u0917\u0947\u0939\u0942\u0901 \u092e\u0947\u0902 \u0915\u0940\u091f\u094b\u0902 \u0915\u093e \u0928\u093f\u092f\u0902\u0924\u094d\u0930\u0923 \u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902?'
+Arguments: ()
+2026-05-22 20:08:05 - rag.retriever - INFO - Retrieving for query: \u0917\u0947\u0939\u0942\u0901 \u092e\u0947\u0902 \u0915\u0940\u091f\u094b\u0902 \u0915\u093e \u0928\u093f\u092f\u0902\u0924\u094d\u0930\u0923 \u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902?
+2026-05-22 20:08:05 - rag.retriever - INFO - Detected language: hi (scores: {'hi': 0.8157894736842105, 'pa': 0.0, 'en': 0.0})
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3568.0_x64__qbz5n2kfra8p0\Lib\logging\__init__.py", line 1154, in emit
+    stream.write(msg + self.terminator)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3568.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 62-66: character maps to <undefined>
+Call stack:
+  File "<stdin>", line 13, in <module>
+  File "D:\practice\VSCode\aiml-fas-rag\aiml-practice-capstone\rag\rag_orchestrator.py", line 198, in query
+    context_chunks = self.retriever.retrieve(
+  File "D:\practice\VSCode\aiml-fas-rag\aiml-practice-capstone\rag\retriever.py", line 195, in retrieve
+    logger.info(f"Processed query: {processed['normalized']} (language: {processed['language']})")
+Message: 'Processed query: \u0917\u0947\u0939\u0942\u0901 \u092e\u0947\u0902 \u0915\u0940\u091f\u094b\u0902 \u0915\u093e \u0928\u093f\u092f\u0902\u0924\u094d\u0930\u0923 \u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902 (language: hi)'
+Arguments: ()
+2026-05-22 20:08:05 - rag.retriever - INFO - Processed query: \u0917\u0947\u0939\u0942\u0901 \u092e\u0947\u0902 \u0915\u0940\u091f\u094b\u0902 \u0915\u093e \u0928\u093f\u092f\u0902\u0924\u094d\u0930\u0923 \u0915\u0948\u0938\u0947 \u0915\u0930\u0947\u0902 (language: hi)
+2026-05-22 20:08:05 - rag.vector_store - INFO - Search returned 5 results
+2026-05-22 20:08:05 - rag.retriever - INFO - Retrieved 5 results
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - Retrieved 5 chunks
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - Generating response...
+2026-05-22 20:08:05 - rag.generator - INFO - Generating response for query (language: hi)
+2026-05-22 20:08:20 - rag.rag_orchestrator - INFO - Query processing completed
+SUCCESS: Hindi query processed
+Language detected: hi
+Chunks retrieved: 5
+Results saved to hindi_test_output.json

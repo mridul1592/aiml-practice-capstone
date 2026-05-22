@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     # LLM Configuration
     llm_provider: str = "ollama"
     ollama_base_url: str = "http://localhost:11434"
-    ollama_model: str = "orca2"
+    ollama_model: str = "neural-chat"
     openai_api_key: str = ""
 
     # Embedding Configuration
@@ -36,8 +36,8 @@ class Settings(BaseSettings):
     chunk_overlap: int = 40
     similarity_threshold: float = 0.5
     top_k_retrieval: int = 5
-    supported_languages: List[str] = ["en", "hi", "pa"]
-    language_detect_threshold: float = 0.5
+    supported_languages: List[str] = ["en", "hi", "pa", "ta", "te", "or", "kn", "mr", "ml", "bn"]
+    language_detect_threshold: float = 0.05
 
     # FastAPI Configuration
     api_host: str = "0.0.0.0"

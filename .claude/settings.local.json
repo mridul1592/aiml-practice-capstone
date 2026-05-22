@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git push *)",
+      "Bash(git config *)",
+      "Bash(curl -X POST -H 'Authorization: token __CMDSUB_OUTPUT__' -H 'Accept: application/vnd.github.v3+json' -d '{\"title\":\"optimize: Switch to lightweight models for RTX 4060\",\"body\":\"## Summary\\\\n\\\\nOptimize the Agricultural RAG system for RTX 4060 \\(6GB VRAM\\) by switching to lightweight, open-source models:\\\\n\\\\n- **Embedding Model**: paraphrase-mpnet-base-v2 → **multilingual-e5-small**\\\\n - 67MB vs 420MB \\(saves 300MB+ VRAM\\)\\\\n - Better multilingual support for Hindi/Punjabi documents\\\\n - Maintains high semantic quality for agricultural queries\\\\n\\\\n- **LLM Model**: mistral → **orca2** \\(7B quantized\\)\\\\n - Improved reasoning for agricultural Q&A tasks\\\\n - Better instruction-following for domain-specific advice\\\\n - Optimized 4GB quantized format fits comfortably in 6GB VRAM\\\\n\\\\n## Benefits\\\\n\\\\n✅ Total VRAM usage: ~4.5GB \\(1.5GB buffer for safety\\)\\\\n✅ Faster inference on mid-range GPUs\\\\n✅ Better accuracy for agricultural domain tasks\\\\n✅ Maintains multilingual support \\(English, Hindi, Punjabi\\)\\\\n✅ All models are free and open-source \\(no API costs\\)\\\\n\\\\n## Files Changed\\\\n\\\\n- utils/config.py: Updated default model names\\\\n- Updated embeddings index and processed data files\\\\n\\\\n🤖 Generated with Claude Code\",\"head\":\"optimize/model-optimization-4060\",\"base\":\"main\"}' https://api.github.com/repos/mridul1592/aiml-practice-capstone/pulls)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(python main.py query --query \"How to control wheat pests?\")",
+      "Bash(python main.py query --query \"गेहूँ में कीटों का नियंत्रण कैसे करें?\")",
+      "Bash(pip install *)",
+      "Bash(cat)",
+      "Bash(python3)",
+      "Bash(python main.py --help)",
+      "Bash(python3 -m py_compile main.py)",
+      "Bash(python main.py)"
+    ]
+  }
+}
