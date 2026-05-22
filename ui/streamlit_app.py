@@ -194,45 +194,44 @@ st.markdown(
 # ── Scroll helper ─────────────────────────────────────────────────────────────
 def _scroll_to_last_message() -> None:
     """
-    Scroll the Streamlit main area so the START of the newest chat message
-    is visible after a response is rendered.
+    Scroll so the user's LATEST QUESTION is at the top of the viewport.
 
-    Implementation notes:
-    - height=0 iframes are suppressed by some browsers; use height=1.
-    - Streamlit batches DOM updates, so the newest message may not be in the
-      DOM when the iframe first loads. We retry up to 3 times with delays.
-    - We scroll to the LAST stChatMessage element (the assistant reply).
+    Targeting the assistant bubble (last message) puts the response at the
+    top and clips the question above the fold.  Targeting the second-to-last
+    message (the user turn) keeps the question fully visible and the start
+    of the response immediately below it — matching the ChatGPT UX.
+
+    height=1 is required; height=0 iframes are suppressed by Chromium and
+    their scripts never execute.  A retry loop handles Streamlit's batched
+    DOM updates.
     """
     _components.html(
         """
         <script>
         (function () {
-            var MAX_TRIES = 6;
-            var DELAY_MS  = 150;
+            var MAX_TRIES = 8;
+            var DELAY_MS  = 120;
             var tries = 0;
 
-            function scrollToLast() {
+            function scrollToQuery() {
                 try {
                     var parent = window.parent.document;
                     var msgs = parent.querySelectorAll(
                         '[data-testid="stChatMessage"]'
                     );
-                    if (msgs.length > 0) {
-                        msgs[msgs.length - 1].scrollIntoView({
-                            behavior: "smooth",
-                            block: "start"
-                        });
-                        return;   // success — stop retrying
+                    if (msgs.length === 0) {
+                        if (++tries < MAX_TRIES) setTimeout(scrollToQuery, DELAY_MS);
+                        return;
                     }
-                } catch (e) { /* cross-origin guard */ }
-
-                if (++tries < MAX_TRIES) {
-                    setTimeout(scrollToLast, DELAY_MS);
-                }
+                    // Scroll to the USER question (second-to-last element) so
+                    // the question is at the top and the response follows below.
+                    // If there is only one message, scroll to it directly.
+                    var target = msgs[Math.max(0, msgs.length - 2)];
+                    target.scrollIntoView({ behavior: "smooth", block: "start" });
+                } catch (e) { /* cross-origin guard — no-op */ }
             }
 
-            // Start after a short pause so Streamlit can commit the DOM
-            setTimeout(scrollToLast, DELAY_MS);
+            setTimeout(scrollToQuery, DELAY_MS);
         })();
         </script>
         """,
