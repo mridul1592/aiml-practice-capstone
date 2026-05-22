@@ -6,9 +6,13 @@ Coordinates:
 - Vector store loading
 - Retriever execution
 - LLM response generation
+- Source attribution (filename enrichment from processed-JSON range map)
 """
 
-from typing import Dict, List, Optional
+import json
+import os
+from pathlib import Path
+from typing import Dict, List, Optional, Tuple
 
 from rag.embedder import Embedder
 from rag.generator import ResponseGenerator, create_generator
@@ -18,6 +22,68 @@ from utils.config import settings
 from utils.logger import setup_logger
 
 logger = setup_logger(__name__)
+
+
+# ---------------------------------------------------------------------------
+# Source-map helpers — map vector_id → source PDF filename at runtime
+# without requiring a re-index.
+# ---------------------------------------------------------------------------
+
+def _build_source_map(processed_dir: str = "./data/processed") -> List[Tuple[int, int, str]]:
+    """
+    Build a list of (start_vector_id, end_vector_id, filename) tuples by
+    reading the processed JSON files in sorted order (same order the
+    EmbeddingPipeline used when building the FAISS index).
+
+    Returns an empty list if the processed directory doesn't exist or is empty.
+    """
+    p = Path(processed_dir)
+    if not p.exists():
+        return []
+
+    source_map: List[Tuple[int, int, str]] = []
+    running_id = 0
+
+    for json_file in sorted(p.glob("*_processed.json")):
+        try:
+            with open(json_file, encoding="utf-8") as f:
+                data = json.load(f)
+            source_file = data.get("source_file", json_file.stem.replace("_processed", ""))
+            n = data.get("total_chunks", len(data.get("chunks", [])))
+            if n > 0:
+                source_map.append((running_id, running_id + n - 1, source_file))
+                running_id += n
+        except Exception as exc:
+            logger.warning(f"Could not read {json_file}: {exc}")
+
+    logger.info(f"Source map built: {len(source_map)} documents, {running_id} total chunks")
+    return source_map
+
+
+def _lookup_filename(vector_id: int, source_map: List[Tuple[int, int, str]]) -> str:
+    """Return the source PDF filename for a given vector_id, or 'Unknown'."""
+    for start, end, filename in source_map:
+        if start <= vector_id <= end:
+            return filename
+    return "Unknown"
+
+
+def _enrich_chunks_with_filename(
+    chunks: List[Dict], source_map: List[Tuple[int, int, str]]
+) -> List[Dict]:
+    """
+    Add a 'filename' key to every chunk dict that doesn't already have one,
+    using the source_map range lookup.
+    """
+    if not source_map:
+        return chunks
+    enriched = []
+    for chunk in chunks:
+        if not chunk.get("filename"):
+            vid = chunk.get("vector_id", -1)
+            chunk = {**chunk, "filename": _lookup_filename(vid, source_map)}
+        enriched.append(chunk)
+    return enriched
 
 
 class RAGPipeline:
@@ -53,6 +119,9 @@ class RAGPipeline:
         self.vector_store = self.load_vector_store()
         self.retriever = self.load_retriever()
         self.generator = self.load_generator()
+
+        # Build source map for filename attribution (no re-indexing needed)
+        self._source_map = _build_source_map()
 
         logger.info("RAG pipeline initialized successfully")
 
@@ -216,6 +285,9 @@ class RAGPipeline:
                     return_scores=True,
                 )
             logger.info(f"Retrieved {len(context_chunks)} chunks")
+
+            # Enrich with source filename (runtime lookup, no re-index needed)
+            context_chunks = _enrich_chunks_with_filename(context_chunks, self._source_map)
         except Exception as e:
             logger.error(f"Retrieval failed: {str(e)}")
             raise

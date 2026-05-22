@@ -182,13 +182,21 @@ class EmbeddingPipeline:
             logger.error("No PDFs were processed")
             return ingestion_results
 
-        # Step 2: Load all chunks
+        # Step 2: Load all chunks (inject source filename into each chunk)
         logger.info("Step 2: Loading chunks...")
-        chunks = self.ingestion_pipeline.get_all_chunks()
+        raw_chunks = self.ingestion_pipeline.get_all_chunks()
 
-        if not chunks:
+        if not raw_chunks:
             logger.error("No chunks found after ingestion")
             return ingestion_results
+
+        # Tag every chunk with its source filename so the FAISS metadata
+        # carries it from this point forward (avoids the runtime range-lookup).
+        chunks = []
+        for chunk in raw_chunks:
+            if not chunk.get("filename"):
+                chunk = {**chunk, "filename": chunk.get("source_file", "Unknown")}
+            chunks.append(chunk)
 
         # Step 3: Build vector store
         logger.info("Step 3: Building vector store...")

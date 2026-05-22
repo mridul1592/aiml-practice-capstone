@@ -279,23 +279,51 @@ def _render_result(result: dict) -> None:
         unsafe_allow_html=True,
     )
 
-    # Sources + retrieved chunks in expanders
-    sources = result.get("sources", [])
-    chunks  = result.get("retrieved_chunks", [])
+    # ── Sources (top 3 unique, with doc name + section) ─────────────────────
+    chunks = result.get("retrieved_chunks", [])
 
-    if sources:
-        with st.expander(f"📚 Sources ({len(sources)})"):
-            for s in sources:
-                st.markdown(f"- 📄 `{s}`")
+    if chunks:
+        # Build deduplicated source list: (filename, section, chunk_index, score)
+        seen_files: set = set()
+        top_sources = []
+        for i, chunk in enumerate(chunks):
+            fname = chunk.get("filename", "Unknown")
+            if fname not in seen_files:
+                seen_files.add(fname)
+                top_sources.append({
+                    "filename": fname,
+                    "section":  chunk.get("section", "").strip()[:60] or "—",
+                    "chunk_no": i + 1,
+                    "score":    chunk.get("similarity_score", 0),
+                })
+            if len(top_sources) == 3:
+                break
 
+        # Short display name: strip path, drop ".pdf"
+        def _short(name: str) -> str:
+            return Path(name).stem.replace("_", " ").replace("-", " ")
+
+        with st.expander(f"📚 Sources — top {len(top_sources)} of {len(chunks)} chunks"):
+            for s in top_sources:
+                short = _short(s["filename"])
+                st.markdown(
+                    f"**📄 {short}**  \n"
+                    f"Section: *{s['section']}* · "
+                    f"Chunk #{s['chunk_no']} · "
+                    f"Score: `{s['score']:.4f}`"
+                )
+                st.divider() if s != top_sources[-1] else None
+
+    # ── Retrieved Chunks (all, collapsible) ──────────────────────────────────
     if chunks:
         with st.expander(f"📖 Retrieved Chunks ({len(chunks)})"):
             for i, chunk in enumerate(chunks, 1):
                 score   = chunk.get("similarity_score", 0)
                 content = chunk.get("content", "")
-                fname   = chunk.get("filename", "Unknown")
+                fname   = _short(chunk.get("filename", "Unknown"))
+                section = chunk.get("section", "").strip()[:50]
                 st.markdown(
-                    f"**Chunk {i}** · 📄 `{fname}` · Score: `{score:.4f}`"
+                    f"**Chunk {i}** · 📄 `{fname}` · *{section}* · Score: `{score:.4f}`"
                 )
                 st.markdown(content)
                 if i < len(chunks):
