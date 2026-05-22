@@ -99,7 +99,7 @@ st.markdown(
         left: 0 !important;
         right: 0 !important;
         z-index: 999 !important;
-        background: var(--background-color, #ffffff) !important;
+        background: var(--background-color, #000000) !important;
     }
 
     /* Toolbar (Deploy button etc.) — keep it on top too */
