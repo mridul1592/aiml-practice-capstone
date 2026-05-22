@@ -1,22 +1,28 @@
 """
-Streamlit UI for Agricultural RAG System.
+Beautiful Streamlit UI for Agricultural RAG System.
 
-Provides web interface for:
-- Query submission with metadata filters
-- Result display with retrieved chunks
-- Configuration management
-- System statistics
+Features:
+- 10-language support (English, Hindi, Tamil, Telugu, Odia, Kannada, Marathi, Malayalam, Bengali, Punjabi)
+- Text and audio input
+- Automatic language detection
+- Beautiful response formatting
+- Confidence indicators
+- Source attribution
+- Responsive design
 """
 
 import sys
 from pathlib import Path
+from typing import Optional
 
 import streamlit as st
 
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
+from audio.audio_rag_handler import AudioRAGHandler
 from rag.rag_orchestrator import RAGPipeline
+from rag.retriever import LanguageDetector
 from utils.config import settings
 from utils.logger import setup_logger
 
@@ -24,39 +30,236 @@ logger = setup_logger(__name__)
 
 # Streamlit page configuration
 st.set_page_config(
-    page_title="Agricultural RAG System",
+    page_title="🌾 Agricultural AI Assistant",
     page_icon="🌾",
     layout="wide",
     initial_sidebar_state="expanded",
+    menu_items={
+        "About": "Agricultural RAG System - 10 Languages, Smart Farming Advice"
+    }
 )
 
-# Custom CSS
+# Language Configuration
+LANGUAGES = {
+    "en": "🇬🇧 English",
+    "hi": "🇮🇳 Hindi (हिंदी)",
+    "pa": "🇮🇳 Punjabi (ਪੰਜਾਬੀ)",
+    "ta": "🇮🇳 Tamil (தமிழ்)",
+    "te": "🇮🇳 Telugu (తెలుగు)",
+    "or": "🇮🇳 Odia (ଓଡ଼ିଆ)",
+    "kn": "🇮🇳 Kannada (ಕನ್ನಡ)",
+    "mr": "🇮🇳 Marathi (मराठी)",
+    "ml": "🇮🇳 Malayalam (മലയാളം)",
+    "bn": "🇮🇳 Bengali (বাংলা)",
+}
+
+# Beautiful Custom CSS
 st.markdown(
     """
     <style>
-    .main-header {
-        text-align: center;
-        color: #2ecc71;
+    /* Main styling */
+    :root {
+        --primary-color: #10b981;
+        --secondary-color: #059669;
+        --accent-color: #f59e0b;
+        --text-dark: #1f2937;
+        --text-light: #6b7280;
+        --bg-light: #f9fafb;
+        --border-color: #e5e7eb;
+    }
+
+    /* Header styling */
+    .header-container {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        padding: 40px 20px;
+        border-radius: 15px;
+        color: white;
         margin-bottom: 30px;
+        box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
     }
-    .result-box {
-        background-color: #000000;
-        padding: 15px;
-        border-radius: 8px;
+
+    .header-title {
+        font-size: 2.5em;
+        font-weight: 700;
+        margin: 0;
+        text-align: center;
+    }
+
+    .header-subtitle {
+        font-size: 1.1em;
+        margin-top: 10px;
+        text-align: center;
+        opacity: 0.95;
+    }
+
+    /* Card styling */
+    .card {
+        background: white;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 20px;
+        margin: 15px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+        transition: all 0.3s ease;
+    }
+
+    .card:hover {
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .response-card {
+        background: linear-gradient(135deg, #f0fdf4 0%, #f0fdf4 100%);
+        border-left: 4px solid #10b981;
+    }
+
+    /* Language badge */
+    .language-badge {
+        display: inline-block;
+        background: #dbeafe;
+        color: #0c4a6e;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        font-weight: 600;
+        margin: 5px 5px 5px 0;
+    }
+
+    /* Confidence indicator */
+    .confidence-high {
+        color: #10b981;
+        font-weight: 700;
+    }
+
+    .confidence-medium {
+        color: #f59e0b;
+        font-weight: 700;
+    }
+
+    .confidence-low {
+        color: #ef4444;
+        font-weight: 700;
+    }
+
+    /* Source box */
+    .source-item {
+        background: #f3f4f6;
+        border-left: 4px solid #3b82f6;
+        padding: 12px 15px;
         margin: 10px 0;
+        border-radius: 6px;
+        font-size: 0.95em;
     }
-    .source-box {
-        background-color: #e8f4f8;
-        padding: 10px;
-        border-left: 4px solid #3498db;
-        margin: 5px 0;
+
+    /* Chunk box */
+    .chunk-item {
+        background: #fafbfc;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 12px 0;
+        line-height: 1.6;
     }
-    .chunk-box {
-        background-color: #f9f9f9;
-        padding: 12px;
-        border-radius: 5px;
-        border: 1px solid #ddd;
-        margin: 8px 0;
+
+    .chunk-header {
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .similarity-score {
+        background: #dcfce7;
+        color: #166534;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.85em;
+        font-weight: 600;
+    }
+
+    /* Metric styling */
+    .metric-container {
+        background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+        border: 1px solid #bbf7d0;
+    }
+
+    .metric-label {
+        font-size: 0.9em;
+        color: var(--text-light);
+        font-weight: 600;
+    }
+
+    .metric-value {
+        font-size: 1.8em;
+        color: var(--primary-color);
+        font-weight: 700;
+        margin-top: 5px;
+    }
+
+    /* Button styling */
+    .stButton button {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        padding: 12px 24px;
+        transition: all 0.3s ease;
+    }
+
+    .stButton button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+    }
+
+    /* Tabs styling */
+    .stTabs [data-baseweb="tab-list"] button {
+        border-radius: 8px 8px 0 0;
+    }
+
+    /* Alert styling */
+    .stSuccess {
+        background-color: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-radius: 8px;
+    }
+
+    .stError {
+        background-color: #fef2f2;
+        border: 1px solid #fecaca;
+        border-radius: 8px;
+    }
+
+    .stWarning {
+        background-color: #fffbeb;
+        border: 1px solid #fde68a;
+        border-radius: 8px;
+    }
+
+    /* Footer */
+    .footer {
+        text-align: center;
+        color: var(--text-light);
+        font-size: 0.9em;
+        margin-top: 50px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border-color);
+    }
+
+    /* Divider */
+    .divider {
+        border: none;
+        border-top: 2px solid var(--border-color);
+        margin: 20px 0;
+    }
+
+    /* Sidebar styling */
+    .stSidebar {
+        background: linear-gradient(180deg, #f9fafb 0%, #f3f4f6 100%);
     }
     </style>
     """,
@@ -70,252 +273,427 @@ def initialize_pipeline(provider: str, model_name: str) -> RAGPipeline:
     return RAGPipeline(llm_provider=provider, llm_model_name=model_name)
 
 
-def main():
-    """Main Streamlit application."""
-    
-    # Header
-    col1, col2, col3 = st.columns([1, 2, 1])
+@st.cache_resource
+def initialize_audio_handler() -> AudioRAGHandler:
+    """Initialize audio handler with caching."""
+    return AudioRAGHandler(audio_model_size="base")
+
+
+def get_confidence_color(confidence: str) -> str:
+    """Get color class for confidence level."""
+    if confidence.lower() == "high":
+        return "confidence-high"
+    elif confidence.lower() == "medium":
+        return "confidence-medium"
+    else:
+        return "confidence-low"
+
+
+def display_header():
+    """Display beautiful header."""
+    st.markdown(
+        """
+        <div class='header-container'>
+            <h1 class='header-title'>🌾 Agricultural AI Assistant</h1>
+            <p class='header-subtitle'>Get expert farming advice in 10 languages with AI-powered recommendations</p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def display_response(result: dict):
+    """Display query response with beautiful formatting."""
+    # Response
+    col1, col2 = st.columns([3, 1])
+    with col1:
+        st.markdown("### 💬 Response")
     with col2:
+        lang_code = result.get("language", "en")
+        lang_name = LANGUAGES.get(lang_code, "Unknown")
+        st.markdown(f"<span class='language-badge'>{lang_name}</span>", unsafe_allow_html=True)
+
+    st.markdown(
+        f"""
+        <div class='card response-card'>
+        {result['response']}
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    st.markdown("<div class='divider'></div>", unsafe_allow_html=True)
+
+    # Metrics
+    col1, col2, col3 = st.columns(3)
+    with col1:
         st.markdown(
-            "<h1 style='text-align: center; color: #2ecc71;'>🌾 Agricultural RAG System</h1>",
-            unsafe_allow_html=True,
-        )
-        st.markdown(
-            "<p style='text-align: center; color: #666;'>Smart farming advice powered by AI</p>",
+            f"""
+            <div class='metric-container'>
+                <div class='metric-label'>📊 Confidence</div>
+                <div class='metric-value {get_confidence_color(result.get("confidence", "low"))}'>
+                    {result.get("confidence", "N/A").upper()}
+                </div>
+            </div>
+            """,
             unsafe_allow_html=True,
         )
 
-    st.markdown("---")
+    with col2:
+        st.markdown(
+            f"""
+            <div class='metric-container'>
+                <div class='metric-label'>📖 Context Chunks</div>
+                <div class='metric-value'>{result.get("num_context_chunks", 0)}</div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    with col3:
+        st.markdown(
+            f"""
+            <div class='metric-container'>
+                <div class='metric-label'>📚 Sources</div>
+                <div class='metric-value'>{len(result.get("sources", []))}</div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    st.markdown("<div class='divider'></div>", unsafe_allow_html=True)
+
+    # Sources
+    if result.get("sources"):
+        st.markdown("### 📚 Sources")
+        for source in result["sources"]:
+            st.markdown(
+                f"<div class='source-item'>📄 {source}</div>",
+                unsafe_allow_html=True,
+            )
+
+    st.markdown("<div class='divider'></div>", unsafe_allow_html=True)
+
+    # Retrieved Chunks
+    if result.get("retrieved_chunks"):
+        with st.expander(f"📖 Retrieved Chunks ({len(result['retrieved_chunks'])})"):
+            for i, chunk in enumerate(result["retrieved_chunks"], 1):
+                similarity = chunk.get("similarity_score", 0)
+                content = chunk.get("content", "")
+                filename = chunk.get("filename", "Unknown")
+
+                st.markdown(
+                    f"""
+                    <div class='chunk-item'>
+                        <div class='chunk-header'>
+                            <span><b>Chunk {i}</b> | 📄 {filename}</span>
+                            <span class='similarity-score'>Similarity: {similarity:.1%}</span>
+                        </div>
+                        <p>{content}</p>
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
+
+
+def main():
+    """Main Streamlit application."""
+    display_header()
 
     # Sidebar Configuration
     with st.sidebar:
-        st.header("⚙️ Configuration")
-        
-        # LLM Provider
+        st.markdown("### ⚙️ Configuration")
+
+        # LLM Settings
         llm_provider = st.selectbox(
             "LLM Provider",
             options=["ollama", "openai"],
             help="Select the LLM provider for response generation",
         )
-        
-        # LLM Model (conditional)
+
         if llm_provider == "ollama":
-            llm_model = st.text_input(
+            llm_model = st.selectbox(
                 "Ollama Model",
-                value="mistral",
-                help="Model name available in Ollama (e.g., mistral, llama2, neural-chat)",
+                options=["neural-chat", "mistral", "llama2", "orca2"],
+                help="Select model available in Ollama",
             )
         else:
             llm_model = st.text_input(
                 "OpenAI Model",
                 value="gpt-3.5-turbo",
-                help="OpenAI model (requires OPENAI_API_KEY in .env)",
+                help="Requires OPENAI_API_KEY in .env",
             )
-        
-        # Temperature
+
         temperature = st.slider(
             "Temperature",
             min_value=0.0,
             max_value=1.0,
             value=0.7,
             step=0.1,
-            help="Lower = more deterministic, Higher = more creative",
+            help="Lower = deterministic, Higher = creative",
         )
-        
+
         st.markdown("---")
-        st.header("📊 System Info")
-        
-        # Display settings
-        with st.expander("View Settings"):
+        st.markdown("### 📊 System Information")
+
+        # System Stats
+        with st.expander("View System Settings", expanded=False):
             st.json({
+                "Supported Languages": len(settings.supported_languages),
                 "Embedding Model": settings.embedding_model,
-                "Embedding Dimension": settings.embedding_dimension,
                 "Chunk Size": settings.chunk_size,
-                "Top K Retrieval": settings.top_k_retrieval,
-                "Vector Store Path": settings.faiss_index_path,
+                "Top K": settings.top_k_retrieval,
             })
-        
-        # Vector store stats
+
+        # Vector Store Stats
         try:
-            pipeline = initialize_pipeline(llm_provider, llm_model)
-            stats = pipeline.get_stats()
-            
-            with st.expander("Vector Store Stats", expanded=False):
+            with st.expander("Vector Store Statistics", expanded=False):
+                pipeline = initialize_pipeline(llm_provider, llm_model)
+                stats = pipeline.get_stats()
+
                 if "vector_store" in stats:
-                    st.write(f"**Total Vectors:** {stats['vector_store'].get('total_vectors', 0)}")
-                    st.write(f"**Total Metadata:** {stats['vector_store'].get('total_metadata', 0)}")
-                    st.write(f"**Embedding Dimension:** {stats['vector_store'].get('embedding_dimension', 0)}")
-                else:
-                    st.warning("Vector store not initialized. Run embedding pipeline first.")
+                    st.metric(
+                        "Total Vectors",
+                        stats['vector_store'].get('total_vectors', 0)
+                    )
+                    st.metric(
+                        "Embedding Dimension",
+                        stats['vector_store'].get('embedding_dimension', 0)
+                    )
         except Exception as e:
             st.warning(f"Could not load stats: {str(e)}")
 
-    # Main Content Area
-    st.header("🔍 Query Agricultural Database")
-    
-    # Query Input
-    query_text = st.text_area(
-        "What would you like to know?",
-        placeholder="e.g., How to control wheat pests? What is the best time to plant paddy?",
-        height=100,
-        label_visibility="collapsed",
-    )
+    # Main Content
+    tab1, tab2 = st.tabs(["📝 Text Query", "🎤 Audio Query"])
 
-    # Filters
-    col1, col2, col3, col4 = st.columns(4)
-    
-    with col1:
-        crop = st.selectbox(
-            "Crop",
-            options=["", "wheat", "paddy", "rice", "maize", "cotton"],
-            help="Filter by crop type",
-        )
-    
-    with col2:
-        region = st.text_input(
-            "Region",
-            placeholder="e.g., Punjab, Gujarat",
-            help="Filter by region (optional)",
-        )
-    
-    with col3:
-        season = st.selectbox(
-            "Season",
-            options=["", "kharif", "rabi", "summer"],
-            help="Filter by season (optional)",
-        )
-    
-    with col4:
-        disease = st.text_input(
-            "Disease/Pest",
-            placeholder="e.g., rust, blight",
-            help="Filter by disease/pest (optional)",
-        )
+    # ==================== TEXT QUERY TAB ====================
+    with tab1:
+        st.markdown("### 🔍 Ask Your Question")
 
-    # Retrieval Parameters
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        k = st.slider(
-            "Number of Context Chunks",
-            min_value=1,
-            max_value=20,
-            value=5,
-            step=1,
-            help="More chunks = more context but longer response time",
-        )
-    
-    with col2:
-        threshold = st.slider(
-            "Similarity Threshold",
-            min_value=0.0,
-            max_value=1.0,
-            value=0.2,
-            step=0.05,
-            help="Lower = broader results, Higher = stricter matching",
-        )
+        # Query input with language info
+        col1, col2 = st.columns([4, 1])
+        with col1:
+            query_text = st.text_area(
+                "Enter your question (in any of 10 languages)",
+                placeholder="e.g., How to control wheat pests? / गेहूँ में कीटों का नियंत्रण कैसे करें?",
+                height=100,
+                label_visibility="collapsed",
+            )
 
-    # Submit Button
-    if st.button("🚀 Get Answer", type="primary", use_container_width=True):
-        if not query_text.strip():
-            st.error("❌ Please enter a query")
-        else:
-            try:
-                # Initialize pipeline
-                with st.spinner("🔄 Processing query..."):
-                    pipeline = initialize_pipeline(llm_provider, llm_model)
-                    
-                    # Build filters
-                    filters_dict = {}
-                    if crop:
-                        filters_dict["crop"] = crop
-                    if region:
-                        filters_dict["region"] = region
-                    if season:
-                        filters_dict["season"] = season
-                    if disease:
-                        filters_dict["disease"] = disease
-                    
-                    # Execute query
-                    result = pipeline.query(
-                        query_text,
-                        k=k,
-                        similarity_threshold=threshold,
-                        crop=crop if crop else None,
-                        region=region if region else None,
-                        season=season if season else None,
-                        disease=disease if disease else None,
-                        temperature=temperature,
-                    )
-                
-                # Display Results
-                st.success("✅ Query processed successfully!")
-                
-                st.markdown("---")
-                
-                # Response Section
-                st.subheader("💬 Response")
-                st.markdown(
-                    f"<div class='result-box'>{result['response']}</div>",
-                    unsafe_allow_html=True,
-                )
-                
-                # Confidence and Stats
-                col1, col2, col3 = st.columns(3)
-                with col1:
-                    st.metric("Confidence", result.get("confidence", "N/A"))
-                with col2:
-                    st.metric("Retrieved Chunks", result["num_context_chunks"])
-                with col3:
-                    st.metric("Sources", len(result.get("sources", [])))
-                
-                st.markdown("---")
-                
-                # Retrieved Sources
-                if result.get("sources"):
-                    st.subheader("📚 Sources")
-                    for source in result["sources"]:
-                        st.markdown(
-                            f"<div class='source-box'>📄 {source}</div>",
-                            unsafe_allow_html=True,
+        with col2:
+            st.markdown("### Supported")
+            st.markdown("🇬🇧 English")
+            st.markdown("🇮🇳 Hindi")
+            st.markdown("🇮🇳 Tamil")
+            st.markdown("+ 7 more")
+
+        st.markdown("---")
+
+        # Filters
+        st.markdown("### 🎯 Filters (Optional)")
+        col1, col2, col3, col4 = st.columns(4)
+
+        with col1:
+            crop = st.selectbox(
+                "Crop",
+                options=["", "wheat", "paddy", "rice", "maize", "cotton", "sugarcane"],
+                help="Filter by crop type",
+                key="crop_filter"
+            )
+
+        with col2:
+            region = st.text_input(
+                "Region",
+                placeholder="e.g., Punjab",
+                help="Filter by region",
+                key="region_filter"
+            )
+
+        with col3:
+            season = st.selectbox(
+                "Season",
+                options=["", "kharif", "rabi", "summer"],
+                help="Filter by season",
+                key="season_filter"
+            )
+
+        with col4:
+            disease = st.text_input(
+                "Disease/Pest",
+                placeholder="e.g., rust",
+                help="Filter by disease/pest",
+                key="disease_filter"
+            )
+
+        st.markdown("---")
+
+        # Retrieval Parameters
+        st.markdown("### 📊 Retrieval Settings")
+        col1, col2, col3 = st.columns(3)
+
+        with col1:
+            k = st.slider(
+                "Context Chunks",
+                min_value=1,
+                max_value=20,
+                value=5,
+                step=1,
+            )
+
+        with col2:
+            threshold = st.slider(
+                "Similarity Threshold",
+                min_value=0.0,
+                max_value=1.0,
+                value=0.2,
+                step=0.05,
+            )
+
+        with col3:
+            st.empty()
+
+        st.markdown("---")
+
+        # Submit Button
+        if st.button("🚀 Get Answer", use_container_width=True, type="primary"):
+            if not query_text.strip():
+                st.error("❌ Please enter a question")
+            else:
+                try:
+                    with st.spinner("🔄 Processing query... This may take a moment"):
+                        # Detect language
+                        lang_detector = LanguageDetector()
+                        detected_lang = lang_detector.detect_language(query_text)
+
+                        # Initialize pipeline
+                        pipeline = initialize_pipeline(llm_provider, llm_model)
+
+                        # Execute query
+                        result = pipeline.query(
+                            query_text,
+                            k=k,
+                            similarity_threshold=threshold,
+                            language=detected_lang,
+                            crop=crop if crop else None,
+                            region=region if region else None,
+                            season=season if season else None,
+                            disease=disease if disease else None,
+                            temperature=temperature,
                         )
-                
-                st.markdown("---")
-                
-                # Retrieved Chunks (expandable)
-                if result.get("retrieved_chunks"):
-                    with st.expander(f"📖 Retrieved Chunks ({len(result['retrieved_chunks'])})"):
-                        for i, chunk in enumerate(result["retrieved_chunks"], 1):
-                            similarity = chunk.get("similarity_score", 0)
-                            content = chunk.get("content", "")[:500]  # First 500 chars
-                            filename = chunk.get("filename", "Unknown")
-                            
-                            st.markdown(
-                                f"""
-                                <div class='chunk-box'>
-                                <b>Chunk {i}</b> | 📄 {filename} | 🎯 Similarity: {similarity:.2f}
-                                <br/><br/>
-                                {content}...
-                                </div>
-                                """,
-                                unsafe_allow_html=True,
+
+                    st.success("✅ Query processed successfully!")
+                    st.markdown("---")
+                    display_response(result)
+
+                except Exception as e:
+                    st.error(f"❌ Error: {str(e)}")
+                    st.info("💡 Make sure you have:")
+                    st.write("1. Built embeddings: `python main.py embed --pdf-dir Agri_docs`")
+                    st.write(f"2. Started {llm_provider} server")
+                    logger.error(f"Query error: {str(e)}")
+
+    # ==================== AUDIO QUERY TAB ====================
+    with tab2:
+        st.markdown("### 🎤 Audio Input")
+        st.markdown("Upload an audio file to ask your question. The system will automatically detect the language and respond in that language.")
+
+        # Audio upload
+        audio_file = st.file_uploader(
+            "Upload audio (MP3, WAV, M4A, FLAC, OGG)",
+            type=["mp3", "wav", "m4a", "flac", "ogg", "opus", "aac"],
+            help="Supports multiple audio formats"
+        )
+
+        if audio_file:
+            st.audio(audio_file, format=f"audio/{audio_file.type}")
+
+        st.markdown("---")
+
+        # Audio settings
+        st.markdown("### ⚙️ Settings")
+        col1, col2 = st.columns(2)
+
+        with col1:
+            model_size = st.selectbox(
+                "Whisper Model Size",
+                options=["tiny", "base", "small", "medium", "large"],
+                value="base",
+                help="Larger = more accurate but slower",
+            )
+
+        with col2:
+            k_audio = st.slider(
+                "Context Chunks",
+                min_value=1,
+                max_value=20,
+                value=5,
+                step=1,
+                key="k_audio"
+            )
+
+        st.markdown("---")
+
+        # Submit button for audio
+        if st.button("🚀 Process Audio", use_container_width=True, type="primary", key="audio_submit"):
+            if not audio_file:
+                st.error("❌ Please upload an audio file")
+            else:
+                try:
+                    with st.spinner("🔄 Processing audio... This may take a moment"):
+                        # Save uploaded file temporarily
+                        import tempfile
+                        import os
+
+                        with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmp_file:
+                            tmp_file.write(audio_file.getbuffer())
+                            tmp_path = tmp_file.name
+
+                        try:
+                            # Process audio
+                            handler = initialize_audio_handler()
+                            result = handler.process_audio_query(
+                                tmp_path,
+                                k=k_audio,
+                                temperature=temperature,
+                                preserve_language=True,
                             )
-                
-            except Exception as e:
-                st.error(f"❌ Error processing query: {str(e)}")
-                st.info("💡 Tip: Make sure you have:")
-                st.write("1. Built embeddings: `python main.py embed --pdf-dir Agri_docs`")
-                st.write(f"2. Started {llm_provider} server")
-                if llm_provider == "openai":
-                    st.write("3. Set OPENAI_API_KEY in .env file")
-                logger.error(f"Query error: {str(e)}")
+                        finally:
+                            # Clean up temp file
+                            if os.path.exists(tmp_path):
+                                os.remove(tmp_path)
+
+                    st.success("✅ Audio processed successfully!")
+                    st.markdown("---")
+
+                    # Transcription section
+                    st.markdown("### 📝 Transcription")
+                    lang_name = LANGUAGES.get(result.get("detected_language_code"), "Unknown")
+                    st.markdown(
+                        f"""
+                        <div class='card'>
+                            <span class='language-badge'>{lang_name}</span>
+                            <p style='margin-top: 10px; font-size: 1.05em;'>{result['transcription']}</p>
+                        </div>
+                        """,
+                        unsafe_allow_html=True,
+                    )
+
+                    st.markdown("---")
+                    display_response(result)
+
+                except Exception as e:
+                    st.error(f"❌ Error processing audio: {str(e)}")
+                    st.info("💡 Troubleshooting:")
+                    st.write("• Ensure audio file is clear and audible")
+                    st.write("• Supported formats: MP3, WAV, M4A, FLAC, OGG, OPUS, AAC")
+                    logger.error(f"Audio query error: {str(e)}")
 
     # Footer
-    st.markdown("---")
     st.markdown(
         """
-        <div style='text-align: center; color: #999; font-size: 12px;'>
-        Agricultural RAG System | Powered by SentenceTransformers + FAISS + LLM
+        <div class='footer'>
+            <p>🌾 Agricultural AI Assistant | Supporting 10 Languages | Text & Audio Input</p>
+            <p style='font-size: 0.85em;'>Powered by SentenceTransformers + FAISS + LLM + Whisper</p>
         </div>
         """,
         unsafe_allow_html=True,
