@@ -622,6 +622,7 @@ def main():
                         # Transcribe the converted audio
                         try:
                             import time
+                            import shutil
 
                             # Wait a moment for Windows file system to finalize the file
                             logger.info(f"Waiting for file system to finalize WAV file...")
@@ -639,13 +640,24 @@ def main():
                                 st.error(f"❌ WAV file is empty: {wav_path}")
                                 raise RuntimeError(f"FFmpeg created empty file: {wav_path}")
 
-                            logger.info(f"Starting transcription of {wav_path}")
-                            handler = initialize_audio_handler()
-                            transcription_result = handler.audio_processor.transcribe(
-                                wav_path,
-                                language=None
-                            )
-                            st.success("✅ Audio captured and transcribed!")
+                            # Copy to a simpler path to avoid Windows path encoding issues
+                            # Some versions of Whisper have issues with complex temp paths
+                            simple_wav_path = "audio_temp.wav"
+                            shutil.copy2(wav_path, simple_wav_path)
+                            logger.info(f"Copied WAV to simpler path: {simple_wav_path}")
+
+                            try:
+                                logger.info(f"Starting transcription of {simple_wav_path}")
+                                handler = initialize_audio_handler()
+                                transcription_result = handler.audio_processor.transcribe(
+                                    simple_wav_path,
+                                    language=None
+                                )
+                                st.success("✅ Audio captured and transcribed!")
+                            finally:
+                                # Clean up the simple path copy
+                                if os.path.exists(simple_wav_path):
+                                    os.remove(simple_wav_path)
                         finally:
                             # Clean up temp files
                             if os.path.exists(webm_path):
