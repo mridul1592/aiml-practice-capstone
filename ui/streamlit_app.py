@@ -14,11 +14,40 @@ Features:
 import sys
 from pathlib import Path
 from typing import Optional
+import os
 
 import streamlit as st
 
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
+
+# Find FFmpeg executable
+def get_ffmpeg_path():
+    """Get the full path to FFmpeg executable."""
+    # Try to find FFmpeg in PATH first
+    try:
+        import subprocess
+        result = subprocess.run(["where", "ffmpeg"], capture_output=True, text=True, timeout=5)
+        if result.returncode == 0:
+            return result.stdout.strip().split('\n')[0]
+    except:
+        pass
+
+    # Try common installation locations
+    common_paths = [
+        r"C:\Users\mridu\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-8.1.1-full_build\bin\ffmpeg.exe",
+        r"C:\Program Files\FFmpeg\bin\ffmpeg.exe",
+        r"C:\Program Files (x86)\FFmpeg\bin\ffmpeg.exe",
+    ]
+
+    for path in common_paths:
+        if os.path.exists(path):
+            return path
+
+    # Return ffmpeg command (will fail if not in PATH, but that's ok for error handling)
+    return "ffmpeg"
+
+FFMPEG_PATH = get_ffmpeg_path()
 
 from audio.audio_rag_handler import AudioRAGHandler
 from rag.rag_orchestrator import RAGPipeline
@@ -152,7 +181,7 @@ st.markdown(
 
     /* Chunk box */
     .chunk-item {
-        background: #fafbfc;
+        background: #000000;
         border: 1px solid #e5e7eb;
         border-radius: 8px;
         padding: 15px;
@@ -170,7 +199,7 @@ st.markdown(
     }
 
     .similarity-score {
-        background: #dcfce7;
+        background: #000000;
         color: #166534;
         padding: 4px 8px;
         border-radius: 4px;
@@ -259,7 +288,7 @@ st.markdown(
 
     /* Sidebar styling */
     .stSidebar {
-        background: linear-gradient(180deg, #f9fafb 0%, #f3f4f6 100%);
+        background: linear-gradient(180deg, #000000 0%, #f3f4f6 100%);
     }
     </style>
     """,
@@ -531,7 +560,7 @@ def main():
                         import subprocess
                         try:
                             subprocess.run(
-                                ["ffmpeg", "-i", webm_path, "-acodec", "pcm_s16le", "-ar", "16000", wav_path, "-y"],
+                                [FFMPEG_PATH, "-i", webm_path, "-acodec", "pcm_s16le", "-ar", "16000", wav_path, "-y"],
                                 capture_output=True,
                                 check=True,
                                 timeout=30
