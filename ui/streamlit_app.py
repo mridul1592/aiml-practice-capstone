@@ -569,7 +569,12 @@ def main():
                         # Save webm temporarily
                         with tempfile.NamedTemporaryFile(delete=False, suffix=".webm") as f:
                             f.write(audio_data['bytes'])
+                            f.flush()  # Flush to disk
                             webm_path = f.name
+
+                        # CRITICAL: Ensure file is fully released before using it
+                        import time
+                        time.sleep(0.1)  # Small delay to ensure file handle release
 
                         # CHECKPOINT 2: File written to disk
                         st.write("**[DEBUG] Checkpoint 2:** File written to temp location")
@@ -584,9 +589,12 @@ def main():
                             st.write("**[DEBUG] Checkpoint 3:** Running Whisper CLI")
                             logger.info("CHECKPOINT 3: About to run Whisper CLI command")
 
-                            whisper_cmd = [sys.executable, "-m", "whisper", webm_path, "--model", "base", "--output_format", "json", "--output_dir", ".", "--verbose", "False"]
+                            # Use absolute path for output directory to avoid path issues
+                            output_dir = os.path.abspath(".")
+                            whisper_cmd = [sys.executable, "-m", "whisper", webm_path, "--model", "base", "--output_format", "json", "--output_dir", output_dir, "--verbose", "False"]
                             logger.info(f"  - Command: {' '.join(whisper_cmd)}")
                             logger.info(f"  - Current working directory: {os.getcwd()}")
+                            logger.info(f"  - Output directory: {output_dir}")
                             logger.info(f"  - Python executable: {sys.executable}")
 
                             result = subprocess.run(
@@ -607,13 +615,19 @@ def main():
 
                             if result.returncode == 0:
                                 # CHECKPOINT 5: Looking for JSON output
-                                json_file = webm_path.replace(".webm", ".json")
+                                # JSON is created in output_dir with the basename of the input file
+                                webm_basename = os.path.basename(webm_path)
+                                json_filename = webm_basename.replace(".webm", ".json")
+                                json_file = os.path.join(output_dir, json_filename)
+
                                 st.write("**[DEBUG] Checkpoint 5:** Looking for JSON output")
                                 logger.info("CHECKPOINT 5: Looking for JSON output file")
+                                logger.info(f"  - Input file basename: {webm_basename}")
+                                logger.info(f"  - JSON filename: {json_filename}")
+                                logger.info(f"  - Output directory: {output_dir}")
                                 logger.info(f"  - Expected JSON path: {json_file}")
-                                logger.info(f"  - Absolute JSON path: {os.path.abspath(json_file)}")
                                 logger.info(f"  - JSON file exists: {os.path.exists(json_file)}")
-                                logger.info(f"  - Files in current directory: {os.listdir('.')[:10]}")  # List first 10 files
+                                logger.info(f"  - Files in output directory: {os.listdir(output_dir)[:15]}")  # List first 15 files
 
                                 if os.path.exists(json_file):
                                     # CHECKPOINT 6: JSON file found, reading contents
@@ -684,7 +698,12 @@ def main():
                     # Save uploaded file temporarily
                     with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as f:
                         f.write(uploaded_audio.getbuffer())
+                        f.flush()  # Flush to disk
                         audio_path = f.name
+
+                    # CRITICAL: Ensure file is fully released before using it
+                    import time
+                    time.sleep(0.1)  # Small delay to ensure file handle release
 
                     # CHECKPOINT 2: File saved
                     st.write("**[DEBUG] Checkpoint 2:** File saved to temp location")
@@ -698,9 +717,12 @@ def main():
                         st.write("**[DEBUG] Checkpoint 3:** Running Whisper CLI")
                         logger.info("CHECKPOINT 3: About to run Whisper on uploaded file")
 
-                        whisper_cmd = [sys.executable, "-m", "whisper", audio_path, "--model", "base", "--output_format", "json", "--output_dir", ".", "--verbose", "False"]
+                        # Use absolute path for output directory to avoid path issues
+                        output_dir = os.path.abspath(".")
+                        whisper_cmd = [sys.executable, "-m", "whisper", audio_path, "--model", "base", "--output_format", "json", "--output_dir", output_dir, "--verbose", "False"]
                         logger.info(f"  - Command: {' '.join(whisper_cmd)}")
                         logger.info(f"  - Working dir: {os.getcwd()}")
+                        logger.info(f"  - Output directory: {output_dir}")
 
                         result = subprocess.run(
                             whisper_cmd,
@@ -717,9 +739,16 @@ def main():
 
                         if result.returncode == 0:
                             # CHECKPOINT 5: Looking for JSON
-                            json_file = audio_path.replace(".wav", ".json")
+                            # JSON is created in output_dir with the basename of the input file
+                            audio_basename = os.path.basename(audio_path)
+                            json_filename = audio_basename.replace(".wav", ".json")
+                            json_file = os.path.join(output_dir, json_filename)
+
                             st.write("**[DEBUG] Checkpoint 5:** Looking for JSON output")
                             logger.info("CHECKPOINT 5: Searching for JSON output")
+                            logger.info(f"  - Input file basename: {audio_basename}")
+                            logger.info(f"  - JSON filename: {json_filename}")
+                            logger.info(f"  - Output directory: {output_dir}")
                             logger.info(f"  - Expected JSON: {json_file}")
                             logger.info(f"  - Exists: {os.path.exists(json_file)}")
 
