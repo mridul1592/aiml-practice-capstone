@@ -115,17 +115,19 @@ class AudioProcessor:
         self._load_model()
 
         logger.info(f"Transcribing audio: {audio_path}")
+        logger.info(f"Audio file exists: {Path(audio_path).exists()}")
+        logger.info(f"Audio file size: {Path(audio_path).stat().st_size if Path(audio_path).exists() else 'N/A'}")
 
         try:
             # Transcribe with language parameter if specified
             if language and language in self.LANGUAGE_MAPPING:
                 logger.info(f"Transcribing with language hint: {language}")
                 result = self.model.transcribe(
-                    audio_path, language=language, verbose=False
+                    str(audio_path), language=language, verbose=False
                 )
             else:
                 logger.info("Transcribing with automatic language detection")
-                result = self.model.transcribe(audio_path, verbose=False)
+                result = self.model.transcribe(str(audio_path), verbose=False)
 
             # Extract results
             text = result.get("text", "").strip()

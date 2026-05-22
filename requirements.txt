@@ -36,6 +36,10 @@ streamlit-mic-recorder==0.0.8
 
 # Audio Processing
 openai-whisper==20231117
+# Note: Requires FFmpeg to be installed on system
+# Windows: winget install ffmpeg
+# macOS: brew install ffmpeg
+# Linux: sudo apt-get install ffmpeg
 
 # Data Processing
 pandas==2.1.3

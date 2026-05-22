@@ -14,19 +14,61 @@ Features:
 import sys
 from pathlib import Path
 from typing import Optional
+import os
+import shutil
+import subprocess
+import tempfile
+import json
 
 import streamlit as st
 
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
+# Import logger FIRST before using it
+from utils.logger import setup_logger
+logger = setup_logger(__name__)
+
+# Import other modules
 from audio.audio_rag_handler import AudioRAGHandler
 from rag.rag_orchestrator import RAGPipeline
 from rag.retriever import LanguageDetector
 from utils.config import settings
-from utils.logger import setup_logger
 
-logger = setup_logger(__name__)
+# Find FFmpeg executable
+def get_ffmpeg_path():
+    """Get the full path to FFmpeg executable."""
+    # Common installation locations for Windows (check most likely first)
+    common_paths = [
+        r"C:\Users\mridu\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-8.1.1-full_build\bin\ffmpeg.exe",
+        r"C:\Program Files\FFmpeg\bin\ffmpeg.exe",
+        r"C:\Program Files (x86)\FFmpeg\bin\ffmpeg.exe",
+        str(Path.home() / "AppData" / "Local" / "Programs" / "FFmpeg" / "bin" / "ffmpeg.exe"),
+    ]
+
+    # Check hardcoded paths first (most reliable for installed packages)
+    for path in common_paths:
+        if os.path.exists(path):
+            logger.info(f"Found FFmpeg at: {path}")
+            return path
+
+    # Try Python's shutil.which() as fallback
+    ffmpeg = shutil.which("ffmpeg")
+    if ffmpeg:
+        logger.info(f"Found FFmpeg in PATH: {ffmpeg}")
+        return ffmpeg
+
+    logger.warning("FFmpeg not found - audio recording will not work")
+    return None
+
+FFMPEG_PATH = get_ffmpeg_path()
+
+# Display FFmpeg status in sidebar for debugging
+with st.sidebar:
+    if FFMPEG_PATH:
+        st.success(f"✅ FFmpeg found: {FFMPEG_PATH.split(os.sep)[-3:]}")
+    else:
+        st.error("❌ FFmpeg not found - audio recording unavailable")
 
 # Streamlit page configuration
 st.set_page_config(
@@ -152,8 +194,9 @@ st.markdown(
 
     /* Chunk box */
     .chunk-item {
-        background: #fafbfc;
-        border: 1px solid #e5e7eb;
+        background: #f3f4f6;
+        color: #1f2937;
+        border: 1px solid #d1d5db;
         border-radius: 8px;
         padding: 15px;
         margin: 12px 0;
@@ -170,8 +213,8 @@ st.markdown(
     }
 
     .similarity-score {
-        background: #dcfce7;
-        color: #166534;
+        background: #dbeafe;
+        color: #0c4a6e;
         padding: 4px 8px;
         border-radius: 4px;
         font-size: 0.85em;
@@ -259,7 +302,7 @@ st.markdown(
 
     /* Sidebar styling */
     .stSidebar {
-        background: linear-gradient(180deg, #f9fafb 0%, #f3f4f6 100%);
+        background: linear-gradient(180deg, #000000 0%, #f3f4f6 100%);
     }
     </style>
     """,
@@ -303,97 +346,150 @@ def display_header():
 
 
 def display_response(result: dict):
-    """Display query response with beautiful formatting."""
-    # Response
-    col1, col2 = st.columns([3, 1])
-    with col1:
+    """Display query response using native Streamlit components (theme-safe)."""
+
+    # ── Header row: title + language badge ───────────────────────────────────
+    lang_code = result.get("language", "en")
+    lang_name = LANGUAGES.get(lang_code, lang_code)
+    col_title, col_lang = st.columns([4, 1])
+    with col_title:
         st.markdown("### 💬 Response")
-    with col2:
-        lang_code = result.get("language", "en")
-        lang_name = LANGUAGES.get(lang_code, "Unknown")
-        st.markdown(f"<span class='language-badge'>{lang_name}</span>", unsafe_allow_html=True)
+    with col_lang:
+        st.info(lang_name)
 
-    st.markdown(
-        f"""
-        <div class='card response-card'>
-        {result['response']}
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+    # ── Response text (native markdown — respects dark/light theme) ──────────
+    response_text = result.get("response", "No response returned.")
+    st.markdown(response_text)
+    st.divider()
 
-    st.markdown("<div class='divider'></div>", unsafe_allow_html=True)
+    # ── Metrics ───────────────────────────────────────────────────────────────
+    confidence = result.get("confidence", "low").upper()
+    num_chunks = result.get("num_context_chunks", 0)
+    num_sources = len(result.get("sources", []))
 
-    # Metrics
     col1, col2, col3 = st.columns(3)
-    with col1:
-        st.markdown(
-            f"""
-            <div class='metric-container'>
-                <div class='metric-label'>📊 Confidence</div>
-                <div class='metric-value {get_confidence_color(result.get("confidence", "low"))}'>
-                    {result.get("confidence", "N/A").upper()}
-                </div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
+    col1.metric("📊 Confidence", confidence)
+    col2.metric("📖 Context Chunks", num_chunks)
+    col3.metric("📚 Sources", num_sources)
+    st.divider()
 
-    with col2:
-        st.markdown(
-            f"""
-            <div class='metric-container'>
-                <div class='metric-label'>📖 Context Chunks</div>
-                <div class='metric-value'>{result.get("num_context_chunks", 0)}</div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-
-    with col3:
-        st.markdown(
-            f"""
-            <div class='metric-container'>
-                <div class='metric-label'>📚 Sources</div>
-                <div class='metric-value'>{len(result.get("sources", []))}</div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-
-    st.markdown("<div class='divider'></div>", unsafe_allow_html=True)
-
-    # Sources
+    # ── Sources ───────────────────────────────────────────────────────────────
     if result.get("sources"):
         st.markdown("### 📚 Sources")
         for source in result["sources"]:
-            st.markdown(
-                f"<div class='source-item'>📄 {source}</div>",
-                unsafe_allow_html=True,
-            )
+            st.markdown(f"- 📄 `{source}`")
+        st.divider()
 
-    st.markdown("<div class='divider'></div>", unsafe_allow_html=True)
-
-    # Retrieved Chunks
+    # ── Retrieved Chunks ─────────────────────────────────────────────────────
     if result.get("retrieved_chunks"):
-        with st.expander(f"📖 Retrieved Chunks ({len(result['retrieved_chunks'])})"):
+        with st.expander(f"📖 View Retrieved Chunks ({len(result['retrieved_chunks'])})"):
             for i, chunk in enumerate(result["retrieved_chunks"], 1):
                 similarity = chunk.get("similarity_score", 0)
-                content = chunk.get("content", "")
-                filename = chunk.get("filename", "Unknown")
+                content    = chunk.get("content", "")
+                filename   = chunk.get("filename", "Unknown")
+                st.markdown(f"**Chunk {i}** · 📄 `{filename}` · Similarity: `{similarity:.1%}`")
+                st.markdown(content)
+                if i < len(result["retrieved_chunks"]):
+                    st.divider()
 
-                st.markdown(
-                    f"""
-                    <div class='chunk-item'>
-                        <div class='chunk-header'>
-                            <span><b>Chunk {i}</b> | 📄 {filename}</span>
-                            <span class='similarity-score'>Similarity: {similarity:.1%}</span>
-                        </div>
-                        <p>{content}</p>
-                    </div>
-                    """,
-                    unsafe_allow_html=True,
+
+def _transcribe_audio_to_query(audio_bytes, suffix: str, language: str) -> None:
+    """
+    Transcribe audio bytes using Whisper and write result to the query text area.
+    This is the ONLY job of this function — no RAG, no answering, just text.
+    """
+    import time as _time
+
+    env = os.environ.copy()
+    if FFMPEG_PATH:
+        env['PATH'] = os.path.dirname(FFMPEG_PATH) + os.pathsep + env.get('PATH', '')
+
+    raw_path = ""
+    wav_path = ""
+    transcribed = ""
+    error_msg = ""
+
+    # ── All heavy work happens inside the spinner ────────────────────────────
+    with st.spinner("🎙️ Transcribing audio…"):
+        try:
+            # 1. Save raw audio to disk
+            with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as raw_f:
+                raw_f.write(bytes(audio_bytes))
+                raw_f.flush()
+                raw_path = raw_f.name
+            _time.sleep(0.05)
+            logger.info(f"Audio saved: {raw_path} ({os.path.getsize(raw_path)} bytes)")
+
+            # 2. Convert to WAV via FFmpeg (Whisper needs it internally)
+            wav_path = raw_path.rsplit(".", 1)[0] + "_in.wav"
+            if FFMPEG_PATH:
+                conv = subprocess.run(
+                    [FFMPEG_PATH, "-y", "-i", raw_path,
+                     "-acodec", "pcm_s16le", "-ar", "16000", "-ac", "1", wav_path],
+                    capture_output=True, text=True, timeout=30
                 )
+                if conv.returncode != 0:
+                    error_msg = f"Audio conversion failed: {conv.stderr[:200]}"
+                    logger.error(f"FFmpeg error: {conv.stderr}")
+                else:
+                    audio_input = wav_path
+                    logger.info(f"Converted to WAV: {wav_path}")
+            else:
+                audio_input = raw_path
+            _time.sleep(0.05)
+
+            if not error_msg:
+                # 3. Run Whisper
+                output_dir = os.path.abspath(".")
+                cmd = [sys.executable, "-m", "whisper", audio_input,
+                       "--model", "base",
+                       "--output_format", "json",
+                       "--output_dir", output_dir,
+                       "--verbose", "False"]
+                if language and language != "Auto-detect":
+                    cmd += ["--language", language]
+
+                logger.info(f"Whisper cmd: {' '.join(cmd)}")
+                proc = subprocess.run(cmd, capture_output=True, text=True, timeout=120, env=env)
+                logger.info(f"Whisper exit={proc.returncode} | stdout={proc.stdout} | stderr={proc.stderr[:200]}")
+
+                if proc.returncode != 0:
+                    error_msg = f"Whisper failed: {proc.stderr[:300]}"
+                else:
+                    # 4. Parse JSON
+                    stem = Path(audio_input).stem
+                    json_path = os.path.join(output_dir, stem + ".json")
+                    if os.path.exists(json_path):
+                        with open(json_path, "r", encoding="utf-8") as jf:
+                            transcribed = json.load(jf).get("text", "").strip()
+                        os.remove(json_path)
+                        logger.info(f"Transcription ({len(transcribed)} chars): {transcribed[:100]}")
+                    else:
+                        error_msg = "Whisper ran but produced no output file."
+                        logger.error(f"Expected JSON not found: {json_path}")
+
+        except subprocess.TimeoutExpired:
+            error_msg = "Transcription timed out (120 s). Try a shorter clip."
+        except Exception as exc:
+            import traceback
+            error_msg = str(exc)
+            logger.error(traceback.format_exc())
+        finally:
+            for p in (raw_path, wav_path):
+                if p and os.path.exists(p):
+                    try:
+                        os.remove(p)
+                    except Exception:
+                        pass
+    # ── Spinner has closed by here ───────────────────────────────────────────
+
+    if error_msg:
+        st.error(error_msg)
+    elif transcribed:
+        st.session_state.query_text_value = transcribed
+        st.rerun()   # spinner is gone; rerun refreshes text area cleanly
+    else:
+        st.warning("⚠️ No speech detected — try speaking more clearly.")
 
 
 def main():
@@ -409,6 +505,7 @@ def main():
             "LLM Provider",
             options=["ollama", "openai"],
             help="Select the LLM provider for response generation",
+            key="llm_provider_sidebar"
         )
 
         if llm_provider == "ollama":
@@ -416,12 +513,14 @@ def main():
                 "Ollama Model",
                 options=["neural-chat", "mistral", "llama2", "orca2"],
                 help="Select model available in Ollama",
+                key="ollama_model_sidebar"
             )
         else:
             llm_model = st.text_input(
                 "OpenAI Model",
                 value="gpt-3.5-turbo",
                 help="Requires OPENAI_API_KEY in .env",
+                key="openai_model_sidebar"
             )
 
         temperature = st.slider(
@@ -431,6 +530,7 @@ def main():
             value=0.7,
             step=0.1,
             help="Lower = deterministic, Higher = creative",
+            key="temperature_sidebar"
         )
 
         st.markdown("---")
@@ -463,34 +563,96 @@ def main():
         except Exception as e:
             st.warning(f"Could not load stats: {str(e)}")
 
-    # Main Content
-    tab1, tab2 = st.tabs(["📝 Text Query", "🎤 Audio Query"])
+    # ==================== GOOGLE-STYLE SEARCH INTERFACE ====================
+    st.markdown("<br>", unsafe_allow_html=True)
 
-    # ==================== TEXT QUERY TAB ====================
-    with tab1:
-        st.markdown("### 🔍 Ask Your Question")
+    # Centered search box area
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        st.markdown(
+            """
+            <div style='text-align: center; margin-bottom: 20px;'>
+                <h2 style='font-size: 2.5em; margin: 0; color: #10b981;'>🌾 Ask Anything</h2>
+                <p style='color: #6b7280; font-size: 1.1em; margin-top: 5px;'>Text or Audio - 10 Languages Supported</p>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
 
-        # Query input with language info
-        col1, col2 = st.columns([4, 1])
-        with col1:
-            query_text = st.text_area(
-                "Enter your question (in any of 10 languages)",
-                placeholder="e.g., How to control wheat pests? / गेहूँ में कीटों का नियंत्रण कैसे करें?",
-                height=100,
-                label_visibility="collapsed",
+    # Search input area (Google-style)
+    # Initialize query text in session state
+    if "query_text_value" not in st.session_state:
+        st.session_state.query_text_value = ""
+
+    col1, col2, col3 = st.columns([0.5, 3, 0.5])
+    with col2:
+        # NO key= here — value= controls content; audio transcription writes to query_text_value
+        query_text = st.text_area(
+            "Enter your question",
+            value=st.session_state.query_text_value,
+            placeholder="e.g., How to control wheat pests? / गेहूँ में कीटों का नियंत्रण कैसे करें?",
+            height=80,
+            label_visibility="collapsed",
+        )
+        # Keep session state in sync so typing also updates it
+        st.session_state.query_text_value = query_text
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    # Language selector for audio (helps Whisper detect correctly)
+    audio_lang_col1, audio_lang_col2, audio_lang_col3 = st.columns([1, 2, 1])
+    with audio_lang_col2:
+        st.write("**Select language for audio input:**")
+        audio_language = st.selectbox(
+            "Audio language",
+            options=["Auto-detect", "en", "hi", "pa"],
+            format_func=lambda x: "🔍 Auto-detect" if x == "Auto-detect" else LANGUAGES.get(x, x),
+            key="audio_language"
+        )
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    # Audio input section - simple transcription to text
+    col1, col2 = st.columns([1, 1])
+
+    with col1:
+        st.markdown("#### 🎙️ Record Audio")
+        try:
+            from streamlit_mic_recorder import mic_recorder
+            audio_data = mic_recorder(
+                start_prompt="🎤 Start Recording",
+                stop_prompt="⏹️ Stop Recording",
+                just_once=True,          # only fires once per recording
+                use_container_width=True,
+                format="webm",
+                key="mic_recorder_widget"
             )
+            if audio_data:
+                # Use audio id to avoid re-transcribing the same clip on every rerun
+                audio_id = audio_data.get("id", id(audio_data['bytes']))
+                if st.session_state.get("last_audio_id") != audio_id:
+                    st.session_state.last_audio_id = audio_id
+                    _transcribe_audio_to_query(audio_data['bytes'], ".webm", audio_language)
+        except ImportError:
+            st.info("📍 Audio recording requires `streamlit-mic-recorder`")
 
-        with col2:
-            st.markdown("### Supported")
-            st.markdown("🇬🇧 English")
-            st.markdown("🇮🇳 Hindi")
-            st.markdown("🇮🇳 Tamil")
-            st.markdown("+ 7 more")
+    with col2:
+        st.markdown("#### 📁 Upload Audio File")
+        uploaded_audio = st.file_uploader(
+            "Upload audio (MP3, WAV, M4A, FLAC, OGG)",
+            type=["mp3", "wav", "m4a", "flac", "ogg", "opus", "aac"],
+            key="audio_upload"
+        )
+        if uploaded_audio:
+            upload_id = f"{uploaded_audio.name}_{uploaded_audio.size}"
+            if st.session_state.get("last_audio_id") != upload_id:
+                st.session_state.last_audio_id = upload_id
+                ext = Path(uploaded_audio.name).suffix.lower()
+                _transcribe_audio_to_query(uploaded_audio.getbuffer(), ext, audio_language)
 
-        st.markdown("---")
+    st.markdown("---")
 
-        # Filters
-        st.markdown("### 🎯 Filters (Optional)")
+    # Optional Filters (in expandable section)
+    with st.expander("🎯 Filters & Settings (Optional)"):
         col1, col2, col3, col4 = st.columns(4)
 
         with col1:
@@ -527,17 +689,15 @@ def main():
 
         st.markdown("---")
 
-        # Retrieval Parameters
-        st.markdown("### 📊 Retrieval Settings")
         col1, col2, col3 = st.columns(3)
-
         with col1:
             k = st.slider(
                 "Context Chunks",
                 min_value=1,
                 max_value=20,
-                value=5,
+                value=10,
                 step=1,
+                key="k_text_query"
             )
 
         with col2:
@@ -547,179 +707,75 @@ def main():
                 max_value=1.0,
                 value=0.2,
                 step=0.05,
+                key="threshold_text_query"
             )
 
         with col3:
             st.empty()
 
-        st.markdown("---")
+    st.markdown("<br>", unsafe_allow_html=True)
 
-        # Submit Button
-        if st.button("🚀 Get Answer", use_container_width=True, type="primary"):
-            if not query_text.strip():
-                st.error("❌ Please enter a question")
-            else:
-                try:
-                    with st.spinner("🔄 Processing query... This may take a moment"):
-                        # Detect language
-                        lang_detector = LanguageDetector()
-                        detected_lang = lang_detector.detect_language(query_text)
+    # ── Get Answer Button ────────────────────────────────────────────────────
+    # Completely independent of audio. Reads only what is in the text area.
+    st.markdown("<br>", unsafe_allow_html=True)
+    col1, col2, col3 = st.columns([1.2, 1.6, 1.2])
+    with col2:
+        submit_button = st.button("🚀 Get Answer", use_container_width=True, type="primary", key="main_submit")
 
-                        # Initialize pipeline
-                        pipeline = initialize_pipeline(llm_provider, llm_model)
-
-                        # Execute query
-                        result = pipeline.query(
-                            query_text,
-                            k=k,
-                            similarity_threshold=threshold,
-                            language=detected_lang,
-                            crop=crop if crop else None,
-                            region=region if region else None,
-                            season=season if season else None,
-                            disease=disease if disease else None,
-                            temperature=temperature,
-                        )
-
-                    st.success("✅ Query processed successfully!")
-                    st.markdown("---")
-                    display_response(result)
-
-                except Exception as e:
-                    st.error(f"❌ Error: {str(e)}")
-                    st.info("💡 Make sure you have:")
-                    st.write("1. Built embeddings: `python main.py embed --pdf-dir Agri_docs`")
-                    st.write(f"2. Started {llm_provider} server")
-                    logger.error(f"Query error: {str(e)}")
-
-    # ==================== AUDIO QUERY TAB ====================
-    with tab2:
-        st.markdown("### 🎤 Audio Input")
-        st.markdown("Ask your question by uploading an audio file or recording directly. The system will automatically detect the language and respond in that language.")
-
-        # Audio input method selection
-        audio_input_col1, audio_input_col2 = st.columns([1, 1])
-
-        with audio_input_col1:
-            st.markdown("#### 📁 Upload Audio File")
-            audio_file = st.file_uploader(
-                "Upload audio (MP3, WAV, M4A, FLAC, OGG)",
-                type=["mp3", "wav", "m4a", "flac", "ogg", "opus", "aac"],
-                help="Supports multiple audio formats",
-                key="audio_upload"
-            )
-
-        with audio_input_col2:
-            st.markdown("#### 🎙️ Record Audio")
-            st.info("📍 Click the microphone button below to record your question")
-            # Try to import the recorder, with fallback message
+    if submit_button:
+        current_query = query_text.strip()
+        if not current_query:
+            st.error("❌ Please type a question or use audio input to populate the text area first.")
+        else:
+            logger.info(f"Get Answer clicked | query='{current_query[:80]}'")
             try:
-                from streamlit_mic_recorder import mic_recorder
+                with st.spinner("🔄 Finding the best answer for you..."):
+                    # Detect language from the text
+                    lang_detector = LanguageDetector()
+                    detected_lang = lang_detector.detect_language(current_query)
+                    logger.info(f"Detected language: {detected_lang}")
 
-                audio_data = mic_recorder(
-                    start_prompt="🎤 Start Recording",
-                    stop_prompt="⏹️ Stop Recording",
-                    just_once=False,
-                    use_container_width=False,
-                    format="webm"
-                )
+                    # Read filter values
+                    crop     = st.session_state.get("crop_filter", "")
+                    region   = st.session_state.get("region_filter", "")
+                    season   = st.session_state.get("season_filter", "")
+                    disease  = st.session_state.get("disease_filter", "")
+                    k        = st.session_state.get("k_text_query", 5)
+                    threshold = st.session_state.get("threshold_text_query", 0.2)
 
-                if audio_data:
-                    # Convert webm to wav for processing
-                    import io
-                    audio_file = io.BytesIO(audio_data['bytes'])
-                    audio_file.name = "recorded_audio.wav"
-                    audio_file.type = "audio/wav"
-                    st.success("✅ Recording captured!")
-            except ImportError:
-                st.warning("⚠️ Audio recording not available. Please install streamlit-mic-recorder or upload an audio file instead.")
+                    logger.info(f"Filters: crop={crop} region={region} season={season} disease={disease} k={k} threshold={threshold}")
 
-        # Display audio if available
-        if audio_file:
-            st.markdown("---")
-            st.markdown("### 🔊 Audio Preview")
-            st.audio(audio_file, format=f"audio/{getattr(audio_file, 'type', 'wav')}")
+                    # Initialize pipeline
+                    pipeline = initialize_pipeline(llm_provider, llm_model)
+                    logger.info("Pipeline initialized")
 
-        st.markdown("---")
-
-        # Audio settings
-        st.markdown("### ⚙️ Settings")
-        col1, col2 = st.columns(2)
-
-        with col1:
-            model_size = st.selectbox(
-                "Whisper Model Size",
-                options=["tiny", "base", "small", "medium", "large"],
-                value="base",
-                help="Larger = more accurate but slower",
-            )
-
-        with col2:
-            k_audio = st.slider(
-                "Context Chunks",
-                min_value=1,
-                max_value=20,
-                value=5,
-                step=1,
-                key="k_audio"
-            )
-
-        st.markdown("---")
-
-        # Submit button for audio
-        if st.button("🚀 Process Audio", use_container_width=True, type="primary", key="audio_submit"):
-            if not audio_file:
-                st.error("❌ Please upload an audio file")
-            else:
-                try:
-                    with st.spinner("🔄 Processing audio... This may take a moment"):
-                        # Save uploaded file temporarily
-                        import tempfile
-                        import os
-
-                        with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmp_file:
-                            tmp_file.write(audio_file.getbuffer())
-                            tmp_path = tmp_file.name
-
-                        try:
-                            # Process audio
-                            handler = initialize_audio_handler()
-                            result = handler.process_audio_query(
-                                tmp_path,
-                                k=k_audio,
-                                temperature=temperature,
-                                preserve_language=True,
-                            )
-                        finally:
-                            # Clean up temp file
-                            if os.path.exists(tmp_path):
-                                os.remove(tmp_path)
-
-                    st.success("✅ Audio processed successfully!")
-                    st.markdown("---")
-
-                    # Transcription section
-                    st.markdown("### 📝 Transcription")
-                    lang_name = LANGUAGES.get(result.get("detected_language_code"), "Unknown")
-                    st.markdown(
-                        f"""
-                        <div class='card'>
-                            <span class='language-badge'>{lang_name}</span>
-                            <p style='margin-top: 10px; font-size: 1.05em;'>{result['transcription']}</p>
-                        </div>
-                        """,
-                        unsafe_allow_html=True,
+                    # Execute RAG query
+                    result = pipeline.query(
+                        current_query,
+                        k=k,
+                        similarity_threshold=threshold,
+                        language=detected_lang,
+                        crop=crop if crop else None,
+                        region=region if region else None,
+                        season=season if season else None,
+                        disease=disease if disease else None,
+                        temperature=temperature,
                     )
+                    logger.info(f"Query complete | response length={len(result.get('response',''))}")
 
-                    st.markdown("---")
-                    display_response(result)
+                st.success("✅ Got your answer!")
+                st.markdown("---")
+                display_response(result)
 
-                except Exception as e:
-                    st.error(f"❌ Error processing audio: {str(e)}")
-                    st.info("💡 Troubleshooting:")
-                    st.write("• Ensure audio file is clear and audible")
-                    st.write("• Supported formats: MP3, WAV, M4A, FLAC, OGG, OPUS, AAC")
-                    logger.error(f"Audio query error: {str(e)}")
+            except Exception as e:
+                import traceback
+                logger.error(f"Query error: {traceback.format_exc()}")
+                st.error(f"❌ Error: {str(e)}")
+                with st.expander("🔍 Error details"):
+                    st.code(traceback.format_exc())
+                st.info("💡 Make sure you have:")
+                st.write("1. Built embeddings: `python main.py embed --pdf-dir Agri_docs`")
+                st.write(f"2. Started {llm_provider} server (`ollama serve`)")
 
     # Footer
     st.markdown(
