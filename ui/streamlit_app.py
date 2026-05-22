@@ -621,6 +621,24 @@ def main():
 
                         # Transcribe the converted audio
                         try:
+                            import time
+
+                            # Wait a moment for Windows file system to finalize the file
+                            logger.info(f"Waiting for file system to finalize WAV file...")
+                            time.sleep(0.5)
+
+                            # Verify WAV file exists and is readable before transcribing
+                            if not os.path.exists(wav_path):
+                                st.error(f"❌ WAV file disappeared: {wav_path}")
+                                raise FileNotFoundError(f"WAV file not found at {wav_path}")
+
+                            file_size = os.path.getsize(wav_path)
+                            logger.info(f"WAV file size: {file_size} bytes")
+
+                            if file_size == 0:
+                                st.error(f"❌ WAV file is empty: {wav_path}")
+                                raise RuntimeError(f"FFmpeg created empty file: {wav_path}")
+
                             logger.info(f"Starting transcription of {wav_path}")
                             handler = initialize_audio_handler()
                             transcription_result = handler.audio_processor.transcribe(
