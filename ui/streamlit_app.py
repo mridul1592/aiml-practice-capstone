@@ -439,6 +439,100 @@ def display_response(result: dict):
                 )
 
 
+def _transcribe_audio_to_query(audio_bytes, suffix: str, language: str) -> None:
+    """
+    Transcribe audio bytes using Whisper and write result to the query text area.
+    This is the ONLY job of this function — no RAG, no answering, just text.
+    """
+    import time as _time
+
+    env = os.environ.copy()
+    if FFMPEG_PATH:
+        env['PATH'] = os.path.dirname(FFMPEG_PATH) + os.pathsep + env.get('PATH', '')
+
+    with st.spinner("🎙️ Transcribing audio…"):
+        try:
+            # 1. Save raw audio to disk
+            with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as raw_f:
+                raw_f.write(bytes(audio_bytes))
+                raw_f.flush()
+                raw_path = raw_f.name
+            _time.sleep(0.05)
+
+            logger.info(f"Audio saved: {raw_path} ({os.path.getsize(raw_path)} bytes)")
+
+            # 2. Convert to WAV via FFmpeg (Whisper needs it)
+            wav_path = raw_path.rsplit(".", 1)[0] + "_in.wav"
+            if FFMPEG_PATH:
+                conv = subprocess.run(
+                    [FFMPEG_PATH, "-y", "-i", raw_path,
+                     "-acodec", "pcm_s16le", "-ar", "16000", "-ac", "1", wav_path],
+                    capture_output=True, text=True, timeout=30
+                )
+                if conv.returncode != 0:
+                    logger.error(f"FFmpeg error: {conv.stderr}")
+                    st.error("Audio conversion failed — check logs.")
+                    return
+                audio_input = wav_path
+                logger.info(f"Converted to WAV: {wav_path}")
+            else:
+                audio_input = raw_path   # hope Whisper handles the format
+
+            _time.sleep(0.05)
+
+            # 3. Run Whisper
+            output_dir = os.path.abspath(".")
+            cmd = [sys.executable, "-m", "whisper", audio_input,
+                   "--model", "base",
+                   "--output_format", "json",
+                   "--output_dir", output_dir,
+                   "--verbose", "False"]
+            if language and language != "Auto-detect":
+                cmd += ["--language", language]
+
+            logger.info(f"Whisper cmd: {' '.join(cmd)}")
+            proc = subprocess.run(cmd, capture_output=True, text=True, timeout=120, env=env)
+            logger.info(f"Whisper exit={proc.returncode}\nSTDOUT: {proc.stdout}\nSTDERR: {proc.stderr}")
+
+            if proc.returncode != 0:
+                st.error(f"Whisper failed: {proc.stderr[:300]}")
+                return
+
+            # 4. Parse JSON output — Whisper names it after the input file stem
+            stem = Path(audio_input).stem
+            json_path = os.path.join(output_dir, stem + ".json")
+            if not os.path.exists(json_path):
+                st.error("Whisper ran but produced no output file.")
+                logger.error(f"Expected JSON not found: {json_path}")
+                return
+
+            with open(json_path, "r", encoding="utf-8") as jf:
+                text = json.load(jf).get("text", "").strip()
+            os.remove(json_path)
+
+            # 5. Write text into the query text area
+            if text:
+                st.session_state.query_text_value = text
+                logger.info(f"Transcription: {text}")
+                st.rerun()          # refresh so text_area shows new value
+            else:
+                st.warning("⚠️ No speech detected — try speaking more clearly.")
+
+        except subprocess.TimeoutExpired:
+            st.error("Transcription timed out (120 s). Try a shorter clip.")
+        except Exception as exc:
+            import traceback
+            logger.error(traceback.format_exc())
+            st.error(f"Transcription error: {exc}")
+        finally:
+            for p in [raw_path, wav_path if 'wav_path' in dir() else ""]:
+                if p and os.path.exists(p):
+                    try:
+                        os.remove(p)
+                    except Exception:
+                        pass
+
+
 def main():
     """Main Streamlit application."""
     display_header()
@@ -533,15 +627,15 @@ def main():
 
     col1, col2, col3 = st.columns([0.5, 3, 0.5])
     with col2:
+        # NO key= here — value= controls content; audio transcription writes to query_text_value
         query_text = st.text_area(
             "Enter your question",
             value=st.session_state.query_text_value,
             placeholder="e.g., How to control wheat pests? / गेहूँ में कीटों का नियंत्रण कैसे करें?",
             height=80,
             label_visibility="collapsed",
-            key="main_query"
         )
-        # Update session state when user types
+        # Keep session state in sync so typing also updates it
         st.session_state.query_text_value = query_text
 
     st.markdown("<br>", unsafe_allow_html=True)
@@ -565,213 +659,17 @@ def main():
         st.markdown("#### 🎙️ Record Audio")
         try:
             from streamlit_mic_recorder import mic_recorder
-
             audio_data = mic_recorder(
                 start_prompt="🎤 Start Recording",
                 stop_prompt="⏹️ Stop Recording",
                 just_once=False,
-                use_container_width=False,
+                use_container_width=True,
                 format="webm"
             )
-
             if audio_data:
-                try:
-                    with st.spinner("🔄 Transcribing audio..."):
-                        # CHECKPOINT 1: Audio data received
-                        st.write("**[DEBUG] Checkpoint 1:** Audio data received")
-                        logger.info("CHECKPOINT 1: Audio data received from mic_recorder")
-                        logger.info(f"  - Audio data type: {type(audio_data)}")
-                        logger.info(f"  - Audio data keys: {audio_data.keys() if isinstance(audio_data, dict) else 'N/A'}")
-                        logger.info(f"  - Bytes length: {len(audio_data.get('bytes', b'')) if isinstance(audio_data, dict) else 'N/A'}")
-
-                        # Save webm temporarily
-                        with tempfile.NamedTemporaryFile(delete=False, suffix=".webm") as f:
-                            f.write(audio_data['bytes'])
-                            f.flush()  # Flush to disk
-                            webm_path = f.name
-
-                        # CRITICAL: Ensure file is fully released before using it
-                        import time
-                        time.sleep(0.1)  # Small delay to ensure file handle release
-
-                        # CHECKPOINT 2: File written to disk
-                        st.write("**[DEBUG] Checkpoint 2:** File written to temp location")
-                        logger.info("CHECKPOINT 2: Audio file written to temp location")
-                        logger.info(f"  - Temp file path: {webm_path}")
-                        logger.info(f"  - File exists: {os.path.exists(webm_path)}")
-                        logger.info(f"  - File size: {os.path.getsize(webm_path) if os.path.exists(webm_path) else 'N/A'}")
-                        logger.info(f"  - Absolute path: {os.path.abspath(webm_path)}")
-
-                        try:
-                            # Convert webm to wav using FFmpeg (Whisper handles WAV better)
-                            try:
-                                st.write("**[DEBUG] Checkpoint 2.5:** Converting WebM to WAV")
-                                logger.info("CHECKPOINT 2.5: Converting WebM to WAV using FFmpeg")
-
-                                wav_path = webm_path.replace(".webm", ".wav")
-                                if FFMPEG_PATH:
-                                    convert_cmd = [
-                                        FFMPEG_PATH,
-                                        "-i", webm_path,
-                                        "-acodec", "pcm_s16le",
-                                        "-ar", "16000",
-                                        "-ac", "1",
-                                        "-y",  # Overwrite output
-                                        wav_path
-                                    ]
-                                    logger.info(f"  - FFmpeg command: {' '.join(convert_cmd)}")
-
-                                    convert_result = subprocess.run(
-                                        convert_cmd,
-                                        capture_output=True,
-                                        text=True,
-                                        timeout=30
-                                    )
-
-                                    if convert_result.returncode == 0:
-                                        logger.info(f"  - Conversion successful")
-                                        logger.info(f"  - WAV path: {wav_path}")
-                                        logger.info(f"  - WAV exists: {os.path.exists(wav_path)}")
-                                        time.sleep(0.1)  # Small delay after conversion
-                                        audio_input_path = wav_path  # Use WAV for Whisper
-                                    else:
-                                        logger.error(f"  - Conversion failed: {convert_result.stderr}")
-                                        st.warning("FFmpeg conversion failed, trying with WebM")
-                                        audio_input_path = webm_path  # Fallback to WebM
-                                else:
-                                    logger.warning("  - FFmpeg not available, using WebM directly")
-                                    audio_input_path = webm_path
-                            except Exception as e:
-                                logger.error(f"EXCEPTION at CP2.5: {str(e)}", exc_info=True)
-                                st.error(f"Conversion error: {str(e)}")
-                                audio_input_path = webm_path  # Fallback
-
-                            # CHECKPOINT 3: About to run Whisper
-                            try:
-                                st.write("**[DEBUG] Checkpoint 3:** Running Whisper CLI")
-                                logger.info("CHECKPOINT 3: About to run Whisper CLI command")
-
-                                # Use absolute path for output directory to avoid path issues
-                                output_dir = os.path.abspath(".")
-                                whisper_cmd = [sys.executable, "-m", "whisper", audio_input_path, "--model", "base", "--output_format", "json", "--output_dir", output_dir, "--verbose", "False"]
-
-                                # Add language hint if specified (not auto-detect)
-                                if audio_language != "Auto-detect":
-                                    whisper_cmd.extend(["--language", audio_language])
-                                    logger.info(f"  - Language hint: {audio_language}")
-                                else:
-                                    logger.info(f"  - Language: Auto-detect")
-                                logger.info(f"  - Command: {' '.join(whisper_cmd)}")
-                                logger.info(f"  - Current working directory: {os.getcwd()}")
-                                logger.info(f"  - Output directory: {output_dir}")
-                                logger.info(f"  - Python executable: {sys.executable}")
-
-                                # CRITICAL: Add FFmpeg directory to PATH so Whisper can find it
-                                env = os.environ.copy()
-                                if FFMPEG_PATH:
-                                    ffmpeg_dir = os.path.dirname(FFMPEG_PATH)
-                                    env['PATH'] = ffmpeg_dir + os.pathsep + env.get('PATH', '')
-                                    logger.info(f"  - Added FFmpeg dir to PATH: {ffmpeg_dir}")
-
-                                result = subprocess.run(
-                                    whisper_cmd,
-                                    capture_output=True,
-                                    text=True,
-                                    timeout=60,
-                                    env=env  # Pass environment with FFmpeg in PATH
-                                )
-
-                                # CHECKPOINT 4: Whisper execution completed
-                                st.write("**[DEBUG] Checkpoint 4:** Whisper execution completed")
-                                logger.info("CHECKPOINT 4: Whisper execution completed")
-                                logger.info(f"  - Return code: {result.returncode}")
-                                logger.info(f"  - Stdout length: {len(result.stdout)}")
-                                logger.info(f"  - Stderr length: {len(result.stderr)}")
-                                logger.info(f"  - Full Stdout:\n{result.stdout}")
-                                logger.info(f"  - Full Stderr:\n{result.stderr}")
-
-                                if result.returncode != 0:
-                                    st.write(f"**[DEBUG] Whisper Error (code {result.returncode}):**")
-                                    st.code(result.stderr, language="text")
-                            except Exception as e:
-                                logger.error(f"EXCEPTION at CP3-4: {str(e)}", exc_info=True)
-                                st.error(f"Whisper execution error: {str(e)}")
-                                result = None
-
-                            if result and result.returncode == 0:
-                                # CHECKPOINT 5: Looking for JSON output
-                                # JSON is created in output_dir with the basename of the input file
-                                webm_basename = os.path.basename(webm_path)
-                                json_filename = webm_basename.replace(".webm", ".json")
-                                json_file = os.path.join(output_dir, json_filename)
-
-                                st.write("**[DEBUG] Checkpoint 5:** Looking for JSON output")
-                                logger.info("CHECKPOINT 5: Looking for JSON output file")
-                                logger.info(f"  - Input file basename: {webm_basename}")
-                                logger.info(f"  - JSON filename: {json_filename}")
-                                logger.info(f"  - Output directory: {output_dir}")
-                                logger.info(f"  - Expected JSON path: {json_file}")
-                                logger.info(f"  - JSON file exists: {os.path.exists(json_file)}")
-                                logger.info(f"  - Files in output directory: {os.listdir(output_dir)[:15]}")  # List first 15 files
-
-                                if os.path.exists(json_file):
-                                    # CHECKPOINT 6: JSON file found, reading contents
-                                    st.write("**[DEBUG] Checkpoint 6:** JSON file found, reading")
-                                    logger.info("CHECKPOINT 6: JSON file found and readable")
-                                    logger.info(f"  - File size: {os.path.getsize(json_file)}")
-
-                                    with open(json_file, 'r', encoding='utf-8') as f:
-                                        whisper_output = json.load(f)
-                                        transcribed_text = whisper_output.get("text", "").strip()
-
-                                        # CHECKPOINT 7: Text extracted
-                                        st.write("**[DEBUG] Checkpoint 7:** Text extracted from JSON")
-                                        logger.info("CHECKPOINT 7: Text extracted from JSON")
-                                        logger.info(f"  - Transcribed text length: {len(transcribed_text)}")
-                                        logger.info(f"  - Transcribed text: {transcribed_text[:200]}")
-
-                                        if transcribed_text:
-                                            # Write transcribed text directly to text area
-                                            st.session_state.query_text_value = transcribed_text
-                                            st.success("✅ Audio transcribed and added to query field!")
-                                            import time
-                                            time.sleep(0.3)
-                                            st.rerun()
-                                        else:
-                                            st.warning("⚠️ No speech detected in audio")
-
-                                    # Clean up JSON file
-                                    os.remove(json_file)
-                                    logger.info("CHECKPOINT 8: JSON file cleaned up")
-                                else:
-                                    st.error(f"JSON file not created. Looking in: {os.getcwd()}")
-                                    logger.error("JSON file not found after Whisper execution")
-                                    logger.error(f"  - Expected: {json_file}")
-                                    logger.error(f"  - Directory contents: {os.listdir('.')}")
-                            else:
-                                st.error(f"Whisper error (code {result.returncode}): {result.stderr[:200]}")
-                                logger.error(f"Whisper failed with return code {result.returncode}")
-                                logger.error(f"  - Error: {result.stderr}")
-
-                        except subprocess.TimeoutExpired:
-                            st.error("Whisper transcription timed out (60 seconds)")
-                            logger.error("Whisper transcription timed out")
-                        finally:
-                            # Clean up temp files
-                            if os.path.exists(webm_path):
-                                os.remove(webm_path)
-                                logger.info("CHECKPOINT 9: Temp webm file cleaned up")
-                            wav_path = webm_path.replace(".webm", ".wav")
-                            if os.path.exists(wav_path):
-                                os.remove(wav_path)
-                                logger.info("CHECKPOINT 9.5: Temp wav file cleaned up")
-
-                except Exception as e:
-                    st.error(f"Error: {str(e)}")
-                    logger.error(f"Audio transcription error: {e}", exc_info=True)
-
+                _transcribe_audio_to_query(audio_data['bytes'], ".webm", audio_language)
         except ImportError:
-            st.info("📍 Audio recording not available")
+            st.info("📍 Audio recording requires `streamlit-mic-recorder`")
 
     with col2:
         st.markdown("#### 📁 Upload Audio File")
@@ -780,132 +678,9 @@ def main():
             type=["mp3", "wav", "m4a", "flac", "ogg", "opus", "aac"],
             key="audio_upload"
         )
-
         if uploaded_audio:
-            try:
-                with st.spinner("🔄 Transcribing audio..."):
-                    # CHECKPOINT 1: File upload received
-                    st.write("**[DEBUG] Checkpoint 1:** File uploaded")
-                    logger.info("CHECKPOINT 1: Audio file uploaded")
-                    logger.info(f"  - File name: {uploaded_audio.name}")
-                    logger.info(f"  - File size: {uploaded_audio.size}")
-
-                    # Save uploaded file temporarily
-                    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as f:
-                        f.write(uploaded_audio.getbuffer())
-                        f.flush()  # Flush to disk
-                        audio_path = f.name
-
-                    # CRITICAL: Ensure file is fully released before using it
-                    import time
-                    time.sleep(0.1)  # Small delay to ensure file handle release
-
-                    # CHECKPOINT 2: File saved
-                    st.write("**[DEBUG] Checkpoint 2:** File saved to temp location")
-                    logger.info("CHECKPOINT 2: Uploaded file saved to temp location")
-                    logger.info(f"  - Temp file path: {audio_path}")
-                    logger.info(f"  - File exists: {os.path.exists(audio_path)}")
-                    logger.info(f"  - File size: {os.path.getsize(audio_path) if os.path.exists(audio_path) else 'N/A'}")
-
-                    try:
-                        # CHECKPOINT 3: Running Whisper
-                        st.write("**[DEBUG] Checkpoint 3:** Running Whisper CLI")
-                        logger.info("CHECKPOINT 3: About to run Whisper on uploaded file")
-
-                        # Use absolute path for output directory to avoid path issues
-                        output_dir = os.path.abspath(".")
-                        whisper_cmd = [sys.executable, "-m", "whisper", audio_path, "--model", "base", "--output_format", "json", "--output_dir", output_dir, "--verbose", "False"]
-
-                        # Add language hint if specified (not auto-detect)
-                        if audio_language != "Auto-detect":
-                            whisper_cmd.extend(["--language", audio_language])
-                            logger.info(f"  - Language hint: {audio_language}")
-                        else:
-                            logger.info(f"  - Language: Auto-detect")
-
-                        logger.info(f"  - Command: {' '.join(whisper_cmd)}")
-                        logger.info(f"  - Working dir: {os.getcwd()}")
-                        logger.info(f"  - Output directory: {output_dir}")
-
-                        # CRITICAL: Add FFmpeg directory to PATH so Whisper can find it
-                        env = os.environ.copy()
-                        if FFMPEG_PATH:
-                            ffmpeg_dir = os.path.dirname(FFMPEG_PATH)
-                            env['PATH'] = ffmpeg_dir + os.pathsep + env.get('PATH', '')
-                            logger.info(f"  - Added FFmpeg dir to PATH: {ffmpeg_dir}")
-
-                        result = subprocess.run(
-                            whisper_cmd,
-                            capture_output=True,
-                            text=True,
-                            timeout=60,
-                            env=env  # Pass environment with FFmpeg in PATH
-                        )
-
-                        # CHECKPOINT 4: Whisper completed
-                        st.write("**[DEBUG] Checkpoint 4:** Whisper completed")
-                        logger.info("CHECKPOINT 4: Whisper execution completed")
-                        logger.info(f"  - Return code: {result.returncode}")
-                        logger.info(f"  - Full Stdout:\n{result.stdout}")
-                        logger.info(f"  - Full Stderr:\n{result.stderr}")
-
-                        if result.returncode != 0:
-                            st.write(f"**[DEBUG] Whisper Error (code {result.returncode}):**")
-                            st.code(result.stderr, language="text")
-
-                        if result.returncode == 0:
-                            # CHECKPOINT 5: Looking for JSON
-                            # JSON is created in output_dir with the basename of the input file
-                            audio_basename = os.path.basename(audio_path)
-                            json_filename = audio_basename.replace(".wav", ".json")
-                            json_file = os.path.join(output_dir, json_filename)
-
-                            st.write("**[DEBUG] Checkpoint 5:** Looking for JSON output")
-                            logger.info("CHECKPOINT 5: Searching for JSON output")
-                            logger.info(f"  - Input file basename: {audio_basename}")
-                            logger.info(f"  - JSON filename: {json_filename}")
-                            logger.info(f"  - Output directory: {output_dir}")
-                            logger.info(f"  - Expected JSON: {json_file}")
-                            logger.info(f"  - Exists: {os.path.exists(json_file)}")
-
-                            if os.path.exists(json_file):
-                                # CHECKPOINT 6: Reading JSON
-                                st.write("**[DEBUG] Checkpoint 6:** Reading JSON")
-                                logger.info("CHECKPOINT 6: JSON file found, reading")
-
-                                with open(json_file, 'r', encoding='utf-8') as f:
-                                    whisper_output = json.load(f)
-                                    transcribed_text = whisper_output.get("text", "").strip()
-
-                                    st.write("**[DEBUG] Checkpoint 7:** Text extracted")
-                                    logger.info(f"CHECKPOINT 7: Text extracted: {len(transcribed_text)} chars")
-
-                                    if transcribed_text:
-                                        # Write transcribed text directly to text area
-                                        st.session_state.query_text_value = transcribed_text
-                                        st.success("✅ Audio transcribed and added to query field!")
-                                        import time
-                                        time.sleep(0.3)
-                                        st.rerun()
-                                    else:
-                                        st.warning("⚠️ No speech detected")
-                                os.remove(json_file)
-                                logger.info("CHECKPOINT 8: JSON cleaned up")
-                        else:
-                            st.error(f"Whisper error (code {result.returncode}): {result.stderr[:200]}")
-                            logger.error(f"Whisper failed: {result.stderr}")
-
-                    except subprocess.TimeoutExpired:
-                        st.error("Whisper transcription timed out (60 seconds)")
-                        logger.error("Whisper timed out")
-                    finally:
-                        if os.path.exists(audio_path):
-                            os.remove(audio_path)
-                            logger.info("CHECKPOINT 9: Temp file cleaned up")
-
-            except Exception as e:
-                st.error(f"Error: {str(e)}")
-                logger.error(f"Audio upload error: {e}", exc_info=True)
+            ext = Path(uploaded_audio.name).suffix.lower()
+            _transcribe_audio_to_query(uploaded_audio.getbuffer(), ext, audio_language)
 
     st.markdown("---")
 
@@ -973,36 +748,43 @@ def main():
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-    # Submit Button (Google-style)
+    # ── Get Answer Button ────────────────────────────────────────────────────
+    # Completely independent of audio. Reads only what is in the text area.
+    st.markdown("<br>", unsafe_allow_html=True)
     col1, col2, col3 = st.columns([1.2, 1.6, 1.2])
     with col2:
         submit_button = st.button("🚀 Get Answer", use_container_width=True, type="primary", key="main_submit")
 
-    # Process query when button is clicked
     if submit_button:
-        if not query_text.strip():
-            st.error("❌ Please enter a question or record/upload audio")
+        current_query = query_text.strip()
+        if not current_query:
+            st.error("❌ Please type a question or use audio input to populate the text area first.")
         else:
+            logger.info(f"Get Answer clicked | query='{current_query[:80]}'")
             try:
                 with st.spinner("🔄 Finding the best answer for you..."):
-                    # Detect language
+                    # Detect language from the text
                     lang_detector = LanguageDetector()
-                    detected_lang = lang_detector.detect_language(query_text)
+                    detected_lang = lang_detector.detect_language(current_query)
+                    logger.info(f"Detected language: {detected_lang}")
+
+                    # Read filter values
+                    crop     = st.session_state.get("crop_filter", "")
+                    region   = st.session_state.get("region_filter", "")
+                    season   = st.session_state.get("season_filter", "")
+                    disease  = st.session_state.get("disease_filter", "")
+                    k        = st.session_state.get("k_text_query", 5)
+                    threshold = st.session_state.get("threshold_text_query", 0.2)
+
+                    logger.info(f"Filters: crop={crop} region={region} season={season} disease={disease} k={k} threshold={threshold}")
 
                     # Initialize pipeline
                     pipeline = initialize_pipeline(llm_provider, llm_model)
+                    logger.info("Pipeline initialized")
 
-                    # Get filter values from expander (set defaults if not in expander)
-                    crop = st.session_state.get("crop_filter", "")
-                    region = st.session_state.get("region_filter", "")
-                    season = st.session_state.get("season_filter", "")
-                    disease = st.session_state.get("disease_filter", "")
-                    k = st.session_state.get("k_text_query", 5)
-                    threshold = st.session_state.get("threshold_text_query", 0.2)
-
-                    # Execute query
+                    # Execute RAG query
                     result = pipeline.query(
-                        query_text,
+                        current_query,
                         k=k,
                         similarity_threshold=threshold,
                         language=detected_lang,
@@ -1012,17 +794,21 @@ def main():
                         disease=disease if disease else None,
                         temperature=temperature,
                     )
+                    logger.info(f"Query complete | response length={len(result.get('response',''))}")
 
                 st.success("✅ Got your answer!")
                 st.markdown("---")
                 display_response(result)
 
             except Exception as e:
+                import traceback
+                logger.error(f"Query error: {traceback.format_exc()}")
                 st.error(f"❌ Error: {str(e)}")
+                with st.expander("🔍 Error details"):
+                    st.code(traceback.format_exc())
                 st.info("💡 Make sure you have:")
                 st.write("1. Built embeddings: `python main.py embed --pdf-dir Agri_docs`")
-                st.write(f"2. Started {llm_provider} server")
-                logger.error(f"Query error: {str(e)}")
+                st.write(f"2. Started {llm_provider} server (`ollama serve`)")
 
     # Footer
     st.markdown(
