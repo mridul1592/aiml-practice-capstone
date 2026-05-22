@@ -584,10 +584,10 @@ def main():
                             st.write("**[DEBUG] Checkpoint 3:** Running Whisper CLI")
                             logger.info("CHECKPOINT 3: About to run Whisper CLI command")
 
-                            whisper_cmd = ["whisper", webm_path, "--model", "base", "--output_format", "json", "--output_dir", ".", "--verbose", "False"]
+                            whisper_cmd = [sys.executable, "-m", "whisper", webm_path, "--model", "base", "--output_format", "json", "--output_dir", ".", "--verbose", "False"]
                             logger.info(f"  - Command: {' '.join(whisper_cmd)}")
                             logger.info(f"  - Current working directory: {os.getcwd()}")
-                            logger.info(f"  - Whisper path: {shutil.which('whisper')}")
+                            logger.info(f"  - Python executable: {sys.executable}")
 
                             result = subprocess.run(
                                 whisper_cmd,
@@ -698,7 +698,7 @@ def main():
                         st.write("**[DEBUG] Checkpoint 3:** Running Whisper CLI")
                         logger.info("CHECKPOINT 3: About to run Whisper on uploaded file")
 
-                        whisper_cmd = ["whisper", audio_path, "--model", "base", "--output_format", "json", "--output_dir", ".", "--verbose", "False"]
+                        whisper_cmd = [sys.executable, "-m", "whisper", audio_path, "--model", "base", "--output_format", "json", "--output_dir", ".", "--verbose", "False"]
                         logger.info(f"  - Command: {' '.join(whisper_cmd)}")
                         logger.info(f"  - Working dir: {os.getcwd()}")
 
