@@ -450,6 +450,12 @@ def _transcribe_audio_to_query(audio_bytes, suffix: str, language: str) -> None:
     if FFMPEG_PATH:
         env['PATH'] = os.path.dirname(FFMPEG_PATH) + os.pathsep + env.get('PATH', '')
 
+    raw_path = ""
+    wav_path = ""
+    transcribed = ""
+    error_msg = ""
+
+    # ── All heavy work happens inside the spinner ────────────────────────────
     with st.spinner("🎙️ Transcribing audio…"):
         try:
             # 1. Save raw audio to disk
@@ -458,10 +464,9 @@ def _transcribe_audio_to_query(audio_bytes, suffix: str, language: str) -> None:
                 raw_f.flush()
                 raw_path = raw_f.name
             _time.sleep(0.05)
-
             logger.info(f"Audio saved: {raw_path} ({os.path.getsize(raw_path)} bytes)")
 
-            # 2. Convert to WAV via FFmpeg (Whisper needs it)
+            # 2. Convert to WAV via FFmpeg (Whisper needs it internally)
             wav_path = raw_path.rsplit(".", 1)[0] + "_in.wav"
             if FFMPEG_PATH:
                 conv = subprocess.run(
@@ -470,67 +475,67 @@ def _transcribe_audio_to_query(audio_bytes, suffix: str, language: str) -> None:
                     capture_output=True, text=True, timeout=30
                 )
                 if conv.returncode != 0:
+                    error_msg = f"Audio conversion failed: {conv.stderr[:200]}"
                     logger.error(f"FFmpeg error: {conv.stderr}")
-                    st.error("Audio conversion failed — check logs.")
-                    return
-                audio_input = wav_path
-                logger.info(f"Converted to WAV: {wav_path}")
+                else:
+                    audio_input = wav_path
+                    logger.info(f"Converted to WAV: {wav_path}")
             else:
-                audio_input = raw_path   # hope Whisper handles the format
-
+                audio_input = raw_path
             _time.sleep(0.05)
 
-            # 3. Run Whisper
-            output_dir = os.path.abspath(".")
-            cmd = [sys.executable, "-m", "whisper", audio_input,
-                   "--model", "base",
-                   "--output_format", "json",
-                   "--output_dir", output_dir,
-                   "--verbose", "False"]
-            if language and language != "Auto-detect":
-                cmd += ["--language", language]
+            if not error_msg:
+                # 3. Run Whisper
+                output_dir = os.path.abspath(".")
+                cmd = [sys.executable, "-m", "whisper", audio_input,
+                       "--model", "base",
+                       "--output_format", "json",
+                       "--output_dir", output_dir,
+                       "--verbose", "False"]
+                if language and language != "Auto-detect":
+                    cmd += ["--language", language]
 
-            logger.info(f"Whisper cmd: {' '.join(cmd)}")
-            proc = subprocess.run(cmd, capture_output=True, text=True, timeout=120, env=env)
-            logger.info(f"Whisper exit={proc.returncode}\nSTDOUT: {proc.stdout}\nSTDERR: {proc.stderr}")
+                logger.info(f"Whisper cmd: {' '.join(cmd)}")
+                proc = subprocess.run(cmd, capture_output=True, text=True, timeout=120, env=env)
+                logger.info(f"Whisper exit={proc.returncode} | stdout={proc.stdout} | stderr={proc.stderr[:200]}")
 
-            if proc.returncode != 0:
-                st.error(f"Whisper failed: {proc.stderr[:300]}")
-                return
-
-            # 4. Parse JSON output — Whisper names it after the input file stem
-            stem = Path(audio_input).stem
-            json_path = os.path.join(output_dir, stem + ".json")
-            if not os.path.exists(json_path):
-                st.error("Whisper ran but produced no output file.")
-                logger.error(f"Expected JSON not found: {json_path}")
-                return
-
-            with open(json_path, "r", encoding="utf-8") as jf:
-                text = json.load(jf).get("text", "").strip()
-            os.remove(json_path)
-
-            # 5. Write text into the query text area
-            if text:
-                st.session_state.query_text_value = text
-                logger.info(f"Transcription: {text}")
-                st.rerun()          # refresh so text_area shows new value
-            else:
-                st.warning("⚠️ No speech detected — try speaking more clearly.")
+                if proc.returncode != 0:
+                    error_msg = f"Whisper failed: {proc.stderr[:300]}"
+                else:
+                    # 4. Parse JSON
+                    stem = Path(audio_input).stem
+                    json_path = os.path.join(output_dir, stem + ".json")
+                    if os.path.exists(json_path):
+                        with open(json_path, "r", encoding="utf-8") as jf:
+                            transcribed = json.load(jf).get("text", "").strip()
+                        os.remove(json_path)
+                        logger.info(f"Transcription ({len(transcribed)} chars): {transcribed[:100]}")
+                    else:
+                        error_msg = "Whisper ran but produced no output file."
+                        logger.error(f"Expected JSON not found: {json_path}")
 
         except subprocess.TimeoutExpired:
-            st.error("Transcription timed out (120 s). Try a shorter clip.")
+            error_msg = "Transcription timed out (120 s). Try a shorter clip."
         except Exception as exc:
             import traceback
+            error_msg = str(exc)
             logger.error(traceback.format_exc())
-            st.error(f"Transcription error: {exc}")
         finally:
-            for p in [raw_path, wav_path if 'wav_path' in dir() else ""]:
+            for p in (raw_path, wav_path):
                 if p and os.path.exists(p):
                     try:
                         os.remove(p)
                     except Exception:
                         pass
+    # ── Spinner has closed by here ───────────────────────────────────────────
+
+    if error_msg:
+        st.error(error_msg)
+    elif transcribed:
+        st.session_state.query_text_value = transcribed
+        st.rerun()   # spinner is gone; rerun refreshes text area cleanly
+    else:
+        st.warning("⚠️ No speech detected — try speaking more clearly.")
 
 
 def main():
