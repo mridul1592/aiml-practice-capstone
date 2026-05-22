@@ -214,6 +214,7 @@ class RAGPipeline:
                 query=query_text,
                 context_chunks=context_chunks,
                 temperature=temperature,
+                language=language,
             )
         except Exception as e:
             logger.error(f"Generation failed: {str(e)}")

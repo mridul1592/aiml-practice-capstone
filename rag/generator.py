@@ -11,6 +11,7 @@ Handles:
 from typing import Dict, List, Optional
 
 from rag.prompt_templates import PromptTemplates
+from rag.retriever import LanguageDetector
 from utils.config import settings
 from utils.logger import setup_logger
 
@@ -226,14 +227,16 @@ class ResponseGenerator:
         query: str,
         context_chunks: List[Dict],
         temperature: float = 0.7,
+        language: Optional[str] = None,
     ) -> Dict:
         """
-        Generate RAG response.
+        Generate RAG response with multilingual support.
 
         Args:
             query: User query
             context_chunks: Retrieved context chunks
             temperature: LLM temperature
+            language: Response language code (en, hi, pa). Auto-detected if not provided.
 
         Returns:
             Dictionary with response and metadata
@@ -244,16 +247,17 @@ class ResponseGenerator:
         if not query or not query.strip():
             raise ValueError("Query cannot be empty")
 
-        logger.info("Generating response for query")
+        # Detect language if not provided
+        if not language:
+            lang_detector = LanguageDetector()
+            language = lang_detector.detect_language(query)
+
+        logger.info(f"Generating response for query (language: {language})")
 
         # Check if we have sufficient context
         if not context_chunks:
             logger.warning("No context chunks provided")
-            response_text = (
-                "I do not have enough information to answer this question. "
-                "Please consult a local agricultural expert or contact your nearest "
-                "agricultural extension center."
-            )
+            response_text = PromptTemplates.get_insufficient_context_response(language)
             return {
                 "query": query,
                 "response": response_text,
@@ -266,13 +270,9 @@ class ResponseGenerator:
         context_text = self._assemble_context(context_chunks)
         sources = [c.get("filename", "Unknown") for c in context_chunks]
 
-        # Create system and retrieval prompts
-        system_prompt = (
-            "You are an agricultural expert providing farming advice based on provided context."
-        )
-        retrieval_template = (
-            "Based on the following context:\n\n{context}\n\nAnswer this question: {query}"
-        )
+        # Get language-specific prompts
+        system_prompt = PromptTemplates.get_system_prompt(language)
+        retrieval_template = PromptTemplates.get_retrieval_template(language)
 
         # Format prompt
         formatted_prompt = retrieval_template.format(context=context_text, query=query)
@@ -284,7 +284,7 @@ class ResponseGenerator:
             )
 
             # Check for hallucination indicators
-            confidence = self._assess_confidence(response_text, context_chunks)
+            confidence = self._assess_confidence(response_text, context_chunks, language=language)
 
             return {
                 "query": query,
@@ -292,6 +292,7 @@ class ResponseGenerator:
                 "num_context_chunks": len(context_chunks),
                 "sources": sources,
                 "confidence": confidence,
+                "language": language,
             }
 
         except Exception as e:

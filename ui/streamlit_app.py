@@ -40,7 +40,7 @@ st.markdown(
         margin-bottom: 30px;
     }
     .result-box {
-        background-color: #f0f2f6;
+        background-color: #000000;
         padding: 15px;
         border-radius: 8px;
         margin: 10px 0;

@@ -3370,3 +3370,433 @@
 2026-05-22 18:56:41 - rag.generator - INFO - Generating response for query
 2026-05-22 18:56:41 - rag.generator - WARNING - No context chunks provided
 2026-05-22 18:56:41 - rag.rag_orchestrator - INFO - Query processing completed
+2026-05-22 19:13:02 - __main__ - INFO - Starting embedding pipeline from: Agri_docs
+2026-05-22 19:13:02 - rag.embeddings_orchestrator - INFO - Starting complete ingestion + embedding pipeline from Agri_docs
+2026-05-22 19:13:02 - rag.embeddings_orchestrator - INFO - Step 1: Ingesting PDFs...
+2026-05-22 19:13:02 - ingestion.orchestrator - INFO - Found 5 PDF files to ingest
+2026-05-22 19:13:02 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\farmerhandbook2016.pdf
+2026-05-22 19:13:03 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\farmerhandbook2016.pdf
+2026-05-22 19:13:03 - ingestion.chunking - INFO - Chunking document (277088 chars, ~69272 tokens)
+2026-05-22 19:13:03 - ingestion.chunking - INFO - Created 536 chunks (avg: 144 tokens)
+2026-05-22 19:13:03 - ingestion.orchestrator - INFO - Created 536 chunks
+2026-05-22 19:13:03 - ingestion.orchestrator - INFO - Saved processed document to data\processed\farmerhandbook2016_processed.json
+2026-05-22 19:13:03 - ingestion.orchestrator - INFO - Successfully ingested farmerhandbook2016.pdf
+2026-05-22 19:13:03 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf
+2026-05-22 19:13:03 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf
+2026-05-22 19:13:03 - ingestion.chunking - INFO - Chunking document (806753 chars, ~201688 tokens)
+2026-05-22 19:13:03 - ingestion.chunking - INFO - Created 1327 chunks (avg: 167 tokens)
+2026-05-22 19:13:03 - ingestion.orchestrator - INFO - Created 1327 chunks
+2026-05-22 19:13:03 - ingestion.orchestrator - INFO - Saved processed document to data\processed\ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025_processed.json
+2026-05-22 19:13:03 - ingestion.orchestrator - INFO - Successfully ingested ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf
+2026-05-22 19:13:03 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\ICAR-technologies-Biofertilizers.pdf
+2026-05-22 19:13:03 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\ICAR-technologies-Biofertilizers.pdf
+2026-05-22 19:13:03 - ingestion.chunking - INFO - Chunking document (63466 chars, ~15866 tokens)
+2026-05-22 19:13:03 - ingestion.chunking - INFO - Created 190 chunks (avg: 85 tokens)
+2026-05-22 19:13:03 - ingestion.orchestrator - INFO - Created 190 chunks
+2026-05-22 19:13:03 - ingestion.orchestrator - INFO - Saved processed document to data\processed\ICAR-technologies-Biofertilizers_processed.json
+2026-05-22 19:13:03 - ingestion.orchestrator - INFO - Successfully ingested ICAR-technologies-Biofertilizers.pdf
+2026-05-22 19:13:03 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\ICAR-Technologies-Biopesticides.pdf
+2026-05-22 19:13:03 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\ICAR-Technologies-Biopesticides.pdf
+2026-05-22 19:13:04 - ingestion.chunking - INFO - Chunking document (49358 chars, ~12339 tokens)
+2026-05-22 19:13:04 - ingestion.chunking - INFO - Created 147 chunks (avg: 85 tokens)
+2026-05-22 19:13:04 - ingestion.orchestrator - INFO - Created 147 chunks
+2026-05-22 19:13:04 - ingestion.orchestrator - INFO - Saved processed document to data\processed\ICAR-Technologies-Biopesticides_processed.json
+2026-05-22 19:13:04 - ingestion.orchestrator - INFO - Successfully ingested ICAR-Technologies-Biopesticides.pdf
+2026-05-22 19:13:04 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\Rabi-Agro-Advisory-2021-22_0.pdf
+2026-05-22 19:13:07 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\Rabi-Agro-Advisory-2021-22_0.pdf
+2026-05-22 19:13:07 - ingestion.chunking - INFO - Chunking document (689032 chars, ~172258 tokens)
+2026-05-22 19:13:08 - ingestion.chunking - INFO - Created 1081 chunks (avg: 176 tokens)
+2026-05-22 19:13:08 - ingestion.orchestrator - INFO - Created 1081 chunks
+2026-05-22 19:13:08 - ingestion.orchestrator - INFO - Saved processed document to data\processed\Rabi-Agro-Advisory-2021-22_0_processed.json
+2026-05-22 19:13:08 - ingestion.orchestrator - INFO - Successfully ingested Rabi-Agro-Advisory-2021-22_0.pdf
+2026-05-22 19:13:08 - ingestion.orchestrator - INFO - Batch ingestion complete: 5/5 files processed, 3281 total chunks created
+2026-05-22 19:13:08 - rag.embeddings_orchestrator - INFO - Step 2: Loading chunks...
+2026-05-22 19:13:08 - ingestion.orchestrator - INFO - Found 5 processed document files
+2026-05-22 19:13:08 - ingestion.orchestrator - INFO - Loaded 536 chunks from farmerhandbook2016_processed.json
+2026-05-22 19:13:08 - ingestion.orchestrator - INFO - Loaded 1327 chunks from ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025_processed.json
+2026-05-22 19:13:08 - ingestion.orchestrator - INFO - Loaded 190 chunks from ICAR-technologies-Biofertilizers_processed.json
+2026-05-22 19:13:08 - ingestion.orchestrator - INFO - Loaded 147 chunks from ICAR-Technologies-Biopesticides_processed.json
+2026-05-22 19:13:08 - ingestion.orchestrator - INFO - Loaded 1081 chunks from Rabi-Agro-Advisory-2021-22_0_processed.json
+2026-05-22 19:13:08 - ingestion.orchestrator - INFO - Total chunks loaded: 3281
+2026-05-22 19:13:08 - rag.embeddings_orchestrator - INFO - Step 3: Building vector store...
+2026-05-22 19:13:08 - rag.embeddings_orchestrator - INFO - Building vector store from 3281 chunks
+2026-05-22 19:13:08 - rag.embeddings_orchestrator - INFO - Creating embedder...
+2026-05-22 19:13:08 - rag.embedder - INFO - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-22 19:13:08 - rag.embedder - INFO - Using SentenceTransformers pipeline.
+2026-05-22 19:13:13 - rag.embedder - INFO - Model loaded successfully. Embedding dimension: 384
+2026-05-22 19:13:13 - rag.embedder - INFO - Generating embeddings for 3281 texts on CUDA
+2026-05-22 19:13:13 - rag.embedder - INFO - Batch size: 64
+2026-05-22 19:13:17 - rag.embedder - INFO - Generated embeddings shape: (3281, 384)
+2026-05-22 19:13:17 - rag.embedder - INFO - Time elapsed: 3.42s (958.9 texts/sec)
+2026-05-22 19:13:17 - rag.embeddings_orchestrator - INFO - Creating vector store...
+2026-05-22 19:13:17 - rag.vector_store - INFO - Initialized vector store with dimension 384
+2026-05-22 19:13:17 - rag.vector_store - INFO - Added 3281 embeddings to vector store
+2026-05-22 19:13:17 - rag.vector_store - INFO - Saved FAISS index to data\embeddings\faiss_index.bin
+2026-05-22 19:13:17 - rag.vector_store - INFO - Saved metadata to data\embeddings\metadata.json
+2026-05-22 19:13:17 - rag.embeddings_orchestrator - INFO - Vector store built with 3281 vectors
+2026-05-22 19:13:17 - rag.embeddings_orchestrator - INFO - Complete pipeline finished successfully
+2026-05-22 19:13:32 - __main__ - INFO - Processing query: How to control wheat pests?
+2026-05-22 19:13:32 - rag.rag_orchestrator - INFO - Initializing RAG pipeline...
+2026-05-22 19:13:32 - rag.rag_orchestrator - INFO - Loading embedder...
+2026-05-22 19:13:32 - rag.embedder - INFO - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-22 19:13:32 - rag.embedder - INFO - Using SentenceTransformers pipeline.
+2026-05-22 19:13:37 - rag.embedder - INFO - Model loaded successfully. Embedding dimension: 384
+2026-05-22 19:13:37 - rag.rag_orchestrator - INFO - Embedder loaded: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-22 19:13:37 - rag.rag_orchestrator - INFO - Loading vector store from disk...
+2026-05-22 19:13:37 - rag.vector_store - INFO - Initialized vector store with dimension 384
+2026-05-22 19:13:37 - rag.vector_store - INFO - Loaded FAISS index from data\embeddings\faiss_index.bin
+2026-05-22 19:13:37 - rag.vector_store - INFO - Loaded 3281 metadata entries
+2026-05-22 19:13:37 - rag.rag_orchestrator - INFO - Vector store loaded: 3281 vectors
+2026-05-22 19:13:37 - rag.rag_orchestrator - INFO - Initializing retriever...
+2026-05-22 19:13:37 - rag.retriever - INFO - Retriever initialized
+2026-05-22 19:13:37 - rag.rag_orchestrator - INFO - Retriever initialized
+2026-05-22 19:13:37 - rag.rag_orchestrator - INFO - Initializing generator with provider: ollama
+2026-05-22 19:13:37 - rag.generator - INFO - Initialized Ollama client: mistral
+2026-05-22 19:13:37 - rag.generator - INFO - Response generator initialized
+2026-05-22 19:13:37 - rag.rag_orchestrator - INFO - Generator initialized
+2026-05-22 19:13:37 - rag.rag_orchestrator - INFO - RAG pipeline initialized successfully
+2026-05-22 19:13:37 - rag.rag_orchestrator - INFO - Processing query: How to control wheat pests?
+2026-05-22 19:13:37 - rag.retriever - INFO - Detected language: en (scores: {'hi': 0.0, 'pa': 0.0, 'en': 0.8148148148148148})
+2026-05-22 19:13:37 - rag.rag_orchestrator - INFO - Response language: en
+2026-05-22 19:13:37 - rag.rag_orchestrator - INFO - Retrieving 5 context chunks...
+2026-05-22 19:13:37 - rag.retriever - INFO - Retrieving for query: How to control wheat pests?
+2026-05-22 19:13:37 - rag.retriever - INFO - Detected language: en (scores: {'hi': 0.0, 'pa': 0.0, 'en': 0.8148148148148148})
+2026-05-22 19:13:37 - rag.retriever - INFO - Processed query: How to control wheat pests (language: en)
+2026-05-22 19:13:37 - rag.vector_store - INFO - Search returned 0 results
+2026-05-22 19:13:37 - rag.retriever - INFO - Retrieved 0 results
+2026-05-22 19:13:37 - rag.rag_orchestrator - INFO - Retrieved 0 chunks
+2026-05-22 19:13:37 - rag.rag_orchestrator - INFO - Generating response...
+2026-05-22 19:13:37 - rag.generator - INFO - Generating response for query
+2026-05-22 19:13:37 - rag.generator - WARNING - No context chunks provided
+2026-05-22 19:13:37 - rag.rag_orchestrator - INFO - Query processing completed
+2026-05-22 19:14:20 - __main__ - INFO - Starting embedding pipeline from: Agri_docs
+2026-05-22 19:14:20 - rag.embeddings_orchestrator - INFO - Starting complete ingestion + embedding pipeline from Agri_docs
+2026-05-22 19:14:20 - rag.embeddings_orchestrator - INFO - Step 1: Ingesting PDFs...
+2026-05-22 19:14:20 - ingestion.orchestrator - INFO - Found 5 PDF files to ingest
+2026-05-22 19:14:20 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\farmerhandbook2016.pdf
+2026-05-22 19:14:20 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\farmerhandbook2016.pdf
+2026-05-22 19:14:20 - ingestion.chunking - INFO - Chunking document (277088 chars, ~69272 tokens)
+2026-05-22 19:14:20 - ingestion.chunking - INFO - Created 536 chunks (avg: 144 tokens)
+2026-05-22 19:14:20 - ingestion.orchestrator - INFO - Created 536 chunks
+2026-05-22 19:14:20 - ingestion.orchestrator - INFO - Saved processed document to data\processed\farmerhandbook2016_processed.json
+2026-05-22 19:14:20 - ingestion.orchestrator - INFO - Successfully ingested farmerhandbook2016.pdf
+2026-05-22 19:14:20 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf
+2026-05-22 19:14:21 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf
+2026-05-22 19:14:21 - ingestion.chunking - INFO - Chunking document (806753 chars, ~201688 tokens)
+2026-05-22 19:14:21 - ingestion.chunking - INFO - Created 1327 chunks (avg: 167 tokens)
+2026-05-22 19:14:21 - ingestion.orchestrator - INFO - Created 1327 chunks
+2026-05-22 19:14:21 - ingestion.orchestrator - INFO - Saved processed document to data\processed\ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025_processed.json
+2026-05-22 19:14:21 - ingestion.orchestrator - INFO - Successfully ingested ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf
+2026-05-22 19:14:21 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\ICAR-technologies-Biofertilizers.pdf
+2026-05-22 19:14:21 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\ICAR-technologies-Biofertilizers.pdf
+2026-05-22 19:14:21 - ingestion.chunking - INFO - Chunking document (63466 chars, ~15866 tokens)
+2026-05-22 19:14:21 - ingestion.chunking - INFO - Created 190 chunks (avg: 85 tokens)
+2026-05-22 19:14:21 - ingestion.orchestrator - INFO - Created 190 chunks
+2026-05-22 19:14:21 - ingestion.orchestrator - INFO - Saved processed document to data\processed\ICAR-technologies-Biofertilizers_processed.json
+2026-05-22 19:14:21 - ingestion.orchestrator - INFO - Successfully ingested ICAR-technologies-Biofertilizers.pdf
+2026-05-22 19:14:21 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\ICAR-Technologies-Biopesticides.pdf
+2026-05-22 19:14:21 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\ICAR-Technologies-Biopesticides.pdf
+2026-05-22 19:14:21 - ingestion.chunking - INFO - Chunking document (49358 chars, ~12339 tokens)
+2026-05-22 19:14:21 - ingestion.chunking - INFO - Created 147 chunks (avg: 85 tokens)
+2026-05-22 19:14:21 - ingestion.orchestrator - INFO - Created 147 chunks
+2026-05-22 19:14:21 - ingestion.orchestrator - INFO - Saved processed document to data\processed\ICAR-Technologies-Biopesticides_processed.json
+2026-05-22 19:14:21 - ingestion.orchestrator - INFO - Successfully ingested ICAR-Technologies-Biopesticides.pdf
+2026-05-22 19:14:21 - ingestion.orchestrator - INFO - Starting ingestion for Agri_docs\Rabi-Agro-Advisory-2021-22_0.pdf
+2026-05-22 19:14:25 - ingestion.pdf_parser - INFO - Successfully extracted text from Agri_docs\Rabi-Agro-Advisory-2021-22_0.pdf
+2026-05-22 19:14:25 - ingestion.chunking - INFO - Chunking document (689032 chars, ~172258 tokens)
+2026-05-22 19:14:25 - ingestion.chunking - INFO - Created 1081 chunks (avg: 176 tokens)
+2026-05-22 19:14:25 - ingestion.orchestrator - INFO - Created 1081 chunks
+2026-05-22 19:14:25 - ingestion.orchestrator - INFO - Saved processed document to data\processed\Rabi-Agro-Advisory-2021-22_0_processed.json
+2026-05-22 19:14:25 - ingestion.orchestrator - INFO - Successfully ingested Rabi-Agro-Advisory-2021-22_0.pdf
+2026-05-22 19:14:25 - ingestion.orchestrator - INFO - Batch ingestion complete: 5/5 files processed, 3281 total chunks created
+2026-05-22 19:14:25 - rag.embeddings_orchestrator - INFO - Step 2: Loading chunks...
+2026-05-22 19:14:25 - ingestion.orchestrator - INFO - Found 5 processed document files
+2026-05-22 19:14:25 - ingestion.orchestrator - INFO - Loaded 536 chunks from farmerhandbook2016_processed.json
+2026-05-22 19:14:25 - ingestion.orchestrator - INFO - Loaded 1327 chunks from ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025_processed.json
+2026-05-22 19:14:25 - ingestion.orchestrator - INFO - Loaded 190 chunks from ICAR-technologies-Biofertilizers_processed.json
+2026-05-22 19:14:25 - ingestion.orchestrator - INFO - Loaded 147 chunks from ICAR-Technologies-Biopesticides_processed.json
+2026-05-22 19:14:25 - ingestion.orchestrator - INFO - Loaded 1081 chunks from Rabi-Agro-Advisory-2021-22_0_processed.json
+2026-05-22 19:14:25 - ingestion.orchestrator - INFO - Total chunks loaded: 3281
+2026-05-22 19:14:25 - rag.embeddings_orchestrator - INFO - Step 3: Building vector store...
+2026-05-22 19:14:25 - rag.embeddings_orchestrator - INFO - Building vector store from 3281 chunks
+2026-05-22 19:14:25 - rag.embeddings_orchestrator - INFO - Creating embedder...
+2026-05-22 19:14:25 - rag.embedder - INFO - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-22 19:14:25 - rag.embedder - INFO - Using SentenceTransformers pipeline.
+2026-05-22 19:14:43 - rag.embedder - INFO - Model loaded successfully. Embedding dimension: 384
+2026-05-22 19:14:43 - rag.embedder - INFO - Generating embeddings for 3281 texts on CUDA
+2026-05-22 19:14:43 - rag.embedder - INFO - Batch size: 64
+2026-05-22 19:14:46 - rag.embedder - INFO - Generated embeddings shape: (3281, 384)
+2026-05-22 19:14:46 - rag.embedder - INFO - Time elapsed: 3.35s (979.7 texts/sec)
+2026-05-22 19:14:47 - rag.embeddings_orchestrator - INFO - Creating vector store...
+2026-05-22 19:14:47 - rag.vector_store - INFO - Initialized vector store with dimension 384
+2026-05-22 19:14:47 - rag.vector_store - INFO - Added 3281 embeddings to vector store
+2026-05-22 19:14:47 - rag.vector_store - INFO - Saved FAISS index to data\embeddings\faiss_index.bin
+2026-05-22 19:14:47 - rag.vector_store - INFO - Saved metadata to data\embeddings\metadata.json
+2026-05-22 19:14:47 - rag.embeddings_orchestrator - INFO - Vector store built with 3281 vectors
+2026-05-22 19:14:47 - rag.embeddings_orchestrator - INFO - Complete pipeline finished successfully
+2026-05-22 19:14:47 - __main__ - INFO - Summary saved to: embedding_rebuild.json
+2026-05-22 19:15:22 - __main__ - INFO - Processing query: How to control wheat pests?
+2026-05-22 19:15:22 - rag.rag_orchestrator - INFO - Initializing RAG pipeline...
+2026-05-22 19:15:22 - rag.rag_orchestrator - INFO - Loading embedder...
+2026-05-22 19:15:22 - rag.embedder - INFO - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-22 19:15:22 - rag.embedder - INFO - Using SentenceTransformers pipeline.
+2026-05-22 19:15:28 - rag.embedder - INFO - Model loaded successfully. Embedding dimension: 384
+2026-05-22 19:15:28 - rag.rag_orchestrator - INFO - Embedder loaded: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-22 19:15:28 - rag.rag_orchestrator - INFO - Loading vector store from disk...
+2026-05-22 19:15:28 - rag.vector_store - INFO - Initialized vector store with dimension 384
+2026-05-22 19:15:28 - rag.vector_store - INFO - Loaded FAISS index from data\embeddings\faiss_index.bin
+2026-05-22 19:15:28 - rag.vector_store - INFO - Loaded 3281 metadata entries
+2026-05-22 19:15:28 - rag.rag_orchestrator - INFO - Vector store loaded: 3281 vectors
+2026-05-22 19:15:28 - rag.rag_orchestrator - INFO - Initializing retriever...
+2026-05-22 19:15:28 - rag.retriever - INFO - Retriever initialized
+2026-05-22 19:15:28 - rag.rag_orchestrator - INFO - Retriever initialized
+2026-05-22 19:15:28 - rag.rag_orchestrator - INFO - Initializing generator with provider: ollama
+2026-05-22 19:15:28 - rag.generator - INFO - Initialized Ollama client: mistral
+2026-05-22 19:15:28 - rag.generator - INFO - Response generator initialized
+2026-05-22 19:15:28 - rag.rag_orchestrator - INFO - Generator initialized
+2026-05-22 19:15:28 - rag.rag_orchestrator - INFO - RAG pipeline initialized successfully
+2026-05-22 19:15:28 - rag.rag_orchestrator - INFO - Processing query: How to control wheat pests?
+2026-05-22 19:15:28 - rag.retriever - INFO - Detected language: en (scores: {'hi': 0.0, 'pa': 0.0, 'en': 0.8148148148148148})
+2026-05-22 19:15:28 - rag.rag_orchestrator - INFO - Response language: en
+2026-05-22 19:15:28 - rag.rag_orchestrator - INFO - Retrieving 5 context chunks...
+2026-05-22 19:15:28 - rag.retriever - INFO - Retrieving for query: How to control wheat pests?
+2026-05-22 19:15:28 - rag.retriever - INFO - Detected language: en (scores: {'hi': 0.0, 'pa': 0.0, 'en': 0.8148148148148148})
+2026-05-22 19:15:28 - rag.retriever - INFO - Processed query: How to control wheat pests (language: en)
+2026-05-22 19:15:28 - rag.vector_store - INFO - Search returned 0 results
+2026-05-22 19:15:28 - rag.retriever - INFO - Retrieved 0 results
+2026-05-22 19:15:28 - rag.rag_orchestrator - INFO - Retrieved 0 chunks
+2026-05-22 19:15:28 - rag.rag_orchestrator - INFO - Generating response...
+2026-05-22 19:15:28 - rag.generator - INFO - Generating response for query
+2026-05-22 19:15:28 - rag.generator - WARNING - No context chunks provided
+2026-05-22 19:15:28 - rag.rag_orchestrator - INFO - Query processing completed
+2026-05-22 19:15:55 - rag.vector_store - INFO - Initialized vector store with dimension 384
+2026-05-22 19:15:55 - rag.vector_store - INFO - Loaded FAISS index from data\embeddings\faiss_index.bin
+2026-05-22 19:15:55 - rag.vector_store - INFO - Loaded 3281 metadata entries
+2026-05-22 19:15:55 - rag.embedder - INFO - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-22 19:15:55 - rag.embedder - INFO - Using SentenceTransformers pipeline.
+2026-05-22 19:16:00 - rag.embedder - INFO - Model loaded successfully. Embedding dimension: 384
+2026-05-22 19:16:00 - rag.vector_store - INFO - Search returned 5 results
+2026-05-22 19:16:00 - rag.vector_store - INFO - Search returned 5 results
+2026-05-22 19:16:00 - rag.vector_store - INFO - Search returned 5 results
+2026-05-22 19:16:00 - rag.vector_store - INFO - Search returned 5 results
+2026-05-22 19:16:00 - rag.vector_store - INFO - Search returned 5 results
+2026-05-22 19:16:24 - rag.vector_store - INFO - Initialized vector store with dimension 384
+2026-05-22 19:16:24 - rag.vector_store - INFO - Loaded FAISS index from data\embeddings\faiss_index.bin
+2026-05-22 19:16:24 - rag.vector_store - INFO - Loaded 3281 metadata entries
+2026-05-22 19:16:38 - __main__ - INFO - Processing query: How to control wheat pests?
+2026-05-22 19:16:38 - rag.rag_orchestrator - INFO - Initializing RAG pipeline...
+2026-05-22 19:16:38 - rag.rag_orchestrator - INFO - Loading embedder...
+2026-05-22 19:16:38 - rag.embedder - INFO - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-22 19:16:38 - rag.embedder - INFO - Using SentenceTransformers pipeline.
+2026-05-22 19:16:43 - rag.embedder - INFO - Model loaded successfully. Embedding dimension: 384
+2026-05-22 19:16:43 - rag.rag_orchestrator - INFO - Embedder loaded: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-22 19:16:43 - rag.rag_orchestrator - INFO - Loading vector store from disk...
+2026-05-22 19:16:43 - rag.vector_store - INFO - Initialized vector store with dimension 384
+2026-05-22 19:16:43 - rag.vector_store - INFO - Loaded FAISS index from data\embeddings\faiss_index.bin
+2026-05-22 19:16:43 - rag.vector_store - INFO - Loaded 3281 metadata entries
+2026-05-22 19:16:43 - rag.rag_orchestrator - INFO - Vector store loaded: 3281 vectors
+2026-05-22 19:16:43 - rag.rag_orchestrator - INFO - Initializing retriever...
+2026-05-22 19:16:43 - rag.retriever - INFO - Retriever initialized
+2026-05-22 19:16:43 - rag.rag_orchestrator - INFO - Retriever initialized
+2026-05-22 19:16:43 - rag.rag_orchestrator - INFO - Initializing generator with provider: ollama
+2026-05-22 19:16:43 - rag.generator - INFO - Initialized Ollama client: mistral
+2026-05-22 19:16:43 - rag.generator - INFO - Response generator initialized
+2026-05-22 19:16:43 - rag.rag_orchestrator - INFO - Generator initialized
+2026-05-22 19:16:43 - rag.rag_orchestrator - INFO - RAG pipeline initialized successfully
+2026-05-22 19:16:43 - rag.rag_orchestrator - INFO - Processing query: How to control wheat pests?
+2026-05-22 19:16:43 - rag.retriever - INFO - Detected language: en (scores: {'hi': 0.0, 'pa': 0.0, 'en': 0.8148148148148148})
+2026-05-22 19:16:43 - rag.rag_orchestrator - INFO - Response language: en
+2026-05-22 19:16:43 - rag.rag_orchestrator - INFO - Retrieving 5 context chunks...
+2026-05-22 19:16:43 - rag.retriever - INFO - Retrieving for query: How to control wheat pests?
+2026-05-22 19:16:43 - rag.retriever - INFO - Detected language: en (scores: {'hi': 0.0, 'pa': 0.0, 'en': 0.8148148148148148})
+2026-05-22 19:16:43 - rag.retriever - INFO - Processed query: How to control wheat pests (language: en)
+2026-05-22 19:16:43 - rag.vector_store - INFO - Search returned 5 results
+2026-05-22 19:16:43 - rag.retriever - INFO - Retrieved 5 results
+2026-05-22 19:16:43 - rag.rag_orchestrator - INFO - Retrieved 5 chunks
+2026-05-22 19:16:43 - rag.rag_orchestrator - INFO - Generating response...
+2026-05-22 19:16:43 - rag.generator - INFO - Generating response for query
+2026-05-22 19:17:00 - rag.rag_orchestrator - INFO - Query processing completed
+2026-05-22 19:22:39 - rag.rag_orchestrator - INFO - Initializing RAG pipeline...
+2026-05-22 19:22:39 - rag.rag_orchestrator - INFO - Loading embedder...
+2026-05-22 19:22:39 - rag.embedder - INFO - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-22 19:22:39 - rag.embedder - INFO - Using SentenceTransformers pipeline.
+2026-05-22 19:22:45 - rag.embedder - INFO - Model loaded successfully. Embedding dimension: 384
+2026-05-22 19:22:45 - rag.rag_orchestrator - INFO - Embedder loaded: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-22 19:22:45 - rag.rag_orchestrator - INFO - Loading vector store from disk...
+2026-05-22 19:22:45 - rag.vector_store - INFO - Initialized vector store with dimension 384
+2026-05-22 19:22:45 - rag.vector_store - INFO - Loaded FAISS index from data\embeddings\faiss_index.bin
+2026-05-22 19:22:45 - rag.vector_store - INFO - Loaded 3281 metadata entries
+2026-05-22 19:22:45 - rag.rag_orchestrator - INFO - Vector store loaded: 3281 vectors
+2026-05-22 19:22:45 - rag.rag_orchestrator - INFO - Initializing retriever...
+2026-05-22 19:22:45 - rag.retriever - INFO - Retriever initialized
+2026-05-22 19:22:45 - rag.rag_orchestrator - INFO - Retriever initialized
+2026-05-22 19:22:45 - rag.rag_orchestrator - INFO - Initializing generator with provider: ollama
+2026-05-22 19:22:45 - rag.generator - INFO - Initialized Ollama client: mistral
+2026-05-22 19:22:45 - rag.generator - INFO - Response generator initialized
+2026-05-22 19:22:45 - rag.rag_orchestrator - INFO - Generator initialized
+2026-05-22 19:22:45 - rag.rag_orchestrator - INFO - RAG pipeline initialized successfully
+2026-05-22 19:23:06 - rag.rag_orchestrator - INFO - Processing query: How to control wheat pests?
+2026-05-22 19:23:06 - rag.retriever - INFO - Detected language: en (scores: {'hi': 0.0, 'pa': 0.0, 'en': 0.8148148148148148})
+2026-05-22 19:23:06 - rag.rag_orchestrator - INFO - Response language: en
+2026-05-22 19:23:06 - rag.rag_orchestrator - INFO - Retrieving 4 context chunks...
+2026-05-22 19:23:06 - rag.retriever - INFO - Retrieving for query: How to control wheat pests?
+2026-05-22 19:23:06 - rag.retriever - INFO - Detected language: en (scores: {'hi': 0.0, 'pa': 0.0, 'en': 0.8148148148148148})
+2026-05-22 19:23:06 - rag.retriever - INFO - Processed query: How to control wheat pests (language: en)
+2026-05-22 19:23:06 - rag.vector_store - INFO - Search returned 4 results
+2026-05-22 19:23:06 - rag.retriever - INFO - Retrieved 4 results
+2026-05-22 19:23:06 - rag.rag_orchestrator - INFO - Retrieved 4 chunks
+2026-05-22 19:23:06 - rag.rag_orchestrator - INFO - Generating response...
+2026-05-22 19:23:06 - rag.generator - INFO - Generating response for query
+2026-05-22 19:23:21 - rag.rag_orchestrator - INFO - Query processing completed
+2026-05-22 19:24:38 - rag.rag_orchestrator - INFO - Processing query: wheat
+2026-05-22 19:24:38 - rag.retriever - INFO - Detected language: en (scores: {'hi': 0.0, 'pa': 0.0, 'en': 1.0})
+2026-05-22 19:24:38 - rag.rag_orchestrator - INFO - Response language: en
+2026-05-22 19:24:38 - rag.rag_orchestrator - INFO - Retrieving 5 context chunks...
+2026-05-22 19:24:38 - rag.retriever - INFO - Retrieving for query: wheat
+2026-05-22 19:24:38 - rag.retriever - INFO - Detected language: en (scores: {'hi': 0.0, 'pa': 0.0, 'en': 1.0})
+2026-05-22 19:24:38 - rag.retriever - INFO - Processed query: wheat (language: en)
+2026-05-22 19:24:38 - rag.vector_store - INFO - Search returned 5 results
+2026-05-22 19:24:38 - rag.retriever - INFO - Retrieved 5 results
+2026-05-22 19:24:38 - rag.rag_orchestrator - INFO - Retrieved 5 chunks
+2026-05-22 19:24:38 - rag.rag_orchestrator - INFO - Generating response...
+2026-05-22 19:24:38 - rag.generator - INFO - Generating response for query
+2026-05-22 19:25:11 - rag.rag_orchestrator - INFO - Query processing completed
+2026-05-22 19:25:39 - rag.rag_orchestrator - INFO - Processing query: can wheat be rice?
+2026-05-22 19:25:39 - rag.retriever - INFO - Detected language: en (scores: {'hi': 0.0, 'pa': 0.0, 'en': 0.7777777777777778})
+2026-05-22 19:25:39 - rag.rag_orchestrator - INFO - Response language: en
+2026-05-22 19:25:39 - rag.rag_orchestrator - INFO - Retrieving 5 context chunks...
+2026-05-22 19:25:39 - rag.retriever - INFO - Retrieving for query: can wheat be rice?
+2026-05-22 19:25:39 - rag.retriever - INFO - Detected language: en (scores: {'hi': 0.0, 'pa': 0.0, 'en': 0.7777777777777778})
+2026-05-22 19:25:39 - rag.retriever - INFO - Processed query: can wheat be rice (language: en)
+2026-05-22 19:25:39 - rag.vector_store - INFO - Search returned 5 results
+2026-05-22 19:25:39 - rag.retriever - INFO - Retrieved 5 results
+2026-05-22 19:25:39 - rag.rag_orchestrator - INFO - Retrieved 5 chunks
+2026-05-22 19:25:39 - rag.rag_orchestrator - INFO - Generating response...
+2026-05-22 19:25:39 - rag.generator - INFO - Generating response for query
+2026-05-22 19:25:44 - rag.rag_orchestrator - INFO - Query processing completed
+2026-05-22 20:04:31 - rag.rag_orchestrator - INFO - Initializing RAG pipeline...
+2026-05-22 20:04:31 - rag.rag_orchestrator - INFO - Loading embedder...
+2026-05-22 20:04:31 - rag.embedder - INFO - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-22 20:04:31 - rag.embedder - INFO - Using SentenceTransformers pipeline.
+2026-05-22 20:04:37 - rag.embedder - INFO - Model loaded successfully. Embedding dimension: 384
+2026-05-22 20:04:37 - rag.rag_orchestrator - INFO - Embedder loaded: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-22 20:04:37 - rag.rag_orchestrator - INFO - Loading vector store from disk...
+2026-05-22 20:04:37 - rag.vector_store - INFO - Initialized vector store with dimension 384
+2026-05-22 20:04:37 - rag.vector_store - INFO - Loaded FAISS index from data\embeddings\faiss_index.bin
+2026-05-22 20:04:37 - rag.vector_store - INFO - Loaded 3281 metadata entries
+2026-05-22 20:04:37 - rag.rag_orchestrator - INFO - Vector store loaded: 3281 vectors
+2026-05-22 20:04:37 - rag.rag_orchestrator - INFO - Initializing retriever...
+2026-05-22 20:04:37 - rag.retriever - INFO - Retriever initialized
+2026-05-22 20:04:37 - rag.rag_orchestrator - INFO - Retriever initialized
+2026-05-22 20:04:37 - rag.rag_orchestrator - INFO - Initializing generator with provider: ollama
+2026-05-22 20:04:37 - rag.generator - INFO - Initialized Ollama client: mistral
+2026-05-22 20:04:37 - rag.generator - INFO - Response generator initialized
+2026-05-22 20:04:37 - rag.rag_orchestrator - INFO - Generator initialized
+2026-05-22 20:04:37 - rag.rag_orchestrator - INFO - RAG pipeline initialized successfully
+2026-05-22 20:04:37 - rag.retriever - INFO - Detected language: en (scores: {'hi': 0.2894736842105263, 'pa': 0.0, 'en': 0.0})
+2026-05-22 20:04:37 - rag.rag_orchestrator - INFO - Response language: en
+2026-05-22 20:04:37 - rag.rag_orchestrator - INFO - Retrieving 5 context chunks...
+2026-05-22 20:04:37 - rag.retriever - INFO - Detected language: en (scores: {'hi': 0.2894736842105263, 'pa': 0.0, 'en': 0.0})
+2026-05-22 20:04:37 - rag.vector_store - INFO - Search returned 5 results
+2026-05-22 20:04:37 - rag.retriever - INFO - Retrieved 5 results
+2026-05-22 20:04:37 - rag.rag_orchestrator - INFO - Retrieved 5 chunks
+2026-05-22 20:04:37 - rag.rag_orchestrator - INFO - Generating response...
+2026-05-22 20:04:37 - rag.generator - INFO - Generating response for query (language: en)
+2026-05-22 20:05:04 - rag.rag_orchestrator - INFO - Query processing completed
+2026-05-22 20:05:04 - __main__ - ERROR - Error running query: 'charmap' codec can't encode characters in position 7-11: character maps to <undefined>
+2026-05-22 20:05:34 - rag.rag_orchestrator - INFO - Initializing RAG pipeline...
+2026-05-22 20:05:34 - rag.rag_orchestrator - INFO - Loading embedder...
+2026-05-22 20:05:34 - rag.embedder - INFO - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-22 20:05:34 - rag.embedder - INFO - Using SentenceTransformers pipeline.
+2026-05-22 20:05:39 - rag.embedder - INFO - Model loaded successfully. Embedding dimension: 384
+2026-05-22 20:05:39 - rag.rag_orchestrator - INFO - Embedder loaded: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-22 20:05:39 - rag.rag_orchestrator - INFO - Loading vector store from disk...
+2026-05-22 20:05:39 - rag.vector_store - INFO - Initialized vector store with dimension 384
+2026-05-22 20:05:39 - rag.vector_store - INFO - Loaded FAISS index from data\embeddings\faiss_index.bin
+2026-05-22 20:05:39 - rag.vector_store - INFO - Loaded 3281 metadata entries
+2026-05-22 20:05:39 - rag.rag_orchestrator - INFO - Vector store loaded: 3281 vectors
+2026-05-22 20:05:39 - rag.rag_orchestrator - INFO - Initializing retriever...
+2026-05-22 20:05:39 - rag.retriever - INFO - Retriever initialized
+2026-05-22 20:05:39 - rag.rag_orchestrator - INFO - Retriever initialized
+2026-05-22 20:05:39 - rag.rag_orchestrator - INFO - Initializing generator with provider: ollama
+2026-05-22 20:05:39 - rag.generator - INFO - Initialized Ollama client: mistral
+2026-05-22 20:05:39 - rag.generator - INFO - Response generator initialized
+2026-05-22 20:05:39 - rag.rag_orchestrator - INFO - Generator initialized
+2026-05-22 20:05:39 - rag.rag_orchestrator - INFO - RAG pipeline initialized successfully
+2026-05-22 20:06:43 - rag.rag_orchestrator - INFO - Initializing RAG pipeline...
+2026-05-22 20:06:43 - rag.rag_orchestrator - INFO - Loading embedder...
+2026-05-22 20:06:43 - rag.embedder - INFO - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-22 20:06:43 - rag.embedder - INFO - Using SentenceTransformers pipeline.
+2026-05-22 20:06:49 - rag.embedder - INFO - Model loaded successfully. Embedding dimension: 384
+2026-05-22 20:06:49 - rag.rag_orchestrator - INFO - Embedder loaded: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-22 20:06:49 - rag.rag_orchestrator - INFO - Loading vector store from disk...
+2026-05-22 20:06:49 - rag.vector_store - INFO - Initialized vector store with dimension 384
+2026-05-22 20:06:49 - rag.vector_store - INFO - Loaded FAISS index from data\embeddings\faiss_index.bin
+2026-05-22 20:06:49 - rag.vector_store - INFO - Loaded 3281 metadata entries
+2026-05-22 20:06:49 - rag.rag_orchestrator - INFO - Vector store loaded: 3281 vectors
+2026-05-22 20:06:49 - rag.rag_orchestrator - INFO - Initializing retriever...
+2026-05-22 20:06:49 - rag.retriever - INFO - Retriever initialized
+2026-05-22 20:06:49 - rag.rag_orchestrator - INFO - Retriever initialized
+2026-05-22 20:06:49 - rag.rag_orchestrator - INFO - Initializing generator with provider: ollama
+2026-05-22 20:06:49 - rag.generator - INFO - Initialized Ollama client: mistral
+2026-05-22 20:06:49 - rag.generator - INFO - Response generator initialized
+2026-05-22 20:06:49 - rag.rag_orchestrator - INFO - Generator initialized
+2026-05-22 20:06:49 - rag.rag_orchestrator - INFO - RAG pipeline initialized successfully
+2026-05-22 20:07:17 - rag.rag_orchestrator - INFO - Initializing RAG pipeline...
+2026-05-22 20:07:17 - rag.rag_orchestrator - INFO - Loading embedder...
+2026-05-22 20:07:17 - rag.embedder - INFO - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-22 20:07:17 - rag.embedder - INFO - Using SentenceTransformers pipeline.
+2026-05-22 20:07:22 - rag.embedder - INFO - Model loaded successfully. Embedding dimension: 384
+2026-05-22 20:07:22 - rag.rag_orchestrator - INFO - Embedder loaded: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-22 20:07:22 - rag.rag_orchestrator - INFO - Loading vector store from disk...
+2026-05-22 20:07:22 - rag.vector_store - INFO - Initialized vector store with dimension 384
+2026-05-22 20:07:22 - rag.vector_store - INFO - Loaded FAISS index from data\embeddings\faiss_index.bin
+2026-05-22 20:07:22 - rag.vector_store - INFO - Loaded 3281 metadata entries
+2026-05-22 20:07:22 - rag.rag_orchestrator - INFO - Vector store loaded: 3281 vectors
+2026-05-22 20:07:22 - rag.rag_orchestrator - INFO - Initializing retriever...
+2026-05-22 20:07:22 - rag.retriever - INFO - Retriever initialized
+2026-05-22 20:07:22 - rag.rag_orchestrator - INFO - Retriever initialized
+2026-05-22 20:07:22 - rag.rag_orchestrator - INFO - Initializing generator with provider: ollama
+2026-05-22 20:07:22 - rag.generator - INFO - Initialized Ollama client: mistral
+2026-05-22 20:07:22 - rag.generator - INFO - Response generator initialized
+2026-05-22 20:07:22 - rag.rag_orchestrator - INFO - Generator initialized
+2026-05-22 20:07:22 - rag.rag_orchestrator - INFO - RAG pipeline initialized successfully
+2026-05-22 20:07:22 - rag.retriever - INFO - Detected language: en (scores: {'hi': 0.2894736842105263, 'pa': 0.0, 'en': 0.0})
+2026-05-22 20:07:22 - rag.rag_orchestrator - INFO - Response language: en
+2026-05-22 20:07:22 - rag.rag_orchestrator - INFO - Retrieving 5 context chunks...
+2026-05-22 20:07:22 - rag.retriever - INFO - Detected language: en (scores: {'hi': 0.2894736842105263, 'pa': 0.0, 'en': 0.0})
+2026-05-22 20:07:23 - rag.vector_store - INFO - Search returned 5 results
+2026-05-22 20:07:23 - rag.retriever - INFO - Retrieved 5 results
+2026-05-22 20:07:23 - rag.rag_orchestrator - INFO - Retrieved 5 chunks
+2026-05-22 20:07:23 - rag.rag_orchestrator - INFO - Generating response...
+2026-05-22 20:07:23 - rag.generator - INFO - Generating response for query (language: en)
+2026-05-22 20:07:33 - rag.rag_orchestrator - INFO - Query processing completed
+2026-05-22 20:07:59 - rag.rag_orchestrator - INFO - Initializing RAG pipeline...
+2026-05-22 20:07:59 - rag.rag_orchestrator - INFO - Loading embedder...
+2026-05-22 20:07:59 - rag.embedder - INFO - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-22 20:07:59 - rag.embedder - INFO - Using SentenceTransformers pipeline.
+2026-05-22 20:08:05 - rag.embedder - INFO - Model loaded successfully. Embedding dimension: 384
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - Embedder loaded: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - Loading vector store from disk...
+2026-05-22 20:08:05 - rag.vector_store - INFO - Initialized vector store with dimension 384
+2026-05-22 20:08:05 - rag.vector_store - INFO - Loaded FAISS index from data\embeddings\faiss_index.bin
+2026-05-22 20:08:05 - rag.vector_store - INFO - Loaded 3281 metadata entries
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - Vector store loaded: 3281 vectors
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - Initializing retriever...
+2026-05-22 20:08:05 - rag.retriever - INFO - Retriever initialized
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - Retriever initialized
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - Initializing generator with provider: ollama
+2026-05-22 20:08:05 - rag.generator - INFO - Initialized Ollama client: mistral
+2026-05-22 20:08:05 - rag.generator - INFO - Response generator initialized
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - Generator initialized
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - RAG pipeline initialized successfully
+2026-05-22 20:08:05 - rag.retriever - INFO - Detected language: hi (scores: {'hi': 0.8157894736842105, 'pa': 0.0, 'en': 0.0})
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - Response language: hi
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - Retrieving 5 context chunks...
+2026-05-22 20:08:05 - rag.retriever - INFO - Detected language: hi (scores: {'hi': 0.8157894736842105, 'pa': 0.0, 'en': 0.0})
+2026-05-22 20:08:05 - rag.vector_store - INFO - Search returned 5 results
+2026-05-22 20:08:05 - rag.retriever - INFO - Retrieved 5 results
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - Retrieved 5 chunks
+2026-05-22 20:08:05 - rag.rag_orchestrator - INFO - Generating response...
+2026-05-22 20:08:05 - rag.generator - INFO - Generating response for query (language: hi)
+2026-05-22 20:08:20 - rag.rag_orchestrator - INFO - Query processing completed

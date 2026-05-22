@@ -27,9 +27,9 @@ class LanguageDetector:
         """Initialize language detector."""
         self.supported_languages = settings.supported_languages
 
-    def detect_language(self, text: str, threshold: float = 0.5) -> str:
+    def detect_language(self, text: str, threshold: float = 0.05) -> str:
         """
-        Detect language of text using multiple heuristics.
+        Detect language of text using script-based detection.
 
         Args:
             text: Text to analyze
@@ -40,8 +40,6 @@ class LanguageDetector:
         """
         if not text:
             return "en"
-
-        text_lower = text.lower()
 
         # Simple pattern-based detection
         hindi_score = self._score_hindi(text)
@@ -68,17 +66,25 @@ class LanguageDetector:
         """Score text for Hindi language (Devanagari script)."""
         import re
 
-        devanagari_pattern = r"[ा-ॿ]"
+        # Count Devanagari characters (more comprehensive range)
+        devanagari_pattern = r"[ऀ-ॿ]"  # Full Devanagari Unicode range
         matches = len(re.findall(devanagari_pattern, text))
-        return matches / max(len(text), 1)
+        # Return percentage of Devanagari characters
+        if not text:
+            return 0
+        return matches / len(text)
 
     def _score_punjabi(self, text: str) -> float:
         """Score text for Punjabi language (Gurmukhi script)."""
         import re
 
-        gurmukhi_pattern = r"[ਅ-ੱ]"
+        # Count Gurmukhi characters
+        gurmukhi_pattern = r"[਀-੿]"  # Full Gurmukhi Unicode range
         matches = len(re.findall(gurmukhi_pattern, text))
-        return matches / max(len(text), 1)
+        # Return percentage of Gurmukhi characters
+        if not text:
+            return 0
+        return matches / len(text)
 
     def _score_english(self, text: str) -> float:
         """Score text for English language."""
@@ -86,7 +92,9 @@ class LanguageDetector:
 
         english_pattern = r"[a-zA-Z]"
         matches = len(re.findall(english_pattern, text))
-        return matches / max(len(text), 1)
+        if not text:
+            return 0
+        return matches / len(text)
 
 
 class QueryPreprocessor:
@@ -106,16 +114,21 @@ class QueryPreprocessor:
         Returns:
             Dictionary with preprocessed query and metadata
         """
-        # Detect language
+        # Detect language FIRST (before any cleaning)
         language = self.lang_detector.detect_language(query)
 
         # Normalize whitespace
         normalized = " ".join(query.split())
 
         # Remove special characters (but keep script characters)
+        # Keep: alphanumeric, spaces, Hindi (Devanagari), Punjabi (Gurmukhi)
         import re
-
-        cleaned = re.sub(r"[^\w\s\u0900-\u097F\u0A00-\u0A7F]", " ", normalized)
+        cleaned = re.sub(
+            r"[^\w\s\u0900-\u097F\u0A00-\u0A7F]",
+            " ",
+            normalized,
+            flags=re.UNICODE
+        )
         cleaned = " ".join(cleaned.split())
 
         return {
