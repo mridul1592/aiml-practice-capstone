@@ -194,8 +194,9 @@ st.markdown(
 
     /* Chunk box */
     .chunk-item {
-        background: #000000;
-        border: 1px solid #e5e7eb;
+        background: #f3f4f6;
+        color: #1f2937;
+        border: 1px solid #d1d5db;
         border-radius: 8px;
         padding: 15px;
         margin: 12px 0;
@@ -212,8 +213,8 @@ st.markdown(
     }
 
     .similarity-score {
-        background: #000000;
-        color: #166534;
+        background: #dbeafe;
+        color: #0c4a6e;
         padding: 4px 8px;
         border-radius: 4px;
         font-size: 0.85em;
