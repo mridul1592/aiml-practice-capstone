@@ -467,34 +467,119 @@ def main():
         except Exception as e:
             st.warning(f"Could not load stats: {str(e)}")
 
-    # Main Content
-    tab1, tab2 = st.tabs(["📝 Text Query", "🎤 Audio Query"])
+    # ==================== GOOGLE-STYLE SEARCH INTERFACE ====================
+    st.markdown("<br>", unsafe_allow_html=True)
 
-    # ==================== TEXT QUERY TAB ====================
-    with tab1:
-        st.markdown("### 🔍 Ask Your Question")
+    # Centered search box area
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        st.markdown(
+            """
+            <div style='text-align: center; margin-bottom: 20px;'>
+                <h2 style='font-size: 2.5em; margin: 0; color: #10b981;'>🌾 Ask Anything</h2>
+                <p style='color: #6b7280; font-size: 1.1em; margin-top: 5px;'>Text or Audio - 10 Languages Supported</p>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
 
-        # Query input with language info
-        col1, col2 = st.columns([4, 1])
-        with col1:
-            query_text = st.text_area(
-                "Enter your question (in any of 10 languages)",
-                placeholder="e.g., How to control wheat pests? / गेहूँ में कीटों का नियंत्रण कैसे करें?",
-                height=100,
-                label_visibility="collapsed",
+    # Search input area (Google-style)
+    col1, col2, col3 = st.columns([0.5, 3, 0.5])
+    with col2:
+        query_text = st.text_area(
+            "Enter your question",
+            placeholder="e.g., How to control wheat pests? / गेहूँ में कीटों का नियंत्रण कैसे करें?",
+            height=80,
+            label_visibility="collapsed",
+            key="main_query"
+        )
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    # Audio input section alongside text
+    col1, col2 = st.columns([1, 1])
+
+    audio_file = None
+    transcription_result = None
+
+    with col1:
+        st.markdown("#### 🎙️ Record Audio")
+        try:
+            from streamlit_mic_recorder import mic_recorder
+
+            audio_data = mic_recorder(
+                start_prompt="🎤 Start Recording",
+                stop_prompt="⏹️ Stop Recording",
+                just_once=False,
+                use_container_width=False,
+                format="webm"
             )
 
-        with col2:
-            st.markdown("### Supported")
-            st.markdown("🇬🇧 English")
-            st.markdown("🇮🇳 Hindi")
-            st.markdown("🇮🇳 Tamil")
-            st.markdown("+ 7 more")
+            if audio_data:
+                import io
+                audio_file = io.BytesIO(audio_data['bytes'])
+                audio_file.name = "recorded_audio.wav"
+                audio_file.type = "audio/wav"
 
+                # Immediately transcribe
+                try:
+                    with st.spinner("🔄 Transcribing audio..."):
+                        handler = initialize_audio_handler()
+                        transcription_result = handler.audio_processor.transcribe(
+                            audio_file,
+                            language=None
+                        )
+                        # Display transcription immediately
+                        st.success("✅ Audio captured!")
+                except Exception as e:
+                    st.error(f"Error transcribing: {str(e)}")
+        except ImportError:
+            st.info("📍 Audio recording not available. Use file upload instead.")
+
+    with col2:
+        st.markdown("#### 📁 Upload Audio File")
+        uploaded_audio = st.file_uploader(
+            "Upload audio (MP3, WAV, M4A, FLAC, OGG)",
+            type=["mp3", "wav", "m4a", "flac", "ogg", "opus", "aac"],
+            key="audio_upload"
+        )
+
+        if uploaded_audio:
+            audio_file = uploaded_audio
+            # Immediately transcribe
+            try:
+                with st.spinner("🔄 Transcribing audio..."):
+                    handler = initialize_audio_handler()
+                    transcription_result = handler.audio_processor.transcribe(
+                        audio_file,
+                        language=None
+                    )
+                    st.success("✅ Audio loaded!")
+            except Exception as e:
+                st.error(f"Error transcribing: {str(e)}")
+
+    # Show transcription immediately if available
+    if transcription_result:
         st.markdown("---")
+        st.markdown("### 📝 What you said:")
+        lang_name = LANGUAGES.get(transcription_result.get("language", "en"), "Unknown")
+        st.markdown(
+            f"""
+            <div class='card'>
+                <span class='language-badge'>{lang_name}</span>
+                <p style='margin-top: 10px; font-size: 1.1em; line-height: 1.6;'><strong>{transcription_result['text']}</strong></p>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+        # Use transcription as query if text input is empty
+        if not query_text.strip():
+            query_text = transcription_result['text']
 
-        # Filters
-        st.markdown("### 🎯 Filters (Optional)")
+    st.markdown("---")
+
+    # Optional Filters (in expandable section)
+    with st.expander("🎯 Filters & Settings (Optional)"):
         col1, col2, col3, col4 = st.columns(4)
 
         with col1:
@@ -531,10 +616,7 @@ def main():
 
         st.markdown("---")
 
-        # Retrieval Parameters
-        st.markdown("### 📊 Retrieval Settings")
         col1, col2, col3 = st.columns(3)
-
         with col1:
             k = st.slider(
                 "Context Chunks",
@@ -558,175 +640,58 @@ def main():
         with col3:
             st.empty()
 
-        st.markdown("---")
+    st.markdown("<br>", unsafe_allow_html=True)
 
-        # Submit Button
-        if st.button("🚀 Get Answer", use_container_width=True, type="primary"):
-            if not query_text.strip():
-                st.error("❌ Please enter a question")
-            else:
-                try:
-                    with st.spinner("🔄 Processing query... This may take a moment"):
-                        # Detect language
-                        lang_detector = LanguageDetector()
-                        detected_lang = lang_detector.detect_language(query_text)
+    # Submit Button (Google-style)
+    col1, col2, col3 = st.columns([1.2, 1.6, 1.2])
+    with col2:
+        submit_button = st.button("🚀 Get Answer", use_container_width=True, type="primary", key="main_submit")
 
-                        # Initialize pipeline
-                        pipeline = initialize_pipeline(llm_provider, llm_model)
-
-                        # Execute query
-                        result = pipeline.query(
-                            query_text,
-                            k=k,
-                            similarity_threshold=threshold,
-                            language=detected_lang,
-                            crop=crop if crop else None,
-                            region=region if region else None,
-                            season=season if season else None,
-                            disease=disease if disease else None,
-                            temperature=temperature,
-                        )
-
-                    st.success("✅ Query processed successfully!")
-                    st.markdown("---")
-                    display_response(result)
-
-                except Exception as e:
-                    st.error(f"❌ Error: {str(e)}")
-                    st.info("💡 Make sure you have:")
-                    st.write("1. Built embeddings: `python main.py embed --pdf-dir Agri_docs`")
-                    st.write(f"2. Started {llm_provider} server")
-                    logger.error(f"Query error: {str(e)}")
-
-    # ==================== AUDIO QUERY TAB ====================
-    with tab2:
-        st.markdown("### 🎤 Audio Input")
-        st.markdown("Ask your question by uploading an audio file or recording directly. The system will automatically detect the language and respond in that language.")
-
-        # Audio input method selection
-        audio_input_col1, audio_input_col2 = st.columns([1, 1])
-
-        with audio_input_col1:
-            st.markdown("#### 📁 Upload Audio File")
-            audio_file = st.file_uploader(
-                "Upload audio (MP3, WAV, M4A, FLAC, OGG)",
-                type=["mp3", "wav", "m4a", "flac", "ogg", "opus", "aac"],
-                help="Supports multiple audio formats",
-                key="audio_upload"
-            )
-
-        with audio_input_col2:
-            st.markdown("#### 🎙️ Record Audio")
-            st.info("📍 Click the microphone button below to record your question")
-            # Try to import the recorder, with fallback message
+    # Process query when button is clicked
+    if submit_button:
+        if not query_text.strip():
+            st.error("❌ Please enter a question or record/upload audio")
+        else:
             try:
-                from streamlit_mic_recorder import mic_recorder
+                with st.spinner("🔄 Finding the best answer for you..."):
+                    # Detect language
+                    lang_detector = LanguageDetector()
+                    detected_lang = lang_detector.detect_language(query_text)
 
-                audio_data = mic_recorder(
-                    start_prompt="🎤 Start Recording",
-                    stop_prompt="⏹️ Stop Recording",
-                    just_once=False,
-                    use_container_width=False,
-                    format="webm"
-                )
+                    # Initialize pipeline
+                    pipeline = initialize_pipeline(llm_provider, llm_model)
 
-                if audio_data:
-                    # Convert webm to wav for processing
-                    import io
-                    audio_file = io.BytesIO(audio_data['bytes'])
-                    audio_file.name = "recorded_audio.wav"
-                    audio_file.type = "audio/wav"
-                    st.success("✅ Recording captured!")
-            except ImportError:
-                st.warning("⚠️ Audio recording not available. Please install streamlit-mic-recorder or upload an audio file instead.")
+                    # Get filter values from expander (set defaults if not in expander)
+                    crop = st.session_state.get("crop_filter", "")
+                    region = st.session_state.get("region_filter", "")
+                    season = st.session_state.get("season_filter", "")
+                    disease = st.session_state.get("disease_filter", "")
+                    k = st.session_state.get("k_text_query", 5)
+                    threshold = st.session_state.get("threshold_text_query", 0.2)
 
-        # Display audio if available
-        if audio_file:
-            st.markdown("---")
-            st.markdown("### 🔊 Audio Preview")
-            st.audio(audio_file, format=f"audio/{getattr(audio_file, 'type', 'wav')}")
-
-        st.markdown("---")
-
-        # Audio settings
-        st.markdown("### ⚙️ Settings")
-        col1, col2 = st.columns(2)
-
-        with col1:
-            model_size = st.selectbox(
-                "Whisper Model Size",
-                options=["tiny", "base", "small", "medium", "large"],
-                index=1,
-                help="Larger = more accurate but slower",
-                key="whisper_model_size"
-            )
-
-        with col2:
-            k_audio = st.slider(
-                "Context Chunks",
-                min_value=1,
-                max_value=20,
-                value=5,
-                step=1,
-                key="k_audio"
-            )
-
-        st.markdown("---")
-
-        # Submit button for audio
-        if st.button("🚀 Process Audio", use_container_width=True, type="primary", key="audio_submit"):
-            if not audio_file:
-                st.error("❌ Please upload an audio file")
-            else:
-                try:
-                    with st.spinner("🔄 Processing audio... This may take a moment"):
-                        # Save uploaded file temporarily
-                        import tempfile
-                        import os
-
-                        with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmp_file:
-                            tmp_file.write(audio_file.getbuffer())
-                            tmp_path = tmp_file.name
-
-                        try:
-                            # Process audio
-                            handler = initialize_audio_handler()
-                            result = handler.process_audio_query(
-                                tmp_path,
-                                k=k_audio,
-                                temperature=temperature,
-                                preserve_language=True,
-                            )
-                        finally:
-                            # Clean up temp file
-                            if os.path.exists(tmp_path):
-                                os.remove(tmp_path)
-
-                    st.success("✅ Audio processed successfully!")
-                    st.markdown("---")
-
-                    # Transcription section
-                    st.markdown("### 📝 Transcription")
-                    lang_name = LANGUAGES.get(result.get("detected_language_code"), "Unknown")
-                    st.markdown(
-                        f"""
-                        <div class='card'>
-                            <span class='language-badge'>{lang_name}</span>
-                            <p style='margin-top: 10px; font-size: 1.05em;'>{result['transcription']}</p>
-                        </div>
-                        """,
-                        unsafe_allow_html=True,
+                    # Execute query
+                    result = pipeline.query(
+                        query_text,
+                        k=k,
+                        similarity_threshold=threshold,
+                        language=detected_lang,
+                        crop=crop if crop else None,
+                        region=region if region else None,
+                        season=season if season else None,
+                        disease=disease if disease else None,
+                        temperature=temperature,
                     )
 
-                    st.markdown("---")
-                    display_response(result)
+                st.success("✅ Got your answer!")
+                st.markdown("---")
+                display_response(result)
 
-                except Exception as e:
-                    st.error(f"❌ Error processing audio: {str(e)}")
-                    st.info("💡 Troubleshooting:")
-                    st.write("• Ensure audio file is clear and audible")
-                    st.write("• Supported formats: MP3, WAV, M4A, FLAC, OGG, OPUS, AAC")
-                    logger.error(f"Audio query error: {str(e)}")
+            except Exception as e:
+                st.error(f"❌ Error: {str(e)}")
+                st.info("💡 Make sure you have:")
+                st.write("1. Built embeddings: `python main.py embed --pdf-dir Agri_docs`")
+                st.write(f"2. Started {llm_provider} server")
+                logger.error(f"Query error: {str(e)}")
 
     # Footer
     st.markdown(
