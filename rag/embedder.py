@@ -184,12 +184,19 @@ class Embedder:
     
     def _embed_with_transformers(self, texts: List[str], normalize: bool = True) -> np.ndarray:
         """Helper to run inference via HuggingFace Transformers."""
+        # Respect the model's actual max sequence length.
+        # BERT-based models (BGE, etc.) cap at 512; some newer models support 1024+.
+        # Exceeding the limit causes position-embedding shape mismatches at runtime.
+        _max_len = min(
+            getattr(self.tokenizer, "model_max_length", 512),
+            512,   # hard safety cap — avoids OOM on models with unrealistic limits
+        )
         inputs = self.tokenizer(
             texts,
             padding=True,
             truncation=True,
             return_tensors="pt",
-            max_length=1024,
+            max_length=_max_len,
         ).to(self.device)
 
         with torch.no_grad():
