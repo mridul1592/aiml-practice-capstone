@@ -118,7 +118,6 @@ class RAGPipeline:
         """
         logger.info(f"Initializing generator with provider: {self.llm_provider}")
         try:
-            # Determine default model name based on provider
             if self.llm_model_name:
                 model_name = self.llm_model_name
             elif self.llm_provider == "ollama":
@@ -127,7 +126,7 @@ class RAGPipeline:
                 model_name = "gpt-3.5-turbo"
             else:
                 model_name = settings.ollama_model
-            
+
             generator = create_generator(
                 provider=self.llm_provider,
                 model_name=model_name,
@@ -157,7 +156,7 @@ class RAGPipeline:
             query_text: Query text
             k: Number of context chunks to retrieve
             similarity_threshold: Minimum similarity score (0-1)
-            language: Response language (en, hi, pa)
+            language: Response language code (en, hi, pa); auto-detected if not provided
             crop: Filter by crop (wheat, paddy, etc.)
             region: Filter by region
             season: Filter by season
@@ -165,7 +164,7 @@ class RAGPipeline:
             temperature: LLM temperature for generation
 
         Returns:
-            Dictionary with query, response, sources, and confidence
+            Dictionary with query, response, language, sources, and confidence
 
         Raises:
             ValueError: If query_text is empty
@@ -175,6 +174,12 @@ class RAGPipeline:
             raise ValueError("Query text cannot be empty")
 
         logger.info(f"Processing query: {query_text}")
+
+        # Detect language if not provided
+        if not language:
+            from rag.retriever import LanguageDetector
+            language = LanguageDetector().detect_language(query_text)
+        logger.info(f"Response language: {language}")
 
         # Build metadata filters
         filters = {}
@@ -186,8 +191,6 @@ class RAGPipeline:
             filters["season"] = season
         if disease:
             filters["disease"] = disease
-        if language:
-            filters["language"] = language
 
         # Retrieve context chunks
         try:
@@ -204,20 +207,12 @@ class RAGPipeline:
             logger.error(f"Retrieval failed: {str(e)}")
             raise
 
-        # Determine response language
-        response_language = language
-        if not response_language and context_chunks:
-            response_language = context_chunks[0].get("language", "en")
-        elif not response_language:
-            response_language = "en"
-
         # Generate response
         try:
-            logger.info(f"Generating response in {response_language}...")
+            logger.info("Generating response...")
             response = self.generator.generate(
                 query=query_text,
                 context_chunks=context_chunks,
-                language=response_language,
                 temperature=temperature,
             )
         except Exception as e:
@@ -227,7 +222,7 @@ class RAGPipeline:
         result = {
             "query": query_text,
             "response": response["response"],
-            "language": response["language"],
+            "language": language,
             "confidence": response["confidence"],
             "sources": response["sources"],
             "num_context_chunks": len(context_chunks),

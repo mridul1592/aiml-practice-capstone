@@ -1,0 +1,47 @@
+{
+  "total_files": 5,
+  "processed_files": 5,
+  "failed_files": 0,
+  "total_chunks": 3281,
+  "documents": [
+    {
+      "filename": "farmerhandbook2016.pdf",
+      "chunks": 536,
+      "status": "success"
+    },
+    {
+      "filename": "ICAR-En-Kharif-Agro-Advisories-for-Farmers-2025.pdf",
+      "chunks": 1327,
+      "status": "success"
+    },
+    {
+      "filename": "ICAR-technologies-Biofertilizers.pdf",
+      "chunks": 190,
+      "status": "success"
+    },
+    {
+      "filename": "ICAR-Technologies-Biopesticides.pdf",
+      "chunks": 147,
+      "status": "success"
+    },
+    {
+      "filename": "Rabi-Agro-Advisory-2021-22_0.pdf",
+      "chunks": 1081,
+      "status": "success"
+    }
+  ],
+  "embedding_stats": {
+    "total_vectors": 3281,
+    "total_metadata": 3281,
+    "embedding_dimension": 384,
+    "index_path": "data\\embeddings\\faiss_index.bin",
+    "metadata_path": "data\\embeddings\\metadata.json"
+  },
+  "embedding_model": {
+    "model_name": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "embedding_dimension": 384,
+    "expected_dimension": 384,
+    "device": "cuda",
+    "pipeline_type": "SentenceTransformers"
+  }
+}

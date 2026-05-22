@@ -13,7 +13,7 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 from ingestion.chunking import DocumentChunker
-from ingestion.metadata_extractor import MetadataExtractor
+# from ingestion.metadata_extractor import MetadataExtractor
 from ingestion.pdf_parser import PDFParser
 from utils.config import settings
 from utils.logger import setup_logger
@@ -27,7 +27,7 @@ class IngestionPipeline:
     def __init__(self):
         """Initialize pipeline components."""
         self.pdf_parser = PDFParser()
-        self.metadata_extractor = MetadataExtractor()
+        # self.metadata_extractor = MetadataExtractor()
         self.output_path = Path(settings.data_processed_path)
         self.output_path.mkdir(parents=True, exist_ok=True)
 
@@ -52,29 +52,24 @@ class IngestionPipeline:
         text = parsed_doc["text"]
         filename = parsed_doc["filename"]
 
-        # Step 2: Extract metadata
-        metadata = self.metadata_extractor.extract_metadata(text, filename)
-        logger.info(f"Extracted metadata: {metadata}")
-
-        # Step 3: Chunk document
-        language = metadata.get("language", "en")
+        # Chunk document for English only
         chunker = DocumentChunker(
             chunk_size=settings.chunk_size,
             chunk_overlap=settings.chunk_overlap,
-            language=language,
         )
 
         chunks = chunker.chunk_document(text)
         logger.info(f"Created {len(chunks)} chunks")
 
         # Step 4: Enrich chunks with metadata
-        enriched_chunks = chunker.add_metadata_to_chunks(chunks, metadata)
+        # enriched_chunks = chunker.add_metadata_to_chunks(chunks, metadata)
 
         # Step 5: Save processed document
-        self._save_processed_document(filename, enriched_chunks)
+        # self._save_processed_document(filename, enriched_chunks)
+        self._save_processed_document(filename, chunks)
 
         logger.info(f"Successfully ingested {filename}")
-        return enriched_chunks
+        return chunks
 
     def ingest_batch(self, pdf_directory: str) -> Dict[str, List]:
         """
