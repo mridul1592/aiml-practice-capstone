@@ -531,7 +531,6 @@ def main():
     with col2:
         query_text = st.text_area(
             "Enter your question",
-            value=st.session_state.get("main_query", ""),
             placeholder="e.g., How to control wheat pests? / गेहूँ में कीटों का नियंत्रण कैसे करें?",
             height=80,
             label_visibility="collapsed",
@@ -725,9 +724,12 @@ def main():
                                         logger.info(f"  - Transcribed text: {transcribed_text[:200]}")
 
                                         if transcribed_text:
-                                            # Update the query text area with transcribed text
+                                            # Store transcribed text and trigger rerun to update text area
                                             st.session_state.main_query = transcribed_text
                                             st.success("✅ Audio transcribed and added to query field!")
+                                            import time
+                                            time.sleep(0.5)  # Brief pause so user sees success message
+                                            st.rerun()
                                         else:
                                             st.warning("⚠️ No speech detected in audio")
 
@@ -872,9 +874,12 @@ def main():
                                     logger.info(f"CHECKPOINT 7: Text extracted: {len(transcribed_text)} chars")
 
                                     if transcribed_text:
-                                        # Update the query text area with transcribed text
+                                        # Store transcribed text and trigger rerun to update text area
                                         st.session_state.main_query = transcribed_text
                                         st.success("✅ Audio transcribed and added to query field!")
+                                        import time
+                                        time.sleep(0.5)  # Brief pause so user sees success message
+                                        st.rerun()
                                     else:
                                         st.warning("⚠️ No speech detected")
                                 os.remove(json_file)
