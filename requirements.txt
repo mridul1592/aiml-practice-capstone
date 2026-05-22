@@ -32,6 +32,10 @@ python-multipart==0.0.6
 
 # Streamlit
 streamlit==1.28.1
+streamlit-mic-recorder==0.0.8
+
+# Audio Processing
+openai-whisper==20231117
 
 # Data Processing
 pandas==2.1.3

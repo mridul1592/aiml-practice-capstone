@@ -595,17 +595,50 @@ def main():
     # ==================== AUDIO QUERY TAB ====================
     with tab2:
         st.markdown("### 🎤 Audio Input")
-        st.markdown("Upload an audio file to ask your question. The system will automatically detect the language and respond in that language.")
+        st.markdown("Ask your question by uploading an audio file or recording directly. The system will automatically detect the language and respond in that language.")
 
-        # Audio upload
-        audio_file = st.file_uploader(
-            "Upload audio (MP3, WAV, M4A, FLAC, OGG)",
-            type=["mp3", "wav", "m4a", "flac", "ogg", "opus", "aac"],
-            help="Supports multiple audio formats"
-        )
+        # Audio input method selection
+        audio_input_col1, audio_input_col2 = st.columns([1, 1])
 
+        with audio_input_col1:
+            st.markdown("#### 📁 Upload Audio File")
+            audio_file = st.file_uploader(
+                "Upload audio (MP3, WAV, M4A, FLAC, OGG)",
+                type=["mp3", "wav", "m4a", "flac", "ogg", "opus", "aac"],
+                help="Supports multiple audio formats",
+                key="audio_upload"
+            )
+
+        with audio_input_col2:
+            st.markdown("#### 🎙️ Record Audio")
+            st.info("📍 Click the microphone button below to record your question")
+            # Try to import the recorder, with fallback message
+            try:
+                from streamlit_mic_recorder import mic_recorder
+
+                audio_data = mic_recorder(
+                    start_prompt="🎤 Start Recording",
+                    stop_prompt="⏹️ Stop Recording",
+                    just_once=False,
+                    use_container_width=False,
+                    format="webm"
+                )
+
+                if audio_data:
+                    # Convert webm to wav for processing
+                    import io
+                    audio_file = io.BytesIO(audio_data['bytes'])
+                    audio_file.name = "recorded_audio.wav"
+                    audio_file.type = "audio/wav"
+                    st.success("✅ Recording captured!")
+            except ImportError:
+                st.warning("⚠️ Audio recording not available. Please install streamlit-mic-recorder or upload an audio file instead.")
+
+        # Display audio if available
         if audio_file:
-            st.audio(audio_file, format=f"audio/{audio_file.type}")
+            st.markdown("---")
+            st.markdown("### 🔊 Audio Preview")
+            st.audio(audio_file, format=f"audio/{getattr(audio_file, 'type', 'wav')}")
 
         st.markdown("---")
 
