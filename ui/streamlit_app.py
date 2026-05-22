@@ -569,27 +569,47 @@ def main():
 
                         # Convert webm to wav using FFmpeg
                         wav_path = webm_path.replace(".webm", ".wav")
+                        logger.info(f"WebM path: {webm_path}")
+                        logger.info(f"WAV path: {wav_path}")
+                        logger.info(f"FFmpeg path: {FFMPEG_PATH}")
 
                         if FFMPEG_PATH:
                             try:
+                                logger.info(f"Starting FFmpeg conversion from {webm_path} to {wav_path}")
                                 result = subprocess.run(
                                     [FFMPEG_PATH, "-i", webm_path, "-acodec", "pcm_s16le", "-ar", "16000", wav_path, "-y"],
                                     capture_output=True,
                                     text=True,
                                     timeout=30
                                 )
+                                logger.info(f"FFmpeg return code: {result.returncode}")
+                                logger.info(f"FFmpeg stdout: {result.stdout[:200] if result.stdout else 'None'}")
+                                logger.info(f"FFmpeg stderr: {result.stderr[:500] if result.stderr else 'None'}")
+
                                 if result.returncode != 0:
-                                    st.error(f"FFmpeg error: {result.stderr}")
+                                    st.error(f"❌ FFmpeg error: {result.stderr[:200]}")
                                     if os.path.exists(webm_path):
                                         os.remove(webm_path)
                                     raise RuntimeError(f"FFmpeg conversion failed: {result.stderr}")
+
+                                # Verify wav file was created
+                                if not os.path.exists(wav_path):
+                                    st.error(f"❌ WAV file not created. Path: {wav_path}")
+                                    if os.path.exists(webm_path):
+                                        os.remove(webm_path)
+                                    raise RuntimeError(f"FFmpeg did not create output file: {wav_path}")
+
+                                logger.info(f"WAV file created successfully: {wav_path}")
+                                st.info(f"✅ Audio converted (webm → wav)")
+
                             except subprocess.TimeoutExpired:
-                                st.error("Audio conversion timed out")
+                                st.error("❌ Audio conversion timed out")
                                 if os.path.exists(webm_path):
                                     os.remove(webm_path)
                                 raise
                             except Exception as ffmpeg_error:
-                                st.error(f"Error converting audio: {str(ffmpeg_error)}")
+                                st.error(f"❌ Error converting audio: {str(ffmpeg_error)}")
+                                logger.error(f"FFmpeg error details: {ffmpeg_error}")
                                 if os.path.exists(webm_path):
                                     os.remove(webm_path)
                                 raise
@@ -601,6 +621,7 @@ def main():
 
                         # Transcribe the converted audio
                         try:
+                            logger.info(f"Starting transcription of {wav_path}")
                             handler = initialize_audio_handler()
                             transcription_result = handler.audio_processor.transcribe(
                                 wav_path,
