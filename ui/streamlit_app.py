@@ -641,11 +641,19 @@ def main():
                                 logger.info(f"  - Output directory: {output_dir}")
                                 logger.info(f"  - Python executable: {sys.executable}")
 
+                                # CRITICAL: Add FFmpeg directory to PATH so Whisper can find it
+                                env = os.environ.copy()
+                                if FFMPEG_PATH:
+                                    ffmpeg_dir = os.path.dirname(FFMPEG_PATH)
+                                    env['PATH'] = ffmpeg_dir + os.pathsep + env.get('PATH', '')
+                                    logger.info(f"  - Added FFmpeg dir to PATH: {ffmpeg_dir}")
+
                                 result = subprocess.run(
                                     whisper_cmd,
                                     capture_output=True,
                                     text=True,
-                                    timeout=60
+                                    timeout=60,
+                                    env=env  # Pass environment with FFmpeg in PATH
                                 )
 
                                 # CHECKPOINT 4: Whisper execution completed
@@ -781,11 +789,19 @@ def main():
                         logger.info(f"  - Working dir: {os.getcwd()}")
                         logger.info(f"  - Output directory: {output_dir}")
 
+                        # CRITICAL: Add FFmpeg directory to PATH so Whisper can find it
+                        env = os.environ.copy()
+                        if FFMPEG_PATH:
+                            ffmpeg_dir = os.path.dirname(FFMPEG_PATH)
+                            env['PATH'] = ffmpeg_dir + os.pathsep + env.get('PATH', '')
+                            logger.info(f"  - Added FFmpeg dir to PATH: {ffmpeg_dir}")
+
                         result = subprocess.run(
                             whisper_cmd,
                             capture_output=True,
                             text=True,
-                            timeout=60
+                            timeout=60,
+                            env=env  # Pass environment with FFmpeg in PATH
                         )
 
                         # CHECKPOINT 4: Whisper completed
