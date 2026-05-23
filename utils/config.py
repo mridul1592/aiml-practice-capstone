@@ -23,11 +23,16 @@ class Settings(BaseSettings):
     openai_api_key: str = ""
 
     # Embedding Configuration
+    # BAAI/bge-large-en-v1.5 → 1024 dims
+    # BAAI/bge-base-en-v1.5  → 768 dims
+    # sentence-transformers/paraphrase-mpnet-base-v2 → 768 dims
     embedding_model: str = "BAAI/bge-large-en-v1.5"
-    embedding_dimension: int = 4096
-    # embedding_model: str = "sentence-transformers/paraphrase-mpnet-base-v2"
+    embedding_dimension: int = 1024
     device: str = "cuda"
-    # embedding_dimension: int = 384
+
+    # Reranker Configuration
+    use_reranker: bool = True
+    reranker_model: str = "BAAI/bge-reranker-base"
 
     # Vector Store Configuration
     faiss_index_path: str = "./data/embeddings/faiss_index.bin"
@@ -38,6 +43,8 @@ class Settings(BaseSettings):
     chunk_overlap: int = 40
     similarity_threshold: float = 0.5
     top_k_retrieval: int = 5
+    language_detect_threshold: float = 0.5
+    supported_languages: List[str] = ["en", "hi", "pa"]
 
     # FastAPI Configuration
     api_host: str = "0.0.0.0"
