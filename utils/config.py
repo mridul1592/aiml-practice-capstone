@@ -19,13 +19,20 @@ class Settings(BaseSettings):
     # LLM Configuration
     llm_provider: str = "ollama"
     ollama_base_url: str = "http://localhost:11434"
-    ollama_model: str = "neural-chat"
+    ollama_model: str = "mistral"
     openai_api_key: str = ""
 
     # Embedding Configuration
-    embedding_model: str = "sentence-transformers/multilingual-e5-small"
+    # BAAI/bge-large-en-v1.5 → 1024 dims
+    # BAAI/bge-base-en-v1.5  → 768 dims
+    # sentence-transformers/paraphrase-mpnet-base-v2 → 768 dims
+    embedding_model: str = "BAAI/bge-large-en-v1.5"
+    embedding_dimension: int = 1024
     device: str = "cuda"
-    embedding_dimension: int = 384
+
+    # Reranker Configuration
+    use_reranker: bool = True
+    reranker_model: str = "BAAI/bge-reranker-base"
 
     # Vector Store Configuration
     faiss_index_path: str = "./data/embeddings/faiss_index.bin"
@@ -36,8 +43,8 @@ class Settings(BaseSettings):
     chunk_overlap: int = 40
     similarity_threshold: float = 0.5
     top_k_retrieval: int = 5
-    supported_languages: List[str] = ["en", "hi", "pa", "ta", "te", "or", "kn", "mr", "ml", "bn"]
-    language_detect_threshold: float = 0.05
+    language_detect_threshold: float = 0.5
+    supported_languages: List[str] = ["en", "hi", "pa"]
 
     # FastAPI Configuration
     api_host: str = "0.0.0.0"

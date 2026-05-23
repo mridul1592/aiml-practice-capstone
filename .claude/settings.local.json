@@ -13,7 +13,18 @@
       "Bash(python3)",
       "Bash(python main.py --help)",
       "Bash(python3 -m py_compile main.py)",
-      "Bash(python main.py)"
+      "Bash(python main.py)",
+      "Bash(gh pr *)",
+      "PowerShell(ffmpeg -version)",
+      "PowerShell(head -3)",
+      "Bash(ffmpeg -version)",
+      "Bash(python -c ' *)",
+      "Bash(python -m py_compile ui/streamlit_app.py)",
+      "Bash(python -c \"from rank_bm25 import BM25Okapi; print\\('rank-bm25 ready'\\)\")",
+      "Bash(python -c \"from utils.config import settings; print\\('embedding_model:', settings.embedding_model\\)\")",
+      "Bash(where gh *)",
+      "Bash(winget list *)",
+      "Bash(findstr /i \"gh\\\\|github\")"
     ]
   }
 }

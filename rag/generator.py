@@ -68,6 +68,12 @@ class OllamaClient(LLMClient):
 
         logger.info(f"Initialized Ollama client: {model_name}")
 
+    # Maximum characters allowed for the full assembled prompt.
+    # neural-chat / mistral default num_ctx = 4096 tokens ≈ 16 000 chars.
+    # We set num_ctx=8192 explicitly and keep the prompt under ~28 000 chars
+    # (≈ 7 000 tokens) to leave headroom for the response.
+    _MAX_PROMPT_CHARS = 28_000
+
     def generate(
         self,
         prompt: str,
@@ -92,31 +98,69 @@ class OllamaClient(LLMClient):
         Raises:
             Exception: If Ollama connection fails
         """
-        try:
-            full_prompt = prompt
-            if system_prompt:
-                full_prompt = f"{system_prompt}\n\n{prompt}"
+        full_prompt = prompt
+        if system_prompt:
+            full_prompt = f"{system_prompt}\n\n{prompt}"
 
-            response = self.requests.post(
-                f"{self.base_url}/api/generate",
-                json={
-                    "model": self.model_name,
-                    "prompt": full_prompt,
-                    "temperature": temperature,
-                    "top_p": top_p,
-                    "stream": False,
-                },
-                timeout=120,
+        # Hard-truncate if the assembled prompt would overflow the model context.
+        if len(full_prompt) > self._MAX_PROMPT_CHARS:
+            logger.warning(
+                f"Prompt too long ({len(full_prompt)} chars) — truncating to "
+                f"{self._MAX_PROMPT_CHARS} chars to avoid Ollama context overflow."
             )
+            full_prompt = full_prompt[: self._MAX_PROMPT_CHARS]
 
-            response.raise_for_status()
-            result = response.json()
+        payload = {
+            "model": self.model_name,
+            "prompt": full_prompt,
+            "temperature": temperature,
+            "top_p": top_p,
+            "num_ctx": 8192,   # explicit context window (default is only 4096)
+            "stream": False,
+        }
 
-            return result.get("response", "").strip()
+        # Retry once on 500 — the first attempt sometimes fails when the
+        # model is being loaded into VRAM from a cold start.
+        last_exc: Exception = RuntimeError("Unknown error")
+        for attempt in range(2):
+            try:
+                response = self.requests.post(
+                    f"{self.base_url}/api/generate",
+                    json=payload,
+                    timeout=180,
+                )
 
-        except Exception as e:
-            logger.error(f"Ollama generation failed: {str(e)}")
-            raise
+                if response.status_code == 500:
+                    body = response.text[:300]
+                    logger.warning(
+                        f"Ollama returned 500 (attempt {attempt+1}/2): {body}"
+                    )
+                    if attempt == 0:
+                        import time as _time
+                        _time.sleep(2)   # brief pause before retry
+                        continue
+                    # Second 500: raise a clear, actionable error
+                    raise RuntimeError(
+                        f"Ollama returned HTTP 500. "
+                        f"The model may be out of VRAM or the prompt is still too long. "
+                        f"Try reducing Context Chunks (k) in the sidebar. "
+                        f"Server said: {body}"
+                    )
+
+                response.raise_for_status()
+                return response.json().get("response", "").strip()
+
+            except RuntimeError:
+                raise
+            except Exception as exc:
+                last_exc = exc
+                logger.error(f"Ollama generation attempt {attempt+1} failed: {exc}")
+                if attempt == 0:
+                    import time as _time
+                    _time.sleep(1)
+
+        logger.error(f"Ollama generation failed after 2 attempts: {last_exc}")
+        raise last_exc
 
     def is_available(self) -> bool:
         """Check if Ollama server is available."""
@@ -299,9 +343,16 @@ class ResponseGenerator:
             logger.error(f"Response generation failed: {str(e)}")
             raise
 
+    # Max chars per individual chunk in the assembled context.
+    # 57 chunks × 200-token avg = fine; but some chunks hit 7 000+ tokens.
+    # Capping at 2 500 chars (≈ 600 tokens) keeps a 10-chunk context under
+    # ~6 500 tokens — safely within num_ctx=8192.
+    _MAX_CHUNK_CHARS = 2_500
+
     def _assemble_context(self, context_chunks: List[Dict]) -> str:
         """
         Assemble context text from retrieved chunks.
+        Each chunk is truncated to _MAX_CHUNK_CHARS to prevent context overflow.
 
         Args:
             context_chunks: List of retrieved chunk dicts
@@ -313,7 +364,17 @@ class ResponseGenerator:
         for i, chunk in enumerate(context_chunks, 1):
             content = chunk.get("content", "").strip()
             filename = chunk.get("filename", "Unknown")
-            parts.append(f"[Source {i}: {filename}]\n{content}")
+            section  = chunk.get("section", "").strip()
+
+            # Truncate oversized chunks
+            if len(content) > self._MAX_CHUNK_CHARS:
+                content = content[: self._MAX_CHUNK_CHARS] + "… [truncated]"
+
+            header = f"[Source {i}: {filename}"
+            if section:
+                header += f" — {section[:60]}"
+            header += "]"
+            parts.append(f"{header}\n{content}")
         return "\n\n".join(parts)
 
     def _assess_confidence(

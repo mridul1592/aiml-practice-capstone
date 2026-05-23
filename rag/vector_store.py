@@ -309,6 +309,18 @@ class VectorStore:
             self.index = read_index(str(self.index_path))
             logger.info(f"Loaded FAISS index from {self.index_path}")
 
+            # Guard: verify that the saved index dimension matches the
+            # configured embedding dimension.  A mismatch means the index
+            # was built with a different model and must be rebuilt.
+            loaded_dim = self.index.d
+            if loaded_dim != self.embedding_dim:
+                raise ValueError(
+                    f"FAISS index dimension mismatch: index on disk has {loaded_dim} dims "
+                    f"but the current embedding model produces {self.embedding_dim} dims. "
+                    f"Please rebuild the vector index by running the embedding pipeline:\n"
+                    f"  python -m rag.embeddings_orchestrator"
+                )
+
             # Load metadata
             with open(self.metadata_path, "r", encoding="utf-8") as f:
                 self.metadata = json.load(f)

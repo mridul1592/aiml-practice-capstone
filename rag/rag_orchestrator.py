@@ -6,18 +6,89 @@ Coordinates:
 - Vector store loading
 - Retriever execution
 - LLM response generation
+- Source attribution (filename enrichment from processed-JSON range map)
 """
 
-from typing import Dict, List, Optional
+import json
+import os
+from pathlib import Path
+from typing import Dict, List, Optional, Tuple
 
 from rag.embedder import Embedder
 from rag.generator import ResponseGenerator, create_generator
+from rag.reranker import BGEReranker, create_reranker
 from rag.retriever import Retriever
 from rag.vector_store import VectorStore
 from utils.config import settings
 from utils.logger import setup_logger
 
 logger = setup_logger(__name__)
+
+
+# ---------------------------------------------------------------------------
+# Source-map helpers — map vector_id → source PDF filename at runtime
+# without requiring a re-index.
+# ---------------------------------------------------------------------------
+
+def _build_source_map(processed_dir: str = "./data/processed") -> List[Tuple[int, int, str]]:
+    """
+    Build a list of (start_vector_id, end_vector_id, filename) tuples by
+    reading the processed JSON files in sorted order (same order the
+    EmbeddingPipeline used when building the FAISS index).
+
+    Returns an empty list if the processed directory doesn't exist or is empty.
+    """
+    p = Path(processed_dir)
+    if not p.exists():
+        return []
+
+    source_map: List[Tuple[int, int, str]] = []
+    running_id = 0
+
+    for json_file in sorted(p.glob("*_processed.json")):
+        try:
+            with open(json_file, encoding="utf-8") as f:
+                data = json.load(f)
+            source_file = data.get("source_file", json_file.stem.replace("_processed", ""))
+            n = data.get("total_chunks", len(data.get("chunks", [])))
+            if n > 0:
+                source_map.append((running_id, running_id + n - 1, source_file))
+                running_id += n
+        except Exception as exc:
+            logger.warning(f"Could not read {json_file}: {exc}")
+
+    logger.info(f"Source map built: {len(source_map)} documents, {running_id} total chunks")
+    return source_map
+
+
+def _lookup_filename(vector_id: int, source_map: List[Tuple[int, int, str]]) -> str:
+    """Return the source PDF filename for a given vector_id, or 'Unknown'."""
+    for start, end, filename in source_map:
+        if start <= vector_id <= end:
+            return filename
+    return "Unknown"
+
+
+def _enrich_chunks_with_filename(
+    chunks: List[Dict], source_map: List[Tuple[int, int, str]]
+) -> List[Dict]:
+    """
+    Add or replace the 'filename' key on every chunk dict that is missing or
+    set to the 'Unknown' sentinel, using the source_map range lookup.
+
+    Note: 'Unknown' is a truthy string so `not chunk.get('filename')` would
+    incorrectly skip it — we check both conditions explicitly.
+    """
+    if not source_map:
+        return chunks
+    enriched = []
+    for chunk in chunks:
+        fname = chunk.get("filename")
+        if not fname or fname == "Unknown":
+            vid = chunk.get("vector_id", -1)
+            chunk = {**chunk, "filename": _lookup_filename(vid, source_map)}
+        enriched.append(chunk)
+    return enriched
 
 
 class RAGPipeline:
@@ -53,6 +124,10 @@ class RAGPipeline:
         self.vector_store = self.load_vector_store()
         self.retriever = self.load_retriever()
         self.generator = self.load_generator()
+        self.reranker = self.load_reranker()
+
+        # Build source map for filename attribution (no re-indexing needed)
+        self._source_map = _build_source_map()
 
         logger.info("RAG pipeline initialized successfully")
 
@@ -106,6 +181,28 @@ class RAGPipeline:
         logger.info("Retriever initialized")
         return retriever
 
+    def load_reranker(self) -> Optional[BGEReranker]:
+        """
+        Load the BGE cross-encoder reranker.
+
+        Returns:
+            BGEReranker instance, or None if reranking is disabled in settings.
+        """
+        if not settings.use_reranker:
+            logger.info("Reranker disabled (USE_RERANKER=false)")
+            return None
+
+        logger.info(f"Loading reranker: {settings.reranker_model}")
+        try:
+            reranker = create_reranker()
+            logger.info("Reranker loaded successfully")
+            return reranker
+        except Exception as e:
+            logger.warning(
+                f"Failed to load reranker ({e}). Continuing without reranking."
+            )
+            return None
+
     def load_generator(self) -> ResponseGenerator:
         """
         Load response generator with LLM client.
@@ -140,7 +237,7 @@ class RAGPipeline:
     def query(
         self,
         query_text: str,
-        k: int = 5,
+        k: int = 10,
         similarity_threshold: Optional[float] = None,
         language: Optional[str] = None,
         crop: Optional[str] = None,
@@ -148,6 +245,8 @@ class RAGPipeline:
         season: Optional[str] = None,
         disease: Optional[str] = None,
         temperature: float = 0.7,
+        use_hybrid: bool = True,
+        use_reranker: Optional[bool] = None,
     ) -> Dict:
         """
         Execute a RAG query.
@@ -162,6 +261,10 @@ class RAGPipeline:
             season: Filter by season
             disease: Filter by disease
             temperature: LLM temperature for generation
+            use_hybrid: If True, use BM25 + semantic hybrid search (recommended).
+                        If False, use semantic-only search.
+            use_reranker: Override reranking on/off for this call.
+                          Defaults to settings.use_reranker.
 
         Returns:
             Dictionary with query, response, language, sources, and confidence
@@ -172,6 +275,10 @@ class RAGPipeline:
         """
         if not query_text or not query_text.strip():
             raise ValueError("Query text cannot be empty")
+
+        # Resolve reranker flag: per-call override → settings default
+        _use_reranker = use_reranker if use_reranker is not None else settings.use_reranker
+        _use_reranker = _use_reranker and (self.reranker is not None)
 
         logger.info(f"Processing query: {query_text}")
 
@@ -192,19 +299,42 @@ class RAGPipeline:
         if disease:
             filters["disease"] = disease
 
-        # Retrieve context chunks
+        # Retrieve exactly k chunks; the reranker reorders them, not filters.
         try:
-            logger.info(f"Retrieving {k} context chunks...")
-            context_chunks = self.retriever.retrieve(
-                query_text,
-                k=k,
-                similarity_threshold=similarity_threshold,
-                filters=filters if filters else None,
-                return_scores=True,
-            )
+            if use_hybrid:
+                logger.info(f"Hybrid retrieval (BM25 + semantic), k={k}...")
+                context_chunks = self.retriever.retrieve_hybrid(
+                    query_text,
+                    k=k,
+                    similarity_threshold=similarity_threshold,
+                    filters=filters if filters else None,
+                    return_scores=True,
+                )
+            else:
+                logger.info(f"Semantic-only retrieval, k={k}...")
+                context_chunks = self.retriever.retrieve(
+                    query_text,
+                    k=k,
+                    similarity_threshold=similarity_threshold,
+                    filters=filters if filters else None,
+                    return_scores=True,
+                )
             logger.info(f"Retrieved {len(context_chunks)} chunks")
+
+            # Enrich with source filename (runtime lookup, no re-index needed)
+            context_chunks = _enrich_chunks_with_filename(context_chunks, self._source_map)
+
+            # ── Reranking ──────────────────────────────────────────────────────
+            if _use_reranker:
+                logger.info(f"Reranking {len(context_chunks)} chunks by cross-encoder score...")
+                context_chunks = self.reranker.rerank(
+                    query=query_text,
+                    chunks=context_chunks,
+                    top_k=None,   # keep all k — just reorder by relevance
+                )
+                logger.info(f"Reranking complete")
         except Exception as e:
-            logger.error(f"Retrieval failed: {str(e)}")
+            logger.error(f"Retrieval/reranking failed: {str(e)}")
             raise
 
         # Generate response
@@ -228,6 +358,8 @@ class RAGPipeline:
             "sources": response["sources"],
             "num_context_chunks": len(context_chunks),
             "retrieved_chunks": context_chunks,
+            "retrieval_mode": "hybrid" if use_hybrid else "semantic",
+            "reranker_used": _use_reranker,
         }
 
         logger.info("Query processing completed")

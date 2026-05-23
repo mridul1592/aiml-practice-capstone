@@ -24,6 +24,18 @@ logger = setup_logger(__name__)
 class Embedder:
     """Generate multilingual embeddings for document chunks."""
 
+    # ── Query prefixes ────────────────────────────────────────────────────────
+    # E5-instruct family: "Instruct: <task>\nQuery: <text>"
+    _QUERY_INSTRUCTION: str = (
+        "Given an agricultural query, retrieve relevant passages that answer the query"
+    )
+
+    # BGE (BAAI) non-instruct models: short prefix recommended in model card.
+    # Applied only to queries; documents are embedded without any prefix.
+    _BGE_QUERY_PREFIX: str = (
+        "Represent this sentence for searching relevant passages: "
+    )
+
     def __init__(self, model_name: Optional[str] = None):
         """
         Initialize embedder with SentenceTransformer or AutoModel.
@@ -52,7 +64,7 @@ class Embedder:
                 self.model = AutoModel.from_pretrained(
                     self.model_name,
                     trust_remote_code=True,
-                    torch_dtype=torch.float16 if "cuda" in str(self.device) else torch.float32,
+                    dtype=torch.float16 if "cuda" in str(self.device) else torch.float32,
                 ).to(self.device)
                 self.embedding_dim = self.model.config.hidden_size
             else:
@@ -73,6 +85,52 @@ class Embedder:
             logger.error(f"Failed to load embedding model: {str(e)}")
             raise
     
+    # ------------------------------------------------------------------
+    # Properties
+    # ------------------------------------------------------------------
+
+    @property
+    def _is_instruct_model(self) -> bool:
+        """True for instruction-tuned embedding models (E5-instruct, etc.)."""
+        return "instruct" in self.model_name.lower()
+
+    # ------------------------------------------------------------------
+    # Public embedding API
+    # ------------------------------------------------------------------
+
+    def embed_query(self, query: str, normalize: bool = True) -> np.ndarray:
+        """
+        Generate an embedding for a *query* string.
+
+        For instruction-tuned models (e.g. intfloat/multilingual-e5-large-instruct)
+        this automatically prepends the task instruction so the query vector is
+        in the same embedding space as the document vectors produced by embed_text().
+
+        For non-instruct models this is identical to embed_text().
+
+        Args:
+            query:     Raw query text
+            normalize: Whether to L2-normalise the output (default: True)
+
+        Returns:
+            1-D numpy array of shape (embedding_dim,)
+        """
+        if not query or not query.strip():
+            raise ValueError("Query text cannot be empty")
+
+        if self._is_instruct_model and not self.use_transformers:
+            # E5-instruct style: "Instruct: <task>\nQuery: <text>"
+            text = f"Instruct: {self._QUERY_INSTRUCTION}\nQuery: {query}"
+            logger.debug("Prepended E5-instruct prefix for query")
+        elif self.use_transformers and self.model_name.startswith("BAAI/") and "instruct" not in self.model_name.lower():
+            # BGE non-instruct: short retrieval prefix recommended in model card
+            text = f"{self._BGE_QUERY_PREFIX}{query}"
+            logger.debug("Prepended BGE query prefix")
+        else:
+            text = query
+
+        return self.embed_text(text, normalize=normalize)
+
     def get_model_info(self) -> Dict[str, Any]:
         """
         Retrieve metadata about the currently loaded embedding model.
@@ -126,19 +184,32 @@ class Embedder:
     
     def _embed_with_transformers(self, texts: List[str], normalize: bool = True) -> np.ndarray:
         """Helper to run inference via HuggingFace Transformers."""
+        # Respect the model's actual max sequence length.
+        # BERT-based models (BGE, etc.) cap at 512; some newer models support 1024+.
+        # Exceeding the limit causes position-embedding shape mismatches at runtime.
+        _max_len = min(
+            getattr(self.tokenizer, "model_max_length", 512),
+            512,   # hard safety cap — avoids OOM on models with unrealistic limits
+        )
         inputs = self.tokenizer(
             texts,
             padding=True,
             truncation=True,
             return_tensors="pt",
-            max_length=1024,
+            max_length=_max_len,
         ).to(self.device)
 
         with torch.no_grad():
             outputs = self.model(**inputs)
 
-        # Apply basic pooling logic
-        if hasattr(outputs, "pooler_output") and outputs.pooler_output is not None:
+        # Pooling strategy:
+        # - BAAI/BGE models: CLS token from last_hidden_state[:,0,:]
+        #   (pooler_output exists but is a linear projection NOT trained
+        #    for retrieval — using it hurts retrieval quality)
+        # - Other models: prefer pooler_output, fall back to CLS
+        if self.model_name.startswith("BAAI/"):
+            emb = outputs.last_hidden_state[:, 0, :]
+        elif hasattr(outputs, "pooler_output") and outputs.pooler_output is not None:
             emb = outputs.pooler_output
         else:
             emb = outputs.last_hidden_state[:, 0, :]
