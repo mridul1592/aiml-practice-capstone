@@ -1,15 +1,17 @@
-# Agricultural Knowledge RAG System - Multilingual Edition
+# Agricultural Knowledge RAG System — Multilingual Edition
 
-A production-grade Retrieval-Augmented Generation (RAG) system designed to provide reliable agricultural knowledge to farmers in India in their preferred language (Hindi, Punjabi, or English).
+A production-grade Retrieval-Augmented Generation (RAG) system that delivers reliable agricultural advisory to farmers in India in their preferred language (English, Hindi, or Punjabi). Supports **text and audio** queries, hybrid retrieval, cross-encoder reranking, and source attribution.
+
+---
 
 ## 🎯 Overview
 
-This system addresses the challenge of agricultural knowledge accessibility by:
-- Aggregating agricultural information from multiple sources
-- Processing and chunking documents intelligently
-- Retrieving relevant information using semantic search
-- Generating context-aware responses in the farmer's language
-- Preventing hallucinations through grounded responses
+The system addresses agricultural knowledge accessibility by:
+- Aggregating curated agricultural literature (PoP manuals, advisory bulletins, IPM guides)
+- Parsing, cleaning, and chunking documents with metadata extraction
+- Retrieving the most relevant passages via **hybrid search** (BM25 + dense semantic) and **cross-encoder reranking**
+- Generating grounded, source-attributed responses in the user's language
+- Suppressing hallucinations by requiring every claim to map back to retrieved context
 
 ### Target Users
 Farmers in Punjab and Haryana
@@ -18,259 +20,373 @@ Farmers in Punjab and Haryana
 - Wheat
 - Paddy (Rice)
 
-### Features
-- Pest/disease advisory
-- Fertilizer guidance
-- Irrigation recommendations
+### Use Cases
+- Pest / disease diagnosis & control advisory
+- Fertilizer & nutrient guidance
+- Irrigation scheduling
 - Seasonal best practices
+- Variety selection
 
 ### Supported Languages
-- English
-- Hindi
-- Punjabi
+Primary: **English, Hindi, Punjabi**
+Detected: English, Hindi, Punjabi, Marathi, Bengali, Odia, Tamil, Telugu, Kannada, Malayalam
+
+---
+
+## 🏗️ Architecture
+
+```
+                    ┌─────────────────────┐
+   PDFs / Audio ──▶ │  Ingestion Layer    │
+                    │  • PDF Parser       │
+                    │  • Chunking         │
+                    │  • Metadata Extract │
+                    └──────────┬──────────┘
+                               ▼
+                    ┌─────────────────────┐
+                    │  Embedding Layer    │
+                    │  BAAI/bge-large-    │
+                    │  en-v1.5 (1024-d)   │
+                    └──────────┬──────────┘
+                               ▼
+                    ┌─────────────────────┐
+                    │  FAISS Vector Store │ ◀── metadata.json
+                    └──────────┬──────────┘
+                               │
+   Query ──▶ Lang Detect ──▶  ▼
+                    ┌─────────────────────┐
+                    │  Hybrid Retriever   │
+                    │  BM25 + Dense → RRF │
+                    └──────────┬──────────┘
+                               ▼
+                    ┌─────────────────────┐
+                    │  BGE Cross-Encoder  │
+                    │  Reranker (top-k)   │
+                    └──────────┬──────────┘
+                               ▼
+                    ┌─────────────────────┐
+                    │  LLM Generator      │
+                    │  Ollama / OpenAI    │
+                    └──────────┬──────────┘
+                               ▼
+                  ┌────────────────────────┐
+                  │ Grounded Response with │
+                  │  Source Attribution    │
+                  └────────────────────────┘
+```
+
+---
 
 ## 📋 Project Structure
 
 ```
-project/
+aiml-practice-capstone/
 ├── data/
-│   ├── raw/              # Raw PDFs and documents
-│   ├── processed/        # Processed and cleaned JSON documents
-│   └── embeddings/       # FAISS indices and metadata
+│   ├── raw/                       # Source PDFs
+│   ├── processed/                 # Cleaned chunks (JSON)
+│   └── embeddings/                # FAISS index + metadata.json
 │
-├── ingestion/            # Document ingestion pipeline
-│   ├── pdf_parser.py
-│   ├── metadata_extractor.py
-│   └── chunking.py
+├── ingestion/                     # Document ingestion pipeline
+│   ├── pdf_parser.py              # PyMuPDF-based extraction
+│   ├── metadata_extractor.py      # Crop / region / season tagging
+│   ├── chunking.py                # Token-aware chunking
+│   └── orchestrator.py            # Batch ingestion driver
 │
-├── rag/                  # RAG pipeline components
-│   ├── embedder.py
-│   ├── vector_store.py
-│   ├── retriever.py
-│   ├── prompt_templates.py
-│   └── generator.py
+├── rag/                           # Retrieval-Augmented Generation
+│   ├── embedder.py                # BAAI/BGE + SentenceTransformer routing
+│   ├── vector_store.py            # FAISS index management
+│   ├── retriever.py               # Hybrid BM25 + Dense + RRF + lang detect
+│   ├── reranker.py                # BAAI/bge-reranker-base cross-encoder
+│   ├── generator.py               # LLM client (Ollama / OpenAI)
+│   ├── prompt_templates.py        # Multilingual prompt scaffolding
+│   ├── embeddings_orchestrator.py # End-to-end ingest + embed + index
+│   └── rag_orchestrator.py        # Query-time pipeline coordinator
 │
-├── api/                  # FastAPI backend
+├── audio/                         # Voice query support
+│   ├── audio_processor.py         # Whisper transcription
+│   └── audio_rag_handler.py       # Audio → RAG bridge
+│
+├── api/                           # FastAPI backend
 │   └── fastapi_app.py
 │
-├── ui/                   # Streamlit frontend
-│   └── streamlit_app.py
+├── ui/                            # Streamlit frontend
+│   └── streamlit_app.py           # Chat interface with reranker toggle
 │
-├── evaluation/           # Evaluation and testing
+├── tests/                         # Unit / integration tests
+│   ├── test_ingestion.py
+│   ├── test_embeddings.py
+│   └── test_rag.py
 │
-├── utils/                # Utility modules
-│   ├── config.py
-│   ├── logger.py
-│   └── __init__.py
+├── utils/
+│   ├── config.py                  # Pydantic settings
+│   └── logger.py
 │
-├── tests/                # Unit and integration tests
-│
-├── requirements.txt      # Python dependencies
-├── .env                  # Environment configuration
-└── main.py              # Entry point
+├── requirements.txt
+├── .env                           # Environment configuration
+└── main.py                        # CLI entry point
 ```
+
+---
 
 ## 🚀 Quick Start
 
 ### 1. Setup Python Environment
 
 ```bash
-# Create virtual environment
 python -m venv venv
 
-# Activate virtual environment
-# On Windows:
+# Windows
 venv\Scripts\activate
-# On macOS/Linux:
+# macOS/Linux
 source venv/bin/activate
 
-# Upgrade pip
 pip install --upgrade pip setuptools wheel
-```
-
-### 2. Install Dependencies
-
-```bash
 pip install -r requirements.txt
 ```
 
-### 3. Configure Environment
-
-Edit `.env` file with your settings:
+### 2. Setup LLM (Ollama recommended)
 
 ```bash
-# LLM Configuration
-LLM_PROVIDER=ollama              # or 'openai'
+# Install from https://ollama.ai
+ollama pull mistral        # default model
+ollama serve               # start the daemon
+```
+
+Or use OpenAI by setting `LLM_PROVIDER=openai` and `OPENAI_API_KEY` in `.env`.
+
+### 3. Configure `.env`
+
+Defaults work out of the box. Adjust as needed:
+
+```bash
+# LLM
+LLM_PROVIDER=ollama
 OLLAMA_BASE_URL=http://localhost:11434
-OLLAMA_MODEL=mistral             # or 'llama2', 'neural-chat'
+OLLAMA_MODEL=mistral
 
-# If using OpenAI:
-# OPENAI_API_KEY=your_key_here
+# Embedding (1024-dim, English-optimized)
+EMBEDDING_MODEL=BAAI/bge-large-en-v1.5
+EMBEDDING_DIMENSION=1024
 
-# Embedding Model (multilingual)
-EMBEDDING_MODEL=sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+# Reranker
+USE_RERANKER=true
+RERANKER_MODEL=BAAI/bge-reranker-base
 
-# RAG Settings
-CHUNK_SIZE=400
-CHUNK_OVERLAP=100
+# Retrieval
+CHUNK_SIZE=200
+CHUNK_OVERLAP=40
+SIMILARITY_THRESHOLD=0.5
 TOP_K_RETRIEVAL=5
-SUPPORTED_LANGUAGES=en,hi,pa
+LANGUAGE_DETECT_THRESHOLD=0.5
 ```
 
-### 4. Setup LLM Provider
+### 4. Build the Index
 
-#### Option A: Using Ollama (Recommended for Local Development)
+Place PDFs in `data/raw/` (or any directory you point `--pdf-dir` at), then:
 
 ```bash
-# Install Ollama from https://ollama.ai
-# Download a model
-ollama pull mistral
-# or
-ollama pull llama2
-
-# Start Ollama service
-ollama serve
+# One-shot: ingest + embed + build FAISS index
+python main.py embed --pdf-dir Agri_docs
 ```
 
-#### Option B: Using OpenAI
+### 5. Query
 
-Set your OpenAI API key in `.env`:
+```bash
+# Text query
+python main.py query --query "How to control wheat pests?"
+
+# Multilingual
+python main.py query --query "गेहूँ में कीटों का नियंत्रण कैसे करें?"
+
+# With filters
+python main.py query --query "Paddy irrigation" --crop paddy --region punjab --k 10
+
+# Audio query (Whisper transcribes, then RAG answers)
+python main.py audio-query --audio-file query.mp3 --model-size base
 ```
-OPENAI_API_KEY=sk-...
-LLM_PROVIDER=openai
+
+### 6. Launch UI / API
+
+```bash
+# Streamlit chat UI (http://localhost:8501)
+python main.py ui
+
+# FastAPI backend (http://localhost:8000/docs)
+python main.py api
 ```
 
-## 📦 Dependencies Overview
+---
 
-### Core Components
-- **FastAPI**: REST API framework
-- **Streamlit**: Frontend framework
-- **LangChain**: LLM orchestration
-- **FAISS**: Vector similarity search
-- **SentenceTransformers**: Multilingual embeddings
-- **PyMuPDF**: PDF processing
+## 🧩 CLI Reference
 
-### Supporting Libraries
-- **Pydantic**: Data validation
-- **python-dotenv**: Environment management
-- **pandas/numpy**: Data processing
-- **pytest**: Testing framework
+The `main.py` entry point exposes seven subcommands:
 
-## 🔄 Development Workflow
+| Command | Description |
+|---------|-------------|
+| `ingest`      | Parse PDFs into cleaned JSON chunks (no embeddings) |
+| `embed`       | Full pipeline: parse → chunk → embed → build FAISS index |
+| `query`       | Run a text RAG query against the existing index |
+| `audio-query` | Run a RAG query from an audio file (mp3/wav/m4a/flac/ogg) |
+| `api`         | Start the FastAPI backend server |
+| `ui`          | Start the Streamlit chat interface |
+| `test`        | Run a specific test module |
 
-This project is built incrementally. Current status:
+Run `python main.py <command> --help` for per-command flags.
 
-### ✅ Step 1: Project Structure & Setup (COMPLETED)
-- Created folder structure
-- Generated requirements.txt
-- Setup configuration management
-- Setup logging infrastructure
+---
 
-### 📌 Step 2: PDF Ingestion Module (NEXT)
-- PDF text extraction
-- Header/footer removal
-- OCR artifact cleaning
-- JSON output generation
+## 🔑 Key Features
 
-### Coming Steps
-3. Chunking & metadata extraction
-4. Embedding generation & FAISS storage
-5. Retrieval pipeline
-6. RAG response generation
-7. FastAPI backend
-8. Streamlit UI
-9. Evaluation module
+### Hybrid Retrieval (BM25 + Dense + RRF)
+First-stage retrieval combines lexical (BM25) and semantic (FAISS dense) search, merged via **Reciprocal Rank Fusion (RRF)**. This captures both exact-keyword matches (crop varieties, chemical names, dosages) and paraphrased semantic matches.
 
-## 📝 Configuration Details
+### Cross-Encoder Reranking
+Top-`k` candidates from hybrid retrieval are rescored by **BAAI/bge-reranker-base**, a cross-encoder that jointly attends over `(query, passage)` pairs — significantly more accurate than bi-encoder similarity. Toggleable via `USE_RERANKER` in `.env` or per-request from the UI.
+
+### BGE Embedding Pipeline
+- **Model:** `BAAI/bge-large-en-v1.5` (1024-dim)
+- Routed through native HuggingFace `transformers` (not SentenceTransformers) for correct CLS-token pooling
+- Query-side prefixing: `"Represent this sentence for searching relevant passages: "`
+- GPU-accelerated with FP16 when CUDA is available
+
+### Multilingual Language Detection
+Script-based detector for 10 Indian languages (Devanagari, Gurmukhi, Bengali, Odia, Tamil, Telugu, Kannada, Malayalam) plus English. The response language defaults to the detected query language unless overridden.
+
+### Audio Queries (Whisper)
+Voice queries are transcribed via OpenAI Whisper (configurable model size: `tiny` / `base` / `small` / `medium` / `large`), with language preservation in the generated response.
+
+### Source Attribution
+Every response cites the source PDFs it drew from. A runtime range-map (`vector_id → filename`) is built from the processed-JSON directory so attribution survives index changes without re-embedding.
+
+### Streamlit Chat UI
+- Sidebar controls for filters (crop, region, season, disease), `k`, threshold, temperature, and reranker toggle
+- Expandable per-chunk panel showing both semantic and rerank scores
+- Per-message metadata badge (`🎯 Reranked` / `⚡ No Rerank`)
+- Auto-scroll to user's latest question after generation
+
+---
+
+## 📊 Configuration Reference
 
 ### Environment Variables
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `LLM_PROVIDER` | ollama | LLM provider (ollama/openai) |
-| `OLLAMA_MODEL` | mistral | Ollama model name |
-| `EMBEDDING_MODEL` | paraphrase-multilingual-MiniLM-L12-v2 | SentenceTransformer model |
-| `CHUNK_SIZE` | 400 | Document chunk size in tokens |
-| `TOP_K_RETRIEVAL` | 5 | Number of chunks to retrieve |
-| `SUPPORTED_LANGUAGES` | en,hi,pa | Supported language codes |
+| `LLM_PROVIDER` | `ollama` | `ollama` or `openai` |
+| `OLLAMA_BASE_URL` | `http://localhost:11434` | Ollama daemon URL |
+| `OLLAMA_MODEL` | `mistral` | Generation model |
+| `OPENAI_API_KEY` | — | Required if `LLM_PROVIDER=openai` |
+| `EMBEDDING_MODEL` | `BAAI/bge-large-en-v1.5` | HuggingFace model id |
+| `EMBEDDING_DIMENSION` | `1024` | Must match the model's output dim |
+| `USE_RERANKER` | `true` | Enable cross-encoder reranking |
+| `RERANKER_MODEL` | `BAAI/bge-reranker-base` | Cross-encoder checkpoint |
+| `CHUNK_SIZE` | `200` | Chunk size in tokens |
+| `CHUNK_OVERLAP` | `40` | Overlap between consecutive chunks |
+| `SIMILARITY_THRESHOLD` | `0.5` | Minimum semantic similarity to retain |
+| `TOP_K_RETRIEVAL` | `5` | Chunks returned to the LLM |
+| `LANGUAGE_DETECT_THRESHOLD` | `0.5` | Script-detection confidence floor |
+| `FAISS_INDEX_PATH` | `./data/embeddings/faiss_index.bin` | FAISS index location |
+| `METADATA_INDEX_PATH` | `./data/embeddings/metadata.json` | Chunk metadata location |
+| `API_HOST` / `API_PORT` | `0.0.0.0` / `8000` | FastAPI binding |
+| `STREAMLIT_PORT` | `8501` | Streamlit port |
+| `LOG_LEVEL` | `INFO` | `DEBUG` / `INFO` / `WARNING` / `ERROR` |
 
-### Directory Structure
+> ⚠️ **`EMBEDDING_DIMENSION` must match the chosen `EMBEDDING_MODEL`.** Common values: `BAAI/bge-large-en-v1.5` → **1024**, `BAAI/bge-base-en-v1.5` → **768**, `paraphrase-multilingual-MiniLM-L12-v2` → **384**. Mismatched values will fail at FAISS index load with a dimension-mismatch error.
 
-- **data/raw/**: Place your PDF files here
-- **data/processed/**: Cleaned JSON documents (auto-generated)
-- **data/embeddings/**: FAISS indices (auto-generated)
-- **logs/**: Application logs
+---
+
+## 📦 Dependencies
+
+| Component | Library |
+|-----------|---------|
+| Embedding & reranking | `transformers`, `sentence-transformers`, `torch` |
+| Vector search | `faiss-cpu` (or `faiss-gpu`) |
+| Lexical search | `rank-bm25` |
+| PDF parsing | `pymupdf` |
+| Audio transcription | `openai-whisper`, `ffmpeg` |
+| LLM clients | `ollama`, `openai` |
+| API | `fastapi`, `uvicorn` |
+| UI | `streamlit` |
+| Config | `pydantic`, `pydantic-settings`, `python-dotenv` |
+
+Full pinned list lives in `requirements.txt`.
+
+---
 
 ## 🧪 Testing
 
 ```bash
-# Run all tests
-pytest tests/
+# Module-level test suites
+python main.py test --test-module tests.test_ingestion
+python main.py test --test-module tests.test_embeddings
+python main.py test --test-module tests.test_rag
 
-# Run with coverage
+# Or directly with pytest
+pytest tests/ -v
 pytest tests/ --cov=.
-
-# Run specific test
-pytest tests/test_module.py -v
 ```
 
-## 📚 Documentation
+---
 
-Each module includes:
-- Type hints for all functions
-- Comprehensive docstrings
-- Inline comments for complex logic
-- Exception handling with logging
+## 🛠️ Troubleshooting
 
-## 🛠️ Development Notes
+**FAISS index dimension mismatch on load**
+Index was built with a different `EMBEDDING_DIMENSION` than the current setting. Rebuild:
+```bash
+python main.py embed --pdf-dir Agri_docs
+```
 
-### Code Quality Standards
-- PEP 8 compliant code
-- Black formatting for consistency
-- Type hints throughout
-- Comprehensive logging
-- Error handling at all layers
+**Sources show as "Unknown"**
+The runtime source-map needs `data/processed/*_processed.json` to exist. Re-run `ingest` or `embed` to regenerate the processed JSONs.
 
-### Dependencies
-- Python 3.10+
-- CUDA support optional (for GPU embeddings)
+**`tensor a (1024) must match tensor b (512)`**
+A previous build hardcoded `max_length=1024`. The current `embedder.py` respects `tokenizer.model_max_length` (capped at 512 for BERT-based models). Pull the latest code.
 
-## 📞 Support & Troubleshooting
+**Ollama connection refused**
+Start the daemon: `ollama serve`. Verify with `curl http://localhost:11434/api/tags`.
 
-### Common Issues
+**CUDA not available / slow embeddings**
+- Verify `torch.cuda.is_available()` returns `True`
+- Set `DEVICE=cpu` in `.env` for explicit CPU mode
+- Use `faiss-cpu` if `faiss-gpu` is unavailable for your CUDA version
 
-**Issue: CUDA not available**
-- Solution: Install `faiss-cpu` or `faiss-gpu` as needed
+**Whisper missing ffmpeg**
+Install FFmpeg system-wide:
+- Windows: `choco install ffmpeg` or download from ffmpeg.org
+- macOS: `brew install ffmpeg`
+- Linux: `apt install ffmpeg`
 
-**Issue: Ollama connection failed**
-- Solution: Ensure Ollama is running: `ollama serve`
+---
 
-**Issue: Missing embeddings**
-- Solution: Run embedding generation step first
+## 🎓 Example Queries
 
-## 🎓 Example Agriculture Queries
+```text
+EN  →  "What is the optimal irrigation schedule for wheat during winter?"
+EN  →  "Recommended fungicides for paddy blast in Punjab"
+HI  →  "गेहूँ में शूट फ्लाई का नियंत्रण कैसे करें?"
+HI  →  "धान में नाइट्रोजन की मात्रा कितनी होनी चाहिए?"
+PA  →  "ਕਣਕ ਦੀ ਫ਼ਸਲ ਲਈ ਬੀਜ ਦੀ ਮਾਤਰਾ ਕਿੰਨੀ ਚਾਹੀਦੀ ਹੈ?"
+```
 
-The system is designed to handle queries like:
+---
 
-- "गेहूँ में शूट फ्लाई का नियंत्रण कैसे करें?" (Hindi)
-- "ਪੱਧਾ ਵਿੱਚ ਜੀਵਾਣੂ ਭਿੱਜ ਕਰਨ ਦਾ ਸਮਾ ਕਿਹੜਾ ਹੈ?" (Punjabi)
-- "What is the optimal irrigation schedule for wheat during winter?" (English)
+## 📝 Recent Changes
+
+- **Switched embedding model** to `BAAI/bge-large-en-v1.5` (1024-dim) — superior retrieval quality over the previous multilingual MiniLM (384-dim) and instruct-E5 models.
+- **Added BGE cross-encoder reranker** (`BAAI/bge-reranker-base`) as a second-stage scorer. Retrieves exactly `k` chunks instead of `k×3` and reorders — 3× fewer FAISS/BM25/cross-encoder operations.
+- **Fixed source attribution** — chunks no longer display "Unknown" filenames. Three-layer fix: ingestion injects `source_file`, embedder propagates it, runtime range-map enriches missing entries from `data/processed/`.
+- **Fixed Streamlit UI issues** — header overlap on first chat message, auto-scroll now lands on the user's question (not the assistant reply), and `height=1` iframe workaround for Chromium's zero-height suppression.
+- **Hardened tokenization** — `max_length` now respects `tokenizer.model_max_length` (capped at 512) instead of a hardcoded value, eliminating position-embedding shape mismatches on BERT-based models.
+- **Corrected BGE pooling** — uses `last_hidden_state[:, 0, :]` (CLS) instead of `pooler_output` for BAAI models, restoring retrieval quality.
+- **Added audio query support** via Whisper with language preservation in responses.
+- **Vector store dimension guard** — `vector_store.py` now raises a clear error if the loaded index dimension differs from the current embedding model.
+
+---
 
 ## 📄 License
 
-MIT License - See LICENSE file for details
+MIT License — see `LICENSE` for details.
 
 ## 👥 Contributors
 
 AI ML FAS Team
-
----
-
-## Next Steps
-
-Proceed to **Step 2: PDF Ingestion Module** when ready.
-
-To start:
-1. Place sample agricultural PDFs in `data/raw/`
-2. Run the PDF ingestion pipeline
-3. Verify processed JSON outputs
